@@ -1,0 +1,946 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         31/May/2015  21:39:48 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\hal\target\CC2530EB\hal_adxl345.c               #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wRouter.cfg"            #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\ta #
+#                          rget\CC2530EB\hal_adxl345.c" -D                    #
+#                          NWK_MAX_DEVICE_LIST=3 -lC "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\RouterEB\Lis #
+#                          t\" -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a #
+#                          \Projects\zstack\Samples\WirelessMonitorSystem\CC2 #
+#                          530DB\RouterEB\List\" --diag_suppress Pe001,Pa010  #
+#                          -o "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \RouterEB\Obj\" -e --no_code_motion --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -Ohz --require_prototypes #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Rou #
+#                          terEB\List\hal_adxl345.lst                         #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Rou #
+#                          terEB\Obj\hal_adxl345.r51                          #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\hal_adxl345.c
+      1          /***************************************************
+      2           *												   	*
+      3           *												   	*
+      4           *		ADXL345	for CC2530						   	*
+      5           *												   	*
+      6           ****************************************************
+      7           *													*
+      8           *	Author: smile boy								*
+      9           *  BuildTime: 2015/4/19							*
+     10           *	Reference:	ADXL345.c ADXL345.h file from 		*
+     11           *				builder.org							*
+     12           *													*
+     13           ***************************************************/
+     14           
+     15          // Header
+     16          #include "hal_i2c.h"
+     17          #include "zcomdef.h"
+     18          #include "hal_adxl345.h"
+     19           
+     20          #define ADXL345_DEVICE (0x53)    // ADXL345 device address
+     21          #define ADXL345_TO_READ (6)      // number of bytes we are going to read each time (two bytes for each axis)
+     22          
+     23          ////////////////////////////////////////////////
+     24          // Global Variable
+     25          
+     26          // ADXL345 status
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     27          bool status = ADXL345_OK;		
+   \                     status:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for status>`
+   \   000001                REQUIRE __INIT_XDATA_I
+     28          
+     29          // Error code
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     30          byte error_code = ADXL345_NO_ERROR;
+   \                     error_code:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     31          
+     32          // gains
+     33          // gains[0] = 0.00376390;
+     34          // gains[1] = 0.00376009;
+     35          // gains[2] = 0.00349265;
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     36          double gains[3] = {0.00376390, 0.00376009, 0.00349265};
+   \                     gains:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for gains>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+     37          
+     38          // buffer
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     39          byte _buff[6] = {0x00};
+   \                     _buff:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     40          
+     41          ///////////////////////////////////////////////////////////////
+     42          // FUNC
+     43          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     44          void ADXL345_PowerOn() 
+   \                     ADXL345_PowerOn:
+     45          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     46          	//Wire.begin();        // join i2c bus (address optional for master)
+     47            	//hali2cStart();
+     48          	//Turning on the ADXL345
+     49          	ADXL345_writeTo(ADXL345_POWER_CTL, 0);      
+   \   000004                ; Setup parameters for call to function ADXL345WriteByte
+   \   000004   7A00         MOV     R2,#0x0
+   \   000006   792D         MOV     R1,#0x2d
+   \   000008   12....       LCALL   ??ADXL345WriteByte?relay
+     50          	ADXL345_writeTo(ADXL345_POWER_CTL, 16);
+   \   00000B                ; Setup parameters for call to function ADXL345WriteByte
+   \   00000B   7A10         MOV     R2,#0x10
+   \   00000D   792D         MOV     R1,#0x2d
+   \   00000F   12....       LCALL   ??ADXL345WriteByte?relay
+     51          	ADXL345_writeTo(ADXL345_POWER_CTL, 8); 
+   \   000012                ; Setup parameters for call to function ADXL345WriteByte
+   \   000012   7A08         MOV     R2,#0x8
+   \   000014   792D         MOV     R1,#0x2d
+   \   000016   12....       LCALL   ??ADXL345WriteByte?relay
+     52          }
+   \   000019                REQUIRE ?Subroutine0
+   \   000019                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     53          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     54          void ADXL345_readAccel(uint8* buffer)
+   \                     ADXL345_readAccel:
+     55          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     56            ADXL345_readFrom(ADXL345_DATAX0, ADXL345_TO_READ, buffer);
+   \   000004                ; Setup parameters for call to function ADXL345ReadBytes
+   \   000004   7C06         MOV     R4,#0x6
+   \   000006   7932         MOV     R1,#0x32
+   \   000008   12....       LCALL   ??ADXL345ReadBytes?relay
+     57          }
+   \   00000B   80..         SJMP    ?Subroutine0
+     58          
+     59          // Reads the acceleration into three variable x, y and z
+     60          //void ADXL345_readAccel(uint16 *xyz)
+     61          //{
+     62          //	ADXL345_readAccel(xyz, xyz + 1, xyz + 2);
+     63          //}
+     64          
+     65          //void ADXL345_readAccel(uint16 *x, uint16 *y, uint16 *z) 
+     66          //{
+     67          //	ADXL345_readFrom(ADXL345_DATAX0, ADXL345_TO_READ, _buff); //read the acceleration data from the ADXL345
+     68          //	
+     69          //	// each axis reading comes in 10 bit resolution, ie 2 bytes.  Least Significat Byte first!!
+     70          //	// thus we are converting both bytes in to one int
+     71          //	*x = (((int)_buff[1]) << 8) | _buff[0];   
+     72          //	*y = (((int)_buff[3]) << 8) | _buff[2];
+     73          //	*z = (((int)_buff[5]) << 8) | _buff[4];
+     74          //}
+     75          
+     76          //void ADXL345_get_Gxyz(double *xyz){
+     77          //	int i;
+     78          //	int xyz_int[3];
+     79          //	ADXL345_readAccel(xyz_int);
+     80          //	for(i=0; i<3; i++){
+     81          //		xyz[i] = xyz_int[i] * gains[i];
+     82          //	}
+     83          //}
+     84          
+     85          // Writes val to address register on device
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     86          void ADXL345_writeTo(byte address, byte val) 
+   \                     ADXL345_writeTo:
+     87          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     88          	// Wire.beginTransmission(ADXL345_DEVICE); // start transmission to device 
+     89          	// Wire.write(address);             		// send register address
+     90          	// Wire.write(val);                 		// send value to write
+     91          	// Wire.endTransmission();         		// end transmission
+     92          	// use CC2530 defined IO-pins
+     93          	ADXL345WriteByte(address, val);
+   \   000005                ; Setup parameters for call to function ADXL345WriteByte
+   \   000005   12....       LCALL   ??ADXL345WriteByte?relay
+     94          }
+   \   000008                REQUIRE ?Subroutine1
+   \   000008                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     95          
+     96          // Reads num bytes starting from address register on device in to _buff array
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     97          void ADXL345_readFrom(byte address, byte num, byte _buff[]) 
+   \                     ADXL345_readFrom:
+     98          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FF           MOV     R7,A
+   \   000007   EC           MOV     A,R4
+   \   000008   FA           MOV     R2,A
+   \   000009   ED           MOV     A,R5
+   \   00000A   FB           MOV     R3,A
+     99          	// Wire.beginTransmission(ADXL345_DEVICE); // start transmission to device 
+    100          	// Wire.write(address);             		// sends address to read from
+    101          	// Wire.endTransmission();         		// end transmission
+    102          	
+    103          	// Wire.beginTransmission(ADXL345_DEVICE); 	// start transmission to device
+    104          	// Wire.requestFrom(ADXL345_DEVICE, num);    	// request 6 bytes from device
+    105          	
+    106          	// int i = 0;
+    107          	// while(Wire.available())         		// device may send less than requested (abnormal)
+    108          	// { 
+    109          		// _buff[i] = Wire.read();    			// receive a byte
+    110          		// i++;
+    111          	// }
+    112          	// if(i != num){
+    113          		// status = ADXL345_ERROR;
+    114          		// error_code = ADXL345_READ_ERROR;
+    115          	// }
+    116          	// Wire.endTransmission();         // end transmission
+    117          	// use CC2530 I2C interface
+    118          	ADXL345ReadBytes(address, _buff, num);
+   \   00000B                ; Setup parameters for call to function ADXL345ReadBytes
+   \   00000B   EF           MOV     A,R7
+   \   00000C   FC           MOV     R4,A
+   \   00000D   12....       LCALL   ??ADXL345ReadBytes?relay
+    119          }
+   \   000010   80..         SJMP    ?Subroutine1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for status>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for gains>`:
+   \   000000   C3AB763B     DD 3B76ABC3H
+   \   000004   D86B763B     DD 3B766BD8H
+   \   000008   F2E4643B     DD 3B64E4F2H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345_PowerOn?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345_PowerOn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345_readAccel?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345_readAccel
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345_writeTo?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345_writeTo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345_readFrom?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345_readFrom
+    120          
+    121          ////////////////////////////////////////////////////////////
+    122          ////////////////////////////////////////////////////////////
+    123          
+    124          //// Gets the range setting and return it into rangeSetting
+    125          //// it can be 2, 4, 8 or 16
+    126          //void ADXL345_getRangeSetting(byte* rangeSetting) {
+    127          //	byte _b;
+    128          //	ADXL345_readFrom(ADXL345_DATA_FORMAT, 1, &_b);
+    129          //	*rangeSetting = _b & 0x03;
+    130          //}
+    131          //
+    132          //// Sets the range setting, possible values are: 2, 4, 8, 16
+    133          //void ADXL345_setRangeSetting(int val) {
+    134          //	byte _s;
+    135          //	byte _b;
+    136          //	
+    137          //	switch (val) {
+    138          //		case 2:  
+    139          //			_s = 0x00; 
+    140          //			break;
+    141          //		case 4:  
+    142          //			_s = 0x01; 
+    143          //			break;
+    144          //		case 8:  
+    145          //			_s = 0x02; 
+    146          //			break;
+    147          //		case 16: 
+    148          //			_s = 0x03; 
+    149          //			break;
+    150          //		default: 
+    151          //			_s = 0x00;
+    152          //	}
+    153          //	ADXL345_readFrom(ADXL345_DATA_FORMAT, 1, &_b);
+    154          //	_s |= (_b & 0xEC);
+    155          //	ADXL345_writeTo(ADXL345_DATA_FORMAT, _s);
+    156          //}
+    157          //// gets the state of the SELF_TEST bit
+    158          //bool ADXL345_getSelfTestBit() {
+    159          //	return ADXL345_getRegisterBit(ADXL345_DATA_FORMAT, 7);
+    160          //}
+    161          //
+    162          //// Sets the SELF-TEST bit
+    163          //// if set to 1 it applies a self-test force to the sensor causing a shift in the output data
+    164          //// if set to 0 it disables the self-test force
+    165          //void ADXL345_setSelfTestBit(bool selfTestBit) {
+    166          //	ADXL345_setRegisterBit(ADXL345_DATA_FORMAT, 7, selfTestBit);
+    167          //}
+    168          //
+    169          //// Gets the state of the SPI bit
+    170          //bool ADXL345_getSpiBit() {
+    171          //	return ADXL345_getRegisterBit(ADXL345_DATA_FORMAT, 6);
+    172          //}
+    173          //
+    174          //// Sets the SPI bit
+    175          //// if set to 1 it sets the device to 3-wire mode
+    176          //// if set to 0 it sets the device to 4-wire SPI mode
+    177          //void ADXL345_setSpiBit(bool spiBit) {
+    178          //	ADXL345_setRegisterBit(ADXL345_DATA_FORMAT, 6, spiBit);
+    179          //}
+    180          //
+    181          //// Gets the state of the INT_INVERT bit
+    182          //bool ADXL345_getInterruptLevelBit() {
+    183          //	return ADXL345_getRegisterBit(ADXL345_DATA_FORMAT, 5);
+    184          //}
+    185          //
+    186          //// Sets the INT_INVERT bit
+    187          //// if set to 0 sets the interrupts to active high
+    188          //// if set to 1 sets the interrupts to active low
+    189          //void ADXL345_setInterruptLevelBit(bool interruptLevelBit) {
+    190          //	ADXL345_setRegisterBit(ADXL345_DATA_FORMAT, 5, interruptLevelBit);
+    191          //}
+    192          //
+    193          //// Gets the state of the FULL_RES bit
+    194          //bool ADXL345_getFullResBit() {
+    195          //	return ADXL345_getRegisterBit(ADXL345_DATA_FORMAT, 3);
+    196          //}
+    197          //
+    198          //// Sets the FULL_RES bit
+    199          //// if set to 1, the device is in full resolution mode, where the output resolution increases with the
+    200          ////   g range set by the range bits to maintain a 4mg/LSB scal factor
+    201          //// if set to 0, the device is in 10-bit mode, and the range buts determine the maximum g range
+    202          ////   and scale factor
+    203          //void ADXL345_setFullResBit(bool fullResBit) 
+    204          //{
+    205          //	ADXL345_setRegisterBit(ADXL345_DATA_FORMAT, 3, fullResBit);
+    206          //}
+    207          //
+    208          //// Gets the state of the justify bit
+    209          //bool ADXL345_getJustifyBit() 
+    210          //{
+    211          //	return ADXL345_getRegisterBit(ADXL345_DATA_FORMAT, 2);
+    212          //}
+    213          //
+    214          //// Sets the JUSTIFY bit
+    215          //// if sets to 1 selects the left justified mode
+    216          //// if sets to 0 selects right justified mode with sign extension
+    217          //void ADXL345_setJustifyBit(bool justifyBit) {
+    218          //	ADXL345_setRegisterBit(ADXL345_DATA_FORMAT, 2, justifyBit);
+    219          //}
+    220          //
+    221          //// Sets the THRESH_TAP byte value
+    222          //// it should be between 0 and 255
+    223          //// the scale factor is 62.5 mg/LSB
+    224          //// A value of 0 may result in undesirable behavior
+    225          //void ADXL345_setTapThreshold(int tapThreshold) {
+    226          //	tapThreshold = constrain(tapThreshold,0,255);
+    227          //	byte _b = byte (tapThreshold);
+    228          //	ADXL345_writeTo(ADXL345_THRESH_TAP, _b);  
+    229          //}
+    230          //
+    231          //// Gets the THRESH_TAP byte value
+    232          //// return value is comprised between 0 and 255
+    233          //// the scale factor is 62.5 mg/LSB
+    234          //int ADXL345_getTapThreshold() {
+    235          //	byte _b;
+    236          //	ADXL345_readFrom(ADXL345_THRESH_TAP, 1, &_b);  
+    237          //	return int(_b);
+    238          //}
+    239          //
+    240          //// set/get the gain for each axis in Gs / count
+    241          //void ADXL345_setAxisGains(double *_gains){
+    242          //	int i;
+    243          //	for(i = 0; i < 3; i++){
+    244          //		gains[i] = _gains[i];
+    245          //	}
+    246          //}
+    247          //void ADXL345_getAxisGains(double *_gains){
+    248          //	int i;
+    249          //	for(i = 0; i < 3; i++){
+    250          //		_gains[i] = gains[i];
+    251          //	}
+    252          //}
+    253          //
+    254          //
+    255          //// Sets the OFSX, OFSY and OFSZ bytes
+    256          //// OFSX, OFSY and OFSZ are user offset adjustments in twos complement format with
+    257          //// a scale factor of 15,6mg/LSB
+    258          //// OFSX, OFSY and OFSZ should be comprised between 
+    259          //void ADXL345_setAxisOffset(int x, int y, int z) {
+    260          //	ADXL345_writeTo(ADXL345_OFSX, byte (x));  
+    261          //	ADXL345_writeTo(ADXL345_OFSY, byte (y));  
+    262          //	ADXL345_writeTo(ADXL345_OFSZ, byte (z));  
+    263          //}
+    264          //
+    265          //// Gets the OFSX, OFSY and OFSZ bytes
+    266          //void ADXL345_getAxisOffset(int* x, int* y, int*z) {
+    267          //	byte _b;
+    268          //	ADXL345_readFrom(ADXL345_OFSX, 1, &_b);  
+    269          //	*x = int (_b);
+    270          //	ADXL345_readFrom(ADXL345_OFSY, 1, &_b);  
+    271          //	*y = int (_b);
+    272          //	ADXL345_readFrom(ADXL345_OFSZ, 1, &_b);  
+    273          //	*z = int (_b);
+    274          //}
+    275          //
+    276          //// Sets the DUR byte
+    277          //// The DUR byte contains an unsigned time value representing the maximum time
+    278          //// that an event must be above THRESH_TAP threshold to qualify as a tap event
+    279          //// The scale factor is 625¦Ìs/LSB
+    280          //// A value of 0 disables the tap/double tap funcitons. Max value is 255.
+    281          //void ADXL345_setTapDuration(int tapDuration) {
+    282          //	tapDuration = constrain(tapDuration,0,255);
+    283          //	byte _b = byte (tapDuration);
+    284          //	ADXL345_writeTo(ADXL345_DUR, _b);  
+    285          //}
+    286          //
+    287          //// Gets the DUR byte
+    288          //int ADXL345_getTapDuration() {
+    289          //	byte _b;
+    290          //	ADXL345_readFrom(ADXL345_DUR, 1, &_b);  
+    291          //	return int (_b);
+    292          //}
+    293          //
+    294          //// Sets the latency (latent register) which contains an unsigned time value
+    295          //// representing the wait time from the detection of a tap event to the start
+    296          //// of the time window, during which a possible second tap can be detected.
+    297          //// The scale factor is 1.25ms/LSB. A value of 0 disables the double tap function.
+    298          //// It accepts a maximum value of 255.
+    299          //void ADXL345_setDoubleTapLatency(int doubleTapLatency) {
+    300          //	byte _b = byte (doubleTapLatency);
+    301          //	ADXL345_writeTo(ADXL345_LATENT, _b);  
+    302          //}
+    303          //
+    304          //// Gets the Latent value
+    305          //int ADXL345_getDoubleTapLatency() {
+    306          //	byte _b;
+    307          //	ADXL345_readFrom(ADXL345_LATENT, 1, &_b);  
+    308          //	return int (_b);
+    309          //}
+    310          //
+    311          //// Sets the Window register, which contains an unsigned time value representing
+    312          //// the amount of time after the expiration of the latency time (Latent register)
+    313          //// during which a second valud tap can begin. The scale factor is 1.25ms/LSB. A
+    314          //// value of 0 disables the double tap function. The maximum value is 255.
+    315          //void ADXL345_setDoubleTapWindow(int doubleTapWindow) {
+    316          //	doubleTapWindow = constrain(doubleTapWindow,0,255);
+    317          //	byte _b = byte (doubleTapWindow);
+    318          //	ADXL345_writeTo(ADXL345_WINDOW, _b);  
+    319          //}
+    320          //
+    321          //// Gets the Window register
+    322          //int ADXL345_getDoubleTapWindow() {
+    323          //	byte _b;
+    324          //	ADXL345_readFrom(ADXL345_WINDOW, 1, &_b);  
+    325          //	return int (_b);
+    326          //}
+    327          //
+    328          //// Sets the THRESH_ACT byte which holds the threshold value for detecting activity.
+    329          //// The data format is unsigned, so the magnitude of the activity event is compared 
+    330          //// with the value is compared with the value in the THRESH_ACT register. The scale
+    331          //// factor is 62.5mg/LSB. A value of 0 may result in undesirable behavior if the 
+    332          //// activity interrupt is enabled. The maximum value is 255.
+    333          //void ADXL345_setActivityThreshold(int activityThreshold) {
+    334          //	activityThreshold = constrain(activityThreshold,0,255);
+    335          //	byte _b = byte (activityThreshold);
+    336          //	ADXL345_getFreeFallDurationwriteTo(ADXL345_THRESH_ACT, _b);  
+    337          //}
+    338          //
+    339          //// Gets the THRESH_ACT byte
+    340          //int ADXL345_getActivityThreshold() {
+    341          //	byte _b;
+    342          //	ADXL345_readFrom(ADXL345_THRESH_ACT, 1, &_b);  
+    343          //	return int (_b);
+    344          //}
+    345          //
+    346          //// Sets the THRESH_INACT byte which holds the threshold value for detecting inactivity.
+    347          //// The data format is unsigned, so the magnitude of the inactivity event is compared 
+    348          //// with the value is compared with the value in the THRESH_INACT register. The scale
+    349          //// factor is 62.5mg/LSB. A value of 0 may result in undesirable behavior if the 
+    350          //// inactivity interrupt is enabled. The maximum value is 255.
+    351          //void ADXL345_setInactivityThreshold(int inactivityThreshold) {
+    352          //	inactivityThreshold = constrain(inactivityThreshold,0,255);
+    353          //	byte _b = byte (inactivityThreshold);
+    354          //	writeTo(ADXL345_THRESH_INACT, _b);  
+    355          //}
+    356          //
+    357          //// Gets the THRESH_INACT byte
+    358          //int ADXL345_getInactivityThreshold() {
+    359          //	byte _b;
+    360          //	readFrom(ADXL345_THRESH_INACT, 1, &_b);  
+    361          //	return int (_b);
+    362          //}
+    363          //
+    364          //// Sets the TIME_INACT register, which contains an unsigned time value representing the
+    365          //// amount of time that acceleration must be less thant the value in the THRESH_INACT
+    366          //// register for inactivity to be declared. The scale factor is 1sec/LSB. The value must
+    367          //// be between 0 and 255.
+    368          //void ADXL345_setTimeInactivity(int timeInactivity) {
+    369          //	timeInactivity = constrain(timeInactivity,0,255);
+    370          //	byte _b = byte (timeInactivity);
+    371          //	writeTo(ADXL345_TIME_INACT, _b);  
+    372          //}
+    373          //
+    374          //// Gets the TIME_INACT register
+    375          //int ADXL345_getTimeInactivity() {
+    376          //	byte _b;
+    377          //	readFrom(ADXL345_TIME_INACT, 1, &_b);  
+    378          //	return int (_b);
+    379          //}
+    380          //
+    381          //// Sets the THRESH_FF register which holds the threshold value, in an unsigned format, for
+    382          //// free-fall detection. The root-sum-square (RSS) value of all axes is calculated and
+    383          //// compared whith the value in THRESH_FF to determine if a free-fall event occured. The 
+    384          //// scale factor is 62.5mg/LSB. A value of 0 may result in undesirable behavior if the free-fall
+    385          //// interrupt is enabled. The maximum value is 255.
+    386          //void ADXL345_setFreeFallThreshold(int freeFallThreshold) {
+    387          //	freeFallThreshold = constrain(freeFallThreshold,0,255);
+    388          //	byte _b = byte (freeFallThreshold);
+    389          //	writeTo(ADXL345_THRESH_FF, _b);  
+    390          //}
+    391          //
+    392          //// Gets the THRESH_FF register.
+    393          //int ADXL345_getFreeFallThreshold() 
+    394          //{
+    395          //	byte _b;
+    396          //	readFrom(ADXL345_THRESH_FF, 1, &_b);  
+    397          //	return int (_b);
+    398          //}
+    399          //
+    400          //// Sets the TIME_FF register, which holds an unsigned time value representing the minimum
+    401          //// time that the RSS value of all axes must be less than THRESH_FF to generate a free-fall 
+    402          //// interrupt. The scale factor is 5ms/LSB. A value of 0 may result in undesirable behavior if
+    403          //// the free-fall interrupt is enabled. The maximum value is 255.
+    404          //void ADXL345_setFreeFallDuration(int freeFallDuration) {
+    405          //	freeFallDuration = constrain(freeFallDuration,0,255);  
+    406          //	byte _b = byte (freeFallDuration);
+    407          //	ADXL345_writeTo(ADXL345_TIME_FF, _b);  
+    408          //}
+    409          //
+    410          //// Gets the TIME_FF register.
+    411          //int ADXL345_getFreeFallDuration() 
+    412          //{
+    413          //	byte _b;
+    414          //	ADXL345_readFrom(ADXL345_TIME_FF, 1, &_b);  
+    415          //	return int (_b);
+    416          //}
+    417          //
+    418          //bool ADXL345_isActivityXEnabled() 
+    419          //{  
+    420          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 6); 
+    421          //}
+    422          //bool ADXL345_isActivityYEnabled() {  
+    423          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 5); 
+    424          //}
+    425          //bool ADXL345_isActivityZEnabled() {  
+    426          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 4); 
+    427          //}
+    428          //bool ADXL345_isInactivityXEnabled() {  
+    429          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 2); 
+    430          //}
+    431          //bool ADXL345_isInactivityYEnabled() {  
+    432          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 1); 
+    433          //}
+    434          //bool ADXL345_isInactivityZEnabled() {  
+    435          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 0); 
+    436          //}
+    437          //
+    438          //void ADXL345_setActivityX(bool state) {  
+    439          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 6, state); 
+    440          //}
+    441          //void ADXL345_setActivityY(bool state) {  
+    442          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 5, state); 
+    443          //}
+    444          //void ADXL345_setActivityZ(bool state) {  
+    445          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 4, state); 
+    446          //}
+    447          //void ADXL345_setInactivityX(bool state) {  
+    448          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 2, state); 
+    449          //}
+    450          //void ADXL345_setInactivityY(bool state) {  
+    451          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 1, state); 
+    452          //}
+    453          //void ADXL345_setInactivityZ(bool state) {  
+    454          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 0, state); 
+    455          //}
+    456          //
+    457          //bool ADXL345_isActivityAc() { 
+    458          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 7); 
+    459          //}
+    460          //bool ADXL345_isInactivityAc(){ 
+    461          //	return ADXL345_getRegisterBit(ADXL345_ACT_INACT_CTL, 3); 
+    462          //}
+    463          //
+    464          //void ADXL345_setActivityAc(bool state) {  
+    465          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 7, state); 
+    466          //}
+    467          //void ADXL345_setInactivityAc(bool state) {  
+    468          //	ADXL345_setRegisterBit(ADXL345_ACT_INACT_CTL, 3, state); 
+    469          //}
+    470          //
+    471          //bool ADXL345_getSuppressBit(){ 
+    472          //	return ADXL345_getRegisterBit(ADXL345_TAP_AXES, 3); 
+    473          //}
+    474          //void ADXL345_setSuppressBit(bool state) {  
+    475          //	ADXL345_setRegisterBit(ADXL345_TAP_AXES, 3, state); 
+    476          //}
+    477          //
+    478          //bool ADXL345_isTapDetectionOnX(){ 
+    479          //	return ADXL345_getRegisterBit(ADXL345_TAP_AXES, 2); 
+    480          //}
+    481          //void ADXL345_setTapDetectionOnX(bool state) {  
+    482          //	ADXL345_setRegisterBit(ADXL345_TAP_AXES, 2, state); 
+    483          //}
+    484          //bool ADXL345_isTapDetectionOnY(){ 
+    485          //	return ADXL345_getRegisterBit(ADXL345_TAP_AXES, 1); 
+    486          //}
+    487          //void ADXL345_setTapDetectionOnY(bool state) {  
+    488          //	ADXL345_setRegisterBit(ADXL345_TAP_AXES, 1, state); 
+    489          //}
+    490          //bool ADXL345_isTapDetectionOnZ(){ 
+    491          //	return ADXL345_getRegisterBit(ADXL345_TAP_AXES, 0); 
+    492          //}
+    493          //void ADXL345_setTapDetectionOnZ(bool state) {  
+    494          //	ADXL345_setRegisterBit(ADXL345_TAP_AXES, 0, state); 
+    495          //}
+    496          //
+    497          //bool ADXL345_isActivitySourceOnX(){ 
+    498          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 6); 
+    499          //}
+    500          //bool ADXL345_isActivitySourceOnY(){ 
+    501          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 5); 
+    502          //}
+    503          //bool ADXL345_isActivitySourceOnZ(){ 
+    504          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 4); 
+    505          //}
+    506          //
+    507          //bool ADXL345_isTapSourceOnX(){ 
+    508          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 2); 
+    509          //}
+    510          //bool ADXL345_isTapSourceOnY(){ 
+    511          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 1); 
+    512          //}
+    513          //bool ADXL345_isTapSourceOnZ(){ 
+    514          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 0); 
+    515          //}
+    516          //
+    517          //bool ADXL345_isAsleep(){ 
+    518          //	return ADXL345_getRegisterBit(ADXL345_ACT_TAP_STATUS, 3); 
+    519          //}
+    520          //
+    521          //bool ADXL345_isLowPower(){ 
+    522          //	return ADXL345_getRegisterBit(ADXL345_BW_RATE, 4); 
+    523          //}
+    524          //void ADXL345_setLowPower(bool state) {  
+    525          //	ADXL345_setRegisterBit(ADXL345_BW_RATE, 4, state); 
+    526          //}
+    527          //
+    528          //double ADXL345_getRate(){
+    529          //	byte _b;
+    530          //	ADXL345_readFrom(ADXL345_BW_RATE, 1, &_b);
+    531          //	_b &= B00001111;
+    532          //	return (pow(2,((int) _b)-6)) * 6.25;
+    533          //}
+    534          //
+    535          //void ADXL345_setRate(double rate){
+    536          //	byte _b,_s;
+    537          //	int v = (int) (rate / 6.25);
+    538          //	int r = 0;
+    539          //	while (v >>= 1)
+    540          //	{
+    541          //		r++;
+    542          //	}
+    543          //	if (r <= 9) { 
+    544          //		ADXL345_readFrom(ADXL345_BW_RATE, 1, &_b);
+    545          //		_s = (byte) (r + 6) | (_b & B11110000);
+    546          //		ADXL345_writeTo(ADXL345_BW_RATE, _s);
+    547          //	}
+    548          //}
+    549          //
+    550          //void ADXL345_set_bw(byte bw_code){
+    551          //	if((bw_code < ADXL345_BW_3) || (bw_code > ADXL345_BW_1600)){
+    552          //		status = false;
+    553          //		error_code = ADXL345_BAD_ARG;
+    554          //	}
+    555          //	else{
+    556          //		ADXL345_writeTo(ADXL345_BW_RATE, bw_code);
+    557          //	}
+    558          //}
+    559          //
+    560          //byte ADXL345_get_bw_code(){
+    561          //	byte bw_code;
+    562          //	ADXL345_readFrom(ADXL345_BW_RATE, 1, &bw_code);
+    563          //	return bw_code;
+    564          //}
+    565          //
+    566          //
+    567          //
+    568          //
+    569          //
+    570          ////Used to check if action was triggered in interrupts
+    571          ////Example triggered(interrupts, ADXL345_SINGLE_TAP);
+    572          //bool ADXL345_triggered(byte interrupts, int mask){
+    573          //	return ((interrupts >> mask) & 1);
+    574          //}
+    575          //
+    576          //
+    577          ///*
+    578          // ADXL345_DATA_READY
+    579          // ADXL345_SINGLE_TAP
+    580          // ADXL345_DOUBLE_TAP
+    581          // ADXL345_ACTIVITY
+    582          // ADXL345_INACTIVITY
+    583          // ADXL345_FREE_FALL
+    584          // ADXL345_WATERMARK
+    585          // ADXL345_OVERRUNY
+    586          // */
+    587          //
+    588          //
+    589          //
+    590          //
+    591          //
+    592          //byte ADXL345_getInterruptSource() {
+    593          //	byte _b;
+    594          //	ADXL345_readFrom(ADXL345_INT_SOURCE, 1, &_b);
+    595          //	return _b;
+    596          //}
+    597          //
+    598          //bool ADXL345_getInterruptSource(byte interruptBit) {
+    599          //	return ADXL345_getRegisterBit(ADXL345_INT_SOURCE,interruptBit);
+    600          //}
+    601          //
+    602          //bool ADXL345_getInterruptMapping(byte interruptBit) {
+    603          //	return ADXL345_getRegisterBit(ADXL345_INT_MAP,interruptBit);
+    604          //}
+    605          //
+    606          //// Set the mapping of an interrupt to pin1 or pin2
+    607          //// eg: setInterruptMapping(ADXL345_INT_DOUBLE_TAP_BIT,ADXL345_INT2_PIN);
+    608          //void ADXL345_setInterruptMapping(byte interruptBit, bool interruptPin) {
+    609          //	ADXL345_setRegisterBit(ADXL345_INT_MAP, interruptBit, interruptPin);
+    610          //}
+    611          //
+    612          //bool ADXL345_isInterruptEnabled(byte interruptBit) {
+    613          //	return ADXL345_getRegisterBit(ADXL345_INT_ENABLE,interruptBit);
+    614          //}
+    615          //
+    616          //void ADXL345_setInterrupt(byte interruptBit, bool state) {
+    617          //	ADXL345_setRegisterBit(ADXL345_INT_ENABLE, interruptBit, state);
+    618          //}
+    619          //
+    620          //void ADXL345_setRegisterBit(byte regAdress, int bitPos, bool state) {
+    621          //	byte _b;
+    622          //	ADXL345_readFrom(regAdress, 1, &_b);
+    623          //	if (state) {
+    624          //		_b |= (1 << bitPos);  // forces nth bit of _b to be 1.  all other bits left alone.
+    625          //	} 
+    626          //	else {
+    627          //		_b &= ~(1 << bitPos); // forces nth bit of _b to be 0.  all other bits left alone.
+    628          //	}
+    629          //	ADXL345_writeTo(regAdress, _b);  
+    630          //}
+    631          //
+    632          //bool ADXL345_getRegisterBit(byte regAdress, int bitPos) {
+    633          //	byte _b;
+    634          //	ADXL345_readFrom(regAdress, 1, &_b);
+    635          //	return ((_b >> bitPos) & 1);
+    636          //}
+    637          
+    638          
+
+   Maximum stack usage in bytes:
+
+     Function              ISTACK PSTACK XSTACK
+     --------              ------ ------ ------
+     ADXL345_PowerOn           2      0      0
+       -> ADXL345WriteByte     4      0      0
+       -> ADXL345WriteByte     4      0      0
+       -> ADXL345WriteByte     4      0      0
+     ADXL345_readAccel         2      0      0
+       -> ADXL345ReadBytes     4      0      0
+     ADXL345_readFrom          0      0      9
+       -> ADXL345ReadBytes     0      0     18
+     ADXL345_writeTo           0      0      9
+       -> ADXL345WriteByte     0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label            Bytes
+     --------------            -----
+     status                       1
+     error_code                   1
+     gains                       12
+     _buff                        6
+     ADXL345_PowerOn             25
+     ?Subroutine0                 7
+     ADXL345_readAccel           13
+     ADXL345_writeTo              8
+     ?Subroutine1                 5
+     ADXL345_readFrom            18
+     ?<Initializer for status>    1
+     ?<Initializer for gains>    12
+     ??ADXL345_PowerOn?relay      6
+     ??ADXL345_readAccel?relay    6
+     ??ADXL345_writeTo?relay      6
+     ??ADXL345_readFrom?relay     6
+
+ 
+ 76 bytes in segment BANKED_CODE
+ 24 bytes in segment BANK_RELAYS
+ 13 bytes in segment XDATA_I
+ 13 bytes in segment XDATA_ID
+  7 bytes in segment XDATA_Z
+ 
+ 113 bytes of CODE  memory
+  20 bytes of XDATA memory
+
+Errors: none
+Warnings: none

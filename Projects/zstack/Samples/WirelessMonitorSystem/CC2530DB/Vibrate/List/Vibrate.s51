@@ -1,0 +1,2433 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        01/Jun/2015  00:49:50 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\WirelessMonitorSystem\Source\Vib /
+//                          rate.c                                            /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"          /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\T /
+//                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO         /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500        /
+//                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)   /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\Source\Vibrate.c"   /
+//                          -D HAL_UART -D xOCM_CLK_PORT=0 -D xOCM_CLK_PIN=7  /
+//                          -D xOCM_DATA_PORT=0 -D xOCM_DATA_PIN=6 -lC        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          Vibrate\List\" -lA "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Vibrate\Li /
+//                          st\" --diag_suppress Pe001,Pa010 -o "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Vibrate\Ob /
+//                          j\" -e --debug --core=plain --dptr=16,1           /
+//                          --data_model=large --code_model=banked            /
+//                          --calling_convention=xdata_reentrant              /
+//                          --place_constants=data_rom --nr_virtual_regs 16   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1 /
+//                          a\Projects\zstack\Samples\WirelessMonitorSystem\C /
+//                          C2530DB\..\Source\" -I "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\Z /
+//                          Main\TI2530DB\" -I "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\include\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\target\CC2530EB\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\include\" -I        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\high_level\" -I     /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\low_level\srf04\"   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\..\..\Components\mac\low_level\srf04\ /
+//                          single_chip\" -I "C:\Texas                        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\mt\" -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\osal\include\" -I "C:\Texas       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\saddr\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\sdata\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\af\" -I "C:\Texas           /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\nwk\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sapi\" -I "C:\Texas         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sec\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sys\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\zdo\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\" -I "C:\Texas               /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\f8w\" -Ohz                   /
+//                          --require_prototypes                              /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\V /
+//                          ibrate\List\Vibrate.s51                           /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME Vibrate
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?MOVE_LONG8_XDATA_XDATA
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?US_SWITCH_DENSE
+        EXTERN ?V0
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION ??Vibrate_CalcFCS?relay,0203H
+        FUNCTION ??Vibrate_InitUart?relay,0203H
+        FUNCTION ??Vibrate_ProcessingUartData?relay,0203H
+        FUNCTION ??Vibrate_SendADXL345Data?relay,0203H
+        FUNCTION ??Vibrate_SendTopoInformation?relay,0203H
+        FUNCTION ??Vibrate_UartCallBack?relay,0203H
+        PUBLIC ??WirelessMonitorSystem_Init?relay
+        FUNCTION ??WirelessMonitorSystem_Init?relay,0203H
+        PUBLIC ??WirelessMonitorSystem_ProcessEvent?relay
+        FUNCTION ??WirelessMonitorSystem_ProcessEvent?relay,0203H
+        FUNCTION Vibrate_CalcFCS,0203H
+        ARGFRAME XSTACK, 23, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC Vibrate_ClusterInList
+        PUBLIC Vibrate_ClusterOutList
+        PUBLIC Vibrate_DstAddr
+        FUNCTION Vibrate_InitUart,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 29, STACK
+        PUBLIC Vibrate_NwkState
+        FUNCTION Vibrate_ProcessingUartData,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        FUNCTION Vibrate_SendADXL345Data,021203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 32, STACK
+        FUNCTION Vibrate_SendTopoInformation,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME XSTACK, 30, STACK
+        PUBLIC Vibrate_SimpleDesc
+        PUBLIC Vibrate_TaskID
+        PUBLIC Vibrate_TransID
+        FUNCTION Vibrate_UartCallBack,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Vibrate_epDesc
+        PUBLIC WirelessMonitorSystem_Init
+        FUNCTION WirelessMonitorSystem_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC WirelessMonitorSystem_ProcessEvent
+        FUNCTION WirelessMonitorSystem_ProcessEvent,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC srcAddr
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+afRegister          SYMBOL "afRegister"
+osal_msg_receive    SYMBOL "osal_msg_receive"
+NLME_GetShortAddr   SYMBOL "NLME_GetShortAddr"
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+NLME_GetCoordShortAddr SYMBOL "NLME_GetCoordShortAddr"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+Hal_UART_RxBufLen   SYMBOL "Hal_UART_RxBufLen"
+HalUARTRead         SYMBOL "HalUARTRead"
+osal_mem_free       SYMBOL "osal_mem_free"
+HalUARTOpen         SYMBOL "HalUARTOpen"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??HalUARTOpen?relay SYMBOL "?relay", HalUARTOpen
+??HalUARTRead?relay SYMBOL "?relay", HalUARTRead
+??Hal_UART_RxBufLen?relay SYMBOL "?relay", Hal_UART_RxBufLen
+??NLME_GetCoordShortAddr?relay SYMBOL "?relay", NLME_GetCoordShortAddr
+??NLME_GetShortAddr?relay SYMBOL "?relay", NLME_GetShortAddr
+??afRegister?relay  SYMBOL "?relay", afRegister
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_msg_deallocate?relay SYMBOL "?relay", osal_msg_deallocate
+??osal_msg_receive?relay SYMBOL "?relay", osal_msg_receive
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+WirelessMonitorSystem_Init SYMBOL "WirelessMonitorSystem_Init"
+??WirelessMonitorSystem_Init?relay SYMBOL "?relay", WirelessMonitorSystem_Init
+WirelessMonitorSystem_ProcessEvent SYMBOL "WirelessMonitorSystem_ProcessEvent"
+??WirelessMonitorSystem_ProcessEvent?relay SYMBOL "?relay", WirelessMonitorSystem_ProcessEvent
+
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetShortAddr
+        FUNCTION NLME_GetShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN NLME_GetCoordShortAddr
+        FUNCTION NLME_GetCoordShortAddr,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN Hal_UART_RxBufLen
+        FUNCTION Hal_UART_RxBufLen,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalUARTRead
+        FUNCTION HalUARTRead,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN HalUARTOpen
+        FUNCTION HalUARTOpen,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??HalUARTOpen?relay
+        FUNCTION ??HalUARTOpen?relay,00H
+        EXTERN ??HalUARTRead?relay
+        FUNCTION ??HalUARTRead?relay,00H
+        EXTERN ??Hal_UART_RxBufLen?relay
+        FUNCTION ??Hal_UART_RxBufLen?relay,00H
+        EXTERN ??NLME_GetCoordShortAddr?relay
+        FUNCTION ??NLME_GetCoordShortAddr?relay,00H
+        EXTERN ??NLME_GetShortAddr?relay
+        FUNCTION ??NLME_GetShortAddr?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??osal_mem_alloc?relay
+        FUNCTION ??osal_mem_alloc?relay,00H
+        EXTERN ??osal_mem_free?relay
+        FUNCTION ??osal_mem_free?relay,00H
+        EXTERN ??osal_msg_deallocate?relay
+        FUNCTION ??osal_msg_deallocate?relay,00H
+        EXTERN ??osal_msg_receive?relay
+        FUNCTION ??osal_msg_receive?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+
+// C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\Vibrate.c
+//    1 /*********************************************************************
+//    2  * INCLUDES
+//    3  */
+//    4 #include "OSAL.h"
+//    5 #include "AF.h"
+//    6 #include "ZDApp.h"
+//    7 #include "ZDObject.h"
+//    8 #include "ZDProfile.h"
+//    9 
+//   10 #include "WirelessMonitorSystem.h"
+//   11 #include "DebugTrace.h"
+//   12 
+//   13 #if !defined( WIN32 )
+//   14   #include "OnBoard.h"
+//   15 #endif
+//   16 
+//   17 /* HAL */
+//   18 //#include "hal_i2c.h"
+//   19 //#include "hal_adxl345.h"
+//   20 //#include "ADXL345SPI.h"
+//   21 
+//   22 
+//   23 /*********************************************************************
+//   24  * MACROS
+//   25  */
+//   26 // Max Cluster ID
+//   27 #define VIBRATE_MAX_IN_CLUSTERS 	3
+//   28 #define VIBRATE_MAX_OUT_CLUSTERS	1
+//   29 
+//   30 // Send Message Timeout
+//   31 #define Vibrate_SEND_DELAY  	(RESPONSE_POLL_RATE * 2)
+//   32 
+//   33 // Application Events (OSAL) - These are bit weighted definitions.
+//   34 #define Vibrate_SEND_MSG_EVT    0x0001
+//   35 
+//   36 /*********************************************************************
+//   37  * CONSTANTS
+//   38  */
+//   39 
+//   40 /*********************************************************************
+//   41  * TYPEDEFS
+//   42  */
+//   43 
+//   44 /*********************************************************************
+//   45  * GLOBAL VARIABLES
+//   46  */
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   47 const cId_t Vibrate_ClusterInList[VIBRATE_MAX_IN_CLUSTERS] =
+Vibrate_ClusterInList:
+        DATA16
+        DW 10
+        DW 14
+        DW 15
+//   48 {
+//   49 	TOPO_REQ,
+//   50 	DATA_ALLOW,
+//   51 	DATA_REFUSE
+//   52 };
+//   53 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   54 const cId_t Vibrate_ClusterOutList[VIBRATE_MAX_OUT_CLUSTERS] =
+Vibrate_ClusterOutList:
+        DW 11
+//   55 {
+//   56 	ZIGBEE_COMMON_CLUSTER
+//   57 };
+//   58 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   59 const SimpleDescriptionFormat_t Vibrate_SimpleDesc =
+Vibrate_SimpleDesc:
+        DB 10
+        DATA16
+        DW 3844
+        DW 1
+        DATA8
+        DB 0
+        DB 3
+        DATA16
+        DW Vibrate_ClusterInList
+        DATA8
+        DB 1
+        DATA16
+        DW Vibrate_ClusterOutList
+//   60 {
+//   61   Monitor_ENDPOINT,              //  int Endpoint;
+//   62   Monitor_PROFID,                //  uint16 AppProfId[2];
+//   63   Monitor_DEVICEID,              //  uint16 AppDeviceId[2];
+//   64   Monitor_DEVICE_VERSION,        //  int   AppDevVer:4;
+//   65   Monitor_FLAGS,                 //  int   AppFlags:4;
+//   66   VIBRATE_MAX_IN_CLUSTERS,          //  byte  AppNumInClusters;
+//   67   (cId_t *)Vibrate_ClusterInList,   //  byte *pAppInClusterList;
+//   68   VIBRATE_MAX_OUT_CLUSTERS,         //  byte  AppNumInClusters;
+//   69   (cId_t *)Vibrate_ClusterOutList   //  byte *pAppInClusterList;
+//   70 };
+//   71 
+//   72 // This is the Endpoint/Interface description.  It is defined here, but
+//   73 // filled-in in Vibrate_Init().  Another way to go would be to fill
+//   74 // in the structure here and make it a "const" (in code space).  The
+//   75 // way it's defined in this sample app it is define in RAM.
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   76 endPointDesc_t Vibrate_epDesc;
+Vibrate_epDesc:
+        DS 6
+        REQUIRE __INIT_XDATA_Z
+//   77 
+//   78 /*********************************************************************
+//   79  * EXTERNAL VARIABLES
+//   80  */
+//   81 
+//   82 /*********************************************************************
+//   83  * EXTERNAL FUNCTIONS
+//   84  */
+//   85 
+//   86 /*********************************************************************
+//   87  * LOCAL VARIABLES
+//   88  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   89 byte Vibrate_TaskID;   // Task ID for internal task/event processing
+Vibrate_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   90 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   91 devStates_t Vibrate_NwkState;
+Vibrate_NwkState:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   92 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   93 byte Vibrate_TransID;  // This is the unique message ID (counter)
+Vibrate_TransID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//   94 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//   95 afAddrType_t Vibrate_DstAddr;	// the coordinator addr
+Vibrate_DstAddr:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//   96 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   97 uint16 srcAddr = 0;
+srcAddr:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   98 
+//   99 
+//  100 /************************ User *********************************/
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  101 static byte allowSend = 1;
+allowSend:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for allowSend>`
+        REQUIRE __INIT_XDATA_I
+//  102 
+//  103 /*********************************************************************
+//  104  * LOCAL FUNCTIONS
+//  105  */
+//  106 static void Vibrate_InitUart( void );
+//  107 static void Vibrate_UartCallBack( uint8 port, uint8 event );
+//  108 static void Vibrate_ProcessingUartData( void );
+//  109 static void Vibrate_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+//  110 //static void Vibrate_InitSensor( void );
+//  111 static void Vibrate_SendTopoInformation( void );
+//  112 static void Vibrate_SendADXL345Data( byte* buffer );
+//  113 static byte Vibrate_CalcFCS( uint8 *msg_ptr, uint8 len );
+//  114 
+//  115 /*********************************************************************
+//  116  * @fn      Controller_Init
+//  117  *
+//  118  * @brief   Initialization function for the Generic App Task.
+//  119  *          This is called during initialization and should contain
+//  120  *          any application specific initialization (ie. hardware
+//  121  *          initialization/setup, table initialization, power up
+//  122  *          notificaiton ... ).
+//  123  *
+//  124  * @param   task_id - the ID assigned by OSAL.  This ID should be
+//  125  *                    used to send messages and set timers.
+//  126  *
+//  127  * @return  none
+//  128  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  129 void WirelessMonitorSystem_Init( uint8 task_id )
+WirelessMonitorSystem_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function WirelessMonitorSystem_Init
+        CODE
+//  130 {
+        FUNCALL WirelessMonitorSystem_Init, Vibrate_InitUart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+//  131   Vibrate_TaskID = task_id;
+        MOV     DPTR,#Vibrate_TaskID
+        MOVX    @DPTR,A
+//  132   Vibrate_NwkState = DEV_INIT;
+        MOV     DPTR,#Vibrate_NwkState
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  133   Vibrate_TransID = 0;
+        MOV     DPTR,#Vibrate_TransID
+        CLR     A
+        MOVX    @DPTR,A
+//  134   
+//  135   // allow send by default
+//  136   allowSend = 1;
+        MOV     DPTR,#allowSend
+        INC     A
+        MOVX    @DPTR,A
+//  137 
+//  138   // Init Uart
+//  139   Vibrate_InitUart();
+        ; Setup parameters for call to function Vibrate_InitUart
+        LCALL   ??Vibrate_InitUart?relay
+//  140   
+//  141   // Init the ADXL345
+//  142 //  Vibrate_InitSensor();
+//  143   
+//  144   // init the destination address
+//  145   Vibrate_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+        MOV     DPTR,#Vibrate_DstAddr + 8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  146   Vibrate_DstAddr.endPoint = Monitor_ENDPOINT;
+        INC     DPTR
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  147   Vibrate_DstAddr.addr.shortAddr = 0x0000;	
+        MOV     DPTR,#Vibrate_DstAddr
+        CLR     A
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOVX    @DPTR,A
+//  148 
+//  149   // Fill out the endpoint description.
+//  150   Vibrate_epDesc.endPoint =Monitor_ENDPOINT;
+        MOV     DPTR,#Vibrate_epDesc
+        MOV     A,#0xa
+        MOVX    @DPTR,A
+//  151   Vibrate_epDesc.task_id = &Vibrate_TaskID;
+        INC     DPTR
+        MOV     A,#Vibrate_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(Vibrate_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//  152   Vibrate_epDesc.simpleDesc
+//  153             = (SimpleDescriptionFormat_t *)&Vibrate_SimpleDesc;
+        INC     DPTR
+        MOV     A,#Vibrate_SimpleDesc & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(Vibrate_SimpleDesc >> 8) & 0xff
+        MOVX    @DPTR,A
+//  154   Vibrate_epDesc.latencyReq = noLatencyReqs;
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  155 
+//  156   // Register the endpoint description with the AF
+//  157   afRegister( &Vibrate_epDesc );
+        ; Setup parameters for call to function afRegister
+        MOV     R2,#Vibrate_epDesc & 0xff
+        MOV     R3,#(Vibrate_epDesc >> 8) & 0xff
+        LCALL   ??afRegister?relay
+        CFI EndBlock cfiBlock0
+//  158 }
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  159 
+//  160 /*********************************************************************
+//  161  * @fn      Controller_ProcessEvent
+//  162  *
+//  163  * @brief   Generic Application Task event processor.  This function
+//  164  *          is called to process all events for the task.  Events
+//  165  *          include timers, messages and any other user defined events.
+//  166  *
+//  167  * @param   task_id  - The OSAL assigned task ID.
+//  168  * @param   events - events to process.  This is a bit map and can
+//  169  *                   contain more than one event.
+//  170  *
+//  171  * @return  none
+//  172  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  173 uint16 WirelessMonitorSystem_ProcessEvent( uint8 task_id, uint16 events )
+WirelessMonitorSystem_ProcessEvent:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function WirelessMonitorSystem_ProcessEvent
+        CODE
+//  174 {
+        FUNCALL WirelessMonitorSystem_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, Vibrate_SendTopoInformation
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, Vibrate_SendTopoInformation
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL WirelessMonitorSystem_ProcessEvent, Vibrate_ProcessingUartData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  175   afIncomingMSGPacket_t *MSGpkt;
+//  176   afDataConfirm_t *afDataConfirm;
+//  177 
+//  178   // Data Confirmation message fields
+//  179   byte sentEP;
+//  180   ZStatus_t sentStatus;
+//  181   byte sentTransID;       // This should match the value sent
+//  182   (void)task_id;  // Intentionally unreferenced parameter
+//  183 
+//  184   if ( events & SYS_EVENT_MSG )
+        ANL     A,#0x80
+        JNZ     $+5
+        LJMP    ??WirelessMonitorSystem_ProcessEvent_0 & 0xFFFF
+//  185   {
+//  186     MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Vibrate_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_1
+//  187     while ( MSGpkt )
+//  188     {
+//  189       switch ( MSGpkt->hdr.event )
+//  190       {
+//  191         case AF_DATA_CONFIRM_CMD:
+//  192           afDataConfirm = (afDataConfirm_t *)MSGpkt;
+//  193           sentEP = afDataConfirm->endpoint;
+//  194           sentStatus = afDataConfirm->hdr.status;
+//  195           sentTransID = afDataConfirm->transID;
+//  196           (void)sentEP;
+//  197           (void)sentTransID;
+//  198 
+//  199           // Action taken when confirmation is received.
+//  200           if ( sentStatus != ZSuccess )
+//  201           {
+//  202 			
+//  203           }
+//  204 		  
+//  205 		  // delay a time
+//  206 		  // this will make the device receive the allow or refuse command
+//  207 		  osal_start_timerEx(Vibrate_TaskID, 
+//  208 							 Vibrate_SEND_MSG_EVT, 
+//  209 							 Vibrate_SEND_DELAY);
+//  210           break;
+//  211 		  
+//  212 		  case AF_INCOMING_MSG_CMD:
+//  213           	Vibrate_MessageMSGCB( MSGpkt );
+//  214           break;
+//  215 		  
+//  216 		  case ZDO_STATE_CHANGE:
+//  217           	Vibrate_NwkState = (devStates_t)(MSGpkt->hdr.status);
+??WirelessMonitorSystem_ProcessEvent_2:
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPTR,#Vibrate_NwkState
+        MOVX    @DPTR,A
+//  218 		    if ( (Vibrate_NwkState == DEV_ZB_COORD)
+//  219 			  || (Vibrate_NwkState == DEV_ROUTER)
+//  220 			  || (Vibrate_NwkState == DEV_END_DEVICE) )
+        XRL     A,#0x9
+        JZ      ??WirelessMonitorSystem_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x7
+        JZ      ??WirelessMonitorSystem_ProcessEvent_3
+        MOVX    A,@DPTR
+        XRL     A,#0x6
+        JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+//  221 			{
+//  222 			    // record the destinator address
+//  223 			  	srcAddr = NLME_GetShortAddr();
+??WirelessMonitorSystem_ProcessEvent_3:
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     DPTR,#srcAddr
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  224 				// Start Topology
+//  225 				Vibrate_SendTopoInformation();
+        ; Setup parameters for call to function Vibrate_SendTopoInformation
+??WirelessMonitorSystem_ProcessEvent_5:
+        LCALL   ??Vibrate_SendTopoInformation?relay
+//  226 				// Start the send task
+//  227 //		  		osal_start_timerEx( Vibrate_TaskID,
+//  228 //							 		Vibrate_SEND_MSG_EVT,
+//  229 //									Vibrate_SEND_DELAY);
+//  230 			}
+//  231 			break;
+//  232       }
+//  233 
+//  234       // Release the memory
+//  235       osal_msg_deallocate( (uint8 *)MSGpkt );
+??WirelessMonitorSystem_ProcessEvent_4:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_msg_deallocate?relay
+//  236 
+//  237       // Next
+//  238       MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Vibrate_TaskID );
+        ; Setup parameters for call to function osal_msg_receive
+??WirelessMonitorSystem_ProcessEvent_1:
+        MOV     DPTR,#Vibrate_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_msg_receive?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??WirelessMonitorSystem_ProcessEvent_6
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        ADD     A,#-0x1a
+        JZ      ??WirelessMonitorSystem_ProcessEvent_7
+        ADD     A,#0x49
+        JZ      ??WirelessMonitorSystem_ProcessEvent_2
+        ADD     A,#-0x2c
+        JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x38
+        MOV     R5,#0x0
+        MOV     R2,#0x1
+        MOV     R3,#0x0
+        MOV     DPTR,#Vibrate_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_4
+??WirelessMonitorSystem_ProcessEvent_7:
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 2
+        LCALL   ?US_SWITCH_DENSE
+`?<Jumptable for WirelessMonitorSystem_ProcessE_0`:
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        10
+        DATA
+        DATA8
+        DATA
+        DATA8
+        DB        5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_5
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_4
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_8
+        DATA
+        DATA16
+        DATA
+        DATA16
+        DW        ??WirelessMonitorSystem_ProcessEvent_9
+        CODE
+??WirelessMonitorSystem_ProcessEvent_9:
+        MOV     DPTR,#allowSend
+        CLR     A
+??WirelessMonitorSystem_ProcessEvent_10:
+        MOVX    @DPTR,A
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_4
+??WirelessMonitorSystem_ProcessEvent_8:
+        MOV     DPTR,#allowSend
+        MOV     A,#0x1
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_10
+//  239     }
+//  240 
+//  241     // return unprocessed events
+//  242     return (events ^ SYS_EVENT_MSG);
+??WirelessMonitorSystem_ProcessEvent_6:
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        XRL     A,#0x80
+??WirelessMonitorSystem_ProcessEvent_11:
+        MOV     R3,A
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_12
+//  243   }
+//  244 
+//  245   // Send a message out - This event is generated by a timer
+//  246   //  (setup in Vibrate_Init()).
+//  247   if ( events & Vibrate_SEND_MSG_EVT )
+??WirelessMonitorSystem_ProcessEvent_0:
+        MOV     A,R6
+        MOV     C,0xE0 /* A   */.0
+        JNC     ??WirelessMonitorSystem_ProcessEvent_13
+//  248   {
+//  249     // Send "the" message
+//  250 //    Vibrate_ReadADXL345();
+//  251 	Vibrate_ProcessingUartData();
+        ; Setup parameters for call to function Vibrate_ProcessingUartData
+        LCALL   ??Vibrate_ProcessingUartData?relay
+//  252 	
+//  253     // return unprocessed events
+//  254     return (events ^ Vibrate_SEND_MSG_EVT);
+        MOV     A,R6
+        XRL     A,#0x1
+        MOV     R2,A
+        MOV     A,R7
+        SJMP    ??WirelessMonitorSystem_ProcessEvent_11
+//  255   }
+//  256 
+//  257   // Discard unknown events
+//  258   return 0;
+??WirelessMonitorSystem_ProcessEvent_13:
+        MOV     R2,#0x0
+        MOV     R3,#0x0
+??WirelessMonitorSystem_ProcessEvent_12:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  259 }
+//  260 
+//  261 // Processing Incoming Message
+//  262 static void Vibrate_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+//  263 {
+//  264   // According to the clusterID
+//  265   switch( pkt->clusterId )
+//  266   {
+//  267 	// send the topology information
+//  268   	case TOPO_REQ:
+//  269       Vibrate_SendTopoInformation();
+//  270     break;
+//  271 	
+//  272   	case DATA_ALLOW:
+//  273 	  // sent the flag
+//  274 	  allowSend = 1;
+//  275 	  break;
+//  276 	  
+//  277   case DATA_REFUSE:
+//  278 	 // reset the flag
+//  279 	allowSend = 0;
+//  280 	break;
+//  281   }
+//  282 }
+//  283 /*********************************************************************
+//  284  * @fn      Vibrate_InitSensor
+//  285  *
+//  286  * @brief   Init the ADXL345.
+//  287  *
+//  288  * @param   none
+//  289  *
+//  290  * @return  none
+//  291  */
+//  292 /*
+//  293 void Vibrate_InitSensor()
+//  294 {
+//  295   byte value = 0x00;
+//  296   
+//  297 //  // set the SPI
+//  298 //  Init_Spi();
+//  299 //  // use 4 -wrie mode
+//  300 //  // default is 4 wire so do nothing 
+//  301 //  value = 0x00;
+//  302 //  ADXL345Write(0, 1, &value, 0x31);
+//  303 //  
+//  304 //  // Just Open the ADXL345
+//  305 //  value = 0;
+//  306 //  ADXL345Write(0, 1, &value, 0x2d);
+//  307 //  value = 16;
+//  308 //  ADXL345Write(0, 1, &value, 0x2d);
+//  309 //  value = 8;
+//  310 //  ADXL345Write(0, 1, &value, 0x2d);
+//  311 //  
+//  312 //  // DO More Setting here
+//  313 //  value = 75;
+//  314 //  ADXL345Write(0, 1, &value, 0x24);
+//  315 //  ADXL345Write(0, 1, &value, 0x25);
+//  316 //  value = 10;
+//  317 //  ADXL345Write(0, 1, &value, 0x26);
+//  318   
+//  319   ADXL345_PowerOn();
+//  320   
+//  321   ADXL345WriteByte(ADXL345_THRESH_ACT, 75);
+//  322   ADXL345WriteByte(ADXL345_THRESH_INACT, 75);
+//  323   ADXL345WriteByte(ADXL345_TIME_INACT, 10);
+//  324   
+//  325   value = ADXL345ReadByte(ADXL345_ACT_INACT_CTL);
+//  326   // set x, y, z movement
+//  327   value |= 0x77;
+//  328   ADXL345WriteByte(ADXL345_ACT_INACT_CTL, value);
+//  329   
+//  330   // set tap
+//  331   value = ADXL345ReadByte(ADXL345_TAP_AXES);
+//  332   value &= 0xF9;
+//  333   value |= 0x01;
+//  334   ADXL345WriteByte(ADXL345_TAP_AXES, value);
+//  335   
+//  336   // single double tap
+//  337   ADXL345WriteByte(ADXL345_THRESH_TAP, 50);
+//  338   ADXL345WriteByte(ADXL345_DUR, 15);
+//  339   ADXL345WriteByte(ADXL345_LATENT, 80);
+//  340   ADXL345WriteByte(ADXL345_WINDOW, 200);
+//  341   
+//  342   // set free fall 
+//  343   ADXL345WriteByte(ADXL345_THRESH_FF, 7);
+//  344   ADXL345WriteByte(ADXL345_TIME_FF, 45);
+//  345   
+//  346 //  value = 0x0F;
+//  347 //  ADXL345Write(0, 1, &value, 0x2c);
+//  348 }
+//  349 */
+//  350 
+//  351 /*********************************************************************
+//  352  * @fn      Vibrate_SendTopoInfo
+//  353  *
+//  354  * @brief   Send the topology information to the coordinator.
+//  355  *
+//  356  * @param   none
+//  357  *
+//  358  * @return  none
+//  359  *
+//  360  *
+//  361  *
+//  362  * |	SOF		|	LEN		| 	CMD		| 	Addr	|	DATA	| 	FCS		|
+//  363  *		1			1			2			2			--			1
+//  364  *
+//  365  */
+//  366 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  367 void Vibrate_SendTopoInformation()
+Vibrate_SendTopoInformation:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Vibrate_SendTopoInformation
+        CODE
+//  368 {
+        FUNCALL Vibrate_SendTopoInformation, NLME_GetShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_SendTopoInformation, NLME_GetCoordShortAddr
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_SendTopoInformation, Vibrate_CalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 21, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 21, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_SendTopoInformation, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 30, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 30, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 11
+        MOV     A,#-0xb
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 21)
+//  369   // Define the Frame
+//  370   uint16 srcAddr = NLME_GetShortAddr();
+        ; Setup parameters for call to function NLME_GetShortAddr
+        LCALL   ??NLME_GetShortAddr?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+//  371   uint16 parAddr = NLME_GetCoordShortAddr();
+        ; Setup parameters for call to function NLME_GetCoordShortAddr
+        LCALL   ??NLME_GetCoordShortAddr?relay
+//  372   byte frame[11] = {0};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0}>` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0}>` & 0xff
+        MOV     A,#0xb
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  373   
+//  374   // Build the Frame
+//  375   // Fill SOF	0xFE
+//  376   frame[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  377   // Fill len
+//  378   frame[1] = 4;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x4
+        MOVX    @DPTR,A
+//  379   // Fill CMD
+//  380   frame[2] = LO_UINT16(TOPOLOGY_CMD);
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  381   frame[3] = HI_UINT16(TOPOLOGY_CMD);
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  382   // Fill Addr
+//  383   frame[4] = LO_UINT16(srcAddr);
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+//  384   frame[5] = HI_UINT16(srcAddr);
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//  385   // Fill type
+//  386   frame[6] = LO_UINT16(VIBRATE);
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x4
+        MOVX    @DPTR,A
+//  387   frame[7] = HI_UINT16(VIBRATE);
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  388   // Fill parent
+//  389   frame[8] = LO_UINT16(parAddr);
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+//  390   frame[9] = HI_UINT16(parAddr);
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  391   // Cal and fill FCS
+//  392   frame[10] = Vibrate_CalcFCS((byte*)&frame[1], \ 
+//  393 								9);
+        ; Setup parameters for call to function Vibrate_CalcFCS
+        MOV     R1,#0x9
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Vibrate_CalcFCS?relay
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  394   
+//  395   // Send the data to Coordinator
+//  396   AF_DataRequest( &Vibrate_DstAddr, &
+//  397 				  Vibrate_epDesc,
+//  398                   ZIGBEE_COMMON_CLUSTER,
+//  399                   11,
+//  400                   (byte *) frame,
+//  401                   &Vibrate_TransID,
+//  402                   AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 22)
+        MOV     ?V0 + 0,#Vibrate_TransID & 0xff
+        MOV     ?V0 + 1,#(Vibrate_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,#0xb
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 30)
+        MOV     R1,#0x20
+        MOV     R4,#Vibrate_epDesc & 0xff
+        MOV     R5,#(Vibrate_epDesc >> 8) & 0xff
+        MOV     R2,#Vibrate_DstAddr & 0xff
+        MOV     R3,#(Vibrate_DstAddr >> 8) & 0xff
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 21)
+//  403 }
+        MOV     A,#0xb
+        SJMP    ?Subroutine1
+        CFI EndBlock cfiBlock3
+//  404 
+//  405 // read the uart data and send to the monitor
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  406 static void Vibrate_ProcessingUartData( void ){
+Vibrate_ProcessingUartData:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Vibrate_ProcessingUartData
+        CODE
+        FUNCALL Vibrate_ProcessingUartData, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_ProcessingUartData, Hal_UART_RxBufLen
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_ProcessingUartData, HalUARTRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_ProcessingUartData, Vibrate_SendADXL345Data
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_ProcessingUartData, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  407   byte* buffer = (byte*)osal_mem_alloc(6);
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R6,?V0 + 0
+        MOV     R7,?V0 + 1
+//  408   // if the Rx hava data
+//  409   while ( Hal_UART_RxBufLen(UART_PORT) )
+        ; Setup parameters for call to function Hal_UART_RxBufLen
+        MOV     R1,#0x0
+        LCALL   ??Hal_UART_RxBufLen?relay
+        MOV     ?V0 + 1,R3
+        MOV     A,R2
+        ORL     A,?V0 + 1
+        JZ      ??Vibrate_ProcessingUartData_0
+//  410   {
+//  411 	// read 6 bytes to buffer
+//  412     HalUARTRead (UART_PORT, buffer, 6);
+        ; Setup parameters for call to function HalUARTRead
+        MOV     R4,#0x6
+        MOV     R5,#0x0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        MOV     R1,#0x0
+        LCALL   ??HalUARTRead?relay
+//  413 	// send the data 
+//  414 	Vibrate_SendADXL345Data(buffer);
+        ; Setup parameters for call to function Vibrate_SendADXL345Data
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??Vibrate_SendADXL345Data?relay
+//  415 	// here just break 
+//  416 	// wait the timer to wake this method again
+//  417 	// or the uart callback to wake the method
+//  418 	break;
+//  419   }
+//  420   // free the memory
+//  421   osal_mem_free((byte*)buffer);
+??Vibrate_ProcessingUartData_0:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  422 }
+        SJMP    ??Subroutine4_0
+        CFI EndBlock cfiBlock4
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 21)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI Invalid
+        LCALL   ?DEALLOC_XSTACK8
+        CFI EndBlock cfiBlock5
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  423 
+//  424 /*********************************************************************
+//  425  * @fn      Vibrate_ReadADXL345
+//  426  *
+//  427  * @brief   read the adxl345 data
+//  428  *
+//  429  * @param   buf		-- where to save the data
+//  430  *
+//  431  * @return  none
+//  432  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  433 void Vibrate_SendADXL345Data(byte* buffer)
+Vibrate_SendADXL345Data:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function Vibrate_SendADXL345Data
+        CODE
+//  434 {
+        FUNCALL Vibrate_SendADXL345Data, Vibrate_CalcFCS
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 23, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 23, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Vibrate_SendADXL345Data, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 32, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 32, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 13
+        MOV     A,#-0xd
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 23)
+//  435   // Read the ADXL345
+//  436   // Use I2C
+//  437 //  byte* buffer = (byte*)osal_mem_alloc(6);
+//  438 //  osal_memset(buffer, 0x00, 6);
+//  439 //  // Read
+//  440 //  ADXL345_readAccel(buffer);
+//  441   //ADXL345Read(0, 1, buffer, 0x2C);
+//  442   //ADXL345Read(1, 6, &buffer[0], 0x32);
+//  443   
+//  444   // Build Frame
+//  445   byte frame[13] = {0};
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     DPH,#(`?<Constant {0}>_1` >> 8) & 0xff
+        MOV     DPL,#`?<Constant {0}>_1` & 0xff
+        MOV     A,#0xd
+        LCALL   ?MOVE_LONG8_XDATA_XDATA
+//  446   
+//  447   // Fill the SOF
+//  448   frame[0] = 0xFE;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#-0x2
+        MOVX    @DPTR,A
+//  449   // Fill len
+//  450   frame[1] = 6;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x6
+        MOVX    @DPTR,A
+//  451   // Fill CMD
+//  452   frame[2] = LO_UINT16(VIBRATE_DATA_CMD);
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x9
+        MOVX    @DPTR,A
+//  453   frame[3] = HI_UINT16(VIBRATE_DATA_CMD);
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  454   // Fill Addr
+//  455   frame[4] = LO_UINT16(srcAddr);
+        MOV     DPTR,#srcAddr
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x4
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  456   frame[5] = HI_UINT16(srcAddr);
+        MOV     DPTR,#srcAddr + 1
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  457   // Fill Data
+//  458   frame[6] = buffer[0];
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x6
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        LCALL   ?Subroutine3 & 0xFFFF
+//  459   frame[7] = buffer[1];
+??CrossCallReturnLabel_2:
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x7
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        LCALL   ?Subroutine3 & 0xFFFF
+//  460   frame[8] = buffer[2];
+??CrossCallReturnLabel_3:
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x8
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        LCALL   ?Subroutine3 & 0xFFFF
+//  461   frame[9] = buffer[3];
+??CrossCallReturnLabel_4:
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x9
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        LCALL   ?Subroutine2 & 0xFFFF
+//  462   frame[10] = buffer[4];
+??CrossCallReturnLabel_0:
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        LCALL   ?Subroutine2 & 0xFFFF
+//  463   frame[11] = buffer[5];
+??CrossCallReturnLabel_1:
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  464   // Calc FCS and Fill
+//  465   frame[12] = Vibrate_CalcFCS((byte*)&frame[1], \ 
+//  466 								 11);
+        ; Setup parameters for call to function Vibrate_CalcFCS
+        MOV     R1,#0xb
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??Vibrate_CalcFCS?relay
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  467   
+//  468   if(1 == allowSend)
+        MOV     DPTR,#allowSend
+        MOVX    A,@DPTR
+        XRL     A,#0x1
+        JNZ     ??Vibrate_SendADXL345Data_0
+//  469   {
+//  470 	  // Send the sensor data to Coordinator
+//  471 	  AF_DataRequest( &Vibrate_DstAddr, &
+//  472 					  Vibrate_epDesc,
+//  473 					  ZIGBEE_COMMON_CLUSTER,
+//  474 					  13,
+//  475 					  (byte *) frame,
+//  476 					  &Vibrate_TransID,
+//  477 					  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     ?V0 + 0,#0x1e
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     ?V0 + 0,#Vibrate_TransID & 0xff
+        MOV     ?V0 + 1,#(Vibrate_TransID >> 8) & 0xff
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 0,DPL
+        MOV     ?V0 + 1,DPH
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     ?V0 + 0,#0xd
+        MOV     ?V0 + 1,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 30)
+        MOV     ?V0 + 0,#0xb
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 32)
+        MOV     R1,#0x20
+        MOV     R4,#Vibrate_epDesc & 0xff
+        MOV     R5,#(Vibrate_epDesc >> 8) & 0xff
+        MOV     R2,#Vibrate_DstAddr & 0xff
+        MOV     R3,#(Vibrate_DstAddr >> 8) & 0xff
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 23)
+//  478   }
+//  479   else
+//  480   {
+//  481 	// do nothing here
+//  482   }
+//  483   
+//  484   // reset the buffer
+//  485 //  osal_mem_free((byte*)buffer);
+//  486 //  buffer = NULL;
+//  487   
+//  488   // send next
+//  489 //  osal_start_timerEx(Vibrate_TaskID,
+//  490 //					 Vibrate_SEND_MSG_EVT,
+//  491 //					 Vibrate_SEND_DELAY);
+//  492 }
+??Vibrate_SendADXL345Data_0:
+        MOV     A,#0xd
+        LJMP    ?Subroutine1 & 0xFFFF
+        CFI EndBlock cfiBlock7
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine3:
+        CFI Block cfiCond8 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_2
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 23)
+        CFI Block cfiCond9 Using cfiCommon0
+        CFI (cfiCond9) NoFunction
+        CFI (cfiCond9) Conditional ??CrossCallReturnLabel_3
+        CFI (cfiCond9) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond9) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond9) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond9) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond9) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond9) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond9) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond9) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond9) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond9) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond9) CFA_SP SP+0
+        CFI (cfiCond9) CFA_XSP16 add(XSP16, 23)
+        CFI Block cfiCond10 Using cfiCommon0
+        CFI (cfiCond10) NoFunction
+        CFI (cfiCond10) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond10) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond10) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond10) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond10) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond10) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond10) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond10) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond10) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond10) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond10) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond10) CFA_SP SP+0
+        CFI (cfiCond10) CFA_XSP16 add(XSP16, 23)
+        CFI Block cfiPicker11 Using cfiCommon1
+        CFI (cfiPicker11) NoFunction
+        CFI (cfiPicker11) Picker
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        RET
+        CFI EndBlock cfiCond8
+        CFI EndBlock cfiCond9
+        CFI EndBlock cfiCond10
+        CFI EndBlock cfiPicker11
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        CFI Block cfiCond12 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 23)
+        CFI Block cfiCond13 Using cfiCommon0
+        CFI (cfiCond13) NoFunction
+        CFI (cfiCond13) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond13) R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI (cfiCond13) VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond13) V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond13) V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond13) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond13) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond13) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond13) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond13) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond13) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond13) CFA_SP SP+0
+        CFI (cfiCond13) CFA_XSP16 add(XSP16, 23)
+        CFI Block cfiPicker14 Using cfiCommon1
+        CFI (cfiPicker14) NoFunction
+        CFI (cfiPicker14) Picker
+        MOVX    @DPTR,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        RET
+        CFI EndBlock cfiCond12
+        CFI EndBlock cfiCond13
+        CFI EndBlock cfiPicker14
+//  493 
+//  494 	
+//  495 /*********************************************************************
+//  496  * @fn      Vibrate_CalcFCS
+//  497  *
+//  498  * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+//  499  *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+//  500  *
+//  501  * @param   byte *msg_ptr - message pointer
+//  502  * @param   byte len - length (in bytes) of message
+//  503  *
+//  504  * @return  result byte
+//  505  ********************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  506 byte Vibrate_CalcFCS( uint8 *msg_ptr, uint8 len )
+Vibrate_CalcFCS:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function Vibrate_CalcFCS
+        CODE
+//  507 {
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R4,A
+//  508   byte x;
+//  509   byte xorResult = 0x00;
+        MOV     R1,#0x0
+//  510 
+//  511   for ( x=0; x<len; x++ )
+        MOV     R0,#0x0
+        SJMP    ??Vibrate_CalcFCS_0
+//  512     xorResult ^=  msg_ptr[x];
+??Vibrate_CalcFCS_1:
+        MOV     ?V0 + 0,R0
+        MOV     A,R2
+        ADD     A,?V0 + 0
+        MOV     DPL,A
+        MOV     A,R3
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XCH     A,R1
+        XRL     A,R1
+        MOV     R1,A
+        INC     R0
+??Vibrate_CalcFCS_0:
+        MOV     A,R0
+        CLR     C
+        SUBB    A,R4
+        JC      ??Vibrate_CalcFCS_1
+//  513 
+//  514   return ( xorResult );
+        LJMP    ??Subroutine4_0 & 0xFFFF
+        CFI EndBlock cfiBlock15
+//  515 }
+//  516 
+//  517 // uart init
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  518 static void Vibrate_InitUart( void )
+Vibrate_InitUart:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function Vibrate_InitUart
+        CODE
+//  519 {
+        FUNCALL Vibrate_InitUart, HalUARTOpen
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 29
+        MOV     A,#-0x1d
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 29)
+//  520     // create the uart structure
+//  521   halUARTCfg_t uartConfig;
+//  522   // set the parameters
+//  523   uartConfig.configured           = TRUE;               
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  524   uartConfig.baudRate             = HAL_UART_BR_9600;
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  525   uartConfig.flowControl          = FALSE;
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        CLR     A
+        MOVX    @DPTR,A
+//  526   uartConfig.flowControlThreshold = 64;   				
+        MOV     A,#0x3
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x40
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  527   uartConfig.rx.maxBufSize        = 128;  				
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  528   uartConfig.tx.maxBufSize        = 128;  				
+        MOV     A,#0x12
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#-0x80
+        MOVX    @DPTR,A
+        INC     DPTR
+        CLR     A
+        MOVX    @DPTR,A
+//  529   uartConfig.idleTimeout          = 6;    				
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x6
+        MOVX    @DPTR,A
+//  530   uartConfig.intEnable            = TRUE;               
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  531   uartConfig.callBackFunc         = Vibrate_UartCallBack;
+        MOV     A,#0x1b
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#??Vibrate_UartCallBack?relay & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(??Vibrate_UartCallBack?relay >> 8) & 0xff
+        MOVX    @DPTR,A
+//  532   // open it
+//  533   HalUARTOpen (UART_PORT, &uartConfig);
+        ; Setup parameters for call to function HalUARTOpen
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     R1,#0x0
+        LCALL   ??HalUARTOpen?relay
+//  534 }
+        MOV     A,#0x1d
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 XSP16+0
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock16
+//  535 
+//  536 // uart call back
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  537 static void Vibrate_UartCallBack( uint8 port, uint8 event )
+Vibrate_UartCallBack:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function Vibrate_UartCallBack
+        CODE
+//  538 {
+        FUNCALL Vibrate_UartCallBack, Vibrate_ProcessingUartData
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+//  539   (void)port;
+//  540 
+//  541   // if Rx interrupt has occur
+//  542   if ((event & (HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT)))
+        MOV     A,#0x7
+        ANL     A,R6
+        JZ      ??Vibrate_UartCallBack_0
+//  543   {
+//  544 	Vibrate_ProcessingUartData();
+        ; Setup parameters for call to function Vibrate_ProcessingUartData
+        LCALL   ??Vibrate_ProcessingUartData?relay
+//  545   }
+//  546 }
+??Vibrate_UartCallBack_0:
+        LJMP    ?Subroutine0 & 0xFFFF
+        CFI EndBlock cfiBlock17
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for allowSend>`:
+        DATA8
+        DB 1
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??WirelessMonitorSystem_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    WirelessMonitorSystem_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??WirelessMonitorSystem_ProcessEvent?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    WirelessMonitorSystem_ProcessEvent
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_SendTopoInformation?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_SendTopoInformation
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_ProcessingUartData?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_ProcessingUartData
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_SendADXL345Data?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_SendADXL345Data
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_CalcFCS?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_CalcFCS
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_InitUart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_InitUart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Vibrate_UartCallBack?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Vibrate_UartCallBack
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0}>`:
+        DB 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+`?<Constant {0}>_1`:
+        DB 0
+        DB 0, 0, 0, 0, 0, 0, 0, 0
+        DB 0, 0, 0, 0
+
+        END
+//  547 /*********************************************************************
+//  548  */
+// 
+// 1 029 bytes in segment BANKED_CODE
+//    48 bytes in segment BANK_RELAYS
+//     1 byte  in segment XDATA_I
+//     1 byte  in segment XDATA_ID
+//    44 bytes in segment XDATA_ROM_C
+//    23 bytes in segment XDATA_Z
+// 
+// 1 078 bytes of CODE  memory
+//    44 bytes of CONST memory
+//    24 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

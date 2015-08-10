@@ -1,0 +1,1540 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Jul/2015  17:24:01 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\hal\target\CC2530EB\ov7670.c                    #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\ta #
+#                          rget\CC2530EB\ov7670.c" -D HAL_UART -lC "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Camera\List\ #
+#                          " -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\WirelessMonitorSystem\CC253 #
+#                          0DB\Camera\List\" --diag_suppress Pe001,Pa010 -o   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\Ca #
+#                          mera\Obj\" -e --no_cse --no_unroll --no_inline     #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\List\ov7670.lst                                #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\Obj\ov7670.r51                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\ov7670.c
+      1          #include "ov7670.h"
+
+   \                                 In  segment SFR_AN, at 0x8b
+   \   unsigned char volatile __sfr P2IFG
+   \                     P2IFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8c
+   \   unsigned char volatile __sfr PICTL
+   \                     PICTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9a
+   \   unsigned char volatile __sfr IEN2
+   \                     IEN2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xac
+   \   unsigned char volatile __sfr P2IEN
+   \                     P2IEN:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf6
+   \   unsigned char volatile __sfr P1INP
+   \                     P1INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include "ov7670config.h"		 
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \   unsigned char const __xdata_rom ov7670_init_reg_tbl[168][2]
+   \                     ov7670_init_reg_tbl:
+   \   000000   3A           DB 58
+   \   000001   04           DB 4
+   \   000002   40           DB 64
+   \   000003   D0           DB 208
+   \   000004   12           DB 18
+   \   000005   14           DB 20
+   \   000006   32           DB 50
+   \   000007   80           DB 128
+   \   000008   17           DB 23
+   \   000009   16           DB 22
+   \   00000A   18           DB 24
+   \   00000B   04           DB 4
+   \   00000C   19           DB 25
+   \   00000D   02           DB 2
+   \   00000E   1A           DB 26
+   \   00000F   7B           DB 123
+   \   000010   03           DB 3
+   \   000011   06           DB 6
+   \   000012   0C           DB 12
+   \   000013   00           DB 0
+   \   000014   15           DB 21
+   \   000015   00           DB 0
+   \   000016   3E           DB 62
+   \   000017   00           DB 0
+   \   000018   70           DB 112
+   \   000019   3A           DB 58
+   \   00001A   71           DB 113
+   \   00001B   35           DB 53
+   \   00001C   72           DB 114
+   \   00001D   11           DB 17
+   \   00001E   73           DB 115
+   \   00001F   00           DB 0
+   \   000020   A2           DB 162
+   \   000021   02           DB 2
+   \   000022   11           DB 17
+   \   000023   81           DB 129
+   \   000024   7A           DB 122
+   \   000025   20           DB 32
+   \   000026   7B           DB 123
+   \   000027   1C           DB 28
+   \   000028   7C           DB 124
+   \   000029   28           DB 40
+   \   00002A   7D           DB 125
+   \   00002B   3C           DB 60
+   \   00002C   7E           DB 126
+   \   00002D   55           DB 85
+   \   00002E   7F           DB 127
+   \   00002F   68           DB 104
+   \   000030   80           DB 128
+   \   000031   76           DB 118
+   \   000032   81           DB 129
+   \   000033   80           DB 128
+   \   000034   82           DB 130
+   \   000035   88           DB 136
+   \   000036   83           DB 131
+   \   000037   8F           DB 143
+   \   000038   84           DB 132
+   \   000039   96           DB 150
+   \   00003A   85           DB 133
+   \   00003B   A3           DB 163
+   \   00003C   86           DB 134
+   \   00003D   AF           DB 175
+   \   00003E   87           DB 135
+   \   00003F   C4           DB 196
+   \   000040   88           DB 136
+   \   000041   D7           DB 215
+   \   000042   89           DB 137
+   \   000043   E8           DB 232
+   \   000044   13           DB 19
+   \   000045   E0           DB 224
+   \   000046   00           DB 0
+   \   000047   00           DB 0
+   \   000048   10           DB 16
+   \   000049   00           DB 0
+   \   00004A   0D           DB 13
+   \   00004B   00           DB 0
+   \   00004C   14           DB 20
+   \   00004D   28           DB 40
+   \   00004E   A5           DB 165
+   \   00004F   05           DB 5
+   \   000050   AB           DB 171
+   \   000051   07           DB 7
+   \   000052   24           DB 36
+   \   000053   75           DB 117
+   \   000054   25           DB 37
+   \   000055   63           DB 99
+   \   000056   26           DB 38
+   \   000057   A5           DB 165
+   \   000058   9F           DB 159
+   \   000059   78           DB 120
+   \   00005A   A0           DB 160
+   \   00005B   68           DB 104
+   \   00005C   A1           DB 161
+   \   00005D   03           DB 3
+   \   00005E   A6           DB 166
+   \   00005F   DF           DB 223
+   \   000060   A7           DB 167
+   \   000061   DF           DB 223
+   \   000062   A8           DB 168
+   \   000063   F0           DB 240
+   \   000064   A9           DB 169
+   \   000065   90           DB 144
+   \   000066   AA           DB 170
+   \   000067   94           DB 148
+   \   000068   13           DB 19
+   \   000069   E5           DB 229
+   \   00006A   0E           DB 14
+   \   00006B   61           DB 97
+   \   00006C   0F           DB 15
+   \   00006D   4B           DB 75
+   \   00006E   16           DB 22
+   \   00006F   02           DB 2
+   \   000070   1E           DB 30
+   \   000071   37           DB 55
+   \   000072   21           DB 33
+   \   000073   02           DB 2
+   \   000074   22           DB 34
+   \   000075   91           DB 145
+   \   000076   29           DB 41
+   \   000077   07           DB 7
+   \   000078   33           DB 51
+   \   000079   0B           DB 11
+   \   00007A   35           DB 53
+   \   00007B   0B           DB 11
+   \   00007C   37           DB 55
+   \   00007D   1D           DB 29
+   \   00007E   38           DB 56
+   \   00007F   71           DB 113
+   \   000080   39           DB 57
+   \   000081   2A           DB 42
+   \   000082   3C           DB 60
+   \   000083   78           DB 120
+   \   000084   4D           DB 77
+   \   000085   40           DB 64
+   \   000086   4E           DB 78
+   \   000087   20           DB 32
+   \   000088   69           DB 105
+   \   000089   00           DB 0
+   \   00008A   6B           DB 107
+   \   00008B   40           DB 64
+   \   00008C   74           DB 116
+   \   00008D   19           DB 25
+   \   00008E   8D           DB 141
+   \   00008F   4F           DB 79
+   \   000090   8E           DB 142
+   \   000091   00           DB 0
+   \   000092   8F           DB 143
+   \   000093   00           DB 0
+   \   000094   90           DB 144
+   \   000095   00           DB 0
+   \   000096   91           DB 145
+   \   000097   00           DB 0
+   \   000098   92           DB 146
+   \   000099   00           DB 0
+   \   00009A   96           DB 150
+   \   00009B   00           DB 0
+   \   00009C   9A           DB 154
+   \   00009D   80           DB 128
+   \   00009E   B0           DB 176
+   \   00009F   84           DB 132
+   \   0000A0   B1           DB 177
+   \   0000A1   0C           DB 12
+   \   0000A2   B2           DB 178
+   \   0000A3   0E           DB 14
+   \   0000A4   B3           DB 179
+   \   0000A5   82           DB 130
+   \   0000A6   B8           DB 184
+   \   0000A7   0A           DB 10
+   \   0000A8   43           DB 67
+   \   0000A9   14           DB 20
+   \   0000AA   44           DB 68
+   \   0000AB   F0           DB 240
+   \   0000AC   45           DB 69
+   \   0000AD   34           DB 52
+   \   0000AE   46           DB 70
+   \   0000AF   58           DB 88
+   \   0000B0   47           DB 71
+   \   0000B1   28           DB 40
+   \   0000B2   48           DB 72
+   \   0000B3   3A           DB 58
+   \   0000B4   59           DB 89
+   \   0000B5   88           DB 136
+   \   0000B6   5A           DB 90
+   \   0000B7   88           DB 136
+   \   0000B8   5B           DB 91
+   \   0000B9   44           DB 68
+   \   0000BA   5C           DB 92
+   \   0000BB   67           DB 103
+   \   0000BC   5D           DB 93
+   \   0000BD   49           DB 73
+   \   0000BE   5E           DB 94
+   \   0000BF   0E           DB 14
+   \   0000C0   64           DB 100
+   \   0000C1   04           DB 4
+   \   0000C2   65           DB 101
+   \   0000C3   20           DB 32
+   \   0000C4   66           DB 102
+   \   0000C5   05           DB 5
+   \   0000C6   94           DB 148
+   \   0000C7   04           DB 4
+   \   0000C8   95           DB 149
+   \   0000C9   08           DB 8
+   \   0000CA   6C           DB 108
+   \   0000CB   0A           DB 10
+   \   0000CC   6D           DB 109
+   \   0000CD   55           DB 85
+   \   0000CE   4F           DB 79
+   \   0000CF   80           DB 128
+   \   0000D0   50           DB 80
+   \   0000D1   80           DB 128
+   \   0000D2   51           DB 81
+   \   0000D3   00           DB 0
+   \   0000D4   52           DB 82
+   \   0000D5   22           DB 34
+   \   0000D6   53           DB 83
+   \   0000D7   5E           DB 94
+   \   0000D8   54           DB 84
+   \   0000D9   80           DB 128
+   \   0000DA   09           DB 9
+   \   0000DB   03           DB 3
+   \   0000DC   6E           DB 110
+   \   0000DD   11           DB 17
+   \   0000DE   6F           DB 111
+   \   0000DF   9F           DB 159
+   \   0000E0   55           DB 85
+   \   0000E1   00           DB 0
+   \   0000E2   56           DB 86
+   \   0000E3   40           DB 64
+   \   0000E4   57           DB 87
+   \   0000E5   40           DB 64
+   \   0000E6   6A           DB 106
+   \   0000E7   40           DB 64
+   \   0000E8   01           DB 1
+   \   0000E9   40           DB 64
+   \   0000EA   02           DB 2
+   \   0000EB   40           DB 64
+   \   0000EC   13           DB 19
+   \   0000ED   E7           DB 231
+   \   0000EE   15           DB 21
+   \   0000EF   00           DB 0
+   \   0000F0   58           DB 88
+   \   0000F1   9E           DB 158
+   \   0000F2   41           DB 65
+   \   0000F3   08           DB 8
+   \   0000F4   3F           DB 63
+   \   0000F5   00           DB 0
+   \   0000F6   75           DB 117
+   \   0000F7   05           DB 5
+   \   0000F8   76           DB 118
+   \   0000F9   E1           DB 225
+   \   0000FA   4C           DB 76
+   \   0000FB   00           DB 0
+   \   0000FC   77           DB 119
+   \   0000FD   01           DB 1
+   \   0000FE   3D           DB 61
+   \   0000FF   C2           DB 194
+   \   000100   4B           DB 75
+   \   000101   09           DB 9
+   \   000102   C9           DB 201
+   \   000103   60           DB 96
+   \   000104   41           DB 65
+   \   000105   38           DB 56
+   \   000106   34           DB 52
+   \   000107   11           DB 17
+   \   000108   3B           DB 59
+   \   000109   02           DB 2
+   \   00010A   A4           DB 164
+   \   00010B   89           DB 137
+   \   00010C   96           DB 150
+   \   00010D   00           DB 0
+   \   00010E   97           DB 151
+   \   00010F   30           DB 48
+   \   000110   98           DB 152
+   \   000111   20           DB 32
+   \   000112   99           DB 153
+   \   000113   30           DB 48
+   \   000114   9A           DB 154
+   \   000115   84           DB 132
+   \   000116   9B           DB 155
+   \   000117   29           DB 41
+   \   000118   9C           DB 156
+   \   000119   03           DB 3
+   \   00011A   9D           DB 157
+   \   00011B   4C           DB 76
+   \   00011C   9E           DB 158
+   \   00011D   3F           DB 63
+   \   00011E   78           DB 120
+   \   00011F   04           DB 4
+   \   000120   79           DB 121
+   \   000121   01           DB 1
+   \   000122   C8           DB 200
+   \   000123   F0           DB 240
+   \   000124   79           DB 121
+   \   000125   0F           DB 15
+   \   000126   C8           DB 200
+   \   000127   00           DB 0
+   \   000128   79           DB 121
+   \   000129   10           DB 16
+   \   00012A   C8           DB 200
+   \   00012B   7E           DB 126
+   \   00012C   79           DB 121
+   \   00012D   0A           DB 10
+   \   00012E   C8           DB 200
+   \   00012F   80           DB 128
+   \   000130   79           DB 121
+   \   000131   0B           DB 11
+   \   000132   C8           DB 200
+   \   000133   01           DB 1
+   \   000134   79           DB 121
+   \   000135   0C           DB 12
+   \   000136   C8           DB 200
+   \   000137   0F           DB 15
+   \   000138   79           DB 121
+   \   000139   0D           DB 13
+   \   00013A   C8           DB 200
+   \   00013B   20           DB 32
+   \   00013C   79           DB 121
+   \   00013D   09           DB 9
+   \   00013E   C8           DB 200
+   \   00013F   80           DB 128
+   \   000140   79           DB 121
+   \   000141   02           DB 2
+   \   000142   C8           DB 200
+   \   000143   C0           DB 192
+   \   000144   79           DB 121
+   \   000145   03           DB 3
+   \   000146   C8           DB 200
+   \   000147   40           DB 64
+   \   000148   79           DB 121
+   \   000149   05           DB 5
+   \   00014A   C8           DB 200
+   \   00014B   30           DB 48
+   \   00014C   79           DB 121
+   \   00014D   26           DB 38
+   \   00014E   09           DB 9
+   \   00014F   00           DB 0
+      3          #include "sccb.h"	
+      4          
+      5          //初始化OV7670
+      6          //返回0:成功
+      7          //返回其他值:错误代码
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      8          uint8 OV7670_Init(void)
+   \                     OV7670_Init:
+      9          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+     10          	uint8 temp;
+     11          	uint16 i=0;	  
+   \   000005   7E00         MOV     R6,#0x0
+   \   000007   7F00         MOV     R7,#0x0
+     12              // init IO for OV7670
+     13              // data input
+     14              P1SEL &= 0x00;
+   \   000009   E5F4         MOV     A,0xf4
+   \   00000B   F5..         MOV     ?V0 + 1,A
+   \   00000D   75F400       MOV     0xf4,#0x0
+     15              P1DIR &= 0x00;
+   \   000010   E5FE         MOV     A,0xfe
+   \   000012   F5..         MOV     ?V0 + 2,A
+   \   000014   75FE00       MOV     0xfe,#0x0
+     16          	P1INP &= 0x00;
+   \   000017   E5F6         MOV     A,0xf6
+   \   000019   F5..         MOV     ?V0 + 3,A
+   \   00001B   75F600       MOV     0xf6,#0x0
+     17              P2INP |= 0xBF; // p1 port all pull-up mode
+   \   00001E   43F7BF       ORL     0xf7,#0xbf
+     18          	
+     19              // init control
+     20              // p0_0,1,4,5 6 output/general I/O/pull-up Mode
+     21              P0SEL &= 0x8C;
+   \   000021   53F38C       ANL     0xf3,#0x8c
+     22              P0DIR |= 0x73;
+   \   000024   43FD73       ORL     0xfd,#0x73
+     23              P0INP |= 0x83;
+   \   000027   438F83       ORL     0x8f,#0x83
+     24          	P2INP &= 0xDF;
+   \   00002A   53F7DF       ANL     0xf7,#0xdf
+     25          	
+     26              // init Vsync(p2_0)
+     27              P2IEN |= 0x01;  // open interrupts on p2_0
+   \   00002D   43AC01       ORL     0xac,#0x1
+     28              PICTL |= 0x08;  // falling-edge
+   \   000030   438C08       ORL     0x8c,#0x8
+     29              IEN2  |= 0x02;  // open all group interrupts
+   \   000033   439A02       ORL     0x9a,#0x2
+     30              P2IFG &= 0xFE;  // reset the flag
+   \   000036   538BFE       ANL     0x8b,#0xfe
+     31                  
+     32           	SCCB_Init();        		//初始化SCCB 的IO口	   	  
+   \   000039                ; Setup parameters for call to function SCCB_Init
+   \   000039   12....       LCALL   ??SCCB_Init?relay
+     33           	if(SCCB_WR_Reg(0x12,0x80))return 1;	//复位SCCB	  
+   \   00003C                ; Setup parameters for call to function SCCB_WR_Reg
+   \   00003C   7A80         MOV     R2,#-0x80
+   \   00003E   7912         MOV     R1,#0x12
+   \   000040   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000043   E9           MOV     A,R1
+   \   000044   6005         JZ      ??OV7670_Init_0
+   \   000046   7901         MOV     R1,#0x1
+   \   000048   02....       LJMP    ??OV7670_Init_1 & 0xFFFF
+     34          	delay_ms(50); 
+   \                     ??OV7670_Init_0:
+   \   00004B                ; Setup parameters for call to function delay_ms
+   \   00004B   7A32         MOV     R2,#0x32
+   \   00004D   7B00         MOV     R3,#0x0
+   \   00004F   12....       LCALL   ??delay_ms?relay
+     35          	//读取产品型号
+     36           	temp=SCCB_RD_Reg(0x0b);   
+   \   000052                ; Setup parameters for call to function SCCB_RD_Reg
+   \   000052   790B         MOV     R1,#0xb
+   \   000054   12....       LCALL   ??SCCB_RD_Reg?relay
+   \   000057   E9           MOV     A,R1
+   \   000058   F5..         MOV     ?V0 + 0,A
+     37          	if(temp!=0x73)return 2;  
+   \   00005A   7473         MOV     A,#0x73
+   \   00005C   65..         XRL     A,?V0 + 0
+   \   00005E   6005         JZ      ??OV7670_Init_2
+   \   000060   7902         MOV     R1,#0x2
+   \   000062   02....       LJMP    ??OV7670_Init_1 & 0xFFFF
+     38           	temp=SCCB_RD_Reg(0x0a);   
+   \                     ??OV7670_Init_2:
+   \   000065                ; Setup parameters for call to function SCCB_RD_Reg
+   \   000065   790A         MOV     R1,#0xa
+   \   000067   12....       LCALL   ??SCCB_RD_Reg?relay
+   \   00006A   E9           MOV     A,R1
+   \   00006B   F5..         MOV     ?V0 + 0,A
+     39          	if(temp!=0x76)return 2;
+   \   00006D   7476         MOV     A,#0x76
+   \   00006F   65..         XRL     A,?V0 + 0
+   \   000071   6004         JZ      ??OV7670_Init_3
+   \   000073   7902         MOV     R1,#0x2
+   \   000075   806E         SJMP    ??OV7670_Init_1
+     40          	//初始化序列	  
+     41          	for(i=0;i<sizeof(ov7670_init_reg_tbl)/sizeof(ov7670_init_reg_tbl[0]);i++)
+   \                     ??OV7670_Init_3:
+   \   000077   7E00         MOV     R6,#0x0
+   \   000079   7F00         MOV     R7,#0x0
+   \                     ??OV7670_Init_4:
+   \   00007B   C3           CLR     C
+   \   00007C   EE           MOV     A,R6
+   \   00007D   94A8         SUBB    A,#-0x58
+   \   00007F   EF           MOV     A,R7
+   \   000080   9400         SUBB    A,#0x0
+   \   000082   505F         JNC     ??OV7670_Init_5
+     42          	{
+     43          	   	SCCB_WR_Reg(ov7670_init_reg_tbl[i][0],ov7670_init_reg_tbl[i][1]);
+   \   000084                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000084   EE           MOV     A,R6
+   \   000085   F8           MOV     R0,A
+   \   000086   EF           MOV     A,R7
+   \   000087   F9           MOV     R1,A
+   \   000088   E8           MOV     A,R0
+   \   000089   75F002       MOV     B,#0x2
+   \   00008C   A4           MUL     AB
+   \   00008D   C8           XCH     A,R0
+   \   00008E   AAF0         MOV     R2,B
+   \   000090   75F000       MOV     B,#0x0
+   \   000093   A4           MUL     AB
+   \   000094   2A           ADD     A,R2
+   \   000095   FA           MOV     R2,A
+   \   000096   75F002       MOV     B,#0x2
+   \   000099   E9           MOV     A,R1
+   \   00009A   A4           MUL     AB
+   \   00009B   2A           ADD     A,R2
+   \   00009C   F9           MOV     R1,A
+   \   00009D   74..         MOV     A,#(ov7670_init_reg_tbl + 1) & 0xff
+   \   00009F   28           ADD     A,R0
+   \   0000A0   F582         MOV     DPL,A
+   \   0000A2   74..         MOV     A,#((ov7670_init_reg_tbl + 1) >> 8) & 0xff
+   \   0000A4   39           ADDC    A,R1
+   \   0000A5   F583         MOV     DPH,A
+   \   0000A7   E0           MOVX    A,@DPTR
+   \   0000A8   FA           MOV     R2,A
+   \   0000A9   EE           MOV     A,R6
+   \   0000AA   F8           MOV     R0,A
+   \   0000AB   EF           MOV     A,R7
+   \   0000AC   F9           MOV     R1,A
+   \   0000AD   E8           MOV     A,R0
+   \   0000AE   75F002       MOV     B,#0x2
+   \   0000B1   A4           MUL     AB
+   \   0000B2   C8           XCH     A,R0
+   \   0000B3   ABF0         MOV     R3,B
+   \   0000B5   75F000       MOV     B,#0x0
+   \   0000B8   A4           MUL     AB
+   \   0000B9   2B           ADD     A,R3
+   \   0000BA   FB           MOV     R3,A
+   \   0000BB   75F002       MOV     B,#0x2
+   \   0000BE   E9           MOV     A,R1
+   \   0000BF   A4           MUL     AB
+   \   0000C0   2B           ADD     A,R3
+   \   0000C1   F9           MOV     R1,A
+   \   0000C2   74..         MOV     A,#ov7670_init_reg_tbl & 0xff
+   \   0000C4   28           ADD     A,R0
+   \   0000C5   F582         MOV     DPL,A
+   \   0000C7   74..         MOV     A,#(ov7670_init_reg_tbl >> 8) & 0xff
+   \   0000C9   39           ADDC    A,R1
+   \   0000CA   F583         MOV     DPH,A
+   \   0000CC   E0           MOVX    A,@DPTR
+   \   0000CD   F9           MOV     R1,A
+   \   0000CE   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   0000D1   E9           MOV     A,R1
+     44          		delay_ms(2);
+   \   0000D2                ; Setup parameters for call to function delay_ms
+   \   0000D2   7A02         MOV     R2,#0x2
+   \   0000D4   7B00         MOV     R3,#0x0
+   \   0000D6   12....       LCALL   ??delay_ms?relay
+     45           	}
+   \   0000D9   EE           MOV     A,R6
+   \   0000DA   2401         ADD     A,#0x1
+   \   0000DC   FE           MOV     R6,A
+   \   0000DD   EF           MOV     A,R7
+   \   0000DE   3400         ADDC    A,#0x0
+   \   0000E0   FF           MOV     R7,A
+   \   0000E1   8098         SJMP    ??OV7670_Init_4
+     46             	return 0x00; 	//ok
+   \                     ??OV7670_Init_5:
+   \   0000E3   7900         MOV     R1,#0x0
+   \                     ??OV7670_Init_1:
+   \   0000E5   7F04         MOV     R7,#0x4
+   \   0000E7   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000EA                REQUIRE P1SEL
+   \   0000EA                REQUIRE P1DIR
+   \   0000EA                REQUIRE P1INP
+   \   0000EA                REQUIRE P2INP
+   \   0000EA                REQUIRE P0SEL
+   \   0000EA                REQUIRE P0DIR
+   \   0000EA                REQUIRE P0INP
+   \   0000EA                REQUIRE P2IEN
+   \   0000EA                REQUIRE PICTL
+   \   0000EA                REQUIRE IEN2
+   \   0000EA                REQUIRE P2IFG
+     47          } 
+     48          ////////////////////////////////////////////////////////////////////////////
+     49          //OV7670功能设置
+     50          //白平衡设置
+     51          //0:自动
+     52          //1:太阳sunny
+     53          //2,阴天cloudy
+     54          //3,办公室office
+     55          //4,家里home
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     56          void OV7670_Light_Mode(uint8 mode)
+   \                     OV7670_Light_Mode:
+     57          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+     58          	uint8 reg13val=0XE7;//默认就是设置为自动白平衡
+   \   000007   75..E7       MOV     ?V0 + 1,#-0x19
+     59          	uint8 reg01val=0;
+   \   00000A   7F00         MOV     R7,#0x0
+     60          	uint8 reg02val=0;
+   \   00000C   7E00         MOV     R6,#0x0
+     61          	switch(mode)
+   \   00000E   E5..         MOV     A,?V0 + 0
+   \   000010   14           DEC     A
+   \   000011   600B         JZ      ??OV7670_Light_Mode_0
+   \   000013   14           DEC     A
+   \   000014   6011         JZ      ??OV7670_Light_Mode_1
+   \   000016   14           DEC     A
+   \   000017   6017         JZ      ??OV7670_Light_Mode_2
+   \   000019   14           DEC     A
+   \   00001A   601D         JZ      ??OV7670_Light_Mode_3
+   \   00001C   8022         SJMP    ??OV7670_Light_Mode_4
+     62          	{
+     63          		case 1://sunny
+     64          			reg13val=0XE5;
+   \                     ??OV7670_Light_Mode_0:
+   \   00001E   75..E5       MOV     ?V0 + 1,#-0x1b
+     65          			reg01val=0X5A;
+   \   000021   7F5A         MOV     R7,#0x5a
+     66          			reg02val=0X5C;
+   \   000023   7E5C         MOV     R6,#0x5c
+     67          			break;	
+   \   000025   8019         SJMP    ??OV7670_Light_Mode_4
+     68          		case 2://cloudy
+     69          			reg13val=0XE5;
+   \                     ??OV7670_Light_Mode_1:
+   \   000027   75..E5       MOV     ?V0 + 1,#-0x1b
+     70          			reg01val=0X58;
+   \   00002A   7F58         MOV     R7,#0x58
+     71          			reg02val=0X60;
+   \   00002C   7E60         MOV     R6,#0x60
+     72          			break;	
+   \   00002E   8010         SJMP    ??OV7670_Light_Mode_4
+     73          		case 3://office
+     74          			reg13val=0XE5;
+   \                     ??OV7670_Light_Mode_2:
+   \   000030   75..E5       MOV     ?V0 + 1,#-0x1b
+     75          			reg01val=0X84;
+   \   000033   7F84         MOV     R7,#-0x7c
+     76          			reg02val=0X4c;
+   \   000035   7E4C         MOV     R6,#0x4c
+     77          			break;	
+   \   000037   8007         SJMP    ??OV7670_Light_Mode_4
+     78          		case 4://home
+     79          			reg13val=0XE5;
+   \                     ??OV7670_Light_Mode_3:
+   \   000039   75..E5       MOV     ?V0 + 1,#-0x1b
+     80          			reg01val=0X96;
+   \   00003C   7F96         MOV     R7,#-0x6a
+     81          			reg02val=0X40;
+   \   00003E   7E40         MOV     R6,#0x40
+     82          			break;	
+     83          	}
+     84          	SCCB_WR_Reg(0X13,reg13val);//COM8设置 
+   \                     ??OV7670_Light_Mode_4:
+   \   000040                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000040   AA..         MOV     R2,?V0 + 1
+   \   000042   7913         MOV     R1,#0x13
+   \   000044   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000047   E9           MOV     A,R1
+     85          	SCCB_WR_Reg(0X01,reg01val);//AWB蓝色通道增益 
+   \   000048                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000048   EF           MOV     A,R7
+   \   000049   FA           MOV     R2,A
+   \   00004A   7901         MOV     R1,#0x1
+   \   00004C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00004F   E9           MOV     A,R1
+     86          	SCCB_WR_Reg(0X02,reg02val);//AWB红色通道增益 
+   \   000050                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000050   EE           MOV     A,R6
+   \   000051   FA           MOV     R2,A
+   \   000052   7902         MOV     R1,#0x2
+   \   000054   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000057   E9           MOV     A,R1
+     87          }				  
+   \   000058   7F02         MOV     R7,#0x2
+   \   00005A   02....       LJMP    ?BANKED_LEAVE_XDATA
+     88          //色度设置
+     89          //0:-2
+     90          //1:-1
+     91          //2,0
+     92          //3,1
+     93          //4,2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     94          void OV7670_Color_Saturation(uint8 sat)
+   \                     OV7670_Color_Saturation:
+     95          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+     96          	uint8 reg4f5054val=0X80;//默认就是sat=2,即不调节色度的设置
+   \   000007   75..80       MOV     ?V0 + 1,#-0x80
+     97           	uint8 reg52val=0X22;
+   \   00000A   7F22         MOV     R7,#0x22
+     98          	uint8 reg53val=0X5E;
+   \   00000C   7E5E         MOV     R6,#0x5e
+     99           	switch(sat)
+   \   00000E   E5..         MOV     A,?V0 + 0
+   \   000010   600C         JZ      ??OV7670_Color_Saturation_0
+   \   000012   14           DEC     A
+   \   000013   6012         JZ      ??OV7670_Color_Saturation_1
+   \   000015   24FE         ADD     A,#-0x2
+   \   000017   6017         JZ      ??OV7670_Color_Saturation_2
+   \   000019   14           DEC     A
+   \   00001A   601D         JZ      ??OV7670_Color_Saturation_3
+   \   00001C   8022         SJMP    ??OV7670_Color_Saturation_4
+    100          	{
+    101          		case 0://-2
+    102          			reg4f5054val=0X40;  	 
+   \                     ??OV7670_Color_Saturation_0:
+   \   00001E   75..40       MOV     ?V0 + 1,#0x40
+    103          			reg52val=0X11;
+   \   000021   7F11         MOV     R7,#0x11
+    104          			reg53val=0X2F;	 	 
+   \   000023   7E2F         MOV     R6,#0x2f
+    105          			break;	
+   \   000025   8019         SJMP    ??OV7670_Color_Saturation_4
+    106          		case 1://-1
+    107          			reg4f5054val=0X66;	    
+   \                     ??OV7670_Color_Saturation_1:
+   \   000027   75..66       MOV     ?V0 + 1,#0x66
+    108          			reg52val=0X1B;
+   \   00002A   7F1B         MOV     R7,#0x1b
+    109          			reg53val=0X4B;	  
+   \   00002C   7E4B         MOV     R6,#0x4b
+    110          			break;	
+   \   00002E   8010         SJMP    ??OV7670_Color_Saturation_4
+    111          		case 3://1
+    112          			reg4f5054val=0X99;	   
+   \                     ??OV7670_Color_Saturation_2:
+   \   000030   75..99       MOV     ?V0 + 1,#-0x67
+    113          			reg52val=0X28;
+   \   000033   7F28         MOV     R7,#0x28
+    114          			reg53val=0X71;	   
+   \   000035   7E71         MOV     R6,#0x71
+    115          			break;	
+   \   000037   8007         SJMP    ??OV7670_Color_Saturation_4
+    116          		case 4://2
+    117          			reg4f5054val=0XC0;	   
+   \                     ??OV7670_Color_Saturation_3:
+   \   000039   75..C0       MOV     ?V0 + 1,#-0x40
+    118          			reg52val=0X33;
+   \   00003C   7F33         MOV     R7,#0x33
+    119          			reg53val=0X8D;	   
+   \   00003E   7E8D         MOV     R6,#-0x73
+    120          			break;	
+    121          	}
+    122          	SCCB_WR_Reg(0X4F,reg4f5054val);	//色彩矩阵系数1
+   \                     ??OV7670_Color_Saturation_4:
+   \   000040                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000040   AA..         MOV     R2,?V0 + 1
+   \   000042   794F         MOV     R1,#0x4f
+   \   000044   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000047   E9           MOV     A,R1
+    123          	SCCB_WR_Reg(0X50,reg4f5054val);	//色彩矩阵系数2 
+   \   000048                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000048   AA..         MOV     R2,?V0 + 1
+   \   00004A   7950         MOV     R1,#0x50
+   \   00004C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00004F   E9           MOV     A,R1
+    124          	SCCB_WR_Reg(0X51,0X00);			//色彩矩阵系数3  
+   \   000050                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000050   7A00         MOV     R2,#0x0
+   \   000052   7951         MOV     R1,#0x51
+   \   000054   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000057   E9           MOV     A,R1
+    125          	SCCB_WR_Reg(0X52,reg52val);		//色彩矩阵系数4 
+   \   000058                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000058   EF           MOV     A,R7
+   \   000059   FA           MOV     R2,A
+   \   00005A   7952         MOV     R1,#0x52
+   \   00005C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00005F   E9           MOV     A,R1
+    126          	SCCB_WR_Reg(0X53,reg53val);		//色彩矩阵系数5 
+   \   000060                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000060   EE           MOV     A,R6
+   \   000061   FA           MOV     R2,A
+   \   000062   7953         MOV     R1,#0x53
+   \   000064   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000067   E9           MOV     A,R1
+    127          	SCCB_WR_Reg(0X54,reg4f5054val);	//色彩矩阵系数6  
+   \   000068                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000068   AA..         MOV     R2,?V0 + 1
+   \   00006A   7954         MOV     R1,#0x54
+   \   00006C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00006F   E9           MOV     A,R1
+    128          	SCCB_WR_Reg(0X58,0X9E);			//MTXS 
+   \   000070                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000070   7A9E         MOV     R2,#-0x62
+   \   000072   7958         MOV     R1,#0x58
+   \   000074   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000077   E9           MOV     A,R1
+    129          }
+   \   000078   7F02         MOV     R7,#0x2
+   \   00007A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    130          //亮度设置
+    131          //0:-2
+    132          //1:-1
+    133          //2,0
+    134          //3,1
+    135          //4,2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    136          void OV7670_Brightness(uint8 bright)
+   \                     OV7670_Brightness:
+    137          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    138          	uint8 reg55val=0X00;//默认就是bright=2
+   \   000007   7F00         MOV     R7,#0x0
+    139            	switch(bright)
+   \   000009   600C         JZ      ??OV7670_Brightness_0
+   \   00000B   14           DEC     A
+   \   00000C   600D         JZ      ??OV7670_Brightness_1
+   \   00000E   24FE         ADD     A,#-0x2
+   \   000010   600D         JZ      ??OV7670_Brightness_2
+   \   000012   14           DEC     A
+   \   000013   600E         JZ      ??OV7670_Brightness_3
+   \   000015   800E         SJMP    ??OV7670_Brightness_4
+    140          	{
+    141          		case 0://-2
+    142          			reg55val=0XB0;	 	 
+   \                     ??OV7670_Brightness_0:
+   \   000017   7FB0         MOV     R7,#-0x50
+    143          			break;	
+   \   000019   800A         SJMP    ??OV7670_Brightness_4
+    144          		case 1://-1
+    145          			reg55val=0X98;	 	 
+   \                     ??OV7670_Brightness_1:
+   \   00001B   7F98         MOV     R7,#-0x68
+    146          			break;	
+   \   00001D   8006         SJMP    ??OV7670_Brightness_4
+    147          		case 3://1
+    148          			reg55val=0X18;	 	 
+   \                     ??OV7670_Brightness_2:
+   \   00001F   7F18         MOV     R7,#0x18
+    149          			break;	
+   \   000021   8002         SJMP    ??OV7670_Brightness_4
+    150          		case 4://2
+    151          			reg55val=0X30;	 	 
+   \                     ??OV7670_Brightness_3:
+   \   000023   7F30         MOV     R7,#0x30
+    152          			break;	
+    153          	}
+    154          	SCCB_WR_Reg(0X55,reg55val);	//亮度调节 
+   \                     ??OV7670_Brightness_4:
+   \   000025                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000025   EF           MOV     A,R7
+   \   000026   FA           MOV     R2,A
+   \   000027   7955         MOV     R1,#0x55
+   \   000029   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00002C   E9           MOV     A,R1
+    155          }
+   \   00002D   7F01         MOV     R7,#0x1
+   \   00002F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    156          //对比度设置
+    157          //0:-2
+    158          //1:-1
+    159          //2,0
+    160          //3,1
+    161          //4,2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    162          void OV7670_Contrast(uint8 contrast)
+   \                     OV7670_Contrast:
+    163          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    164          	uint8 reg56val=0X40;//默认就是contrast=2
+   \   000007   7F40         MOV     R7,#0x40
+    165            	switch(contrast)
+   \   000009   600C         JZ      ??OV7670_Contrast_0
+   \   00000B   14           DEC     A
+   \   00000C   600D         JZ      ??OV7670_Contrast_1
+   \   00000E   24FE         ADD     A,#-0x2
+   \   000010   600D         JZ      ??OV7670_Contrast_2
+   \   000012   14           DEC     A
+   \   000013   600E         JZ      ??OV7670_Contrast_3
+   \   000015   800E         SJMP    ??OV7670_Contrast_4
+    166          	{
+    167          		case 0://-2
+    168          			reg56val=0X30;	 	 
+   \                     ??OV7670_Contrast_0:
+   \   000017   7F30         MOV     R7,#0x30
+    169          			break;	
+   \   000019   800A         SJMP    ??OV7670_Contrast_4
+    170          		case 1://-1
+    171          			reg56val=0X38;	 	 
+   \                     ??OV7670_Contrast_1:
+   \   00001B   7F38         MOV     R7,#0x38
+    172          			break;	
+   \   00001D   8006         SJMP    ??OV7670_Contrast_4
+    173          		case 3://1
+    174          			reg56val=0X50;	 	 
+   \                     ??OV7670_Contrast_2:
+   \   00001F   7F50         MOV     R7,#0x50
+    175          			break;	
+   \   000021   8002         SJMP    ??OV7670_Contrast_4
+    176          		case 4://2
+    177          			reg56val=0X60;	 	 
+   \                     ??OV7670_Contrast_3:
+   \   000023   7F60         MOV     R7,#0x60
+    178          			break;	
+    179          	}
+    180          	SCCB_WR_Reg(0X56,reg56val);	//对比度调节 
+   \                     ??OV7670_Contrast_4:
+   \   000025                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000025   EF           MOV     A,R7
+   \   000026   FA           MOV     R2,A
+   \   000027   7956         MOV     R1,#0x56
+   \   000029   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00002C   E9           MOV     A,R1
+    181          }
+   \   00002D   7F01         MOV     R7,#0x1
+   \   00002F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    182          //特效设置
+    183          //0:普通模式    
+    184          //1,负片
+    185          //2,黑白   
+    186          //3,偏红色
+    187          //4,偏绿色
+    188          //5,偏蓝色
+    189          //6,复古	    
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    190          void OV7670_Special_Effects(uint8 eft)
+   \                     OV7670_Special_Effects:
+    191          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+    192          	uint8 reg3aval=0X04;//默认为普通模式
+   \   000007   75..04       MOV     ?V0 + 1,#0x4
+    193          	uint8 reg67val=0XC0;
+   \   00000A   7FC0         MOV     R7,#-0x40
+    194          	uint8 reg68val=0X80;
+   \   00000C   7E80         MOV     R6,#-0x80
+    195          	switch(eft)
+   \   00000E   E5..         MOV     A,?V0 + 0
+   \   000010   14           DEC     A
+   \   000011   6011         JZ      ??OV7670_Special_Effects_0
+   \   000013   14           DEC     A
+   \   000014   6017         JZ      ??OV7670_Special_Effects_1
+   \   000016   14           DEC     A
+   \   000017   601D         JZ      ??OV7670_Special_Effects_2
+   \   000019   14           DEC     A
+   \   00001A   6023         JZ      ??OV7670_Special_Effects_3
+   \   00001C   14           DEC     A
+   \   00001D   6029         JZ      ??OV7670_Special_Effects_4
+   \   00001F   14           DEC     A
+   \   000020   602F         JZ      ??OV7670_Special_Effects_5
+   \   000022   8034         SJMP    ??OV7670_Special_Effects_6
+    196          	{
+    197          		case 1://负片
+    198          			reg3aval=0X24;
+   \                     ??OV7670_Special_Effects_0:
+   \   000024   75..24       MOV     ?V0 + 1,#0x24
+    199          			reg67val=0X80;
+   \   000027   7F80         MOV     R7,#-0x80
+    200          			reg68val=0X80;
+   \   000029   7E80         MOV     R6,#-0x80
+    201          			break;	
+   \   00002B   802B         SJMP    ??OV7670_Special_Effects_6
+    202          		case 2://黑白
+    203          			reg3aval=0X14;
+   \                     ??OV7670_Special_Effects_1:
+   \   00002D   75..14       MOV     ?V0 + 1,#0x14
+    204          			reg67val=0X80;
+   \   000030   7F80         MOV     R7,#-0x80
+    205          			reg68val=0X80;
+   \   000032   7E80         MOV     R6,#-0x80
+    206          			break;	
+   \   000034   8022         SJMP    ??OV7670_Special_Effects_6
+    207          		case 3://偏红色
+    208          			reg3aval=0X14;
+   \                     ??OV7670_Special_Effects_2:
+   \   000036   75..14       MOV     ?V0 + 1,#0x14
+    209          			reg67val=0Xc0;
+   \   000039   7FC0         MOV     R7,#-0x40
+    210          			reg68val=0X80;
+   \   00003B   7E80         MOV     R6,#-0x80
+    211          			break;	
+   \   00003D   8019         SJMP    ??OV7670_Special_Effects_6
+    212          		case 4://偏绿色
+    213          			reg3aval=0X14;
+   \                     ??OV7670_Special_Effects_3:
+   \   00003F   75..14       MOV     ?V0 + 1,#0x14
+    214          			reg67val=0X40;
+   \   000042   7F40         MOV     R7,#0x40
+    215          			reg68val=0X40;
+   \   000044   7E40         MOV     R6,#0x40
+    216          			break;	
+   \   000046   8010         SJMP    ??OV7670_Special_Effects_6
+    217          		case 5://偏蓝色
+    218          			reg3aval=0X14;
+   \                     ??OV7670_Special_Effects_4:
+   \   000048   75..14       MOV     ?V0 + 1,#0x14
+    219          			reg67val=0X80;
+   \   00004B   7F80         MOV     R7,#-0x80
+    220          			reg68val=0XC0;
+   \   00004D   7EC0         MOV     R6,#-0x40
+    221          			break;	
+   \   00004F   8007         SJMP    ??OV7670_Special_Effects_6
+    222          		case 6://复古
+    223          			reg3aval=0X14;
+   \                     ??OV7670_Special_Effects_5:
+   \   000051   75..14       MOV     ?V0 + 1,#0x14
+    224          			reg67val=0XA0;
+   \   000054   7FA0         MOV     R7,#-0x60
+    225          			reg68val=0X40;
+   \   000056   7E40         MOV     R6,#0x40
+    226          			break;	 
+    227          	}
+    228          	SCCB_WR_Reg(0X3A,reg3aval);//TSLB设置 
+   \                     ??OV7670_Special_Effects_6:
+   \   000058                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000058   AA..         MOV     R2,?V0 + 1
+   \   00005A   793A         MOV     R1,#0x3a
+   \   00005C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00005F   E9           MOV     A,R1
+    229          	SCCB_WR_Reg(0X68,reg67val);//MANU,手动U值 
+   \   000060                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000060   EF           MOV     A,R7
+   \   000061   FA           MOV     R2,A
+   \   000062   7968         MOV     R1,#0x68
+   \   000064   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000067   E9           MOV     A,R1
+    230          	SCCB_WR_Reg(0X67,reg68val);//MANV,手动V值 
+   \   000068                ; Setup parameters for call to function SCCB_WR_Reg
+   \   000068   EE           MOV     A,R6
+   \   000069   FA           MOV     R2,A
+   \   00006A   7967         MOV     R1,#0x67
+   \   00006C   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   00006F   E9           MOV     A,R1
+    231          }	
+   \   000070   7F02         MOV     R7,#0x2
+   \   000072   02....       LJMP    ?BANKED_LEAVE_XDATA
+    232          //设置图像输出窗口
+    233          //对QVGA设置。
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    234          void OV7670_Window_Set(uint16 sx,uint16 sy,uint16 width,uint16 height)
+   \                     OV7670_Window_Set:
+    235          {
+   \   000000   74EA         MOV     A,#-0x16
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 22
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 4,R2
+   \   000007   8B..         MOV     ?V0 + 5,R3
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   7416         MOV     A,#0x16
+   \   00000F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   F5..         MOV     ?V0 + 8,A
+   \   000015   A3           INC     DPTR
+   \   000016   E0           MOVX    A,@DPTR
+   \   000017   F5..         MOV     ?V0 + 9,A
+   \   000019   7418         MOV     A,#0x18
+   \   00001B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F5..         MOV     ?V0 + 6,A
+   \   000021   A3           INC     DPTR
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   F5..         MOV     ?V0 + 7,A
+    236          	uint16 endx;
+    237          	uint16 endy;
+    238          	uint8 temp; 
+    239          	endx=sx+width*2;	//V*2
+   \   000025   A8..         MOV     R0,?V0 + 8
+   \   000027   A9..         MOV     R1,?V0 + 9
+   \   000029   E8           MOV     A,R0
+   \   00002A   75F002       MOV     B,#0x2
+   \   00002D   A4           MUL     AB
+   \   00002E   C8           XCH     A,R0
+   \   00002F   AAF0         MOV     R2,B
+   \   000031   75F000       MOV     B,#0x0
+   \   000034   A4           MUL     AB
+   \   000035   2A           ADD     A,R2
+   \   000036   FA           MOV     R2,A
+   \   000037   75F002       MOV     B,#0x2
+   \   00003A   E5..         MOV     A,?V0 + 9
+   \   00003C   A4           MUL     AB
+   \   00003D   2A           ADD     A,R2
+   \   00003E   F9           MOV     R1,A
+   \   00003F   E5..         MOV     A,?V0 + 4
+   \   000041   28           ADD     A,R0
+   \   000042   F8           MOV     R0,A
+   \   000043   E5..         MOV     A,?V0 + 5
+   \   000045   39           ADDC    A,R1
+   \   000046   F9           MOV     R1,A
+   \   000047   88..         MOV     ?V0 + 2,R0
+   \   000049   89..         MOV     ?V0 + 3,R1
+    240           	endy=sy+height*2;
+   \   00004B   A8..         MOV     R0,?V0 + 6
+   \   00004D   A9..         MOV     R1,?V0 + 7
+   \   00004F   E8           MOV     A,R0
+   \   000050   75F002       MOV     B,#0x2
+   \   000053   A4           MUL     AB
+   \   000054   C8           XCH     A,R0
+   \   000055   AAF0         MOV     R2,B
+   \   000057   75F000       MOV     B,#0x0
+   \   00005A   A4           MUL     AB
+   \   00005B   2A           ADD     A,R2
+   \   00005C   FA           MOV     R2,A
+   \   00005D   75F002       MOV     B,#0x2
+   \   000060   E5..         MOV     A,?V0 + 7
+   \   000062   A4           MUL     AB
+   \   000063   2A           ADD     A,R2
+   \   000064   F9           MOV     R1,A
+   \   000065   E5..         MOV     A,?V0 + 0
+   \   000067   28           ADD     A,R0
+   \   000068   F8           MOV     R0,A
+   \   000069   E5..         MOV     A,?V0 + 1
+   \   00006B   39           ADDC    A,R1
+   \   00006C   F9           MOV     R1,A
+   \   00006D   E8           MOV     A,R0
+   \   00006E   FE           MOV     R6,A
+   \   00006F   E9           MOV     A,R1
+   \   000070   FF           MOV     R7,A
+    241          	if(endy>784)endy-=784;
+   \   000071   C3           CLR     C
+   \   000072   EE           MOV     A,R6
+   \   000073   9411         SUBB    A,#0x11
+   \   000075   EF           MOV     A,R7
+   \   000076   9403         SUBB    A,#0x3
+   \   000078   4008         JC      ??OV7670_Window_Set_0
+   \   00007A   EE           MOV     A,R6
+   \   00007B   24F0         ADD     A,#-0x10
+   \   00007D   FE           MOV     R6,A
+   \   00007E   EF           MOV     A,R7
+   \   00007F   34FC         ADDC    A,#-0x4
+   \   000081   FF           MOV     R7,A
+    242          	temp=SCCB_RD_Reg(0X03);				//读取Vref之前的值
+   \                     ??OV7670_Window_Set_0:
+   \   000082                ; Setup parameters for call to function SCCB_RD_Reg
+   \   000082   7903         MOV     R1,#0x3
+   \   000084   12....       LCALL   ??SCCB_RD_Reg?relay
+   \   000087   E9           MOV     A,R1
+   \   000088   F5..         MOV     ?V0 + 10,A
+    243          	temp&=0XF0;
+   \   00008A   53..F0       ANL     ?V0 + 10,#0xf0
+    244          	temp|=((endx&0X03)<<2)|(sx&0X03);
+   \   00008D   E5..         MOV     A,?V0 + 4
+   \   00008F   5403         ANL     A,#0x3
+   \   000091   F8           MOV     R0,A
+   \   000092   E5..         MOV     A,?V0 + 2
+   \   000094   5403         ANL     A,#0x3
+   \   000096   33           RLC     A
+   \   000097   33           RLC     A
+   \   000098   54FC         ANL     A,#0xfc
+   \   00009A   48           ORL     A,R0
+   \   00009B   42..         ORL     ?V0 + 10,A
+    245          	SCCB_WR_Reg(0X03,temp);				//设置Vref的start和end的最低2位
+   \   00009D                ; Setup parameters for call to function SCCB_WR_Reg
+   \   00009D   AA..         MOV     R2,?V0 + 10
+   \   00009F   7903         MOV     R1,#0x3
+   \   0000A1   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   0000A4   E9           MOV     A,R1
+    246          	SCCB_WR_Reg(0X19,sx>>2);			//设置Vref的start高8位
+   \   0000A5                ; Setup parameters for call to function SCCB_WR_Reg
+   \   0000A5   85....       MOV     ?V0 + 12,?V0 + 4
+   \   0000A8   85....       MOV     ?V0 + 13,?V0 + 5
+   \   0000AB   7402         MOV     A,#0x2
+   \   0000AD   78..         MOV     R0,#?V0 + 12
+   \   0000AF   12....       LCALL   ?US_SHR
+   \   0000B2   AA..         MOV     R2,?V0 + 12
+   \   0000B4   7919         MOV     R1,#0x19
+   \   0000B6   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   0000B9   E9           MOV     A,R1
+    247          	SCCB_WR_Reg(0X1A,endx>>2);			//设置Vref的end的高8位
+   \   0000BA                ; Setup parameters for call to function SCCB_WR_Reg
+   \   0000BA   85....       MOV     ?V0 + 12,?V0 + 2
+   \   0000BD   85....       MOV     ?V0 + 13,?V0 + 3
+   \   0000C0   7402         MOV     A,#0x2
+   \   0000C2   78..         MOV     R0,#?V0 + 12
+   \   0000C4   12....       LCALL   ?US_SHR
+   \   0000C7   AA..         MOV     R2,?V0 + 12
+   \   0000C9   791A         MOV     R1,#0x1a
+   \   0000CB   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   0000CE   E9           MOV     A,R1
+    248          
+    249          	temp=SCCB_RD_Reg(0X32);				//读取Href之前的值
+   \   0000CF                ; Setup parameters for call to function SCCB_RD_Reg
+   \   0000CF   7932         MOV     R1,#0x32
+   \   0000D1   12....       LCALL   ??SCCB_RD_Reg?relay
+   \   0000D4   E9           MOV     A,R1
+   \   0000D5   F5..         MOV     ?V0 + 10,A
+    250          	temp&=0XC0;
+   \   0000D7   53..C0       ANL     ?V0 + 10,#0xc0
+    251          	temp|=((endy&0X07)<<3)|(sy&0X07);
+   \   0000DA   E5..         MOV     A,?V0 + 0
+   \   0000DC   5407         ANL     A,#0x7
+   \   0000DE   F8           MOV     R0,A
+   \   0000DF   EE           MOV     A,R6
+   \   0000E0   5407         ANL     A,#0x7
+   \   0000E2   33           RLC     A
+   \   0000E3   33           RLC     A
+   \   0000E4   33           RLC     A
+   \   0000E5   54F8         ANL     A,#0xf8
+   \   0000E7   48           ORL     A,R0
+   \   0000E8   42..         ORL     ?V0 + 10,A
+    252          	SCCB_WR_Reg(0X17,sy>>3);			//设置Href的start高8位
+   \   0000EA                ; Setup parameters for call to function SCCB_WR_Reg
+   \   0000EA   85....       MOV     ?V0 + 12,?V0 + 0
+   \   0000ED   85....       MOV     ?V0 + 13,?V0 + 1
+   \   0000F0   7403         MOV     A,#0x3
+   \   0000F2   78..         MOV     R0,#?V0 + 12
+   \   0000F4   12....       LCALL   ?US_SHR
+   \   0000F7   AA..         MOV     R2,?V0 + 12
+   \   0000F9   7917         MOV     R1,#0x17
+   \   0000FB   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   0000FE   E9           MOV     A,R1
+    253          	SCCB_WR_Reg(0X18,endy>>3);			//设置Href的end的高8位
+   \   0000FF                ; Setup parameters for call to function SCCB_WR_Reg
+   \   0000FF   8E..         MOV     ?V0 + 12,R6
+   \   000101   8F..         MOV     ?V0 + 13,R7
+   \   000103   7403         MOV     A,#0x3
+   \   000105   78..         MOV     R0,#?V0 + 12
+   \   000107   12....       LCALL   ?US_SHR
+   \   00010A   AA..         MOV     R2,?V0 + 12
+   \   00010C   7918         MOV     R1,#0x18
+   \   00010E   12....       LCALL   ??SCCB_WR_Reg?relay
+   \   000111   E9           MOV     A,R1
+    254          }
+   \   000112   7F0E         MOV     R7,#0xe
+   \   000114   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Light_Mode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Light_Mode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Color_Saturation?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Color_Saturation
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Brightness?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Brightness
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Contrast?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Contrast
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Special_Effects?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Special_Effects
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OV7670_Window_Set?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OV7670_Window_Set
+    255          
+    256          
+    257          
+    258          
+    259          
+    260          
+    261          
+    262          
+    263          
+    264          
+    265          
+    266          
+    267          
+    268          
+    269          
+    270          
+    271          
+    272          
+    273          
+    274          
+    275          
+    276          
+    277          
+    278          
+    279          
+    280          
+
+   Maximum stack usage in bytes:
+
+     Function                ISTACK PSTACK XSTACK
+     --------                ------ ------ ------
+     OV7670_Brightness           0      0      9
+       -> SCCB_WR_Reg            0      0     18
+     OV7670_Color_Saturation     0      0     10
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+     OV7670_Contrast             0      0      9
+       -> SCCB_WR_Reg            0      0     18
+     OV7670_Init                 0      0     12
+       -> SCCB_Init              0      0     24
+       -> SCCB_WR_Reg            0      0     24
+       -> delay_ms               0      0     24
+       -> SCCB_RD_Reg            0      0     24
+       -> SCCB_RD_Reg            0      0     24
+       -> SCCB_WR_Reg            0      0     24
+       -> delay_ms               0      0     24
+     OV7670_Light_Mode           0      0     10
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+     OV7670_Special_Effects      0      0     10
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+       -> SCCB_WR_Reg            0      0     20
+     OV7670_Window_Set           0      0     26
+       -> SCCB_RD_Reg            0      0     44
+       -> SCCB_WR_Reg            0      0     44
+       -> SCCB_WR_Reg            0      0     44
+       -> SCCB_WR_Reg            0      0     44
+       -> SCCB_RD_Reg            0      0     44
+       -> SCCB_WR_Reg            0      0     44
+       -> SCCB_WR_Reg            0      0     44
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     P2IFG                              1
+     PICTL                              1
+     P0INP                              1
+     IEN2                               1
+     P2IEN                              1
+     P0SEL                              1
+     P1SEL                              1
+     P1INP                              1
+     P2INP                              1
+     P0DIR                              1
+     P1DIR                              1
+     ov7670_init_reg_tbl              336
+     OV7670_Init                      234
+     OV7670_Light_Mode                 93
+     OV7670_Color_Saturation          125
+     OV7670_Brightness                 50
+     OV7670_Contrast                   50
+     OV7670_Special_Effects           117
+     OV7670_Window_Set                279
+     ??OV7670_Init?relay                6
+     ??OV7670_Light_Mode?relay          6
+     ??OV7670_Color_Saturation?relay    6
+     ??OV7670_Brightness?relay          6
+     ??OV7670_Contrast?relay            6
+     ??OV7670_Special_Effects?relay     6
+     ??OV7670_Window_Set?relay          6
+
+ 
+ 948 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+  11 bytes in segment SFR_AN
+ 336 bytes in segment XDATA_ROM_C
+ 
+ 990 bytes of CODE  memory
+ 336 bytes of CONST memory
+   0 bytes of DATA  memory (+ 11 bytes shared)
+
+Errors: none
+Warnings: none

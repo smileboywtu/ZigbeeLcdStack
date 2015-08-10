@@ -1,0 +1,825 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         31/May/2015  21:39:32 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\Source\Route #
+#                          r.c                                                #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wRouter.cfg"            #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\Source\Router.c" -D   #
+#                          NWK_MAX_DEVICE_LIST=3 -lC "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\RouterEB\Lis #
+#                          t\" -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a #
+#                          \Projects\zstack\Samples\WirelessMonitorSystem\CC2 #
+#                          530DB\RouterEB\List\" --diag_suppress Pe001,Pa010  #
+#                          -o "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \RouterEB\Obj\" -e --no_code_motion --debug        #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -Ohz --require_prototypes #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Rou #
+#                          terEB\List\Router.lst                              #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Rou #
+#                          terEB\Obj\Router.r51                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\Router.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "AF.h"
+      6          #include "ZDApp.h"
+      7          #include "ZDObject.h"
+      8          #include "ZDProfile.h"
+      9          
+     10          #include "WirelessMonitorSystem.h"
+     11          #include "DebugTrace.h"
+     12          
+     13          #if !defined( WIN32 )
+     14            #include "OnBoard.h"
+     15          #endif
+     16          
+     17          /*********************************************************************
+     18           * MACROS
+     19           */
+     20          
+     21          // Max in / out Cluster number
+     22          #define Router_MAX_IN_CLUSTERS			1
+     23          #define Router_MAX_OUT_CLUSTERS			10
+     24          
+     25          /*********************************************************************
+     26           * GLOBAL VARIABLES
+     27           */
+     28          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     29          const cId_t Router_ClusterInList[Router_MAX_IN_CLUSTERS] =
+   \                     Router_ClusterInList:
+   \   000000   0B00         DW 11
+     30          {
+     31          	ZIGBEE_COMMON_CLUSTER,
+     32          };
+     33          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     34          const cId_t Router_ClusterOutList[Router_MAX_OUT_CLUSTERS] =
+   \                     Router_ClusterOutList:
+   \   000000   0A00         DW 10
+   \   000002   0C00         DW 12
+   \   000004   0200         DW 2
+   \   000006   0300         DW 3
+   \   000008   0400         DW 4
+   \   00000A   0500         DW 5
+   \   00000C   0600         DW 6
+   \   00000E   0D00         DW 13
+   \   000010   0E00         DW 14
+   \   000012   0F00         DW 15
+     35          {
+     36          	TOPO_REQ,
+     37          	IMAGE_REQ,
+     38          	LCD_SUBJECT_CMD,
+     39          	LCD_CLASS_CMD,
+     40          	LCD_TEACHER_CMD,
+     41          	LCD_PEOPLE_CMD,
+     42          	LCD_TIME_CMD,
+     43          	GRAPHICS_CMD,
+     44          	DATA_ALLOW,
+     45          	DATA_REFUSE
+     46          };
+     47          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     48          const SimpleDescriptionFormat_t Router_SimpleDesc =
+   \                     Router_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+   \   000007   ....         DW Router_ClusterInList
+   \   000009   0A           DB 10
+   \   00000A   ....         DW Router_ClusterOutList
+     49          {
+     50            Monitor_ENDPOINT,              //  int Endpoint;
+     51            Monitor_PROFID,                //  uint16 AppProfId[2];
+     52            Monitor_DEVICEID,              //  uint16 AppDeviceId[2];
+     53            Monitor_DEVICE_VERSION,        //  int   AppDevVer:4;
+     54            Monitor_FLAGS,                 //  int   AppFlags:4;
+     55            Router_MAX_IN_CLUSTERS,           //  byte  AppNumInClusters;
+     56            (cId_t *)Router_ClusterInList,    //  byte *pAppInClusterList;
+     57            Router_MAX_OUT_CLUSTERS,          //  byte  AppNumOutClusters;
+     58            (cId_t *)Router_ClusterOutList    //  byte *pAppOutClusterList;
+     59          };
+     60          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     61          endPointDesc_t Router_epDesc;
+   \                     Router_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     62          
+     63          /*********************************************************************
+     64           * EXTERNAL VARIABLES
+     65           */
+     66          
+     67          /*********************************************************************
+     68           * EXTERNAL FUNCTIONS
+     69           */
+     70          
+     71          /*********************************************************************
+     72           * LOCAL VARIABLES
+     73           */
+     74          
+     75          /**************************** OSAL **********************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     76          byte Router_TaskID;    // Task ID for internal task/event processing
+   \                     Router_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     77          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     78          byte Router_TransID;   // This is the unique message ID (counter)
+   \                     Router_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     79          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     80          devStates_t Router_NwkState;	// record the network state
+   \                     Router_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     81          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     82          afAddrType_t Router_DstAddr;	// Bind endpoint address
+   \                     Router_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+     83          
+     84          
+     85          /*********************************************************************
+     86           * LOCAL FUNCTIONS
+     87           */
+     88          static void Router_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+     89          static void Router_SendTopologyInformation( void );
+     90          static byte Router_CalcFCS( uint8 *msg_ptr, uint8 len );
+     91          
+     92          /*********************************************************************
+     93           * @fn      Router_Init
+     94           *
+     95           * @brief   Initialization function for the Sensor App Task.
+     96           *          This is called during initialization and should contain
+     97           *          any application specific initialization (ie. hardware
+     98           *          initialization/setup, table initialization, power up
+     99           *          notificaiton ... ).
+    100           *
+    101           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    102           *                    used to send messages and set timers.
+    103           *
+    104           * @return  none
+    105           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    106          void WirelessMonitorSystem_Init( uint8 task_id )
+   \                     WirelessMonitorSystem_Init:
+    107          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    108            Router_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Router_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    109            Router_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Router_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    110            Router_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Router_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    111            
+    112            // Device hardware initialization can be added here or in main() (Zmain.c).
+    113            // If the hardware is application specific - add it here.
+    114            // If the hardware is other parts of the device add it in main().
+    115            Router_DstAddr.addrMode = (afAddrMode_t)AddrBroadcast;
+   \   000015   90....       MOV     DPTR,#Router_DstAddr + 8
+   \   000018   740F         MOV     A,#0xf
+   \   00001A   F0           MOVX    @DPTR,A
+    116            Router_DstAddr.endPoint = Monitor_ENDPOINT;
+   \   00001B   A3           INC     DPTR
+   \   00001C   740A         MOV     A,#0xa
+   \   00001E   F0           MOVX    @DPTR,A
+    117            Router_DstAddr.addr.shortAddr = NWK_BROADCAST_SHORTADDR;	// 0xFFFF
+   \   00001F   90....       MOV     DPTR,#Router_DstAddr
+   \   000022   74FF         MOV     A,#-0x1
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   F0           MOVX    @DPTR,A
+    118          
+    119            // Fill out the endpoint description.
+    120            Router_epDesc.endPoint = Monitor_ENDPOINT;
+   \   000027   90....       MOV     DPTR,#Router_epDesc
+   \   00002A   740A         MOV     A,#0xa
+   \   00002C   F0           MOVX    @DPTR,A
+    121            Router_epDesc.task_id = &Router_TaskID;
+   \   00002D   A3           INC     DPTR
+   \   00002E   74..         MOV     A,#Router_TaskID & 0xff
+   \   000030   F0           MOVX    @DPTR,A
+   \   000031   A3           INC     DPTR
+   \   000032   74..         MOV     A,#(Router_TaskID >> 8) & 0xff
+   \   000034   F0           MOVX    @DPTR,A
+    122            Router_epDesc.simpleDesc
+    123                      = (SimpleDescriptionFormat_t *)&Router_SimpleDesc;
+   \   000035   A3           INC     DPTR
+   \   000036   74..         MOV     A,#Router_SimpleDesc & 0xff
+   \   000038   F0           MOVX    @DPTR,A
+   \   000039   A3           INC     DPTR
+   \   00003A   74..         MOV     A,#(Router_SimpleDesc >> 8) & 0xff
+   \   00003C   F0           MOVX    @DPTR,A
+    124            Router_epDesc.latencyReq = noLatencyReqs;
+   \   00003D   A3           INC     DPTR
+   \   00003E   E4           CLR     A
+   \   00003F   F0           MOVX    @DPTR,A
+    125          
+    126            // Register the endpoint description with the AF
+    127            afRegister( &Router_epDesc );
+   \   000040                ; Setup parameters for call to function afRegister
+   \   000040   7A..         MOV     R2,#Router_epDesc & 0xff
+   \   000042   7B..         MOV     R3,#(Router_epDesc >> 8) & 0xff
+   \   000044   12....       LCALL   ??afRegister?relay
+    128            
+    129          }
+   \   000047   7F01         MOV     R7,#0x1
+   \   000049   02....       LJMP    ?BANKED_LEAVE_XDATA
+    130          
+    131          /*********************************************************************
+    132           * @fn      Router_ProcessEvent
+    133           *
+    134           * @brief   Sensor Application Task event processor.  This function
+    135           *          is called to process all events for the task.  Events
+    136           *          include timers, messages and any other user defined events.
+    137           *
+    138           * @param   task_id  - The OSAL assigned task ID.
+    139           * @param   events - events to process.  This is a bit map and can
+    140           *                   contain more than one event.
+    141           *
+    142           * @return  none
+    143           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    144          uint16 WirelessMonitorSystem_ProcessEvent( uint8 task_id, uint16 events )
+   \                     WirelessMonitorSystem_ProcessEvent:
+    145          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+    146            afIncomingMSGPacket_t *MSGpkt;
+    147            afDataConfirm_t *afDataConfirm;
+    148          
+    149            // Data Confirmation message fields
+    150            byte sentEP;
+    151            ZStatus_t sentStatus;
+    152            byte sentTransID;       // This should match the value sent
+    153            (void)task_id;  		  // Intentionally unreferenced parameter
+    154          
+    155            if ( events & SYS_EVENT_MSG )
+   \   000009   EB           MOV     A,R3
+   \   00000A   5480         ANL     A,#0x80
+   \   00000C   605B         JZ      ??WirelessMonitorSystem_ProcessEvent_0
+    156            {
+    157              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Router_TaskID );
+   \   00000E                ; Setup parameters for call to function osal_msg_receive
+   \   00000E   801E         SJMP    ??WirelessMonitorSystem_ProcessEvent_1
+    158              while ( MSGpkt )
+    159              {
+    160                switch ( MSGpkt->hdr.event )
+    161                {
+    162                  case AF_DATA_CONFIRM_CMD:
+    163                    // This message is received as a confirmation of a data packet sent.
+    164                    // The status is of ZStatus_t type [defined in ZComDef.h]
+    165                    // The message fields are defined in AF.h
+    166                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    167                    sentEP = afDataConfirm->endpoint;
+    168                    sentStatus = afDataConfirm->hdr.status;
+    169                    sentTransID = afDataConfirm->transID;
+    170                    (void)sentEP;
+    171                    (void)sentTransID;
+    172          
+    173          		  if( sentStatus == ZSuccess )
+    174          		  {
+    175          			// success do something here
+    176          		  } 
+    177                    break;
+    178          
+    179                  case AF_INCOMING_MSG_CMD:
+    180                    Router_MessageMSGCB( MSGpkt );
+    181                    break;
+    182          
+    183                  case ZDO_STATE_CHANGE:
+    184                    Router_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??WirelessMonitorSystem_ProcessEvent_2:
+   \   000010   A3           INC     DPTR
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   90....       MOV     DPTR,#Router_NwkState
+   \   000015   F0           MOVX    @DPTR,A
+    185                    if ( (Router_NwkState == DEV_ZB_COORD)
+    186                        || (Router_NwkState == DEV_ROUTER)
+    187                        || (Router_NwkState == DEV_END_DEVICE) )
+   \   000016   6409         XRL     A,#0x9
+   \   000018   600A         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   6407         XRL     A,#0x7
+   \   00001D   6005         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   6406         XRL     A,#0x6
+   \   000022   7003         JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+    188                    { 
+    189          			// send the topology information
+    190          			Router_SendTopologyInformation();
+   \                     ??WirelessMonitorSystem_ProcessEvent_3:
+   \   000024                ; Setup parameters for call to function Router_SendTopologyInformation
+   \   000024   12....       LCALL   ??Router_SendTopologyInformation?relay
+    191                    }
+    192                    break;
+    193                }
+    194          
+    195                // Release the memory
+    196                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_4:
+   \   000027                ; Setup parameters for call to function osal_msg_deallocate
+   \   000027   EE           MOV     A,R6
+   \   000028   FA           MOV     R2,A
+   \   000029   EF           MOV     A,R7
+   \   00002A   FB           MOV     R3,A
+   \   00002B   12....       LCALL   ??osal_msg_deallocate?relay
+    197          
+    198                // Next
+    199                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Router_TaskID );
+   \   00002E                ; Setup parameters for call to function osal_msg_receive
+   \                     ??WirelessMonitorSystem_ProcessEvent_1:
+   \   00002E   90....       MOV     DPTR,#Router_TaskID
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   F9           MOV     R1,A
+   \   000033   12....       LCALL   ??osal_msg_receive?relay
+   \   000036   8A..         MOV     ?V0 + 2,R2
+   \   000038   8B..         MOV     ?V0 + 3,R3
+   \   00003A   AE..         MOV     R6,?V0 + 2
+   \   00003C   AF..         MOV     R7,?V0 + 3
+   \   00003E   EE           MOV     A,R6
+   \   00003F   4F           ORL     A,R7
+   \   000040   601E         JZ      ??WirelessMonitorSystem_ProcessEvent_5
+   \   000042   8E82         MOV     DPL,R6
+   \   000044   8F83         MOV     DPH,R7
+   \   000046   E0           MOVX    A,@DPTR
+   \   000047   24E6         ADD     A,#-0x1a
+   \   000049   6006         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   00004B   2449         ADD     A,#0x49
+   \   00004D   60C1         JZ      ??WirelessMonitorSystem_ProcessEvent_2
+   \   00004F   80D6         SJMP    ??WirelessMonitorSystem_ProcessEvent_4
+   \                     ??WirelessMonitorSystem_ProcessEvent_6:
+   \   000051   A3           INC     DPTR
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   A3           INC     DPTR
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   640A         XRL     A,#0xa
+   \   000058   7002         JNZ     ??WirelessMonitorSystem_ProcessEvent_7
+   \   00005A   A3           INC     DPTR
+   \   00005B   E0           MOVX    A,@DPTR
+   \                     ??WirelessMonitorSystem_ProcessEvent_7:
+   \   00005C   70C9         JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+   \   00005E   80C4         SJMP    ??WirelessMonitorSystem_ProcessEvent_3
+    200              }
+    201          	
+    202              // return unprocessed events
+    203              return (events ^ SYS_EVENT_MSG);
+   \                     ??WirelessMonitorSystem_ProcessEvent_5:
+   \   000060   AA..         MOV     R2,?V0 + 0
+   \   000062   E5..         MOV     A,?V0 + 1
+   \   000064   6480         XRL     A,#0x80
+   \   000066   FB           MOV     R3,A
+   \   000067   8004         SJMP    ??WirelessMonitorSystem_ProcessEvent_8
+    204            }
+    205            
+    206            // Discard unknown events
+    207            return 0;
+   \                     ??WirelessMonitorSystem_ProcessEvent_0:
+   \   000069   7A00         MOV     R2,#0x0
+   \   00006B   7B00         MOV     R3,#0x0
+   \                     ??WirelessMonitorSystem_ProcessEvent_8:
+   \   00006D   7F04         MOV     R7,#0x4
+   \   00006F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    208          }
+    209          
+    210          /*********************************************************************
+    211           * LOCAL FUNCTIONS
+    212           */
+    213          
+    214          /*********************************************************************
+    215           * @fn      Router_MessageMSGCB
+    216           *
+    217           * @brief   Data message processor callback.  This function processes
+    218           *          any incoming data - probably from other devices.  So, based
+    219           *          on cluster ID, perform the intended action.
+    220           *
+    221           * @param   none
+    222           *
+    223           * @return  none
+    224           */
+    225          void Router_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    226          {
+    227            // According to the clusterID
+    228            switch( pkt->clusterId )
+    229            {
+    230          	// send the topology information
+    231            	case TOPO_REQ:
+    232                Router_SendTopologyInformation();
+    233              break;
+    234            }
+    235          }
+    236          
+    237          /*********************************************************************
+    238           * @fn      Router_SendTopoInfo
+    239           *
+    240           * @brief   Send the topology information to the coordinator.
+    241           *
+    242           * @param   none
+    243           *
+    244           * @return  none
+    245           *
+    246           *
+    247           *
+    248           * |	SOF		|	LEN		| 	CMD		| 	Addr	|	DATA	| 	FCS		|
+    249           *		1			1			2			2			--			1
+    250           *
+    251           */
+    252          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    253          void Router_SendTopologyInformation()
+   \                     Router_SendTopologyInformation:
+    254          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 11
+   \   000005   74F5         MOV     A,#-0xb
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    255            // Define the Frame
+    256            uint16 srcAddr = NLME_GetShortAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000A   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+    257            uint16 parAddr = NLME_GetCoordShortAddr();
+   \   000011                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000011   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+    258            byte frame[11] = {0};
+   \   000014   85..82       MOV     DPL,?XSP + 0
+   \   000017   85..83       MOV     DPH,?XSP + 1
+   \   00001A   AC82         MOV     R4,DPL
+   \   00001C   AD83         MOV     R5,DPH
+   \   00001E   7583..       MOV     DPH,#(`?<Constant {0}>` >> 8) & 0xff
+   \   000021   7582..       MOV     DPL,#`?<Constant {0}>` & 0xff
+   \   000024   740B         MOV     A,#0xb
+   \   000026   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    259            
+    260            // Build the Frame
+    261            // Fill SOF	0xFE
+    262            frame[0] = 0xFE;
+   \   000029   85..82       MOV     DPL,?XSP + 0
+   \   00002C   85..83       MOV     DPH,?XSP + 1
+   \   00002F   74FE         MOV     A,#-0x2
+   \   000031   F0           MOVX    @DPTR,A
+    263            // Fill len
+    264            frame[1] = 4;
+   \   000032   7401         MOV     A,#0x1
+   \   000034   12....       LCALL   ?XSTACK_DISP0_8
+   \   000037   7404         MOV     A,#0x4
+   \   000039   F0           MOVX    @DPTR,A
+    265            // Fill CMD
+    266            frame[2] = LO_UINT16(TOPOLOGY_CMD);
+   \   00003A   7402         MOV     A,#0x2
+   \   00003C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003F   7401         MOV     A,#0x1
+   \   000041   F0           MOVX    @DPTR,A
+    267            frame[3] = HI_UINT16(TOPOLOGY_CMD);
+   \   000042   7403         MOV     A,#0x3
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   E4           CLR     A
+   \   000048   F0           MOVX    @DPTR,A
+    268            // Fill Addr
+    269            frame[4] = LO_UINT16(srcAddr);
+   \   000049   7404         MOV     A,#0x4
+   \   00004B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004E   E5..         MOV     A,?V0 + 0
+   \   000050   F0           MOVX    @DPTR,A
+    270            frame[5] = HI_UINT16(srcAddr);
+   \   000051   7405         MOV     A,#0x5
+   \   000053   12....       LCALL   ?XSTACK_DISP0_8
+   \   000056   E5..         MOV     A,?V0 + 1
+   \   000058   F0           MOVX    @DPTR,A
+    271            // Fill type
+    272            frame[6] = LO_UINT16(ROUTER);
+   \   000059   7406         MOV     A,#0x6
+   \   00005B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005E   7402         MOV     A,#0x2
+   \   000060   F0           MOVX    @DPTR,A
+    273            frame[7] = HI_UINT16(ROUTER);
+   \   000061   7407         MOV     A,#0x7
+   \   000063   12....       LCALL   ?XSTACK_DISP0_8
+   \   000066   E4           CLR     A
+   \   000067   F0           MOVX    @DPTR,A
+    274            // Fill parent
+    275            frame[8] = LO_UINT16(parAddr);
+   \   000068   7408         MOV     A,#0x8
+   \   00006A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006D   EA           MOV     A,R2
+   \   00006E   F0           MOVX    @DPTR,A
+    276            frame[9] = HI_UINT16(parAddr);
+   \   00006F   7409         MOV     A,#0x9
+   \   000071   12....       LCALL   ?XSTACK_DISP0_8
+   \   000074   EB           MOV     A,R3
+   \   000075   F0           MOVX    @DPTR,A
+    277            // Cal and fill FCS
+    278            frame[10] = Router_CalcFCS((byte*)&frame[1], 9);
+   \   000076   75..00       MOV     ?V0 + 2,#0x0
+   \   000079   7800         MOV     R0,#0x0
+   \                     ??Router_SendTopologyInformation_0:
+   \   00007B   88..         MOV     ?V0 + 0,R0
+   \   00007D   85..82       MOV     DPL,?XSP + 0
+   \   000080   85..83       MOV     DPH,?XSP + 1
+   \   000083   E582         MOV     A,DPL
+   \   000085   25..         ADD     A,?V0 + 0
+   \   000087   F582         MOV     DPL,A
+   \   000089   E583         MOV     A,DPH
+   \   00008B   3400         ADDC    A,#0x0
+   \   00008D   F583         MOV     DPH,A
+   \   00008F   A3           INC     DPTR
+   \   000090   E0           MOVX    A,@DPTR
+   \   000091   62..         XRL     ?V0 + 2,A
+   \   000093   08           INC     R0
+   \   000094   E8           MOV     A,R0
+   \   000095   C3           CLR     C
+   \   000096   9409         SUBB    A,#0x9
+   \   000098   40E1         JC      ??Router_SendTopologyInformation_0
+   \   00009A   740A         MOV     A,#0xa
+   \   00009C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009F   E5..         MOV     A,?V0 + 2
+   \   0000A1   F0           MOVX    @DPTR,A
+    279            
+    280            // Send the data to Coordinator
+    281            AF_DataRequest( &Router_DstAddr, &
+    282          				  Router_epDesc,
+    283                            ZIGBEE_COMMON_CLUSTER,
+    284                            11,
+    285                            (byte *) frame,
+    286                            &Router_TransID,
+    287                            AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000A2                ; Setup parameters for call to function AF_DataRequest
+   \   0000A2   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000A5   78..         MOV     R0,#?V0 + 0
+   \   0000A7   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000AA   75....       MOV     ?V0 + 0,#Router_TransID & 0xff
+   \   0000AD   75....       MOV     ?V0 + 1,#(Router_TransID >> 8) & 0xff
+   \   0000B0   78..         MOV     R0,#?V0 + 0
+   \   0000B2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B5   7403         MOV     A,#0x3
+   \   0000B7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BA   8582..       MOV     ?V0 + 0,DPL
+   \   0000BD   8583..       MOV     ?V0 + 1,DPH
+   \   0000C0   78..         MOV     R0,#?V0 + 0
+   \   0000C2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C5   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000C8   75..00       MOV     ?V0 + 1,#0x0
+   \   0000CB   78..         MOV     R0,#?V0 + 0
+   \   0000CD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D0   78..         MOV     R0,#?V0 + 0
+   \   0000D2   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D5   7920         MOV     R1,#0x20
+   \   0000D7   7C..         MOV     R4,#Router_epDesc & 0xff
+   \   0000D9   7D..         MOV     R5,#(Router_epDesc >> 8) & 0xff
+   \   0000DB   7A..         MOV     R2,#Router_DstAddr & 0xff
+   \   0000DD   7B..         MOV     R3,#(Router_DstAddr >> 8) & 0xff
+   \   0000DF   12....       LCALL   ??AF_DataRequest?relay
+   \   0000E2   7409         MOV     A,#0x9
+   \   0000E4   12....       LCALL   ?DEALLOC_XSTACK8
+    288          }
+   \   0000E7   740B         MOV     A,#0xb
+   \   0000E9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000EC   7F03         MOV     R7,#0x3
+   \   0000EE   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Router_SendTopologyInformation?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Router_SendTopologyInformation
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000009   0000         DB 0, 0
+    289          
+    290          /*********************************************************************
+    291           * @fn      Vibrate_CalcFCS
+    292           *
+    293           * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+    294           *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+    295           *
+    296           * @param   byte *msg_ptr - message pointer
+    297           * @param   byte len - length (in bytes) of message
+    298           *
+    299           * @return  result byte
+    300           ********************************************************************/
+    301          byte Router_CalcFCS( uint8 *msg_ptr, uint8 len )
+    302          {
+    303            byte x;
+    304            byte xorResult = 0x00;
+    305          
+    306            for ( x=0; x<len; x++ )
+    307              xorResult ^=  msg_ptr[x];
+    308          
+    309            return ( xorResult );
+    310          }
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Router_SendTopologyInformation     2      0     43
+       -> NLME_GetShortAddr             0      0     44
+       -> NLME_GetCoordShortAddr        0      0     44
+       -> AF_DataRequest                0      0     62
+     WirelessMonitorSystem_Init         0      0      9
+       -> afRegister                    0      0     18
+     WirelessMonitorSystem_ProcessEvent
+                                        0      0     12
+       -> osal_msg_receive              0      0     24
+       -> Router_SendTopologyInformation
+                                        0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label                             Bytes
+     --------------                             -----
+     Router_ClusterInList                          2
+     Router_ClusterOutList                        20
+     Router_SimpleDesc                            12
+     Router_epDesc                                 6
+     Router_TaskID                                 1
+     Router_TransID                                1
+     Router_NwkState                               1
+     Router_DstAddr                               12
+     WirelessMonitorSystem_Init                   76
+     WirelessMonitorSystem_ProcessEvent
+                                                 114
+     Router_SendTopologyInformation              241
+     ??WirelessMonitorSystem_Init?relay            6
+     ??WirelessMonitorSystem_ProcessEvent?relay    6
+     ??Router_SendTopologyInformation?relay        6
+     ?<Constant {0}>                              11
+
+ 
+ 431 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+  45 bytes in segment XDATA_ROM_C
+  21 bytes in segment XDATA_Z
+ 
+ 449 bytes of CODE  memory
+  45 bytes of CONST memory
+  21 bytes of XDATA memory
+
+Errors: none
+Warnings: none

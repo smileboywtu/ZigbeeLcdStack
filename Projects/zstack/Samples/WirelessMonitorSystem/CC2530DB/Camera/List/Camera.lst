@@ -1,0 +1,3086 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Jul/2015  17:23:40 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\Source\Camer #
+#                          a.c                                                #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\Source\Camera.c" -D   #
+#                          HAL_UART -lC "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\Camera\List\" -lA "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Camera\List\ #
+#                          " --diag_suppress Pe001,Pa010 -o "C:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Camera\Obj\" #
+#                           -e --no_cse --no_unroll --no_inline               #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\List\Camera.lst                                #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\Obj\Camera.r51                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\Camera.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "AF.h"
+      6          #include "ZDApp.h"
+      7          #include "ZDObject.h"
+      8          #include "ZDProfile.h"
+      9          
+     10          #include "WirelessMonitorSystem.h"
+     11          #include "DebugTrace.h"
+     12          
+     13          #if !defined( WIN32 )
+     14            #include "OnBoard.h"
+     15          #endif
+     16          
+     17          /* HAL */
+     18          #include "hal_uart.h"
+     19          
+     20          /*********************************************************************
+     21           * MACROS
+     22           */
+     23          // Cluster number for Camera
+     24          #define CAMERA_MAX_IN_CLUSTERS 	2
+     25          #define CAMERA_MAX_OUT_CLUSTERS	3
+     26          
+     27          // Camera Read Step
+     28          // you don't need to set the camera
+     29          #define	CAMERA_RESET		1
+     30          
+     31          #define CAMERA_CLEAR		2
+     32          #define CAMERA_SHUT			3
+     33          #define CAMERA_RECEIVE_LEN	4
+     34          #define CAMERA_SEND_DATA	5
+     35          
+     36          // EVENT LIST
+     37          #define CAMERA_IMAGE_READ_EVT			0x0002
+     38          #define CAMERA_INIT_EVT					0x0004
+     39          
+     40          
+     41          // Image Send Delay
+     42          // the coordinator needs 11 ms to send the data to the monitor
+     43          #define CAMERA_SEND_DELAY    1
+     44          
+     45          /*********************************************************************
+     46           * CONSTANTS
+     47           */
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     48          const byte reset[] = {0x56, 0x00, 0x26, 0x00};
+   \                     reset:
+   \   000000   56           DB 86
+   \   000001   00           DB 0
+   \   000002   26           DB 38
+   \   000003   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     49          const byte reset_ack[] = {0x76, 0x00, 0x26, 0x00};
+   \                     reset_ack:
+   \   000000   76           DB 118
+   \   000001   00           DB 0
+   \   000002   26           DB 38
+   \   000003   00           DB 0
+     50          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     51          const byte clear[] = {0x56, 0x00, 0x36, 0x01, 0x02};
+   \                     clear:
+   \   000000   56           DB 86
+   \   000001   00           DB 0
+   \   000002   36           DB 54
+   \   000003   01           DB 1
+   \   000004   02           DB 2
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     52          const byte clear_ack[] = {0x76, 0x00, 0x36, 0x00, 0x00};
+   \                     clear_ack:
+   \   000000   76           DB 118
+   \   000001   00           DB 0
+   \   000002   36           DB 54
+   \   000003   00           DB 0
+   \   000004   00           DB 0
+     53          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     54          const byte shut[] = {0x56, 0x00, 0x36, 0x01, 0x00};
+   \                     shut:
+   \   000000   56           DB 86
+   \   000001   00           DB 0
+   \   000002   36           DB 54
+   \   000003   01           DB 1
+   \   000004   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     55          const byte shut_ack[] = {0x76, 0x00, 0x36, 0x00, 0x00};
+   \                     shut_ack:
+   \   000000   76           DB 118
+   \   000001   00           DB 0
+   \   000002   36           DB 54
+   \   000003   00           DB 0
+   \   000004   00           DB 0
+     56          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     57          const byte length[] = {0x56, 0x00, 0x34, 0x01, 0x00};
+   \                     length:
+   \   000000   56           DB 86
+   \   000001   00           DB 0
+   \   000002   34           DB 52
+   \   000003   01           DB 1
+   \   000004   00           DB 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     58          const byte length_ack[] = {0x76, 0x00, 0x34, 0x00, 0x04, 0x00, 0x00};
+   \                     length_ack:
+   \   000000   76           DB 118
+   \   000001   00           DB 0
+   \   000002   34           DB 52
+   \   000003   00           DB 0
+   \   000004   04           DB 4
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+     59          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     60          const byte data_pre[] = {0x56, 0x00, 0x32, 0x0C, 0x00, 0x0A};
+   \                     data_pre:
+   \   000000   56           DB 86
+   \   000001   00           DB 0
+   \   000002   32           DB 50
+   \   000003   0C           DB 12
+   \   000004   00           DB 0
+   \   000005   0A           DB 10
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     61          const byte data_end[] = {0x00, 0x00}; 
+   \                     data_end:
+   \   000000   00           DB 0
+   \   000001   00           DB 0
+     62          
+     63          /*********************************************************************
+     64           * TYPEDEFS
+     65           */
+     66          
+     67          /*********************************************************************
+     68           * GLOBAL VARIABLES
+     69           */
+     70          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     71          const cId_t Camera_ClusterInList[CAMERA_MAX_IN_CLUSTERS] =
+   \                     Camera_ClusterInList:
+   \   000000   0A00         DW 10
+   \   000002   0C00         DW 12
+     72          {
+     73          	TOPO_REQ,
+     74          	IMAGE_REQ
+     75          };
+     76          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     77          const cId_t Camera_ClusterOutList[CAMERA_MAX_OUT_CLUSTERS] =
+   \                     Camera_ClusterOutList:
+   \   000000   0B00         DW 11
+   \   000002   0700         DW 7
+   \   000004   0800         DW 8
+     78          {
+     79            ZIGBEE_COMMON_CLUSTER,
+     80            CAMERA_START_CMD,
+     81            CAMERA_DATA_CMD
+     82          };
+     83          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     84          const SimpleDescriptionFormat_t Camera_SimpleDesc =
+   \                     Camera_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   02           DB 2
+   \   000007   ....         DW Camera_ClusterInList
+   \   000009   03           DB 3
+   \   00000A   ....         DW Camera_ClusterOutList
+     85          {
+     86            Monitor_ENDPOINT,              //  int Endpoint;
+     87            Monitor_PROFID,                //  uint16 AppProfId[2];
+     88            Monitor_DEVICEID,              //  uint16 AppDeviceId[2];
+     89            Monitor_DEVICE_VERSION,        //  int   AppDevVer:4;
+     90            Monitor_FLAGS,                 //  int   AppFlags:4;
+     91            CAMERA_MAX_IN_CLUSTERS,           //  byte  AppNumInClusters;
+     92            (cId_t *)Camera_ClusterInList,    //  byte *pAppInClusterList;
+     93            CAMERA_MAX_OUT_CLUSTERS,          //  byte  AppNumOutClusters;
+     94            (cId_t *)Camera_ClusterOutList    //  byte *pAppOutClusterList;
+     95          };
+     96          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     97          endPointDesc_t Camera_epDesc;
+   \                     Camera_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     98          
+     99          /*********************************************************************
+    100           * EXTERNAL VARIABLES
+    101           */
+    102          
+    103          /*********************************************************************
+    104           * EXTERNAL FUNCTIONS
+    105           */
+    106          
+    107          /*********************************************************************
+    108           * LOCAL VARIABLES
+    109           */
+    110          /**************************** OSAL *********************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    111          byte Camera_TaskID;    // Task ID for internal task/event processing
+   \                     Camera_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    112          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    113          byte Camera_TransID;  // This is the unique message ID (counter)
+   \                     Camera_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    114          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    115          devStates_t Camera_NwkState;
+   \                     Camera_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    116          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    117          afAddrType_t Camera_DstAddr;	// Bind endpoint address
+   \                     Camera_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    118          
+    119          /************************** Camera *********************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    120          byte cameraState;	
+   \                     cameraState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    121          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    122          byte maxTransmitDataLen;
+   \                     maxTransmitDataLen:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    123          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    124          uint16	imageLength;
+   \                     imageLength:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    125          uint16 	currentRead;
+   \                     currentRead:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    126          uint16  currentAddr;
+   \                     currentAddr:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    127          
+    128          // Get the Max output
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    129          afDataReqMTU_t mtu;
+   \                     mtu:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    130          
+    131          /*************************** AF *******************************/
+    132          // address for the current node
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    133          uint16 srcAddr;
+   \                     srcAddr:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    134          uint16 parAddr;
+   \                     parAddr:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    135          /*********************************************************************
+    136           * LOCAL FUNCTIONS
+    137           */
+    138          static void Camera_UartInit( void );
+    139          static void Camera_UartCallBack( uint8 port, uint8 event );
+    140          static void Camera_SendImageData( byte* buffer, byte len );
+    141          static void Camera_SendTopoInformation( void );
+    142          static void Camera_SendImageStartFrame( void );
+    143          static byte Camera_CalcFCS( uint8 *msg_ptr, uint8 len );
+    144          static void copyExtAddr(byte* src, byte* dst);
+    145          static void Camera_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    146          
+    147          static void Camera_SendResetCMD( void );
+    148          static void Camera_SendClearCMD( void );
+    149          static void Camera_SendShutCMD( void );
+    150          static void Camera_SendLengthCMD( void );
+    151          static void Camera_SendDataCMD(uint16 startAddr, uint16 len);
+    152          
+    153          static void Camera_SendCommand( void );
+    154          static void Camera_UartInterface( void );
+    155          static uint16 Camera_ToolTimesOfEight(uint16 addr);
+    156          
+    157          /*********************************************************************
+    158           * @fn      Camera_Init
+    159           *
+    160           * @brief   Initialization function for the Sensor App Task.
+    161           *          This is called during initialization and should contain
+    162           *          any application specific initialization (ie. hardware
+    163           *          initialization/setup, table initialization, power up
+    164           *          notificaiton ... ).
+    165           *
+    166           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    167           *                    used to send messages and set timers.
+    168           *
+    169           * @return  none
+    170           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    171          void WirelessMonitorSystem_Init( uint8 task_id )
+   \                     WirelessMonitorSystem_Init:
+    172          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    173            // Init the Stack
+    174            Camera_TaskID = task_id;
+   \   000007   90....       MOV     DPTR,#Camera_TaskID
+   \   00000A   F0           MOVX    @DPTR,A
+    175            Camera_NwkState = DEV_INIT;
+   \   00000B   90....       MOV     DPTR,#Camera_NwkState
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   F0           MOVX    @DPTR,A
+    176            Camera_TransID = 0;
+   \   000011   90....       MOV     DPTR,#Camera_TransID
+   \   000014   7400         MOV     A,#0x0
+   \   000016   F0           MOVX    @DPTR,A
+    177            
+    178            // init the state and len
+    179            cameraState = CAMERA_RESET;	// reset mode
+   \   000017   90....       MOV     DPTR,#cameraState
+   \   00001A   7401         MOV     A,#0x1
+   \   00001C   F0           MOVX    @DPTR,A
+    180            imageLength = 0;
+   \   00001D   90....       MOV     DPTR,#imageLength
+   \   000020   7400         MOV     A,#0x0
+   \   000022   F0           MOVX    @DPTR,A
+   \   000023   A3           INC     DPTR
+   \   000024   7400         MOV     A,#0x0
+   \   000026   F0           MOVX    @DPTR,A
+    181            currentRead = 0;
+   \   000027   90....       MOV     DPTR,#currentRead
+   \   00002A   7400         MOV     A,#0x0
+   \   00002C   F0           MOVX    @DPTR,A
+   \   00002D   A3           INC     DPTR
+   \   00002E   7400         MOV     A,#0x0
+   \   000030   F0           MOVX    @DPTR,A
+    182            currentAddr = 0;
+   \   000031   90....       MOV     DPTR,#currentAddr
+   \   000034   7400         MOV     A,#0x0
+   \   000036   F0           MOVX    @DPTR,A
+   \   000037   A3           INC     DPTR
+   \   000038   7400         MOV     A,#0x0
+   \   00003A   F0           MOVX    @DPTR,A
+    183          
+    184            // init the camera uart
+    185            Camera_UartInit();
+   \   00003B                ; Setup parameters for call to function Camera_UartInit
+   \   00003B   12....       LCALL   ??Camera_UartInit?relay
+    186            
+    187            // init the destination address
+    188            Camera_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00003E   90....       MOV     DPTR,#Camera_DstAddr + 8
+   \   000041   7402         MOV     A,#0x2
+   \   000043   F0           MOVX    @DPTR,A
+    189            Camera_DstAddr.endPoint = Monitor_ENDPOINT;
+   \   000044   90....       MOV     DPTR,#Camera_DstAddr + 9
+   \   000047   740A         MOV     A,#0xa
+   \   000049   F0           MOVX    @DPTR,A
+    190            Camera_DstAddr.addr.shortAddr = 0x0000;		// coordinator
+   \   00004A   90....       MOV     DPTR,#Camera_DstAddr
+   \   00004D   7400         MOV     A,#0x0
+   \   00004F   F0           MOVX    @DPTR,A
+   \   000050   A3           INC     DPTR
+   \   000051   7400         MOV     A,#0x0
+   \   000053   F0           MOVX    @DPTR,A
+    191          	
+    192            // Fill out the endpoint description.
+    193            Camera_epDesc.endPoint = Monitor_ENDPOINT;
+   \   000054   90....       MOV     DPTR,#Camera_epDesc
+   \   000057   740A         MOV     A,#0xa
+   \   000059   F0           MOVX    @DPTR,A
+    194            Camera_epDesc.task_id = &Camera_TaskID;
+   \   00005A   90....       MOV     DPTR,#Camera_epDesc + 1
+   \   00005D   74..         MOV     A,#Camera_TaskID & 0xff
+   \   00005F   F0           MOVX    @DPTR,A
+   \   000060   A3           INC     DPTR
+   \   000061   74..         MOV     A,#(Camera_TaskID >> 8) & 0xff
+   \   000063   F0           MOVX    @DPTR,A
+    195            Camera_epDesc.simpleDesc
+    196                      = (SimpleDescriptionFormat_t *)&Camera_SimpleDesc;
+   \   000064   90....       MOV     DPTR,#Camera_epDesc + 3
+   \   000067   74..         MOV     A,#Camera_SimpleDesc & 0xff
+   \   000069   F0           MOVX    @DPTR,A
+   \   00006A   A3           INC     DPTR
+   \   00006B   74..         MOV     A,#(Camera_SimpleDesc >> 8) & 0xff
+   \   00006D   F0           MOVX    @DPTR,A
+    197            Camera_epDesc.latencyReq = noLatencyReqs;
+   \   00006E   90....       MOV     DPTR,#Camera_epDesc + 5
+   \   000071   7400         MOV     A,#0x0
+   \   000073   F0           MOVX    @DPTR,A
+    198          
+    199            // Register the endpoint description with the AF
+    200            afRegister( &Camera_epDesc );
+   \   000074                ; Setup parameters for call to function afRegister
+   \   000074   7A..         MOV     R2,#Camera_epDesc & 0xff
+   \   000076   7B..         MOV     R3,#(Camera_epDesc >> 8) & 0xff
+   \   000078   12....       LCALL   ??afRegister?relay
+   \   00007B   E9           MOV     A,R1
+    201          
+    202            // Set the size
+    203            mtu.kvp        = FALSE;
+   \   00007C   90....       MOV     DPTR,#mtu
+   \   00007F   7400         MOV     A,#0x0
+   \   000081   F0           MOVX    @DPTR,A
+    204            mtu.aps.secure = FALSE;
+   \   000082   90....       MOV     DPTR,#mtu + 1
+   \   000085   7400         MOV     A,#0x0
+   \   000087   F0           MOVX    @DPTR,A
+    205            maxTransmitDataLen = afDataReqMTU( &mtu );
+   \   000088                ; Setup parameters for call to function afDataReqMTU
+   \   000088   7A..         MOV     R2,#mtu & 0xff
+   \   00008A   7B..         MOV     R3,#(mtu >> 8) & 0xff
+   \   00008C   12....       LCALL   ??afDataReqMTU?relay
+   \   00008F   E9           MOV     A,R1
+   \   000090   90....       MOV     DPTR,#maxTransmitDataLen
+   \   000093   F0           MOVX    @DPTR,A
+    206          }
+   \   000094   7F01         MOV     R7,#0x1
+   \   000096   02....       LJMP    ?BANKED_LEAVE_XDATA
+    207          
+    208          /*********************************************************************
+    209           * @fn      Camera_ProcessEvent
+    210           *
+    211           * @brief   Sensor Application Task event processor.  This function
+    212           *          is called to process all events for the task.  Events
+    213           *          include timers, messages and any other user defined events.
+    214           *
+    215           * @param   task_id  - The OSAL assigned task ID.
+    216           * @param   events - events to process.  This is a bit map and can
+    217           *                   contain more than one event.
+    218           *
+    219           * @return  none
+    220           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    221          uint16 WirelessMonitorSystem_ProcessEvent( uint8 task_id, uint16 events )
+   \                     WirelessMonitorSystem_ProcessEvent:
+    222          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 7,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+    223            afIncomingMSGPacket_t *MSGpkt;
+    224            afDataConfirm_t *afDataConfirm;
+    225          
+    226            // Data Confirmation message fields
+    227            byte sentEP;
+    228            ZStatus_t sentStatus;
+    229            byte sentTransID;       // This should match the value sent
+    230            (void)task_id;  		  // Intentionally unreferenced parameter
+    231          
+    232            if ( events & SYS_EVENT_MSG )
+   \   00000B   EE           MOV     A,R6
+   \   00000C   5400         ANL     A,#0x0
+   \   00000E   F8           MOV     R0,A
+   \   00000F   EF           MOV     A,R7
+   \   000010   5480         ANL     A,#0x80
+   \   000012   F9           MOV     R1,A
+   \   000013   E8           MOV     A,R0
+   \   000014   49           ORL     A,R1
+   \   000015   7003         JNZ     $+5
+   \   000017   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_0 & 0xFFFF
+    233            {
+    234              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Camera_TaskID );
+   \   00001A                ; Setup parameters for call to function osal_msg_receive
+   \   00001A   90....       MOV     DPTR,#Camera_TaskID
+   \   00001D   E0           MOVX    A,@DPTR
+   \   00001E   F9           MOV     R1,A
+   \   00001F   12....       LCALL   ??osal_msg_receive?relay
+   \   000022   8A..         MOV     ?V0 + 8,R2
+   \   000024   8B..         MOV     ?V0 + 9,R3
+   \   000026   85....       MOV     ?V0 + 0,?V0 + 8
+   \   000029   85....       MOV     ?V0 + 1,?V0 + 9
+    235              while ( MSGpkt )
+   \                     ??WirelessMonitorSystem_ProcessEvent_1:
+   \   00002C   E5..         MOV     A,?V0 + 0
+   \   00002E   45..         ORL     A,?V0 + 1
+   \   000030   7003         JNZ     $+5
+   \   000032   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_2 & 0xFFFF
+    236              {
+    237                switch ( MSGpkt->hdr.event )
+   \   000035   85..82       MOV     DPL,?V0 + 0
+   \   000038   85..83       MOV     DPH,?V0 + 1
+   \   00003B   E0           MOVX    A,@DPTR
+   \   00003C   24E6         ADD     A,#-0x1a
+   \   00003E   604D         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   000040   2449         ADD     A,#0x49
+   \   000042   6052         JZ      ??WirelessMonitorSystem_ProcessEvent_4
+   \   000044   24D4         ADD     A,#-0x2c
+   \   000046   6003         JZ      $+5
+   \   000048   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_5 & 0xFFFF
+    238                {
+    239          
+    240                  case AF_DATA_CONFIRM_CMD:
+    241                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+   \   00004B   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00004E   85....       MOV     ?V0 + 3,?V0 + 1
+    242                    sentEP = afDataConfirm->endpoint;
+   \   000051   85..82       MOV     DPL,?V0 + 2
+   \   000054   85..83       MOV     DPH,?V0 + 3
+   \   000057   A3           INC     DPTR
+   \   000058   A3           INC     DPTR
+   \   000059   E0           MOVX    A,@DPTR
+   \   00005A   F5..         MOV     ?V0 + 6,A
+    243                    sentStatus = afDataConfirm->hdr.status;
+   \   00005C   85..82       MOV     DPL,?V0 + 2
+   \   00005F   85..83       MOV     DPH,?V0 + 3
+   \   000062   A3           INC     DPTR
+   \   000063   E0           MOVX    A,@DPTR
+   \   000064   F5..         MOV     ?V0 + 5,A
+    244                    sentTransID = afDataConfirm->transID;
+   \   000066   85..82       MOV     DPL,?V0 + 2
+   \   000069   85..83       MOV     DPH,?V0 + 3
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   F5..         MOV     ?V0 + 4,A
+    245                    (void)sentEP;
+    246                    (void)sentTransID;
+    247          
+    248                    // Action taken when confirmation is received.
+    249                    if ( sentStatus == ZSuccess )
+    250                    {
+    251          		  }
+    252          			 
+    253          		  // delay just a little time as a during
+    254          		  // here just wait 20 ms for test
+    255          //		  if( cameraState == CAMERA_RESET )
+    256          //		  {
+    257          //			  // here you just need to reset the camera
+    258          //			  // and the incoming camera data request will
+    259          //			  // send the clear command the continious cmd
+    260          //			// delay enough time for the camera to initialized
+    261          //			int counter = 2500;
+    262          //			while(counter--);
+    263          //			Camera_SendResetCMD();
+    264          //		  }
+    265          		  if( cameraState ==  CAMERA_SEND_DATA )	
+   \   000072   90....       MOV     DPTR,#cameraState
+   \   000075   E0           MOVX    A,@DPTR
+   \   000076   6405         XRL     A,#0x5
+   \   000078   7067         JNZ     ??WirelessMonitorSystem_ProcessEvent_5
+    266          		  {
+    267          			// this will first happen when the 
+    268          			// start frame send out
+    269          			// we just know that the start frame send out successfully 
+    270          			// but we can't receive the data frame
+    271          			osal_start_timerEx(Camera_TaskID, 
+    272          							   CAMERA_IMAGE_READ_EVT,
+    273          							   CAMERA_SEND_DELAY);
+   \   00007A                ; Setup parameters for call to function osal_start_timerEx
+   \   00007A   7C01         MOV     R4,#0x1
+   \   00007C   7D00         MOV     R5,#0x0
+   \   00007E   7A02         MOV     R2,#0x2
+   \   000080   7B00         MOV     R3,#0x0
+   \   000082   90....       MOV     DPTR,#Camera_TaskID
+   \   000085   E0           MOVX    A,@DPTR
+   \   000086   F9           MOV     R1,A
+   \   000087   12....       LCALL   ??osal_start_timerEx?relay
+   \   00008A   E9           MOV     A,R1
+    274          		  }
+    275                    break;
+   \   00008B   8054         SJMP    ??WirelessMonitorSystem_ProcessEvent_5
+    276          
+    277                  case AF_INCOMING_MSG_CMD:
+    278                    Camera_MessageMSGCB( MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_3:
+   \   00008D                ; Setup parameters for call to function Camera_MessageMSGCB
+   \   00008D   AA..         MOV     R2,?V0 + 0
+   \   00008F   AB..         MOV     R3,?V0 + 1
+   \   000091   12....       LCALL   ??Camera_MessageMSGCB?relay
+    279                    break;
+   \   000094   804B         SJMP    ??WirelessMonitorSystem_ProcessEvent_5
+    280          
+    281                  case ZDO_STATE_CHANGE:
+    282                    Camera_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??WirelessMonitorSystem_ProcessEvent_4:
+   \   000096   85..82       MOV     DPL,?V0 + 0
+   \   000099   85..83       MOV     DPH,?V0 + 1
+   \   00009C   A3           INC     DPTR
+   \   00009D   E0           MOVX    A,@DPTR
+   \   00009E   90....       MOV     DPTR,#Camera_NwkState
+   \   0000A1   F0           MOVX    @DPTR,A
+    283                    if ( (Camera_NwkState == DEV_ZB_COORD)
+    284                        || (Camera_NwkState == DEV_ROUTER)
+    285                        || (Camera_NwkState == DEV_END_DEVICE) )
+   \   0000A2   90....       MOV     DPTR,#Camera_NwkState
+   \   0000A5   E0           MOVX    A,@DPTR
+   \   0000A6   6409         XRL     A,#0x9
+   \   0000A8   6010         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   0000AA   90....       MOV     DPTR,#Camera_NwkState
+   \   0000AD   E0           MOVX    A,@DPTR
+   \   0000AE   6407         XRL     A,#0x7
+   \   0000B0   6008         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   0000B2   90....       MOV     DPTR,#Camera_NwkState
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   6406         XRL     A,#0x6
+   \   0000B8   7027         JNZ     ??WirelessMonitorSystem_ProcessEvent_5
+    286                    {
+    287          			  // get address
+    288          			  srcAddr = NLME_GetShortAddr();
+   \                     ??WirelessMonitorSystem_ProcessEvent_6:
+   \   0000BA                ; Setup parameters for call to function NLME_GetShortAddr
+   \   0000BA   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   0000BD   90....       MOV     DPTR,#srcAddr
+   \   0000C0   EA           MOV     A,R2
+   \   0000C1   F0           MOVX    @DPTR,A
+   \   0000C2   A3           INC     DPTR
+   \   0000C3   EB           MOV     A,R3
+   \   0000C4   F0           MOVX    @DPTR,A
+    289          			  parAddr = NLME_GetCoordShortAddr();
+   \   0000C5                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   0000C5   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+   \   0000C8   90....       MOV     DPTR,#parAddr
+   \   0000CB   EA           MOV     A,R2
+   \   0000CC   F0           MOVX    @DPTR,A
+   \   0000CD   A3           INC     DPTR
+   \   0000CE   EB           MOV     A,R3
+   \   0000CF   F0           MOVX    @DPTR,A
+    290          			  
+    291          			  //send topology information
+    292          			  // here we can wait the camera initialized then
+    293          			  // send topology to the monitor
+    294          			  //Camera_SendTopoInformation();  
+    295          			  osal_start_timerEx(Camera_TaskID,
+    296          								 CAMERA_INIT_EVT,
+    297          								 2500);
+   \   0000D0                ; Setup parameters for call to function osal_start_timerEx
+   \   0000D0   7CC4         MOV     R4,#-0x3c
+   \   0000D2   7D09         MOV     R5,#0x9
+   \   0000D4   7A04         MOV     R2,#0x4
+   \   0000D6   7B00         MOV     R3,#0x0
+   \   0000D8   90....       MOV     DPTR,#Camera_TaskID
+   \   0000DB   E0           MOVX    A,@DPTR
+   \   0000DC   F9           MOV     R1,A
+   \   0000DD   12....       LCALL   ??osal_start_timerEx?relay
+   \   0000E0   E9           MOV     A,R1
+    298          			  
+    299          			  // here you just need to reset the camera
+    300          			  // and the incoming camera data request will
+    301          			  // send the clear command the continious cmd
+    302          //			  Camera_SendResetCMD();
+    303                    }
+    304                    break;
+    305          
+    306                  default:
+    307                    break;
+    308                }
+    309                // Release the memory
+    310                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_5:
+   \   0000E1                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000E1   AA..         MOV     R2,?V0 + 0
+   \   0000E3   AB..         MOV     R3,?V0 + 1
+   \   0000E5   12....       LCALL   ??osal_msg_deallocate?relay
+   \   0000E8   E9           MOV     A,R1
+    311                // Next
+    312                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Camera_TaskID );
+   \   0000E9                ; Setup parameters for call to function osal_msg_receive
+   \   0000E9   90....       MOV     DPTR,#Camera_TaskID
+   \   0000EC   E0           MOVX    A,@DPTR
+   \   0000ED   F9           MOV     R1,A
+   \   0000EE   12....       LCALL   ??osal_msg_receive?relay
+   \   0000F1   8A..         MOV     ?V0 + 8,R2
+   \   0000F3   8B..         MOV     ?V0 + 9,R3
+   \   0000F5   85....       MOV     ?V0 + 0,?V0 + 8
+   \   0000F8   85....       MOV     ?V0 + 1,?V0 + 9
+   \   0000FB   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_1 & 0xFFFF
+    313              }
+    314          
+    315              // return unprocessed events
+    316              return (events ^ SYS_EVENT_MSG);
+   \                     ??WirelessMonitorSystem_ProcessEvent_2:
+   \   0000FE   EE           MOV     A,R6
+   \   0000FF   6400         XRL     A,#0x0
+   \   000101   FA           MOV     R2,A
+   \   000102   EF           MOV     A,R7
+   \   000103   6480         XRL     A,#0x80
+   \   000105   FB           MOV     R3,A
+   \   000106   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_7 & 0xFFFF
+    317            }
+    318            
+    319            // initialize the camera
+    320            if ( events & CAMERA_INIT_EVT )
+   \                     ??WirelessMonitorSystem_ProcessEvent_0:
+   \   000109   EE           MOV     A,R6
+   \   00010A   5404         ANL     A,#0x4
+   \   00010C   600D         JZ      ??WirelessMonitorSystem_ProcessEvent_8
+    321            {
+    322          	// init the camera 
+    323          	// send the reset command here
+    324          	Camera_SendResetCMD();
+   \   00010E                ; Setup parameters for call to function Camera_SendResetCMD
+   \   00010E   12....       LCALL   ??Camera_SendResetCMD?relay
+    325          	// so will send the topology information at the 
+    326          	// ack for reset
+    327          	
+    328          	return (events ^ CAMERA_INIT_EVT);
+   \   000111   EE           MOV     A,R6
+   \   000112   6404         XRL     A,#0x4
+   \   000114   FA           MOV     R2,A
+   \   000115   EF           MOV     A,R7
+   \   000116   6400         XRL     A,#0x0
+   \   000118   FB           MOV     R3,A
+   \   000119   8079         SJMP    ??WirelessMonitorSystem_ProcessEvent_7
+    329            }
+    330            
+    331             // transfer the camera data
+    332            if ( events & CAMERA_IMAGE_READ_EVT )
+   \                     ??WirelessMonitorSystem_ProcessEvent_8:
+   \   00011B   EE           MOV     A,R6
+   \   00011C   5402         ANL     A,#0x2
+   \   00011E   6070         JZ      ??WirelessMonitorSystem_ProcessEvent_9
+    333            {
+    334          	// you should keep care of this , that's the 
+    335          	// the last time the data request for the camera
+    336          	// maybe is more than needed, but this don't event make the 
+    337          	// the situation worse, it will always work well
+    338          	// cause will check the length in the AF send 
+    339          	// or we can chack the length in the ack
+    340          	if(currentRead < imageLength){
+   \   000120   90....       MOV     DPTR,#currentRead
+   \   000123   C082         PUSH    DPL
+   \   000125   C083         PUSH    DPH
+   \   000127   90....       MOV     DPTR,#imageLength
+   \   00012A   E0           MOVX    A,@DPTR
+   \   00012B   F8           MOV     R0,A
+   \   00012C   A3           INC     DPTR
+   \   00012D   E0           MOVX    A,@DPTR
+   \   00012E   F9           MOV     R1,A
+   \   00012F   D083         POP     DPH
+   \   000131   D082         POP     DPL
+   \   000133   C3           CLR     C
+   \   000134   E0           MOVX    A,@DPTR
+   \   000135   98           SUBB    A,R0
+   \   000136   A3           INC     DPTR
+   \   000137   E0           MOVX    A,@DPTR
+   \   000138   99           SUBB    A,R1
+   \   000139   5027         JNC     ??WirelessMonitorSystem_ProcessEvent_10
+    341          	  // get the mtu and sent the request
+    342          	  maxTransmitDataLen = afDataReqMTU( &mtu );
+   \   00013B                ; Setup parameters for call to function afDataReqMTU
+   \   00013B   7A..         MOV     R2,#mtu & 0xff
+   \   00013D   7B..         MOV     R3,#(mtu >> 8) & 0xff
+   \   00013F   12....       LCALL   ??afDataReqMTU?relay
+   \   000142   E9           MOV     A,R1
+   \   000143   90....       MOV     DPTR,#maxTransmitDataLen
+   \   000146   F0           MOVX    @DPTR,A
+    343          	  // here just request the data from the camera
+    344          	  // here you must read the data with a address which
+    345          	  // is the times of 8
+    346          	  // so just make
+    347          	  Camera_SendDataCMD(currentAddr, Camera_ToolTimesOfEight(maxTransmitDataLen));
+   \   000147                ; Setup parameters for call to function Camera_SendDataCMD
+   \   000147                ; Setup parameters for call to function Camera_ToolTimesOfEight
+   \   000147   90....       MOV     DPTR,#maxTransmitDataLen
+   \   00014A   E0           MOVX    A,@DPTR
+   \   00014B   FA           MOV     R2,A
+   \   00014C   7B00         MOV     R3,#0x0
+   \   00014E   12....       LCALL   ??Camera_ToolTimesOfEight?relay
+   \   000151   EA           MOV     A,R2
+   \   000152   FC           MOV     R4,A
+   \   000153   EB           MOV     A,R3
+   \   000154   FD           MOV     R5,A
+   \   000155   90....       MOV     DPTR,#currentAddr
+   \   000158   E0           MOVX    A,@DPTR
+   \   000159   FA           MOV     R2,A
+   \   00015A   A3           INC     DPTR
+   \   00015B   E0           MOVX    A,@DPTR
+   \   00015C   FB           MOV     R3,A
+   \   00015D   12....       LCALL   ??Camera_SendDataCMD?relay
+   \   000160   8024         SJMP    ??WirelessMonitorSystem_ProcessEvent_11
+    348          	  // you  should update the data read and current addr in the 
+    349          	  // data ack 
+    350          	}
+    351          	else
+    352          	{
+    353          	  // data send ok
+    354          	  // reset all state 
+    355          //	  cameraState = CAMERA_RESET;
+    356          	  cameraState = CAMERA_CLEAR;
+   \                     ??WirelessMonitorSystem_ProcessEvent_10:
+   \   000162   90....       MOV     DPTR,#cameraState
+   \   000165   7402         MOV     A,#0x2
+   \   000167   F0           MOVX    @DPTR,A
+    357          	  currentRead = 0;
+   \   000168   90....       MOV     DPTR,#currentRead
+   \   00016B   7400         MOV     A,#0x0
+   \   00016D   F0           MOVX    @DPTR,A
+   \   00016E   A3           INC     DPTR
+   \   00016F   7400         MOV     A,#0x0
+   \   000171   F0           MOVX    @DPTR,A
+    358          	  currentAddr = 0;
+   \   000172   90....       MOV     DPTR,#currentAddr
+   \   000175   7400         MOV     A,#0x0
+   \   000177   F0           MOVX    @DPTR,A
+   \   000178   A3           INC     DPTR
+   \   000179   7400         MOV     A,#0x0
+   \   00017B   F0           MOVX    @DPTR,A
+    359          	  imageLength = 0;
+   \   00017C   90....       MOV     DPTR,#imageLength
+   \   00017F   7400         MOV     A,#0x0
+   \   000181   F0           MOVX    @DPTR,A
+   \   000182   A3           INC     DPTR
+   \   000183   7400         MOV     A,#0x0
+   \   000185   F0           MOVX    @DPTR,A
+    360          	}
+    361              // return unprocessed events
+    362              return (events ^ CAMERA_IMAGE_READ_EVT);
+   \                     ??WirelessMonitorSystem_ProcessEvent_11:
+   \   000186   EE           MOV     A,R6
+   \   000187   6402         XRL     A,#0x2
+   \   000189   FA           MOV     R2,A
+   \   00018A   EF           MOV     A,R7
+   \   00018B   6400         XRL     A,#0x0
+   \   00018D   FB           MOV     R3,A
+   \   00018E   8004         SJMP    ??WirelessMonitorSystem_ProcessEvent_7
+    363            }
+    364            
+    365            // Discard unknown events
+    366            return 0;
+   \                     ??WirelessMonitorSystem_ProcessEvent_9:
+   \   000190   7A00         MOV     R2,#0x0
+   \   000192   7B00         MOV     R3,#0x0
+   \                     ??WirelessMonitorSystem_ProcessEvent_7:
+   \   000194   7F0A         MOV     R7,#0xa
+   \   000196   02....       LJMP    ?BANKED_LEAVE_XDATA
+    367          }
+    368          
+    369          /*********************************************************************
+    370           * @fn      LCD_MessageMSGCB
+    371           *
+    372           * @brief   Data message processor callback.  This function processes
+    373           *          any incoming data - probably from other devices.  So, based
+    374           *          on cluster ID, perform the intended action.
+    375           *
+    376           * @param   none
+    377           *
+    378           * @return  none
+    379           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    380          static void Camera_MessageMSGCB( afIncomingMSGPacket_t *pckt )
+   \                     Camera_MessageMSGCB:
+    381          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    382            // According to the clusterID
+    383            switch( pckt->clusterId )
+   \   000009   8E82         MOV     DPL,R6
+   \   00000B   8F83         MOV     DPH,R7
+   \   00000D   A3           INC     DPTR
+   \   00000E   A3           INC     DPTR
+   \   00000F   A3           INC     DPTR
+   \   000010   A3           INC     DPTR
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   F5..         MOV     ?V0 + 0,A
+   \   000014   A3           INC     DPTR
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F5..         MOV     ?V0 + 1,A
+   \   000018   78..         MOV     R0,#?V0 + 0
+   \   00001A   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for Camera_MessageMSGCB>_0`:
+   \   00001D   0A00         DW        10
+   \   00001F   02           DB        2
+   \   000020   ....         DW        ??Camera_MessageMSGCB_0
+   \   000022   ....         DW        ??Camera_MessageMSGCB_1
+   \   000024   ....         DW        ??Camera_MessageMSGCB_0
+   \   000026   ....         DW        ??Camera_MessageMSGCB_2
+    384            {
+    385          	// send the topology information
+    386            	case TOPO_REQ:
+    387                Camera_SendTopoInformation();
+   \                     ??Camera_MessageMSGCB_1:
+   \   000028                ; Setup parameters for call to function Camera_SendTopoInformation
+   \   000028   12....       LCALL   ??Camera_SendTopoInformation?relay
+    388              break;
+   \   00002B   8027         SJMP    ??Camera_MessageMSGCB_0
+    389          	// send image data
+    390            	case IMAGE_REQ:
+    391          	  // set the camera pointer to clear
+    392          	  // cause the the camera is reset when the node start
+    393          	  cameraState = CAMERA_CLEAR;
+   \                     ??Camera_MessageMSGCB_2:
+   \   00002D   90....       MOV     DPTR,#cameraState
+   \   000030   7402         MOV     A,#0x2
+   \   000032   F0           MOVX    @DPTR,A
+    394          	  currentRead = 0;
+   \   000033   90....       MOV     DPTR,#currentRead
+   \   000036   7400         MOV     A,#0x0
+   \   000038   F0           MOVX    @DPTR,A
+   \   000039   A3           INC     DPTR
+   \   00003A   7400         MOV     A,#0x0
+   \   00003C   F0           MOVX    @DPTR,A
+    395          	  currentAddr = 0;
+   \   00003D   90....       MOV     DPTR,#currentAddr
+   \   000040   7400         MOV     A,#0x0
+   \   000042   F0           MOVX    @DPTR,A
+   \   000043   A3           INC     DPTR
+   \   000044   7400         MOV     A,#0x0
+   \   000046   F0           MOVX    @DPTR,A
+    396          	  imageLength = 0;
+   \   000047   90....       MOV     DPTR,#imageLength
+   \   00004A   7400         MOV     A,#0x0
+   \   00004C   F0           MOVX    @DPTR,A
+   \   00004D   A3           INC     DPTR
+   \   00004E   7400         MOV     A,#0x0
+   \   000050   F0           MOVX    @DPTR,A
+    397          	  // here you should send the clear command to the camera
+    398          	  Camera_SendClearCMD();
+   \   000051                ; Setup parameters for call to function Camera_SendClearCMD
+   \   000051   12....       LCALL   ??Camera_SendClearCMD?relay
+    399          	break;
+    400            }
+    401          }
+   \                     ??Camera_MessageMSGCB_0:
+   \   000054   7F02         MOV     R7,#0x2
+   \   000056   02....       LJMP    ?BANKED_LEAVE_XDATA
+    402          
+    403          /*********************************************************************
+    404           *
+    405           *@fn Camera_SendStartFrame
+    406           *
+    407           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    408          void Camera_SendImageStartFrame()
+   \                     Camera_SendImageStartFrame:
+    409          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 9
+   \   000005   74F7         MOV     A,#-0x9
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    410            // Define the Frame
+    411            byte frame[9] = {0};
+   \   00000A   90....       MOV     DPTR,#`?<Constant {0}>`
+   \   00000D   C082         PUSH    DPL
+   \   00000F   C083         PUSH    DPH
+   \   000011   85..82       MOV     DPL,?XSP + 0
+   \   000014   85..83       MOV     DPH,?XSP + 1
+   \   000017   AC82         MOV     R4,DPL
+   \   000019   AD83         MOV     R5,DPH
+   \   00001B   D083         POP     DPH
+   \   00001D   D082         POP     DPL
+   \   00001F   7409         MOV     A,#0x9
+   \   000021   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    412            
+    413            // Build the Frame
+    414            // Fill SOF	0xFE
+    415            frame[0] = 0xFE;
+   \   000024   85..82       MOV     DPL,?XSP + 0
+   \   000027   85..83       MOV     DPH,?XSP + 1
+   \   00002A   74FE         MOV     A,#-0x2
+   \   00002C   F0           MOVX    @DPTR,A
+    416            // Fill len
+    417            frame[1] = 2;
+   \   00002D   7401         MOV     A,#0x1
+   \   00002F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000032   7402         MOV     A,#0x2
+   \   000034   F0           MOVX    @DPTR,A
+    418            // Fill CMD
+    419            frame[2] = LO_UINT16(CAMERA_START_CMD);
+   \   000035   7402         MOV     A,#0x2
+   \   000037   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003A   7407         MOV     A,#0x7
+   \   00003C   F0           MOVX    @DPTR,A
+    420            frame[3] = HI_UINT16(CAMERA_START_CMD);
+   \   00003D   7403         MOV     A,#0x3
+   \   00003F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000042   7400         MOV     A,#0x0
+   \   000044   F0           MOVX    @DPTR,A
+    421            // Fill Addr
+    422            frame[4] = LO_UINT16(srcAddr);
+   \   000045   90....       MOV     DPTR,#srcAddr
+   \   000048   E0           MOVX    A,@DPTR
+   \   000049   F8           MOV     R0,A
+   \   00004A   A3           INC     DPTR
+   \   00004B   E0           MOVX    A,@DPTR
+   \   00004C   F9           MOV     R1,A
+   \   00004D   E8           MOV     A,R0
+   \   00004E   C0E0         PUSH    A
+   \   000050   7404         MOV     A,#0x4
+   \   000052   12....       LCALL   ?XSTACK_DISP0_8
+   \   000055   D0E0         POP     A
+   \   000057   F0           MOVX    @DPTR,A
+    423            frame[5] = HI_UINT16(srcAddr);
+   \   000058   90....       MOV     DPTR,#srcAddr
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F8           MOV     R0,A
+   \   00005D   A3           INC     DPTR
+   \   00005E   E0           MOVX    A,@DPTR
+   \   00005F   F9           MOV     R1,A
+   \   000060   E4           CLR     A
+   \   000061   E9           MOV     A,R1
+   \   000062   F8           MOV     R0,A
+   \   000063   C0E0         PUSH    A
+   \   000065   7405         MOV     A,#0x5
+   \   000067   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006A   D0E0         POP     A
+   \   00006C   F0           MOVX    @DPTR,A
+    424            // fill the length
+    425            frame[6] = LO_UINT16(imageLength);
+   \   00006D   90....       MOV     DPTR,#imageLength
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   E8           MOV     A,R0
+   \   000076   C0E0         PUSH    A
+   \   000078   7406         MOV     A,#0x6
+   \   00007A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007D   D0E0         POP     A
+   \   00007F   F0           MOVX    @DPTR,A
+    426            frame[7] = HI_UINT16(imageLength);
+   \   000080   90....       MOV     DPTR,#imageLength
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   F8           MOV     R0,A
+   \   000085   A3           INC     DPTR
+   \   000086   E0           MOVX    A,@DPTR
+   \   000087   F9           MOV     R1,A
+   \   000088   E4           CLR     A
+   \   000089   E9           MOV     A,R1
+   \   00008A   F8           MOV     R0,A
+   \   00008B   C0E0         PUSH    A
+   \   00008D   7407         MOV     A,#0x7
+   \   00008F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000092   D0E0         POP     A
+   \   000094   F0           MOVX    @DPTR,A
+    427            // Cal and fill FCS
+    428            frame[8] = Camera_CalcFCS((byte*)&frame[1], 7);
+   \   000095                ; Setup parameters for call to function Camera_CalcFCS
+   \   000095   7907         MOV     R1,#0x7
+   \   000097   7401         MOV     A,#0x1
+   \   000099   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009C   AA82         MOV     R2,DPL
+   \   00009E   AB83         MOV     R3,DPH
+   \   0000A0   12....       LCALL   ??Camera_CalcFCS?relay
+   \   0000A3   E9           MOV     A,R1
+   \   0000A4   C0E0         PUSH    A
+   \   0000A6   7408         MOV     A,#0x8
+   \   0000A8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AB   D0E0         POP     A
+   \   0000AD   F0           MOVX    @DPTR,A
+    429            
+    430            // Send the data to Coordinator
+    431            AF_DataRequest( &Camera_DstAddr, 
+    432          				  &Camera_epDesc,
+    433          				  ZIGBEE_COMMON_CLUSTER,
+    434          				  9,
+    435          				  (byte *)frame,
+    436          				  &Camera_TransID,
+    437          				  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000AE                ; Setup parameters for call to function AF_DataRequest
+   \   0000AE   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000B1   78..         MOV     R0,#?V0 + 0
+   \   0000B3   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000B6   75....       MOV     ?V0 + 0,#Camera_TransID & 0xff
+   \   0000B9   75....       MOV     ?V0 + 1,#(Camera_TransID >> 8) & 0xff
+   \   0000BC   78..         MOV     R0,#?V0 + 0
+   \   0000BE   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C1   7403         MOV     A,#0x3
+   \   0000C3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C6   8582..       MOV     ?V0 + 0,DPL
+   \   0000C9   8583..       MOV     ?V0 + 1,DPH
+   \   0000CC   78..         MOV     R0,#?V0 + 0
+   \   0000CE   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000D1   75..09       MOV     ?V0 + 0,#0x9
+   \   0000D4   75..00       MOV     ?V0 + 1,#0x0
+   \   0000D7   78..         MOV     R0,#?V0 + 0
+   \   0000D9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000DC   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000DF   75..00       MOV     ?V0 + 1,#0x0
+   \   0000E2   78..         MOV     R0,#?V0 + 0
+   \   0000E4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000E7   7920         MOV     R1,#0x20
+   \   0000E9   7C..         MOV     R4,#Camera_epDesc & 0xff
+   \   0000EB   7D..         MOV     R5,#(Camera_epDesc >> 8) & 0xff
+   \   0000ED   7A..         MOV     R2,#Camera_DstAddr & 0xff
+   \   0000EF   7B..         MOV     R3,#(Camera_DstAddr >> 8) & 0xff
+   \   0000F1   12....       LCALL   ??AF_DataRequest?relay
+   \   0000F4   7409         MOV     A,#0x9
+   \   0000F6   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000F9   E9           MOV     A,R1
+    438          }
+   \   0000FA   7409         MOV     A,#0x9
+   \   0000FC   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000FF   7F02         MOV     R7,#0x2
+   \   000101   02....       LJMP    ?BANKED_LEAVE_XDATA
+    439          
+    440          /*********************************************************************
+    441           *
+    442           *@fn 	Camera_SendImageData
+    443           *
+    444           *@brief	A very Good way to send the data out
+    445           *
+    446           *@param		None
+    447           *
+    448           *@return	None
+    449           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    450          void Camera_SendImageData( byte* buffer, byte len )
+   \                     Camera_SendImageData:
+    451          {  
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    452            // alloc memory
+    453            byte* imageBuffer = (byte*)osal_mem_alloc(len+7);
+   \   00000B                ; Setup parameters for call to function osal_mem_alloc
+   \   00000B   85....       MOV     ?V0 + 2,?V0 + 0
+   \   00000E   75..00       MOV     ?V0 + 3,#0x0
+   \   000011   E5..         MOV     A,?V0 + 2
+   \   000013   2407         ADD     A,#0x7
+   \   000015   FA           MOV     R2,A
+   \   000016   E5..         MOV     A,?V0 + 3
+   \   000018   3400         ADDC    A,#0x0
+   \   00001A   FB           MOV     R3,A
+   \   00001B   12....       LCALL   ??osal_mem_alloc?relay
+   \   00001E   8A..         MOV     ?V0 + 4,R2
+   \   000020   8B..         MOV     ?V0 + 5,R3
+   \   000022   85....       MOV     ?V0 + 2,?V0 + 4
+   \   000025   85....       MOV     ?V0 + 3,?V0 + 5
+    454            osal_memset(imageBuffer, 0x00, len+7);
+   \   000028                ; Setup parameters for call to function osal_memset
+   \   000028   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00002B   75..00       MOV     ?V0 + 5,#0x0
+   \   00002E   E5..         MOV     A,?V0 + 4
+   \   000030   2407         ADD     A,#0x7
+   \   000032   FC           MOV     R4,A
+   \   000033   E5..         MOV     A,?V0 + 5
+   \   000035   3400         ADDC    A,#0x0
+   \   000037   FD           MOV     R5,A
+   \   000038   7900         MOV     R1,#0x0
+   \   00003A   AA..         MOV     R2,?V0 + 2
+   \   00003C   AB..         MOV     R3,?V0 + 3
+   \   00003E   12....       LCALL   ??osal_memset?relay
+    455            
+    456            /*
+    457             * |	SOF 1| LEN  1| CMD 2| Addr 2| Data | FCS 1|
+    458             *  Max length is maxTransmitDataLen
+    459             */
+    460            // Add SOF 
+    461            imageBuffer[0] = 0xFE;
+   \   000041   85..82       MOV     DPL,?V0 + 2
+   \   000044   85..83       MOV     DPH,?V0 + 3
+   \   000047   74FE         MOV     A,#-0x2
+   \   000049   F0           MOVX    @DPTR,A
+    462            // Add DataLen containing len+1
+    463            imageBuffer[1] = len;
+   \   00004A   E5..         MOV     A,?V0 + 0
+   \   00004C   85..82       MOV     DPL,?V0 + 2
+   \   00004F   85..83       MOV     DPH,?V0 + 3
+   \   000052   A3           INC     DPTR
+   \   000053   E5..         MOV     A,?V0 + 0
+   \   000055   F0           MOVX    @DPTR,A
+    464            // Fill cmd
+    465            imageBuffer[2] = LO_UINT16(CAMERA_DATA_CMD);
+   \   000056   85..82       MOV     DPL,?V0 + 2
+   \   000059   85..83       MOV     DPH,?V0 + 3
+   \   00005C   A3           INC     DPTR
+   \   00005D   A3           INC     DPTR
+   \   00005E   7408         MOV     A,#0x8
+   \   000060   F0           MOVX    @DPTR,A
+    466            imageBuffer[3] = HI_UINT16(CAMERA_DATA_CMD);
+   \   000061   85..82       MOV     DPL,?V0 + 2
+   \   000064   85..83       MOV     DPH,?V0 + 3
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   7400         MOV     A,#0x0
+   \   00006C   F0           MOVX    @DPTR,A
+    467            // Fill Addr
+    468            imageBuffer[4] = LO_UINT16(srcAddr);
+   \   00006D   90....       MOV     DPTR,#srcAddr
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   E8           MOV     A,R0
+   \   000076   85..82       MOV     DPL,?V0 + 2
+   \   000079   85..83       MOV     DPH,?V0 + 3
+   \   00007C   A3           INC     DPTR
+   \   00007D   A3           INC     DPTR
+   \   00007E   A3           INC     DPTR
+   \   00007F   A3           INC     DPTR
+   \   000080   F0           MOVX    @DPTR,A
+    469            imageBuffer[5] = HI_UINT16(srcAddr);
+   \   000081   90....       MOV     DPTR,#srcAddr
+   \   000084   E0           MOVX    A,@DPTR
+   \   000085   F8           MOV     R0,A
+   \   000086   A3           INC     DPTR
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   F9           MOV     R1,A
+   \   000089   E4           CLR     A
+   \   00008A   E9           MOV     A,R1
+   \   00008B   F8           MOV     R0,A
+   \   00008C   85..82       MOV     DPL,?V0 + 2
+   \   00008F   85..83       MOV     DPH,?V0 + 3
+   \   000092   A3           INC     DPTR
+   \   000093   A3           INC     DPTR
+   \   000094   A3           INC     DPTR
+   \   000095   A3           INC     DPTR
+   \   000096   A3           INC     DPTR
+   \   000097   F0           MOVX    @DPTR,A
+    470            // Add the data
+    471            osal_memcpy(&imageBuffer[6], buffer, len);
+   \   000098                ; Setup parameters for call to function osal_memcpy
+   \   000098   8E..         MOV     ?V0 + 4,R6
+   \   00009A   8F..         MOV     ?V0 + 5,R7
+   \   00009C   75..00       MOV     ?V0 + 6,#0x0
+   \   00009F   78..         MOV     R0,#?V0 + 4
+   \   0000A1   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000A4   85....       MOV     ?V0 + 4,?V0 + 0
+   \   0000A7   75..00       MOV     ?V0 + 5,#0x0
+   \   0000AA   AC..         MOV     R4,?V0 + 4
+   \   0000AC   AD..         MOV     R5,?V0 + 5
+   \   0000AE   E5..         MOV     A,?V0 + 2
+   \   0000B0   2406         ADD     A,#0x6
+   \   0000B2   FA           MOV     R2,A
+   \   0000B3   E5..         MOV     A,?V0 + 3
+   \   0000B5   3400         ADDC    A,#0x0
+   \   0000B7   FB           MOV     R3,A
+   \   0000B8   12....       LCALL   ??osal_memcpy?relay
+   \   0000BB   7403         MOV     A,#0x3
+   \   0000BD   12....       LCALL   ?DEALLOC_XSTACK8
+    472            // Fill fcs
+    473            imageBuffer[len+6] = Camera_CalcFCS(&imageBuffer[1], len+5);
+   \   0000C0                ; Setup parameters for call to function Camera_CalcFCS
+   \   0000C0   7405         MOV     A,#0x5
+   \   0000C2   25..         ADD     A,?V0 + 0
+   \   0000C4   F9           MOV     R1,A
+   \   0000C5   85..82       MOV     DPL,?V0 + 2
+   \   0000C8   85..83       MOV     DPH,?V0 + 3
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   AA82         MOV     R2,DPL
+   \   0000CE   AB83         MOV     R3,DPH
+   \   0000D0   12....       LCALL   ??Camera_CalcFCS?relay
+   \   0000D3   E9           MOV     A,R1
+   \   0000D4   C0E0         PUSH    A
+   \   0000D6   85....       MOV     ?V0 + 4,?V0 + 0
+   \   0000D9   75..00       MOV     ?V0 + 5,#0x0
+   \   0000DC   E5..         MOV     A,?V0 + 2
+   \   0000DE   25..         ADD     A,?V0 + 4
+   \   0000E0   F582         MOV     DPL,A
+   \   0000E2   E5..         MOV     A,?V0 + 3
+   \   0000E4   35..         ADDC    A,?V0 + 5
+   \   0000E6   F583         MOV     DPH,A
+   \   0000E8   A3           INC     DPTR
+   \   0000E9   A3           INC     DPTR
+   \   0000EA   A3           INC     DPTR
+   \   0000EB   A3           INC     DPTR
+   \   0000EC   A3           INC     DPTR
+   \   0000ED   A3           INC     DPTR
+   \   0000EE   D0E0         POP     A
+   \   0000F0   F0           MOVX    @DPTR,A
+    474          
+    475            // send the data
+    476            AF_DataRequest( &Camera_DstAddr, 
+    477          				&Camera_epDesc,
+    478          				ZIGBEE_COMMON_CLUSTER,
+    479          				len+7,
+    480          				(byte *)imageBuffer,
+    481          				&Camera_TransID,
+    482          				AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000F1                ; Setup parameters for call to function AF_DataRequest
+   \   0000F1   75..1E       MOV     ?V0 + 1,#0x1e
+   \   0000F4   78..         MOV     R0,#?V0 + 1
+   \   0000F6   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000F9   75....       MOV     ?V0 + 4,#Camera_TransID & 0xff
+   \   0000FC   75....       MOV     ?V0 + 5,#(Camera_TransID >> 8) & 0xff
+   \   0000FF   78..         MOV     R0,#?V0 + 4
+   \   000101   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000104   78..         MOV     R0,#?V0 + 2
+   \   000106   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000109   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00010C   75..00       MOV     ?V0 + 5,#0x0
+   \   00010F   E5..         MOV     A,?V0 + 4
+   \   000111   2407         ADD     A,#0x7
+   \   000113   F5..         MOV     ?V0 + 4,A
+   \   000115   E5..         MOV     A,?V0 + 5
+   \   000117   3400         ADDC    A,#0x0
+   \   000119   F5..         MOV     ?V0 + 5,A
+   \   00011B   78..         MOV     R0,#?V0 + 4
+   \   00011D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000120   75..0B       MOV     ?V0 + 4,#0xb
+   \   000123   75..00       MOV     ?V0 + 5,#0x0
+   \   000126   78..         MOV     R0,#?V0 + 4
+   \   000128   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00012B   7920         MOV     R1,#0x20
+   \   00012D   7C..         MOV     R4,#Camera_epDesc & 0xff
+   \   00012F   7D..         MOV     R5,#(Camera_epDesc >> 8) & 0xff
+   \   000131   7A..         MOV     R2,#Camera_DstAddr & 0xff
+   \   000133   7B..         MOV     R3,#(Camera_DstAddr >> 8) & 0xff
+   \   000135   12....       LCALL   ??AF_DataRequest?relay
+   \   000138   7409         MOV     A,#0x9
+   \   00013A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00013D   E9           MOV     A,R1
+    483           
+    484            // free the data
+    485            osal_mem_free((byte*)imageBuffer);
+   \   00013E                ; Setup parameters for call to function osal_mem_free
+   \   00013E   AA..         MOV     R2,?V0 + 2
+   \   000140   AB..         MOV     R3,?V0 + 3
+   \   000142   12....       LCALL   ??osal_mem_free?relay
+    486            imageBuffer = NULL;
+   \   000145   75..00       MOV     ?V0 + 2,#0x0
+   \   000148   75..00       MOV     ?V0 + 3,#0x0
+    487          }
+   \   00014B   7F07         MOV     R7,#0x7
+   \   00014D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    488          
+    489          /*********************************************************************
+    490           *
+    491           * @fn		Camera_SendTopoInfo
+    492           *
+    493           *
+    494           *
+    495           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    496          static void Camera_SendTopoInformation()
+   \                     Camera_SendTopoInformation:
+    497          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 19
+   \   000005   74ED         MOV     A,#-0x13
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    498            
+    499            unsigned char* srcExtAddr;
+    500            srcExtAddr = NLME_GetExtAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetExtAddr
+   \   00000A   12....       LCALL   ??NLME_GetExtAddr?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+   \   000011   AE..         MOV     R6,?V0 + 0
+   \   000013   AF..         MOV     R7,?V0 + 1
+    501            byte frame[19] = {0};
+   \   000015   90....       MOV     DPTR,#`?<Constant {0}>_1`
+   \   000018   C082         PUSH    DPL
+   \   00001A   C083         PUSH    DPH
+   \   00001C   85..82       MOV     DPL,?XSP + 0
+   \   00001F   85..83       MOV     DPH,?XSP + 1
+   \   000022   AC82         MOV     R4,DPL
+   \   000024   AD83         MOV     R5,DPH
+   \   000026   D083         POP     DPH
+   \   000028   D082         POP     DPL
+   \   00002A   7413         MOV     A,#0x13
+   \   00002C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    502            
+    503            // Build the Frame
+    504            // Fill SOF	0xFE
+    505            frame[0] = 0xFE;
+   \   00002F   85..82       MOV     DPL,?XSP + 0
+   \   000032   85..83       MOV     DPH,?XSP + 1
+   \   000035   74FE         MOV     A,#-0x2
+   \   000037   F0           MOVX    @DPTR,A
+    506            // Fill len
+    507            frame[1] = 12;
+   \   000038   7401         MOV     A,#0x1
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   740C         MOV     A,#0xc
+   \   00003F   F0           MOVX    @DPTR,A
+    508            // Fill CMD
+    509            frame[2] = LO_UINT16(TOPOLOGY_CMD);
+   \   000040   7402         MOV     A,#0x2
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   7401         MOV     A,#0x1
+   \   000047   F0           MOVX    @DPTR,A
+    510            frame[3] = HI_UINT16(TOPOLOGY_CMD);
+   \   000048   7403         MOV     A,#0x3
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   7400         MOV     A,#0x0
+   \   00004F   F0           MOVX    @DPTR,A
+    511            // Fill Addr
+    512            frame[4] = LO_UINT16(srcAddr);
+   \   000050   90....       MOV     DPTR,#srcAddr
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   F8           MOV     R0,A
+   \   000055   A3           INC     DPTR
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   F9           MOV     R1,A
+   \   000058   E8           MOV     A,R0
+   \   000059   C0E0         PUSH    A
+   \   00005B   7404         MOV     A,#0x4
+   \   00005D   12....       LCALL   ?XSTACK_DISP0_8
+   \   000060   D0E0         POP     A
+   \   000062   F0           MOVX    @DPTR,A
+    513            frame[5] = HI_UINT16(srcAddr);
+   \   000063   90....       MOV     DPTR,#srcAddr
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   F8           MOV     R0,A
+   \   000068   A3           INC     DPTR
+   \   000069   E0           MOVX    A,@DPTR
+   \   00006A   F9           MOV     R1,A
+   \   00006B   E4           CLR     A
+   \   00006C   E9           MOV     A,R1
+   \   00006D   F8           MOV     R0,A
+   \   00006E   C0E0         PUSH    A
+   \   000070   7405         MOV     A,#0x5
+   \   000072   12....       LCALL   ?XSTACK_DISP0_8
+   \   000075   D0E0         POP     A
+   \   000077   F0           MOVX    @DPTR,A
+    514            // fill type
+    515            frame[6] = LO_UINT16(CAMERA);
+   \   000078   7406         MOV     A,#0x6
+   \   00007A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007D   7405         MOV     A,#0x5
+   \   00007F   F0           MOVX    @DPTR,A
+    516            frame[7] = HI_UINT16(CAMERA);
+   \   000080   7407         MOV     A,#0x7
+   \   000082   12....       LCALL   ?XSTACK_DISP0_8
+   \   000085   7400         MOV     A,#0x0
+   \   000087   F0           MOVX    @DPTR,A
+    517            // Fill Parent
+    518            frame[8] = LO_UINT16(parAddr);
+   \   000088   90....       MOV     DPTR,#parAddr
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   F8           MOV     R0,A
+   \   00008D   A3           INC     DPTR
+   \   00008E   E0           MOVX    A,@DPTR
+   \   00008F   F9           MOV     R1,A
+   \   000090   E8           MOV     A,R0
+   \   000091   C0E0         PUSH    A
+   \   000093   7408         MOV     A,#0x8
+   \   000095   12....       LCALL   ?XSTACK_DISP0_8
+   \   000098   D0E0         POP     A
+   \   00009A   F0           MOVX    @DPTR,A
+    519            frame[9] = HI_UINT16(parAddr);
+   \   00009B   90....       MOV     DPTR,#parAddr
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   F8           MOV     R0,A
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   E0           MOVX    A,@DPTR
+   \   0000A2   F9           MOV     R1,A
+   \   0000A3   E4           CLR     A
+   \   0000A4   E9           MOV     A,R1
+   \   0000A5   F8           MOV     R0,A
+   \   0000A6   C0E0         PUSH    A
+   \   0000A8   7409         MOV     A,#0x9
+   \   0000AA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AD   D0E0         POP     A
+   \   0000AF   F0           MOVX    @DPTR,A
+    520            // fill the ieee64 address
+    521            copyExtAddr(srcExtAddr, (byte*)&frame[10]); 
+   \   0000B0                ; Setup parameters for call to function copyExtAddr
+   \   0000B0   740A         MOV     A,#0xa
+   \   0000B2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B5   AC82         MOV     R4,DPL
+   \   0000B7   AD83         MOV     R5,DPH
+   \   0000B9   E5..         MOV     A,?V0 + 0
+   \   0000BB   AA..         MOV     R2,?V0 + 0
+   \   0000BD   E5..         MOV     A,?V0 + 1
+   \   0000BF   AB..         MOV     R3,?V0 + 1
+   \   0000C1   12....       LCALL   ??copyExtAddr?relay
+    522            // Cal and fill FCS
+    523            frame[18] = Camera_CalcFCS((byte*)&frame[1], 17);
+   \   0000C4                ; Setup parameters for call to function Camera_CalcFCS
+   \   0000C4   7911         MOV     R1,#0x11
+   \   0000C6   7401         MOV     A,#0x1
+   \   0000C8   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CB   AA82         MOV     R2,DPL
+   \   0000CD   AB83         MOV     R3,DPH
+   \   0000CF   12....       LCALL   ??Camera_CalcFCS?relay
+   \   0000D2   E9           MOV     A,R1
+   \   0000D3   C0E0         PUSH    A
+   \   0000D5   7412         MOV     A,#0x12
+   \   0000D7   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DA   D0E0         POP     A
+   \   0000DC   F0           MOVX    @DPTR,A
+    524            
+    525            // Send the data to Coordinator
+    526            AF_DataRequest( &Camera_DstAddr, 
+    527          				  &Camera_epDesc,
+    528          				  ZIGBEE_COMMON_CLUSTER,
+    529          				  19,
+    530          				  (byte *)frame,
+    531          				  &Camera_TransID,
+    532          				  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000DD                ; Setup parameters for call to function AF_DataRequest
+   \   0000DD   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000E0   78..         MOV     R0,#?V0 + 0
+   \   0000E2   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000E5   75....       MOV     ?V0 + 0,#Camera_TransID & 0xff
+   \   0000E8   75....       MOV     ?V0 + 1,#(Camera_TransID >> 8) & 0xff
+   \   0000EB   78..         MOV     R0,#?V0 + 0
+   \   0000ED   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F0   7403         MOV     A,#0x3
+   \   0000F2   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F5   8582..       MOV     ?V0 + 0,DPL
+   \   0000F8   8583..       MOV     ?V0 + 1,DPH
+   \   0000FB   78..         MOV     R0,#?V0 + 0
+   \   0000FD   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000100   75..13       MOV     ?V0 + 0,#0x13
+   \   000103   75..00       MOV     ?V0 + 1,#0x0
+   \   000106   78..         MOV     R0,#?V0 + 0
+   \   000108   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00010B   75..0B       MOV     ?V0 + 0,#0xb
+   \   00010E   75..00       MOV     ?V0 + 1,#0x0
+   \   000111   78..         MOV     R0,#?V0 + 0
+   \   000113   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000116   7920         MOV     R1,#0x20
+   \   000118   7C..         MOV     R4,#Camera_epDesc & 0xff
+   \   00011A   7D..         MOV     R5,#(Camera_epDesc >> 8) & 0xff
+   \   00011C   7A..         MOV     R2,#Camera_DstAddr & 0xff
+   \   00011E   7B..         MOV     R3,#(Camera_DstAddr >> 8) & 0xff
+   \   000120   12....       LCALL   ??AF_DataRequest?relay
+   \   000123   7409         MOV     A,#0x9
+   \   000125   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000128   E9           MOV     A,R1
+    533          }
+   \   000129   7413         MOV     A,#0x13
+   \   00012B   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00012E   7F02         MOV     R7,#0x2
+   \   000130   02....       LJMP    ?BANKED_LEAVE_XDATA
+    534          
+    535          /*********************************************************************
+    536           * @fn      Camera_CalcFCS
+    537           *
+    538           * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+    539           *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+    540           *
+    541           * @param   byte *msg_ptr - message pointer
+    542           * @param   byte len - length (in bytes) of message
+    543           *
+    544           * @return  result byte
+    545           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    546          byte Camera_CalcFCS( uint8 *msg_ptr, uint8 len )
+   \                     Camera_CalcFCS:
+    547          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FC           MOV     R4,A
+    548            byte x;
+    549            byte xorResult = 0x00;
+   \   000007   7900         MOV     R1,#0x0
+    550          
+    551            for ( x=0; x<len; x++ )
+   \   000009   7800         MOV     R0,#0x0
+   \                     ??Camera_CalcFCS_0:
+   \   00000B   E8           MOV     A,R0
+   \   00000C   C3           CLR     C
+   \   00000D   9C           SUBB    A,R4
+   \   00000E   5016         JNC     ??Camera_CalcFCS_1
+    552              xorResult ^=  msg_ptr[x];
+   \   000010   88..         MOV     ?V0 + 0,R0
+   \   000012   75..00       MOV     ?V0 + 1,#0x0
+   \   000015   EA           MOV     A,R2
+   \   000016   25..         ADD     A,?V0 + 0
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   35..         ADDC    A,?V0 + 1
+   \   00001D   F583         MOV     DPH,A
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   C9           XCH     A,R1
+   \   000021   69           XRL     A,R1
+   \   000022   F9           MOV     R1,A
+   \   000023   08           INC     R0
+   \   000024   80E5         SJMP    ??Camera_CalcFCS_0
+    553          
+    554            return ( xorResult );
+   \                     ??Camera_CalcFCS_1:
+   \   000026   7F02         MOV     R7,#0x2
+   \   000028   02....       LJMP    ?BANKED_LEAVE_XDATA
+    555          }
+    556          
+    557          /*********************************************************************
+    558           *
+    559           * @fn		Camera_UartInit
+    560           *
+    561           * @brief	this method init the usart for the coordinator
+    562           *
+    563           *
+    564           * @param   None
+    565           *
+    566           * @return  void
+    567           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    568          static void Camera_UartInit()
+   \                     Camera_UartInit:
+    569          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    570            // create the uart structure
+    571            halUARTCfg_t uartConfig;
+    572            // set the parameters
+    573            uartConfig.configured           = TRUE;               
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    574            uartConfig.baudRate             = HAL_UART_BR_115200;
+   \   000012   7401         MOV     A,#0x1
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   7404         MOV     A,#0x4
+   \   000019   F0           MOVX    @DPTR,A
+    575            uartConfig.flowControl          = FALSE;
+   \   00001A   7402         MOV     A,#0x2
+   \   00001C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001F   7400         MOV     A,#0x0
+   \   000021   F0           MOVX    @DPTR,A
+    576            uartConfig.flowControlThreshold = 64;   				
+   \   000022   7403         MOV     A,#0x3
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   7440         MOV     A,#0x40
+   \   000029   F0           MOVX    @DPTR,A
+   \   00002A   A3           INC     DPTR
+   \   00002B   7400         MOV     A,#0x0
+   \   00002D   F0           MOVX    @DPTR,A
+    577            uartConfig.rx.maxBufSize        = 128;  				
+   \   00002E   740A         MOV     A,#0xa
+   \   000030   12....       LCALL   ?XSTACK_DISP0_8
+   \   000033   7480         MOV     A,#-0x80
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   A3           INC     DPTR
+   \   000037   7400         MOV     A,#0x0
+   \   000039   F0           MOVX    @DPTR,A
+    578            uartConfig.tx.maxBufSize        = 128;  				
+   \   00003A   7412         MOV     A,#0x12
+   \   00003C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003F   7480         MOV     A,#-0x80
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   7400         MOV     A,#0x0
+   \   000045   F0           MOVX    @DPTR,A
+    579            uartConfig.idleTimeout          = 6;    				
+   \   000046   7405         MOV     A,#0x5
+   \   000048   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004B   7406         MOV     A,#0x6
+   \   00004D   F0           MOVX    @DPTR,A
+    580            uartConfig.intEnable            = TRUE;               
+   \   00004E   7416         MOV     A,#0x16
+   \   000050   12....       LCALL   ?XSTACK_DISP0_8
+   \   000053   7401         MOV     A,#0x1
+   \   000055   F0           MOVX    @DPTR,A
+    581            uartConfig.callBackFunc         = Camera_UartCallBack;
+   \   000056   741B         MOV     A,#0x1b
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   74..         MOV     A,#??Camera_UartCallBack?relay & 0xff
+   \   00005D   F0           MOVX    @DPTR,A
+   \   00005E   A3           INC     DPTR
+   \   00005F   74..         MOV     A,#(??Camera_UartCallBack?relay >> 8) & 0xff
+   \   000061   F0           MOVX    @DPTR,A
+    582            // open it
+    583            HalUARTOpen (UART_PORT, &uartConfig);
+   \   000062                ; Setup parameters for call to function HalUARTOpen
+   \   000062   85..82       MOV     DPL,?XSP + 0
+   \   000065   85..83       MOV     DPH,?XSP + 1
+   \   000068   AA82         MOV     R2,DPL
+   \   00006A   AB83         MOV     R3,DPH
+   \   00006C   7900         MOV     R1,#0x0
+   \   00006E   12....       LCALL   ??HalUARTOpen?relay
+   \   000071   E9           MOV     A,R1
+    584          }
+   \   000072   741D         MOV     A,#0x1d
+   \   000074   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000077   D083         POP     DPH
+   \   000079   D082         POP     DPL
+   \   00007B   02....       LJMP    ?BRET
+    585          
+    586          /*********************************************************************
+    587           *
+    588           * @fn		Camera_UartCallBack
+    589           *
+    590           * @brief	this method deal with the uart event
+    591           *
+    592           *
+    593           * @param   port  -- uart port
+    594           *			event -- event occur
+    595           *
+    596           * @return  void
+    597           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    598          static void Camera_UartCallBack( uint8 port, uint8 event )
+   \                     Camera_UartCallBack:
+    599          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    600            (void)port;
+    601          
+    602            // if Rx interrupt has occur
+    603            if ((event & (HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT)))
+   \   000009   7407         MOV     A,#0x7
+   \   00000B   5F           ANL     A,R7
+   \   00000C   6003         JZ      ??Camera_UartCallBack_0
+    604            {
+    605          	Camera_UartInterface();
+   \   00000E                ; Setup parameters for call to function Camera_UartInterface
+   \   00000E   12....       LCALL   ??Camera_UartInterface?relay
+    606            }
+    607          }
+   \                     ??Camera_UartCallBack_0:
+   \   000011   7F01         MOV     R7,#0x1
+   \   000013   02....       LJMP    ?BANKED_LEAVE_XDATA
+    608          
+    609          // Camera_Interface
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    610          static void Camera_UartInterface()
+   \                     Camera_UartInterface:
+    611          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+    612            byte* ack = NULL;
+   \   000005   7E00         MOV     R6,#0x0
+   \   000007   7F00         MOV     R7,#0x0
+    613            byte* buffer = NULL;
+   \   000009   75..00       MOV     ?V0 + 2,#0x0
+   \   00000C   75..00       MOV     ?V0 + 3,#0x0
+    614            byte sendLength = 0;
+   \   00000F   75..00       MOV     ?V0 + 1,#0x0
+    615            byte bytesInRxBuffer = 0;
+   \   000012   75..00       MOV     ?V0 + 0,#0x0
+    616            
+    617            if( cameraState < CAMERA_RECEIVE_LEN )	// ignore the ack
+   \   000015   90....       MOV     DPTR,#cameraState
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   C3           CLR     C
+   \   00001A   9404         SUBB    A,#0x4
+   \   00001C   504B         JNC     ??Camera_UartInterface_0
+    618            {
+    619          		// read all data out and send new command
+    620          		bytesInRxBuffer = Hal_UART_RxBufLen(UART_PORT);
+   \   00001E                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   00001E   7900         MOV     R1,#0x0
+   \   000020   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   000023   EA           MOV     A,R2
+   \   000024   F5..         MOV     ?V0 + 0,A
+    621          		// memory data and read all data out
+    622          		ack = osal_mem_alloc(bytesInRxBuffer);
+   \   000026                ; Setup parameters for call to function osal_mem_alloc
+   \   000026   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000029   75..00       MOV     ?V0 + 5,#0x0
+   \   00002C   AA..         MOV     R2,?V0 + 4
+   \   00002E   AB..         MOV     R3,?V0 + 5
+   \   000030   12....       LCALL   ??osal_mem_alloc?relay
+   \   000033   8A..         MOV     ?V0 + 4,R2
+   \   000035   8B..         MOV     ?V0 + 5,R3
+   \   000037   AE..         MOV     R6,?V0 + 4
+   \   000039   AF..         MOV     R7,?V0 + 5
+    623          		// this data will be destroyed at the end of the method
+    624          		HalUARTRead(UART_PORT, (byte*)ack, bytesInRxBuffer);
+   \   00003B                ; Setup parameters for call to function HalUARTRead
+   \   00003B   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00003E   75..00       MOV     ?V0 + 5,#0x0
+   \   000041   AC..         MOV     R4,?V0 + 4
+   \   000043   AD..         MOV     R5,?V0 + 5
+   \   000045   EE           MOV     A,R6
+   \   000046   FA           MOV     R2,A
+   \   000047   EF           MOV     A,R7
+   \   000048   FB           MOV     R3,A
+   \   000049   7900         MOV     R1,#0x0
+   \   00004B   12....       LCALL   ??HalUARTRead?relay
+    625          		// send next command
+    626          		// keep care that if the this is the reset ack
+    627          		// you should never send next command again
+    628          		if(CAMERA_RESET != cameraState)
+   \   00004E   90....       MOV     DPTR,#cameraState
+   \   000051   E0           MOVX    A,@DPTR
+   \   000052   6401         XRL     A,#0x1
+   \   000054   600D         JZ      ??Camera_UartInterface_1
+    629          		{
+    630          			Camera_SendCommand();
+   \   000056                ; Setup parameters for call to function Camera_SendCommand
+   \   000056   12....       LCALL   ??Camera_SendCommand?relay
+    631          			// update the current state
+    632          			cameraState++;
+   \   000059   90....       MOV     DPTR,#cameraState
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   2401         ADD     A,#0x1
+   \   00005F   F0           MOVX    @DPTR,A
+   \   000060   02....       LJMP    ??Camera_UartInterface_2 & 0xFFFF
+    633          		}
+    634          		else	// this is the ack for reset command
+    635          		{
+    636          		  // here send the topology information to the monitor
+    637          		  Camera_SendTopoInformation();
+   \                     ??Camera_UartInterface_1:
+   \   000063                ; Setup parameters for call to function Camera_SendTopoInformation
+   \   000063   12....       LCALL   ??Camera_SendTopoInformation?relay
+   \   000066   02....       LJMP    ??Camera_UartInterface_2 & 0xFFFF
+    638          		}
+    639            }
+    640            else
+    641            {
+    642          	  if(CAMERA_RECEIVE_LEN == cameraState)
+   \                     ??Camera_UartInterface_0:
+   \   000069   90....       MOV     DPTR,#cameraState
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   6404         XRL     A,#0x4
+   \   00006F   7073         JNZ     ??Camera_UartInterface_3
+    643          	  {
+    644          		  // here you will deal with the length ack with length in it
+    645          		  // here you need to read enough data out and get the length
+    646          		  bytesInRxBuffer = Hal_UART_RxBufLen(UART_PORT);
+   \   000071                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000071   7900         MOV     R1,#0x0
+   \   000073   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   000076   EA           MOV     A,R2
+   \   000077   F5..         MOV     ?V0 + 0,A
+    647          		  if( 9 == bytesInRxBuffer )
+   \   000079   7409         MOV     A,#0x9
+   \   00007B   65..         XRL     A,?V0 + 0
+   \   00007D   7059         JNZ     ??Camera_UartInterface_4
+    648          		  {
+    649          			  ack = osal_mem_alloc(9);
+   \   00007F                ; Setup parameters for call to function osal_mem_alloc
+   \   00007F   7A09         MOV     R2,#0x9
+   \   000081   7B00         MOV     R3,#0x0
+   \   000083   12....       LCALL   ??osal_mem_alloc?relay
+   \   000086   8A..         MOV     ?V0 + 4,R2
+   \   000088   8B..         MOV     ?V0 + 5,R3
+   \   00008A   AE..         MOV     R6,?V0 + 4
+   \   00008C   AF..         MOV     R7,?V0 + 5
+    650          			  // the last two bytes are the length
+    651          			  HalUARTRead(UART_PORT, ack, 9);
+   \   00008E                ; Setup parameters for call to function HalUARTRead
+   \   00008E   7C09         MOV     R4,#0x9
+   \   000090   7D00         MOV     R5,#0x0
+   \   000092   EE           MOV     A,R6
+   \   000093   FA           MOV     R2,A
+   \   000094   EF           MOV     A,R7
+   \   000095   FB           MOV     R3,A
+   \   000096   7900         MOV     R1,#0x0
+   \   000098   12....       LCALL   ??HalUARTRead?relay
+    652          			  // get the image len
+    653          			  imageLength = BUILD_UINT16(ack[8], ack[7]);
+   \   00009B   8E82         MOV     DPL,R6
+   \   00009D   8F83         MOV     DPH,R7
+   \   00009F   A3           INC     DPTR
+   \   0000A0   A3           INC     DPTR
+   \   0000A1   A3           INC     DPTR
+   \   0000A2   A3           INC     DPTR
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   A3           INC     DPTR
+   \   0000A6   A3           INC     DPTR
+   \   0000A7   E0           MOVX    A,@DPTR
+   \   0000A8   FA           MOV     R2,A
+   \   0000A9   7B00         MOV     R3,#0x0
+   \   0000AB   8E82         MOV     DPL,R6
+   \   0000AD   8F83         MOV     DPH,R7
+   \   0000AF   A3           INC     DPTR
+   \   0000B0   A3           INC     DPTR
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   A3           INC     DPTR
+   \   0000B3   A3           INC     DPTR
+   \   0000B4   A3           INC     DPTR
+   \   0000B5   A3           INC     DPTR
+   \   0000B6   E0           MOVX    A,@DPTR
+   \   0000B7   F8           MOV     R0,A
+   \   0000B8   7900         MOV     R1,#0x0
+   \   0000BA   E4           CLR     A
+   \   0000BB   C8           XCH     A,R0
+   \   0000BC   F9           MOV     R1,A
+   \   0000BD   EA           MOV     A,R2
+   \   0000BE   28           ADD     A,R0
+   \   0000BF   F8           MOV     R0,A
+   \   0000C0   EB           MOV     A,R3
+   \   0000C1   39           ADDC    A,R1
+   \   0000C2   F9           MOV     R1,A
+   \   0000C3   90....       MOV     DPTR,#imageLength
+   \   0000C6   E8           MOV     A,R0
+   \   0000C7   F0           MOVX    @DPTR,A
+   \   0000C8   A3           INC     DPTR
+   \   0000C9   E9           MOV     A,R1
+   \   0000CA   F0           MOVX    @DPTR,A
+    654          			  // here you need to send the starter command to 
+    655          			  // the monitor with the data length
+    656          			  Camera_SendImageStartFrame();
+   \   0000CB                ; Setup parameters for call to function Camera_SendImageStartFrame
+   \   0000CB   12....       LCALL   ??Camera_SendImageStartFrame?relay
+    657          			  // update the state
+    658          			  cameraState++;
+   \   0000CE   90....       MOV     DPTR,#cameraState
+   \   0000D1   E0           MOVX    A,@DPTR
+   \   0000D2   2401         ADD     A,#0x1
+   \   0000D4   F0           MOVX    @DPTR,A
+   \   0000D5   02....       LJMP    ??Camera_UartInterface_2 & 0xFFFF
+    659          		  }
+    660          		  else
+    661          		  {
+    662          			// from the start and read again
+    663          			cameraState = CAMERA_CLEAR;
+   \                     ??Camera_UartInterface_4:
+   \   0000D8   90....       MOV     DPTR,#cameraState
+   \   0000DB   7402         MOV     A,#0x2
+   \   0000DD   F0           MOVX    @DPTR,A
+    664          			// send clear command
+    665          			Camera_SendClearCMD();
+   \   0000DE                ; Setup parameters for call to function Camera_SendClearCMD
+   \   0000DE   12....       LCALL   ??Camera_SendClearCMD?relay
+   \   0000E1   02....       LJMP    ??Camera_UartInterface_2 & 0xFFFF
+    666          		  }
+    667          	  }
+    668          	  else if( CAMERA_SEND_DATA == cameraState )
+   \                     ??Camera_UartInterface_3:
+   \   0000E4   90....       MOV     DPTR,#cameraState
+   \   0000E7   E0           MOVX    A,@DPTR
+   \   0000E8   6405         XRL     A,#0x5
+   \   0000EA   6003         JZ      $+5
+   \   0000EC   02....       LJMP    ??Camera_UartInterface_2 & 0xFFFF
+    669          	  {
+    670          		  // ignore two bytes first and send the real data to the 
+    671          		  // pack and AF send mathod
+    672          		  // read all data out and send new command
+    673          		  bytesInRxBuffer = Hal_UART_RxBufLen(UART_PORT);
+   \   0000EF                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   0000EF   7900         MOV     R1,#0x0
+   \   0000F1   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   0000F4   EA           MOV     A,R2
+   \   0000F5   F5..         MOV     ?V0 + 0,A
+    674          		  // memory data and read all data out
+    675          		  ack = osal_mem_alloc(bytesInRxBuffer);
+   \   0000F7                ; Setup parameters for call to function osal_mem_alloc
+   \   0000F7   85....       MOV     ?V0 + 4,?V0 + 0
+   \   0000FA   75..00       MOV     ?V0 + 5,#0x0
+   \   0000FD   AA..         MOV     R2,?V0 + 4
+   \   0000FF   AB..         MOV     R3,?V0 + 5
+   \   000101   12....       LCALL   ??osal_mem_alloc?relay
+   \   000104   8A..         MOV     ?V0 + 4,R2
+   \   000106   8B..         MOV     ?V0 + 5,R3
+   \   000108   AE..         MOV     R6,?V0 + 4
+   \   00010A   AF..         MOV     R7,?V0 + 5
+    676          		  buffer = osal_mem_alloc(bytesInRxBuffer-10);
+   \   00010C                ; Setup parameters for call to function osal_mem_alloc
+   \   00010C   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00010F   75..00       MOV     ?V0 + 5,#0x0
+   \   000112   E5..         MOV     A,?V0 + 4
+   \   000114   24F6         ADD     A,#-0xa
+   \   000116   FA           MOV     R2,A
+   \   000117   E5..         MOV     A,?V0 + 5
+   \   000119   34FF         ADDC    A,#-0x1
+   \   00011B   FB           MOV     R3,A
+   \   00011C   12....       LCALL   ??osal_mem_alloc?relay
+   \   00011F   8A..         MOV     ?V0 + 4,R2
+   \   000121   8B..         MOV     ?V0 + 5,R3
+   \   000123   85....       MOV     ?V0 + 2,?V0 + 4
+   \   000126   85....       MOV     ?V0 + 3,?V0 + 5
+    677          		  HalUARTRead(UART_PORT, ack, bytesInRxBuffer);
+   \   000129                ; Setup parameters for call to function HalUARTRead
+   \   000129   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00012C   75..00       MOV     ?V0 + 5,#0x0
+   \   00012F   AC..         MOV     R4,?V0 + 4
+   \   000131   AD..         MOV     R5,?V0 + 5
+   \   000133   EE           MOV     A,R6
+   \   000134   FA           MOV     R2,A
+   \   000135   EF           MOV     A,R7
+   \   000136   FB           MOV     R3,A
+   \   000137   7900         MOV     R1,#0x0
+   \   000139   12....       LCALL   ??HalUARTRead?relay
+    678          		  // ignore first and last 7 bytes
+    679          		  if((bytesInRxBuffer-10) > (imageLength - currentRead))
+   \   00013C   90....       MOV     DPTR,#imageLength
+   \   00013F   C082         PUSH    DPL
+   \   000141   C083         PUSH    DPH
+   \   000143   90....       MOV     DPTR,#currentRead
+   \   000146   E0           MOVX    A,@DPTR
+   \   000147   F8           MOV     R0,A
+   \   000148   A3           INC     DPTR
+   \   000149   E0           MOVX    A,@DPTR
+   \   00014A   F9           MOV     R1,A
+   \   00014B   D083         POP     DPH
+   \   00014D   D082         POP     DPL
+   \   00014F   E0           MOVX    A,@DPTR
+   \   000150   C3           CLR     C
+   \   000151   98           SUBB    A,R0
+   \   000152   F8           MOV     R0,A
+   \   000153   A3           INC     DPTR
+   \   000154   E0           MOVX    A,@DPTR
+   \   000155   99           SUBB    A,R1
+   \   000156   F9           MOV     R1,A
+   \   000157   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00015A   75..00       MOV     ?V0 + 5,#0x0
+   \   00015D   E5..         MOV     A,?V0 + 4
+   \   00015F   24F6         ADD     A,#-0xa
+   \   000161   FA           MOV     R2,A
+   \   000162   E5..         MOV     A,?V0 + 5
+   \   000164   34FF         ADDC    A,#-0x1
+   \   000166   FB           MOV     R3,A
+   \   000167   C3           CLR     C
+   \   000168   E8           MOV     A,R0
+   \   000169   9A           SUBB    A,R2
+   \   00016A   E9           MOV     A,R1
+   \   00016B   9B           SUBB    A,R3
+   \   00016C   5017         JNC     ??Camera_UartInterface_5
+    680          		  {
+    681          			sendLength = (imageLength - currentRead);
+   \   00016E   90....       MOV     DPTR,#currentRead
+   \   000171   E0           MOVX    A,@DPTR
+   \   000172   F8           MOV     R0,A
+   \   000173   A3           INC     DPTR
+   \   000174   E0           MOVX    A,@DPTR
+   \   000175   F9           MOV     R1,A
+   \   000176   90....       MOV     DPTR,#imageLength
+   \   000179   E0           MOVX    A,@DPTR
+   \   00017A   FA           MOV     R2,A
+   \   00017B   A3           INC     DPTR
+   \   00017C   E0           MOVX    A,@DPTR
+   \   00017D   FB           MOV     R3,A
+   \   00017E   EA           MOV     A,R2
+   \   00017F   C3           CLR     C
+   \   000180   98           SUBB    A,R0
+   \   000181   F5..         MOV     ?V0 + 1,A
+   \   000183   8006         SJMP    ??Camera_UartInterface_6
+    682          		  }
+    683          		  else
+    684          		  {
+    685          			sendLength = bytesInRxBuffer-10;
+   \                     ??Camera_UartInterface_5:
+   \   000185   74F6         MOV     A,#-0xa
+   \   000187   25..         ADD     A,?V0 + 0
+   \   000189   F5..         MOV     ?V0 + 1,A
+    686          		  }
+    687          		  //  pack the data and send
+    688          		  osal_memcpy(buffer, &ack[5], sendLength);
+   \                     ??Camera_UartInterface_6:
+   \   00018B                ; Setup parameters for call to function osal_memcpy
+   \   00018B   EE           MOV     A,R6
+   \   00018C   2405         ADD     A,#0x5
+   \   00018E   F5..         MOV     ?V0 + 4,A
+   \   000190   EF           MOV     A,R7
+   \   000191   3400         ADDC    A,#0x0
+   \   000193   F5..         MOV     ?V0 + 5,A
+   \   000195   75..00       MOV     ?V0 + 6,#0x0
+   \   000198   78..         MOV     R0,#?V0 + 4
+   \   00019A   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00019D   85....       MOV     ?V0 + 4,?V0 + 1
+   \   0001A0   75..00       MOV     ?V0 + 5,#0x0
+   \   0001A3   AC..         MOV     R4,?V0 + 4
+   \   0001A5   AD..         MOV     R5,?V0 + 5
+   \   0001A7   AA..         MOV     R2,?V0 + 2
+   \   0001A9   AB..         MOV     R3,?V0 + 3
+   \   0001AB   12....       LCALL   ??osal_memcpy?relay
+   \   0001AE   7403         MOV     A,#0x3
+   \   0001B0   12....       LCALL   ?DEALLOC_XSTACK8
+    689          		  Camera_SendImageData(buffer, sendLength);
+   \   0001B3                ; Setup parameters for call to function Camera_SendImageData
+   \   0001B3   A9..         MOV     R1,?V0 + 1
+   \   0001B5   AA..         MOV     R2,?V0 + 2
+   \   0001B7   AB..         MOV     R3,?V0 + 3
+   \   0001B9   12....       LCALL   ??Camera_SendImageData?relay
+    690          		  
+    691          		  // update the addr and read counter
+    692          		  currentRead += sendLength;
+   \   0001BC   85....       MOV     ?V0 + 4,?V0 + 1
+   \   0001BF   75..00       MOV     ?V0 + 5,#0x0
+   \   0001C2   90....       MOV     DPTR,#currentRead
+   \   0001C5   E0           MOVX    A,@DPTR
+   \   0001C6   25..         ADD     A,?V0 + 4
+   \   0001C8   F0           MOVX    @DPTR,A
+   \   0001C9   A3           INC     DPTR
+   \   0001CA   E0           MOVX    A,@DPTR
+   \   0001CB   35..         ADDC    A,?V0 + 5
+   \   0001CD   F0           MOVX    @DPTR,A
+    693          		  currentAddr += sendLength;
+   \   0001CE   85....       MOV     ?V0 + 4,?V0 + 1
+   \   0001D1   75..00       MOV     ?V0 + 5,#0x0
+   \   0001D4   90....       MOV     DPTR,#currentAddr
+   \   0001D7   E0           MOVX    A,@DPTR
+   \   0001D8   25..         ADD     A,?V0 + 4
+   \   0001DA   F0           MOVX    @DPTR,A
+   \   0001DB   A3           INC     DPTR
+   \   0001DC   E0           MOVX    A,@DPTR
+   \   0001DD   35..         ADDC    A,?V0 + 5
+   \   0001DF   F0           MOVX    @DPTR,A
+    694          		  
+    695          		  // free the data
+    696          		  osal_mem_free((byte*)buffer);
+   \   0001E0                ; Setup parameters for call to function osal_mem_free
+   \   0001E0   AA..         MOV     R2,?V0 + 2
+   \   0001E2   AB..         MOV     R3,?V0 + 3
+   \   0001E4   12....       LCALL   ??osal_mem_free?relay
+    697            		  // reset
+    698            		  buffer = NULL;
+   \   0001E7   75..00       MOV     ?V0 + 2,#0x0
+   \   0001EA   75..00       MOV     ?V0 + 3,#0x0
+    699          		  sendLength = 0; 
+   \   0001ED   75..00       MOV     ?V0 + 1,#0x0
+    700          		  
+    701          		  // here you do not to update the state again
+    702          		  // cause the state then will change by the app not the ack
+    703          		  // this will actually happen in the image_read_transfer event
+    704          		  // it will be reset when the user read all imageLength data
+    705          		  // and wait the user send camera command again
+    706          		  // this will make the zigbee enddevice send clear cmd agian
+    707          		  // with ack update the state to receive length state again  
+    708          	  } // end else if CAMERA_SEND_DATA
+    709          	}// end else CAMERA_RECEIVE_LEN
+    710            
+    711            // just dispose the data
+    712            osal_mem_free((byte*)ack);
+   \                     ??Camera_UartInterface_2:
+   \   0001F0                ; Setup parameters for call to function osal_mem_free
+   \   0001F0   EE           MOV     A,R6
+   \   0001F1   FA           MOV     R2,A
+   \   0001F2   EF           MOV     A,R7
+   \   0001F3   FB           MOV     R3,A
+   \   0001F4   12....       LCALL   ??osal_mem_free?relay
+    713            // reset
+    714            ack = NULL;
+   \   0001F7   7E00         MOV     R6,#0x0
+   \   0001F9   7F00         MOV     R7,#0x0
+    715            bytesInRxBuffer = 0;
+   \   0001FB   75..00       MOV     ?V0 + 0,#0x0
+    716          }
+   \   0001FE   7F07         MOV     R7,#0x7
+   \   000200   02....       LJMP    ?BANKED_LEAVE_XDATA
+    717          
+    718          // send the command
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    719          static void Camera_SendCommand()
+   \                     Camera_SendCommand:
+    720          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    721            switch(cameraState)
+   \   000004   90....       MOV     DPTR,#cameraState
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   24FE         ADD     A,#-0x2
+   \   00000A   6005         JZ      ??Camera_SendCommand_0
+   \   00000C   14           DEC     A
+   \   00000D   6007         JZ      ??Camera_SendCommand_1
+   \   00000F   8008         SJMP    ??Camera_SendCommand_2
+    722            {
+    723            case CAMERA_CLEAR:
+    724          	// this may be happen when the user request the camera data
+    725          	Camera_SendShutCMD();
+   \                     ??Camera_SendCommand_0:
+   \   000011                ; Setup parameters for call to function Camera_SendShutCMD
+   \   000011   12....       LCALL   ??Camera_SendShutCMD?relay
+    726          	break;
+   \   000014   8003         SJMP    ??Camera_SendCommand_2
+    727            case CAMERA_SHUT:
+    728          	// this is after the the user receive the shut ack
+    729          	Camera_SendLengthCMD();
+   \                     ??Camera_SendCommand_1:
+   \   000016                ; Setup parameters for call to function Camera_SendLengthCMD
+   \   000016   12....       LCALL   ??Camera_SendLengthCMD?relay
+    730          	break;
+    731            // do not need more conditions 
+    732            // cause the length cmd will return a user length for user to send start
+    733            // frame
+    734            // the data ack will carry the data of the camera, then send to the monitor
+    735            }
+    736          }
+   \                     ??Camera_SendCommand_2:
+   \   000019   D083         POP     DPH
+   \   00001B   D082         POP     DPL
+   \   00001D   02....       LJMP    ?BRET
+    737          
+    738          // deal with the ack and know what's the ack is
+    739          // sometimes you need not the ack command
+    740          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    741          static void Camera_SendResetCMD( void ){
+   \                     Camera_SendResetCMD:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    742            HalUARTWrite(UART_PORT, (byte*)reset, 4);
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7C04         MOV     R4,#0x4
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A..         MOV     R2,#reset & 0xff
+   \   00000A   7B..         MOV     R3,#(reset >> 8) & 0xff
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ??HalUARTWrite?relay
+    743          }
+   \   000011   D083         POP     DPH
+   \   000013   D082         POP     DPL
+   \   000015   02....       LJMP    ?BRET
+    744          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    745          static void Camera_SendClearCMD( void ){
+   \                     Camera_SendClearCMD:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    746            HalUARTWrite(UART_PORT, (byte*)clear, 5);
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7C05         MOV     R4,#0x5
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A..         MOV     R2,#clear & 0xff
+   \   00000A   7B..         MOV     R3,#(clear >> 8) & 0xff
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ??HalUARTWrite?relay
+    747          }
+   \   000011   D083         POP     DPH
+   \   000013   D082         POP     DPL
+   \   000015   02....       LJMP    ?BRET
+    748          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    749          static void Camera_SendShutCMD( void ){
+   \                     Camera_SendShutCMD:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    750            HalUARTWrite(UART_PORT, (byte*)shut, 5);
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7C05         MOV     R4,#0x5
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A..         MOV     R2,#shut & 0xff
+   \   00000A   7B..         MOV     R3,#(shut >> 8) & 0xff
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ??HalUARTWrite?relay
+    751          }
+   \   000011   D083         POP     DPH
+   \   000013   D082         POP     DPL
+   \   000015   02....       LJMP    ?BRET
+    752          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    753          static void Camera_SendLengthCMD( void ){
+   \                     Camera_SendLengthCMD:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    754            HalUARTWrite(UART_PORT, (byte*)length, 5);
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7C05         MOV     R4,#0x5
+   \   000006   7D00         MOV     R5,#0x0
+   \   000008   7A..         MOV     R2,#length & 0xff
+   \   00000A   7B..         MOV     R3,#(length >> 8) & 0xff
+   \   00000C   7900         MOV     R1,#0x0
+   \   00000E   12....       LCALL   ??HalUARTWrite?relay
+    755          }
+   \   000011   D083         POP     DPH
+   \   000013   D082         POP     DPL
+   \   000015   02....       LJMP    ?BRET
+    756          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    757          static void Camera_SendDataCMD( uint16 startAddr, uint16 len ){
+   \                     Camera_SendDataCMD:
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 2,R2
+   \   000007   8B..         MOV     ?V0 + 3,R3
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+    758            byte* buffer = osal_mem_alloc(16);
+   \   00000D                ; Setup parameters for call to function osal_mem_alloc
+   \   00000D   7A10         MOV     R2,#0x10
+   \   00000F   7B00         MOV     R3,#0x0
+   \   000011   12....       LCALL   ??osal_mem_alloc?relay
+   \   000014   8A..         MOV     ?V0 + 4,R2
+   \   000016   8B..         MOV     ?V0 + 5,R3
+   \   000018   AE..         MOV     R6,?V0 + 4
+   \   00001A   AF..         MOV     R7,?V0 + 5
+    759            osal_memcpy(buffer, (byte*)data_pre, 6);
+   \   00001C                ; Setup parameters for call to function osal_memcpy
+   \   00001C   75....       MOV     ?V0 + 4,#data_pre & 0xff
+   \   00001F   75....       MOV     ?V0 + 5,#(data_pre >> 8) & 0xff
+   \   000022   75..00       MOV     ?V0 + 6,#0x0
+   \   000025   78..         MOV     R0,#?V0 + 4
+   \   000027   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   00002A   7C06         MOV     R4,#0x6
+   \   00002C   7D00         MOV     R5,#0x0
+   \   00002E   EE           MOV     A,R6
+   \   00002F   FA           MOV     R2,A
+   \   000030   EF           MOV     A,R7
+   \   000031   FB           MOV     R3,A
+   \   000032   12....       LCALL   ??osal_memcpy?relay
+   \   000035   7403         MOV     A,#0x3
+   \   000037   12....       LCALL   ?DEALLOC_XSTACK8
+    760            buffer[6] = 0x00;
+   \   00003A   8E82         MOV     DPL,R6
+   \   00003C   8F83         MOV     DPH,R7
+   \   00003E   A3           INC     DPTR
+   \   00003F   A3           INC     DPTR
+   \   000040   A3           INC     DPTR
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   A3           INC     DPTR
+   \   000044   7400         MOV     A,#0x0
+   \   000046   F0           MOVX    @DPTR,A
+    761            buffer[7] = 0x00;
+   \   000047   8E82         MOV     DPL,R6
+   \   000049   8F83         MOV     DPH,R7
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   A3           INC     DPTR
+   \   000051   A3           INC     DPTR
+   \   000052   7400         MOV     A,#0x0
+   \   000054   F0           MOVX    @DPTR,A
+    762            buffer[8] = HI_UINT16(startAddr);
+   \   000055   A8..         MOV     R0,?V0 + 2
+   \   000057   A9..         MOV     R1,?V0 + 3
+   \   000059   E4           CLR     A
+   \   00005A   E5..         MOV     A,?V0 + 3
+   \   00005C   A8..         MOV     R0,?V0 + 3
+   \   00005E   E5..         MOV     A,?V0 + 3
+   \   000060   8E82         MOV     DPL,R6
+   \   000062   8F83         MOV     DPH,R7
+   \   000064   A3           INC     DPTR
+   \   000065   A3           INC     DPTR
+   \   000066   A3           INC     DPTR
+   \   000067   A3           INC     DPTR
+   \   000068   A3           INC     DPTR
+   \   000069   A3           INC     DPTR
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   E5..         MOV     A,?V0 + 3
+   \   00006E   F0           MOVX    @DPTR,A
+    763            buffer[9] = LO_UINT16(startAddr);
+   \   00006F   E5..         MOV     A,?V0 + 2
+   \   000071   8E82         MOV     DPL,R6
+   \   000073   8F83         MOV     DPH,R7
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   A3           INC     DPTR
+   \   00007A   A3           INC     DPTR
+   \   00007B   A3           INC     DPTR
+   \   00007C   A3           INC     DPTR
+   \   00007D   A3           INC     DPTR
+   \   00007E   E5..         MOV     A,?V0 + 2
+   \   000080   F0           MOVX    @DPTR,A
+    764            buffer[10] = 0x00;
+   \   000081   8E82         MOV     DPL,R6
+   \   000083   8F83         MOV     DPH,R7
+   \   000085   A3           INC     DPTR
+   \   000086   A3           INC     DPTR
+   \   000087   A3           INC     DPTR
+   \   000088   A3           INC     DPTR
+   \   000089   A3           INC     DPTR
+   \   00008A   A3           INC     DPTR
+   \   00008B   A3           INC     DPTR
+   \   00008C   A3           INC     DPTR
+   \   00008D   A3           INC     DPTR
+   \   00008E   A3           INC     DPTR
+   \   00008F   7400         MOV     A,#0x0
+   \   000091   F0           MOVX    @DPTR,A
+    765            buffer[11] = 0x00;
+   \   000092   EE           MOV     A,R6
+   \   000093   240B         ADD     A,#0xb
+   \   000095   F582         MOV     DPL,A
+   \   000097   EF           MOV     A,R7
+   \   000098   3400         ADDC    A,#0x0
+   \   00009A   F583         MOV     DPH,A
+   \   00009C   7400         MOV     A,#0x0
+   \   00009E   F0           MOVX    @DPTR,A
+    766            buffer[12] = HI_UINT16(len);
+   \   00009F   A8..         MOV     R0,?V0 + 0
+   \   0000A1   A9..         MOV     R1,?V0 + 1
+   \   0000A3   E4           CLR     A
+   \   0000A4   E5..         MOV     A,?V0 + 1
+   \   0000A6   A8..         MOV     R0,?V0 + 1
+   \   0000A8   E5..         MOV     A,?V0 + 1
+   \   0000AA   EE           MOV     A,R6
+   \   0000AB   240C         ADD     A,#0xc
+   \   0000AD   F582         MOV     DPL,A
+   \   0000AF   EF           MOV     A,R7
+   \   0000B0   3400         ADDC    A,#0x0
+   \   0000B2   F583         MOV     DPH,A
+   \   0000B4   E5..         MOV     A,?V0 + 1
+   \   0000B6   F0           MOVX    @DPTR,A
+    767            buffer[13] = LO_UINT16(len);
+   \   0000B7   E5..         MOV     A,?V0 + 0
+   \   0000B9   EE           MOV     A,R6
+   \   0000BA   240D         ADD     A,#0xd
+   \   0000BC   F582         MOV     DPL,A
+   \   0000BE   EF           MOV     A,R7
+   \   0000BF   3400         ADDC    A,#0x0
+   \   0000C1   F583         MOV     DPH,A
+   \   0000C3   E5..         MOV     A,?V0 + 0
+   \   0000C5   F0           MOVX    @DPTR,A
+    768            osal_memcpy(&buffer[14], (byte*)data_end, 2);
+   \   0000C6                ; Setup parameters for call to function osal_memcpy
+   \   0000C6   75....       MOV     ?V0 + 4,#data_end & 0xff
+   \   0000C9   75....       MOV     ?V0 + 5,#(data_end >> 8) & 0xff
+   \   0000CC   75..00       MOV     ?V0 + 6,#0x0
+   \   0000CF   78..         MOV     R0,#?V0 + 4
+   \   0000D1   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   0000D4   7C02         MOV     R4,#0x2
+   \   0000D6   7D00         MOV     R5,#0x0
+   \   0000D8   EE           MOV     A,R6
+   \   0000D9   240E         ADD     A,#0xe
+   \   0000DB   FA           MOV     R2,A
+   \   0000DC   EF           MOV     A,R7
+   \   0000DD   3400         ADDC    A,#0x0
+   \   0000DF   FB           MOV     R3,A
+   \   0000E0   12....       LCALL   ??osal_memcpy?relay
+   \   0000E3   7403         MOV     A,#0x3
+   \   0000E5   12....       LCALL   ?DEALLOC_XSTACK8
+    769            // send the command
+    770            HalUARTWrite(UART_PORT, buffer, 16);
+   \   0000E8                ; Setup parameters for call to function HalUARTWrite
+   \   0000E8   7C10         MOV     R4,#0x10
+   \   0000EA   7D00         MOV     R5,#0x0
+   \   0000EC   EE           MOV     A,R6
+   \   0000ED   FA           MOV     R2,A
+   \   0000EE   EF           MOV     A,R7
+   \   0000EF   FB           MOV     R3,A
+   \   0000F0   7900         MOV     R1,#0x0
+   \   0000F2   12....       LCALL   ??HalUARTWrite?relay
+    771            // free the buffer
+    772            osal_mem_free((byte*)buffer);
+   \   0000F5                ; Setup parameters for call to function osal_mem_free
+   \   0000F5   EE           MOV     A,R6
+   \   0000F6   FA           MOV     R2,A
+   \   0000F7   EF           MOV     A,R7
+   \   0000F8   FB           MOV     R3,A
+   \   0000F9   12....       LCALL   ??osal_mem_free?relay
+    773            buffer = NULL;
+   \   0000FC   7E00         MOV     R6,#0x0
+   \   0000FE   7F00         MOV     R7,#0x0
+    774          }
+   \   000100   7F07         MOV     R7,#0x7
+   \   000102   02....       LJMP    ?BANKED_LEAVE_XDATA
+    775          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    776          static uint16 Camera_ToolTimesOfEight(uint16 addr)
+   \                     Camera_ToolTimesOfEight:
+    777          {
+   \   000000   C0..         PUSH    ?V0 + 0
+   \   000002   C0..         PUSH    ?V0 + 1
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    778            // here you should just read less than the bits
+    779            if((addr/8*8+7) > addr)
+   \   000004   8A..         MOV     ?V0 + 0,R2
+   \   000006   8B..         MOV     ?V0 + 1,R3
+   \   000008   7403         MOV     A,#0x3
+   \   00000A   78..         MOV     R0,#?V0 + 0
+   \   00000C   12....       LCALL   ?US_SHR
+   \   00000F   E5..         MOV     A,?V0 + 0
+   \   000011   75F008       MOV     B,#0x8
+   \   000014   A4           MUL     AB
+   \   000015   C5..         XCH     A,?V0 + 0
+   \   000017   A8F0         MOV     R0,B
+   \   000019   75F000       MOV     B,#0x0
+   \   00001C   A4           MUL     AB
+   \   00001D   28           ADD     A,R0
+   \   00001E   F8           MOV     R0,A
+   \   00001F   75F008       MOV     B,#0x8
+   \   000022   E5..         MOV     A,?V0 + 1
+   \   000024   A4           MUL     AB
+   \   000025   28           ADD     A,R0
+   \   000026   F5..         MOV     ?V0 + 1,A
+   \   000028   E5..         MOV     A,?V0 + 0
+   \   00002A   2407         ADD     A,#0x7
+   \   00002C   F8           MOV     R0,A
+   \   00002D   E5..         MOV     A,?V0 + 1
+   \   00002F   3400         ADDC    A,#0x0
+   \   000031   F9           MOV     R1,A
+   \   000032   C3           CLR     C
+   \   000033   EA           MOV     A,R2
+   \   000034   98           SUBB    A,R0
+   \   000035   EB           MOV     A,R3
+   \   000036   99           SUBB    A,R1
+   \   000037   502C         JNC     ??Camera_ToolTimesOfEight_0
+    780            {
+    781          	return ((addr/8-1)*8);
+   \   000039   8A..         MOV     ?V0 + 0,R2
+   \   00003B   8B..         MOV     ?V0 + 1,R3
+   \   00003D   7403         MOV     A,#0x3
+   \   00003F   78..         MOV     R0,#?V0 + 0
+   \   000041   12....       LCALL   ?US_SHR
+   \   000044   E5..         MOV     A,?V0 + 0
+   \   000046   24FF         ADD     A,#-0x1
+   \   000048   FA           MOV     R2,A
+   \   000049   E5..         MOV     A,?V0 + 1
+   \   00004B   34FF         ADDC    A,#-0x1
+   \   00004D   FB           MOV     R3,A
+   \   00004E   EA           MOV     A,R2
+   \   00004F   75F008       MOV     B,#0x8
+   \   000052   A4           MUL     AB
+   \   000053   CA           XCH     A,R2
+   \   000054   A8F0         MOV     R0,B
+   \   000056   75F000       MOV     B,#0x0
+   \   000059   A4           MUL     AB
+   \   00005A   28           ADD     A,R0
+   \   00005B   F8           MOV     R0,A
+   \   00005C   75F008       MOV     B,#0x8
+   \   00005F   EB           MOV     A,R3
+   \   000060   A4           MUL     AB
+   \   000061   28           ADD     A,R0
+   \   000062   FB           MOV     R3,A
+   \   000063   8025         SJMP    ??Camera_ToolTimesOfEight_1
+    782            }
+    783            else
+    784            {
+    785          	return (addr/8*8);
+   \                     ??Camera_ToolTimesOfEight_0:
+   \   000065   8A..         MOV     ?V0 + 0,R2
+   \   000067   8B..         MOV     ?V0 + 1,R3
+   \   000069   7403         MOV     A,#0x3
+   \   00006B   78..         MOV     R0,#?V0 + 0
+   \   00006D   12....       LCALL   ?US_SHR
+   \   000070   AA..         MOV     R2,?V0 + 0
+   \   000072   AB..         MOV     R3,?V0 + 1
+   \   000074   EA           MOV     A,R2
+   \   000075   75F008       MOV     B,#0x8
+   \   000078   A4           MUL     AB
+   \   000079   CA           XCH     A,R2
+   \   00007A   A8F0         MOV     R0,B
+   \   00007C   75F000       MOV     B,#0x0
+   \   00007F   A4           MUL     AB
+   \   000080   28           ADD     A,R0
+   \   000081   F8           MOV     R0,A
+   \   000082   75F008       MOV     B,#0x8
+   \   000085   E5..         MOV     A,?V0 + 1
+   \   000087   A4           MUL     AB
+   \   000088   28           ADD     A,R0
+   \   000089   FB           MOV     R3,A
+   \                     ??Camera_ToolTimesOfEight_1:
+   \   00008A   D0..         POP     ?V0 + 1
+   \   00008C   D0..         POP     ?V0 + 0
+   \   00008E   02....       LJMP    ?BRET
+    786            }
+    787          }
+    788          
+    789          /**************************************
+    790          	save extern address in array
+    791          **************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    792          static void copyExtAddr(byte* src, byte* dst){
+   \                     copyExtAddr:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    793          	// here LSB goes first
+    794            	int i = 0;
+   \   000004   7800         MOV     R0,#0x0
+   \   000006   7900         MOV     R1,#0x0
+    795          	while(i < 8){
+   \                     ??copyExtAddr_0:
+   \   000008   C3           CLR     C
+   \   000009   E8           MOV     A,R0
+   \   00000A   9408         SUBB    A,#0x8
+   \   00000C   E9           MOV     A,R1
+   \   00000D   9400         SUBB    A,#0x0
+   \   00000F   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000011   65D0         XRL     A,PSW
+   \   000013   33           RLC     A
+   \   000014   5020         JNC     ??copyExtAddr_1
+    796          	  dst[i] = src[i];
+   \   000016   EA           MOV     A,R2
+   \   000017   28           ADD     A,R0
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   39           ADDC    A,R1
+   \   00001C   F583         MOV     DPH,A
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   C0E0         PUSH    A
+   \   000021   EC           MOV     A,R4
+   \   000022   28           ADD     A,R0
+   \   000023   F582         MOV     DPL,A
+   \   000025   ED           MOV     A,R5
+   \   000026   39           ADDC    A,R1
+   \   000027   F583         MOV     DPH,A
+   \   000029   D0E0         POP     A
+   \   00002B   F0           MOVX    @DPTR,A
+    797          	  // update
+    798          	  i++;
+   \   00002C   E8           MOV     A,R0
+   \   00002D   2401         ADD     A,#0x1
+   \   00002F   F8           MOV     R0,A
+   \   000030   E9           MOV     A,R1
+   \   000031   3400         ADDC    A,#0x0
+   \   000033   F9           MOV     R1,A
+   \   000034   80D2         SJMP    ??copyExtAddr_0
+    799          	}
+    800          }
+   \                     ??copyExtAddr_1:
+   \   000036   D083         POP     DPH
+   \   000038   D082         POP     DPL
+   \   00003A   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendImageStartFrame?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendImageStartFrame
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendImageData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendImageData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendTopoInformation?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendTopoInformation
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_CalcFCS?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_CalcFCS
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_UartInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_UartInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_UartCallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_UartCallBack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_UartInterface?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_UartInterface
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendCommand?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendCommand
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendResetCMD?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendResetCMD
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendClearCMD?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendClearCMD
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendShutCMD?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendShutCMD
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendLengthCMD?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendLengthCMD
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_SendDataCMD?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_SendDataCMD
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Camera_ToolTimesOfEight?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Camera_ToolTimesOfEight
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??copyExtAddr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    copyExtAddr
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>_1`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000009   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000011   0000         DB 0, 0
+    801          /*******************************************************************************
+    802          *******************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Camera_CalcFCS                     0      0     39
+     Camera_MessageMSGCB                0      0     28
+       -> Camera_SendTopoInformation
+                                        0      0     20
+       -> Camera_SendClearCMD           0      0     20
+     Camera_SendClearCMD                2      0     15
+       -> HalUARTWrite                  4      0      0
+     Camera_SendCommand                 2      0     15
+       -> Camera_SendShutCMD            4      0      0
+       -> Camera_SendLengthCMD          4      0      0
+     Camera_SendDataCMD                 1      0     36
+       -> osal_mem_alloc                0      0     30
+       -> osal_memcpy                   0      0     36
+       -> osal_memcpy                   0      0     36
+       -> HalUARTWrite                  0      0     30
+       -> osal_mem_free                 0      0     30
+     Camera_SendImageData               1      0     39
+       -> osal_mem_alloc                0      0     30
+       -> osal_memset                   0      0     30
+       -> osal_memcpy                   0      0     36
+       -> Camera_CalcFCS                0      0     30
+       -> AF_DataRequest                0      0     48
+       -> osal_mem_free                 0      0     30
+     Camera_SendImageStartFrame         2      0     43
+       -> Camera_CalcFCS                0      0     38
+       -> AF_DataRequest                0      0     56
+     Camera_SendLengthCMD               2      0      0
+       -> HalUARTWrite                  4      0      0
+     Camera_SendResetCMD                2      0     18
+       -> HalUARTWrite                  4      0      0
+     Camera_SendShutCMD                 2      0      0
+       -> HalUARTWrite                  4      0      0
+     Camera_SendTopoInformation         2      0     53
+       -> NLME_GetExtAddr               0      0     58
+       -> copyExtAddr                   0      0     58
+       -> Camera_CalcFCS                0      0     58
+       -> AF_DataRequest                0      0     76
+     Camera_ToolTimesOfEight            2      0     18
+     Camera_UartCallBack                0      0      9
+       -> Camera_UartInterface          0      0     18
+     Camera_UartInit                    2      0     38
+       -> HalUARTOpen                   4      0     58
+     Camera_UartInterface               2      0     27
+       -> Hal_UART_RxBufLen             0      0     30
+       -> osal_mem_alloc                0      0     30
+       -> HalUARTRead                   0      0     30
+       -> Camera_SendCommand            0      0     30
+       -> Camera_SendTopoInformation
+                                        0      0     30
+       -> Hal_UART_RxBufLen             0      0     30
+       -> osal_mem_alloc                0      0     30
+       -> HalUARTRead                   0      0     30
+       -> Camera_SendImageStartFrame
+                                        0      0     30
+       -> Camera_SendClearCMD           0      0     30
+       -> Hal_UART_RxBufLen             0      0     30
+       -> osal_mem_alloc                0      0     30
+       -> osal_mem_alloc                0      0     30
+       -> HalUARTRead                   0      0     30
+       -> osal_memcpy                   0      0     36
+       -> Camera_SendImageData          0      0     30
+       -> osal_mem_free                 0      0     30
+       -> osal_mem_free                 0      0     30
+     WirelessMonitorSystem_Init         0      0      9
+       -> Camera_UartInit               0      0     18
+       -> afRegister                    0      0     18
+       -> afDataReqMTU                  0      0     18
+     WirelessMonitorSystem_ProcessEvent
+                                        2      0     18
+       -> osal_msg_receive              0      0     36
+       -> osal_start_timerEx            0      0     36
+       -> Camera_MessageMSGCB           0      0     36
+       -> NLME_GetShortAddr             0      0     36
+       -> NLME_GetCoordShortAddr        0      0     36
+       -> osal_start_timerEx            0      0     36
+       -> osal_msg_deallocate           0      0     36
+       -> osal_msg_receive              0      0     36
+       -> Camera_SendResetCMD           0      0     36
+       -> afDataReqMTU                  0      0     36
+       -> Camera_ToolTimesOfEight       0      0     36
+       -> Camera_SendDataCMD            0      0     36
+     copyExtAddr                        3      0     29
+
+
+   Segment part sizes:
+
+     Function/Label                             Bytes
+     --------------                             -----
+     reset                                         4
+     reset_ack                                     4
+     clear                                         5
+     clear_ack                                     5
+     shut                                          5
+     shut_ack                                      5
+     length                                        5
+     length_ack                                    7
+     data_pre                                      6
+     data_end                                      2
+     Camera_ClusterInList                          4
+     Camera_ClusterOutList                         6
+     Camera_SimpleDesc                            12
+     Camera_epDesc                                 6
+     Camera_TaskID                                 1
+     Camera_TransID                                1
+     Camera_NwkState                               1
+     Camera_DstAddr                               12
+     cameraState                                   1
+     maxTransmitDataLen                            1
+     imageLength                                   2
+     currentRead                                   2
+     currentAddr                                   2
+     mtu                                           2
+     srcAddr                                       2
+     parAddr                                       2
+     WirelessMonitorSystem_Init                  153
+     WirelessMonitorSystem_ProcessEvent
+                                                 409
+     Camera_MessageMSGCB                          89
+     Camera_SendImageStartFrame                  260
+     Camera_SendImageData                        336
+     Camera_SendTopoInformation                  307
+     Camera_CalcFCS                               43
+     Camera_UartInit                             126
+     Camera_UartCallBack                          22
+     Camera_UartInterface                        515
+     Camera_SendCommand                           32
+     Camera_SendResetCMD                          24
+     Camera_SendClearCMD                          24
+     Camera_SendShutCMD                           24
+     Camera_SendLengthCMD                         24
+     Camera_SendDataCMD                          261
+     Camera_ToolTimesOfEight                     145
+     copyExtAddr                                  61
+     ??WirelessMonitorSystem_Init?relay            6
+     ??WirelessMonitorSystem_ProcessEvent?relay    6
+     ??Camera_MessageMSGCB?relay                   6
+     ??Camera_SendImageStartFrame?relay            6
+     ??Camera_SendImageData?relay                  6
+     ??Camera_SendTopoInformation?relay            6
+     ??Camera_CalcFCS?relay                        6
+     ??Camera_UartInit?relay                       6
+     ??Camera_UartCallBack?relay                   6
+     ??Camera_UartInterface?relay                  6
+     ??Camera_SendCommand?relay                    6
+     ??Camera_SendResetCMD?relay                   6
+     ??Camera_SendClearCMD?relay                   6
+     ??Camera_SendShutCMD?relay                    6
+     ??Camera_SendLengthCMD?relay                  6
+     ??Camera_SendDataCMD?relay                    6
+     ??Camera_ToolTimesOfEight?relay               6
+     ??copyExtAddr?relay                           6
+     ?<Constant {0}>                               9
+     ?<Constant {0}>_1                            19
+
+ 
+ 2 855 bytes in segment BANKED_CODE
+   108 bytes in segment BANK_RELAYS
+    98 bytes in segment XDATA_ROM_C
+    35 bytes in segment XDATA_Z
+ 
+ 2 963 bytes of CODE  memory
+    98 bytes of CONST memory
+    35 bytes of XDATA memory
+
+Errors: none
+Warnings: none

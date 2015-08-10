@@ -1,0 +1,2160 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        13/Jul/2015  17:24:01 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Compone /
+//                          nts\hal\target\CC2530EB\ov7670.c                  /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"          /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\T /
+//                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO         /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500        /
+//                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)   /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\t /
+//                          arget\CC2530EB\ov7670.c" -D HAL_UART -lC          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          Camera\List\" -lA "C:\Texas                       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Camera\Lis /
+//                          t\" --diag_suppress Pe001,Pa010 -o "C:\Texas      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Camera\Obj /
+//                          \" -e --no_cse --no_unroll --no_inline            /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\" -I       /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\Source\" -I "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\Z /
+//                          Main\TI2530DB\" -I "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\include\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\target\CC2530EB\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\include\" -I        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\high_level\" -I     /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\low_level\srf04\"   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\..\..\Components\mac\low_level\srf04\ /
+//                          single_chip\" -I "C:\Texas                        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\mt\" -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\osal\include\" -I "C:\Texas       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\saddr\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\sdata\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\af\" -I "C:\Texas           /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\nwk\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sapi\" -I "C:\Texas         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sec\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sys\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\zdo\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\" -I "C:\Texas               /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\f8w\" -On                    /
+//                          --require_prototypes                              /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\C /
+//                          amera\List\ov7670.s51                             /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ov7670
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?US_SHR
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+
+        PUBLIC ??OV7670_Brightness?relay
+        FUNCTION ??OV7670_Brightness?relay,0203H
+        PUBLIC ??OV7670_Color_Saturation?relay
+        FUNCTION ??OV7670_Color_Saturation?relay,0203H
+        PUBLIC ??OV7670_Contrast?relay
+        FUNCTION ??OV7670_Contrast?relay,0203H
+        PUBLIC ??OV7670_Init?relay
+        FUNCTION ??OV7670_Init?relay,0203H
+        PUBLIC ??OV7670_Light_Mode?relay
+        FUNCTION ??OV7670_Light_Mode?relay,0203H
+        PUBLIC ??OV7670_Special_Effects?relay
+        FUNCTION ??OV7670_Special_Effects?relay,0203H
+        PUBLIC ??OV7670_Window_Set?relay
+        FUNCTION ??OV7670_Window_Set?relay,0203H
+        PUBWEAK IEN2
+        PUBLIC OV7670_Brightness
+        FUNCTION OV7670_Brightness,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC OV7670_Color_Saturation
+        FUNCTION OV7670_Color_Saturation,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC OV7670_Contrast
+        FUNCTION OV7670_Contrast,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC OV7670_Init
+        FUNCTION OV7670_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC OV7670_Light_Mode
+        FUNCTION OV7670_Light_Mode,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC OV7670_Special_Effects
+        FUNCTION OV7670_Special_Effects,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC OV7670_Window_Set
+        FUNCTION OV7670_Window_Set,021203H
+        ARGFRAME XSTACK, 4, STACK
+        LOCFRAME XSTACK, 22, STACK
+        PUBWEAK P0DIR
+        PUBWEAK P0INP
+        PUBWEAK P0SEL
+        PUBWEAK P1DIR
+        PUBWEAK P1INP
+        PUBWEAK P1SEL
+        PUBWEAK P2IEN
+        PUBWEAK P2IFG
+        PUBWEAK P2INP
+        PUBWEAK PICTL
+        PUBLIC ov7670_init_reg_tbl
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+SCCB_Init           SYMBOL "SCCB_Init"
+SCCB_WR_Reg         SYMBOL "SCCB_WR_Reg"
+delay_ms            SYMBOL "delay_ms"
+SCCB_RD_Reg         SYMBOL "SCCB_RD_Reg"
+??SCCB_Init?relay   SYMBOL "?relay", SCCB_Init
+??SCCB_RD_Reg?relay SYMBOL "?relay", SCCB_RD_Reg
+??SCCB_WR_Reg?relay SYMBOL "?relay", SCCB_WR_Reg
+??delay_ms?relay    SYMBOL "?relay", delay_ms
+OV7670_Brightness   SYMBOL "OV7670_Brightness"
+??OV7670_Brightness?relay SYMBOL "?relay", OV7670_Brightness
+OV7670_Color_Saturation SYMBOL "OV7670_Color_Saturation"
+??OV7670_Color_Saturation?relay SYMBOL "?relay", OV7670_Color_Saturation
+OV7670_Contrast     SYMBOL "OV7670_Contrast"
+??OV7670_Contrast?relay SYMBOL "?relay", OV7670_Contrast
+OV7670_Init         SYMBOL "OV7670_Init"
+??OV7670_Init?relay SYMBOL "?relay", OV7670_Init
+OV7670_Light_Mode   SYMBOL "OV7670_Light_Mode"
+??OV7670_Light_Mode?relay SYMBOL "?relay", OV7670_Light_Mode
+OV7670_Special_Effects SYMBOL "OV7670_Special_Effects"
+??OV7670_Special_Effects?relay SYMBOL "?relay", OV7670_Special_Effects
+OV7670_Window_Set   SYMBOL "OV7670_Window_Set"
+??OV7670_Window_Set?relay SYMBOL "?relay", OV7670_Window_Set
+
+        EXTERN SCCB_Init
+        FUNCTION SCCB_Init,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SCCB_WR_Reg
+        FUNCTION SCCB_WR_Reg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN delay_ms
+        FUNCTION delay_ms,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN SCCB_RD_Reg
+        FUNCTION SCCB_RD_Reg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??SCCB_Init?relay
+        FUNCTION ??SCCB_Init?relay,00H
+        EXTERN ??SCCB_RD_Reg?relay
+        FUNCTION ??SCCB_RD_Reg?relay,00H
+        EXTERN ??SCCB_WR_Reg?relay
+        FUNCTION ??SCCB_WR_Reg?relay,00H
+        EXTERN ??delay_ms?relay
+        FUNCTION ??delay_ms?relay,00H
+
+// C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\ov7670.c
+//    1 #include "ov7670.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,08bH
+// unsigned char volatile __sfr P2IFG
+P2IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08cH
+// unsigned char volatile __sfr PICTL
+PICTL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,08fH
+// unsigned char volatile __sfr P0INP
+P0INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,09aH
+// unsigned char volatile __sfr IEN2
+IEN2:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0acH
+// unsigned char volatile __sfr P2IEN
+P2IEN:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f4H
+// unsigned char volatile __sfr P1SEL
+P1SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f6H
+// unsigned char volatile __sfr P1INP
+P1INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f7H
+// unsigned char volatile __sfr P2INP
+P2INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0feH
+// unsigned char volatile __sfr P1DIR
+P1DIR:
+        DATA8
+        DS 1
+//    2 #include "ov7670config.h"		 
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+// unsigned char const __xdata_rom ov7670_init_reg_tbl[168][2]
+ov7670_init_reg_tbl:
+        DB 58
+        DB 4
+        DB 64
+        DB 208
+        DB 18
+        DB 20
+        DB 50
+        DB 128
+        DB 23
+        DB 22
+        DB 24
+        DB 4
+        DB 25
+        DB 2
+        DB 26
+        DB 123
+        DB 3
+        DB 6
+        DB 12
+        DB 0
+        DB 21
+        DB 0
+        DB 62
+        DB 0
+        DB 112
+        DB 58
+        DB 113
+        DB 53
+        DB 114
+        DB 17
+        DB 115
+        DB 0
+        DB 162
+        DB 2
+        DB 17
+        DB 129
+        DB 122
+        DB 32
+        DB 123
+        DB 28
+        DB 124
+        DB 40
+        DB 125
+        DB 60
+        DB 126
+        DB 85
+        DB 127
+        DB 104
+        DB 128
+        DB 118
+        DB 129
+        DB 128
+        DB 130
+        DB 136
+        DB 131
+        DB 143
+        DB 132
+        DB 150
+        DB 133
+        DB 163
+        DB 134
+        DB 175
+        DB 135
+        DB 196
+        DB 136
+        DB 215
+        DB 137
+        DB 232
+        DB 19
+        DB 224
+        DB 0
+        DB 0
+        DB 16
+        DB 0
+        DB 13
+        DB 0
+        DB 20
+        DB 40
+        DB 165
+        DB 5
+        DB 171
+        DB 7
+        DB 36
+        DB 117
+        DB 37
+        DB 99
+        DB 38
+        DB 165
+        DB 159
+        DB 120
+        DB 160
+        DB 104
+        DB 161
+        DB 3
+        DB 166
+        DB 223
+        DB 167
+        DB 223
+        DB 168
+        DB 240
+        DB 169
+        DB 144
+        DB 170
+        DB 148
+        DB 19
+        DB 229
+        DB 14
+        DB 97
+        DB 15
+        DB 75
+        DB 22
+        DB 2
+        DB 30
+        DB 55
+        DB 33
+        DB 2
+        DB 34
+        DB 145
+        DB 41
+        DB 7
+        DB 51
+        DB 11
+        DB 53
+        DB 11
+        DB 55
+        DB 29
+        DB 56
+        DB 113
+        DB 57
+        DB 42
+        DB 60
+        DB 120
+        DB 77
+        DB 64
+        DB 78
+        DB 32
+        DB 105
+        DB 0
+        DB 107
+        DB 64
+        DB 116
+        DB 25
+        DB 141
+        DB 79
+        DB 142
+        DB 0
+        DB 143
+        DB 0
+        DB 144
+        DB 0
+        DB 145
+        DB 0
+        DB 146
+        DB 0
+        DB 150
+        DB 0
+        DB 154
+        DB 128
+        DB 176
+        DB 132
+        DB 177
+        DB 12
+        DB 178
+        DB 14
+        DB 179
+        DB 130
+        DB 184
+        DB 10
+        DB 67
+        DB 20
+        DB 68
+        DB 240
+        DB 69
+        DB 52
+        DB 70
+        DB 88
+        DB 71
+        DB 40
+        DB 72
+        DB 58
+        DB 89
+        DB 136
+        DB 90
+        DB 136
+        DB 91
+        DB 68
+        DB 92
+        DB 103
+        DB 93
+        DB 73
+        DB 94
+        DB 14
+        DB 100
+        DB 4
+        DB 101
+        DB 32
+        DB 102
+        DB 5
+        DB 148
+        DB 4
+        DB 149
+        DB 8
+        DB 108
+        DB 10
+        DB 109
+        DB 85
+        DB 79
+        DB 128
+        DB 80
+        DB 128
+        DB 81
+        DB 0
+        DB 82
+        DB 34
+        DB 83
+        DB 94
+        DB 84
+        DB 128
+        DB 9
+        DB 3
+        DB 110
+        DB 17
+        DB 111
+        DB 159
+        DB 85
+        DB 0
+        DB 86
+        DB 64
+        DB 87
+        DB 64
+        DB 106
+        DB 64
+        DB 1
+        DB 64
+        DB 2
+        DB 64
+        DB 19
+        DB 231
+        DB 21
+        DB 0
+        DB 88
+        DB 158
+        DB 65
+        DB 8
+        DB 63
+        DB 0
+        DB 117
+        DB 5
+        DB 118
+        DB 225
+        DB 76
+        DB 0
+        DB 119
+        DB 1
+        DB 61
+        DB 194
+        DB 75
+        DB 9
+        DB 201
+        DB 96
+        DB 65
+        DB 56
+        DB 52
+        DB 17
+        DB 59
+        DB 2
+        DB 164
+        DB 137
+        DB 150
+        DB 0
+        DB 151
+        DB 48
+        DB 152
+        DB 32
+        DB 153
+        DB 48
+        DB 154
+        DB 132
+        DB 155
+        DB 41
+        DB 156
+        DB 3
+        DB 157
+        DB 76
+        DB 158
+        DB 63
+        DB 120
+        DB 4
+        DB 121
+        DB 1
+        DB 200
+        DB 240
+        DB 121
+        DB 15
+        DB 200
+        DB 0
+        DB 121
+        DB 16
+        DB 200
+        DB 126
+        DB 121
+        DB 10
+        DB 200
+        DB 128
+        DB 121
+        DB 11
+        DB 200
+        DB 1
+        DB 121
+        DB 12
+        DB 200
+        DB 15
+        DB 121
+        DB 13
+        DB 200
+        DB 32
+        DB 121
+        DB 9
+        DB 200
+        DB 128
+        DB 121
+        DB 2
+        DB 200
+        DB 192
+        DB 121
+        DB 3
+        DB 200
+        DB 64
+        DB 121
+        DB 5
+        DB 200
+        DB 48
+        DB 121
+        DB 38
+        DB 9
+        DB 0
+//    3 #include "sccb.h"	
+//    4 
+//    5 //初始化OV7670
+//    6 //返回0:成功
+//    7 //返回其他值:错误代码
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//    8 uint8 OV7670_Init(void)
+OV7670_Init:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function OV7670_Init
+        CODE
+//    9 {
+        FUNCALL OV7670_Init, SCCB_Init
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, delay_ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, SCCB_RD_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, SCCB_RD_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Init, delay_ms
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//   10 	uint8 temp;
+//   11 	uint16 i=0;	  
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//   12     // init IO for OV7670
+//   13     // data input
+//   14     P1SEL &= 0x00;
+        MOV     A,0xf4
+        MOV     ?V0 + 1,A
+        MOV     0xf4,#0x0
+//   15     P1DIR &= 0x00;
+        MOV     A,0xfe
+        MOV     ?V0 + 2,A
+        MOV     0xfe,#0x0
+//   16 	P1INP &= 0x00;
+        MOV     A,0xf6
+        MOV     ?V0 + 3,A
+        MOV     0xf6,#0x0
+//   17     P2INP |= 0xBF; // p1 port all pull-up mode
+        ORL     0xf7,#0xbf
+//   18 	
+//   19     // init control
+//   20     // p0_0,1,4,5 6 output/general I/O/pull-up Mode
+//   21     P0SEL &= 0x8C;
+        ANL     0xf3,#0x8c
+//   22     P0DIR |= 0x73;
+        ORL     0xfd,#0x73
+//   23     P0INP |= 0x83;
+        ORL     0x8f,#0x83
+//   24 	P2INP &= 0xDF;
+        ANL     0xf7,#0xdf
+//   25 	
+//   26     // init Vsync(p2_0)
+//   27     P2IEN |= 0x01;  // open interrupts on p2_0
+        ORL     0xac,#0x1
+//   28     PICTL |= 0x08;  // falling-edge
+        ORL     0x8c,#0x8
+//   29     IEN2  |= 0x02;  // open all group interrupts
+        ORL     0x9a,#0x2
+//   30     P2IFG &= 0xFE;  // reset the flag
+        ANL     0x8b,#0xfe
+//   31         
+//   32  	SCCB_Init();        		//初始化SCCB 的IO口	   	  
+        ; Setup parameters for call to function SCCB_Init
+        LCALL   ??SCCB_Init?relay
+//   33  	if(SCCB_WR_Reg(0x12,0x80))return 1;	//复位SCCB	  
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,#-0x80
+        MOV     R1,#0x12
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+        JZ      ??OV7670_Init_0
+        MOV     R1,#0x1
+        LJMP    ??OV7670_Init_1 & 0xFFFF
+//   34 	delay_ms(50); 
+??OV7670_Init_0:
+        ; Setup parameters for call to function delay_ms
+        MOV     R2,#0x32
+        MOV     R3,#0x0
+        LCALL   ??delay_ms?relay
+//   35 	//读取产品型号
+//   36  	temp=SCCB_RD_Reg(0x0b);   
+        ; Setup parameters for call to function SCCB_RD_Reg
+        MOV     R1,#0xb
+        LCALL   ??SCCB_RD_Reg?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//   37 	if(temp!=0x73)return 2;  
+        MOV     A,#0x73
+        XRL     A,?V0 + 0
+        JZ      ??OV7670_Init_2
+        MOV     R1,#0x2
+        LJMP    ??OV7670_Init_1 & 0xFFFF
+//   38  	temp=SCCB_RD_Reg(0x0a);   
+??OV7670_Init_2:
+        ; Setup parameters for call to function SCCB_RD_Reg
+        MOV     R1,#0xa
+        LCALL   ??SCCB_RD_Reg?relay
+        MOV     A,R1
+        MOV     ?V0 + 0,A
+//   39 	if(temp!=0x76)return 2;
+        MOV     A,#0x76
+        XRL     A,?V0 + 0
+        JZ      ??OV7670_Init_3
+        MOV     R1,#0x2
+        SJMP    ??OV7670_Init_1
+//   40 	//初始化序列	  
+//   41 	for(i=0;i<sizeof(ov7670_init_reg_tbl)/sizeof(ov7670_init_reg_tbl[0]);i++)
+??OV7670_Init_3:
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+??OV7670_Init_4:
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#-0x58
+        MOV     A,R7
+        SUBB    A,#0x0
+        JNC     ??OV7670_Init_5
+//   42 	{
+//   43 	   	SCCB_WR_Reg(ov7670_init_reg_tbl[i][0],ov7670_init_reg_tbl[i][1]);
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,#(ov7670_init_reg_tbl + 1) & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#((ov7670_init_reg_tbl + 1) >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     A,R6
+        MOV     R0,A
+        MOV     A,R7
+        MOV     R1,A
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R3,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R3
+        MOV     R3,A
+        MOV     B,#0x2
+        MOV     A,R1
+        MUL     AB
+        ADD     A,R3
+        MOV     R1,A
+        MOV     A,#ov7670_init_reg_tbl & 0xff
+        ADD     A,R0
+        MOV     DPL,A
+        MOV     A,#(ov7670_init_reg_tbl >> 8) & 0xff
+        ADDC    A,R1
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//   44 		delay_ms(2);
+        ; Setup parameters for call to function delay_ms
+        MOV     R2,#0x2
+        MOV     R3,#0x0
+        LCALL   ??delay_ms?relay
+//   45  	}
+        MOV     A,R6
+        ADD     A,#0x1
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        SJMP    ??OV7670_Init_4
+//   46    	return 0x00; 	//ok
+??OV7670_Init_5:
+        MOV     R1,#0x0
+??OV7670_Init_1:
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+        REQUIRE P1SEL
+        REQUIRE P1DIR
+        REQUIRE P1INP
+        REQUIRE P2INP
+        REQUIRE P0SEL
+        REQUIRE P0DIR
+        REQUIRE P0INP
+        REQUIRE P2IEN
+        REQUIRE PICTL
+        REQUIRE IEN2
+        REQUIRE P2IFG
+//   47 } 
+//   48 ////////////////////////////////////////////////////////////////////////////
+//   49 //OV7670功能设置
+//   50 //白平衡设置
+//   51 //0:自动
+//   52 //1:太阳sunny
+//   53 //2,阴天cloudy
+//   54 //3,办公室office
+//   55 //4,家里home
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   56 void OV7670_Light_Mode(uint8 mode)
+OV7670_Light_Mode:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function OV7670_Light_Mode
+        CODE
+//   57 {
+        FUNCALL OV7670_Light_Mode, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Light_Mode, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Light_Mode, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+//   58 	uint8 reg13val=0XE7;//默认就是设置为自动白平衡
+        MOV     ?V0 + 1,#-0x19
+//   59 	uint8 reg01val=0;
+        MOV     R7,#0x0
+//   60 	uint8 reg02val=0;
+        MOV     R6,#0x0
+//   61 	switch(mode)
+        MOV     A,?V0 + 0
+        DEC     A
+        JZ      ??OV7670_Light_Mode_0
+        DEC     A
+        JZ      ??OV7670_Light_Mode_1
+        DEC     A
+        JZ      ??OV7670_Light_Mode_2
+        DEC     A
+        JZ      ??OV7670_Light_Mode_3
+        SJMP    ??OV7670_Light_Mode_4
+//   62 	{
+//   63 		case 1://sunny
+//   64 			reg13val=0XE5;
+??OV7670_Light_Mode_0:
+        MOV     ?V0 + 1,#-0x1b
+//   65 			reg01val=0X5A;
+        MOV     R7,#0x5a
+//   66 			reg02val=0X5C;
+        MOV     R6,#0x5c
+//   67 			break;	
+        SJMP    ??OV7670_Light_Mode_4
+//   68 		case 2://cloudy
+//   69 			reg13val=0XE5;
+??OV7670_Light_Mode_1:
+        MOV     ?V0 + 1,#-0x1b
+//   70 			reg01val=0X58;
+        MOV     R7,#0x58
+//   71 			reg02val=0X60;
+        MOV     R6,#0x60
+//   72 			break;	
+        SJMP    ??OV7670_Light_Mode_4
+//   73 		case 3://office
+//   74 			reg13val=0XE5;
+??OV7670_Light_Mode_2:
+        MOV     ?V0 + 1,#-0x1b
+//   75 			reg01val=0X84;
+        MOV     R7,#-0x7c
+//   76 			reg02val=0X4c;
+        MOV     R6,#0x4c
+//   77 			break;	
+        SJMP    ??OV7670_Light_Mode_4
+//   78 		case 4://home
+//   79 			reg13val=0XE5;
+??OV7670_Light_Mode_3:
+        MOV     ?V0 + 1,#-0x1b
+//   80 			reg01val=0X96;
+        MOV     R7,#-0x6a
+//   81 			reg02val=0X40;
+        MOV     R6,#0x40
+//   82 			break;	
+//   83 	}
+//   84 	SCCB_WR_Reg(0X13,reg13val);//COM8设置 
+??OV7670_Light_Mode_4:
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 1
+        MOV     R1,#0x13
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//   85 	SCCB_WR_Reg(0X01,reg01val);//AWB蓝色通道增益 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,#0x1
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//   86 	SCCB_WR_Reg(0X02,reg02val);//AWB红色通道增益 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R6
+        MOV     R2,A
+        MOV     R1,#0x2
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//   87 }				  
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//   88 //色度设置
+//   89 //0:-2
+//   90 //1:-1
+//   91 //2,0
+//   92 //3,1
+//   93 //4,2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   94 void OV7670_Color_Saturation(uint8 sat)
+OV7670_Color_Saturation:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function OV7670_Color_Saturation
+        CODE
+//   95 {
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Color_Saturation, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+//   96 	uint8 reg4f5054val=0X80;//默认就是sat=2,即不调节色度的设置
+        MOV     ?V0 + 1,#-0x80
+//   97  	uint8 reg52val=0X22;
+        MOV     R7,#0x22
+//   98 	uint8 reg53val=0X5E;
+        MOV     R6,#0x5e
+//   99  	switch(sat)
+        MOV     A,?V0 + 0
+        JZ      ??OV7670_Color_Saturation_0
+        DEC     A
+        JZ      ??OV7670_Color_Saturation_1
+        ADD     A,#-0x2
+        JZ      ??OV7670_Color_Saturation_2
+        DEC     A
+        JZ      ??OV7670_Color_Saturation_3
+        SJMP    ??OV7670_Color_Saturation_4
+//  100 	{
+//  101 		case 0://-2
+//  102 			reg4f5054val=0X40;  	 
+??OV7670_Color_Saturation_0:
+        MOV     ?V0 + 1,#0x40
+//  103 			reg52val=0X11;
+        MOV     R7,#0x11
+//  104 			reg53val=0X2F;	 	 
+        MOV     R6,#0x2f
+//  105 			break;	
+        SJMP    ??OV7670_Color_Saturation_4
+//  106 		case 1://-1
+//  107 			reg4f5054val=0X66;	    
+??OV7670_Color_Saturation_1:
+        MOV     ?V0 + 1,#0x66
+//  108 			reg52val=0X1B;
+        MOV     R7,#0x1b
+//  109 			reg53val=0X4B;	  
+        MOV     R6,#0x4b
+//  110 			break;	
+        SJMP    ??OV7670_Color_Saturation_4
+//  111 		case 3://1
+//  112 			reg4f5054val=0X99;	   
+??OV7670_Color_Saturation_2:
+        MOV     ?V0 + 1,#-0x67
+//  113 			reg52val=0X28;
+        MOV     R7,#0x28
+//  114 			reg53val=0X71;	   
+        MOV     R6,#0x71
+//  115 			break;	
+        SJMP    ??OV7670_Color_Saturation_4
+//  116 		case 4://2
+//  117 			reg4f5054val=0XC0;	   
+??OV7670_Color_Saturation_3:
+        MOV     ?V0 + 1,#-0x40
+//  118 			reg52val=0X33;
+        MOV     R7,#0x33
+//  119 			reg53val=0X8D;	   
+        MOV     R6,#-0x73
+//  120 			break;	
+//  121 	}
+//  122 	SCCB_WR_Reg(0X4F,reg4f5054val);	//色彩矩阵系数1
+??OV7670_Color_Saturation_4:
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 1
+        MOV     R1,#0x4f
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  123 	SCCB_WR_Reg(0X50,reg4f5054val);	//色彩矩阵系数2 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 1
+        MOV     R1,#0x50
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  124 	SCCB_WR_Reg(0X51,0X00);			//色彩矩阵系数3  
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,#0x0
+        MOV     R1,#0x51
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  125 	SCCB_WR_Reg(0X52,reg52val);		//色彩矩阵系数4 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,#0x52
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  126 	SCCB_WR_Reg(0X53,reg53val);		//色彩矩阵系数5 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R6
+        MOV     R2,A
+        MOV     R1,#0x53
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  127 	SCCB_WR_Reg(0X54,reg4f5054val);	//色彩矩阵系数6  
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 1
+        MOV     R1,#0x54
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  128 	SCCB_WR_Reg(0X58,0X9E);			//MTXS 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,#-0x62
+        MOV     R1,#0x58
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  129 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  130 //亮度设置
+//  131 //0:-2
+//  132 //1:-1
+//  133 //2,0
+//  134 //3,1
+//  135 //4,2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  136 void OV7670_Brightness(uint8 bright)
+OV7670_Brightness:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function OV7670_Brightness
+        CODE
+//  137 {
+        FUNCALL OV7670_Brightness, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  138 	uint8 reg55val=0X00;//默认就是bright=2
+        MOV     R7,#0x0
+//  139   	switch(bright)
+        JZ      ??OV7670_Brightness_0
+        DEC     A
+        JZ      ??OV7670_Brightness_1
+        ADD     A,#-0x2
+        JZ      ??OV7670_Brightness_2
+        DEC     A
+        JZ      ??OV7670_Brightness_3
+        SJMP    ??OV7670_Brightness_4
+//  140 	{
+//  141 		case 0://-2
+//  142 			reg55val=0XB0;	 	 
+??OV7670_Brightness_0:
+        MOV     R7,#-0x50
+//  143 			break;	
+        SJMP    ??OV7670_Brightness_4
+//  144 		case 1://-1
+//  145 			reg55val=0X98;	 	 
+??OV7670_Brightness_1:
+        MOV     R7,#-0x68
+//  146 			break;	
+        SJMP    ??OV7670_Brightness_4
+//  147 		case 3://1
+//  148 			reg55val=0X18;	 	 
+??OV7670_Brightness_2:
+        MOV     R7,#0x18
+//  149 			break;	
+        SJMP    ??OV7670_Brightness_4
+//  150 		case 4://2
+//  151 			reg55val=0X30;	 	 
+??OV7670_Brightness_3:
+        MOV     R7,#0x30
+//  152 			break;	
+//  153 	}
+//  154 	SCCB_WR_Reg(0X55,reg55val);	//亮度调节 
+??OV7670_Brightness_4:
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,#0x55
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  155 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  156 //对比度设置
+//  157 //0:-2
+//  158 //1:-1
+//  159 //2,0
+//  160 //3,1
+//  161 //4,2
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  162 void OV7670_Contrast(uint8 contrast)
+OV7670_Contrast:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function OV7670_Contrast
+        CODE
+//  163 {
+        FUNCALL OV7670_Contrast, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  164 	uint8 reg56val=0X40;//默认就是contrast=2
+        MOV     R7,#0x40
+//  165   	switch(contrast)
+        JZ      ??OV7670_Contrast_0
+        DEC     A
+        JZ      ??OV7670_Contrast_1
+        ADD     A,#-0x2
+        JZ      ??OV7670_Contrast_2
+        DEC     A
+        JZ      ??OV7670_Contrast_3
+        SJMP    ??OV7670_Contrast_4
+//  166 	{
+//  167 		case 0://-2
+//  168 			reg56val=0X30;	 	 
+??OV7670_Contrast_0:
+        MOV     R7,#0x30
+//  169 			break;	
+        SJMP    ??OV7670_Contrast_4
+//  170 		case 1://-1
+//  171 			reg56val=0X38;	 	 
+??OV7670_Contrast_1:
+        MOV     R7,#0x38
+//  172 			break;	
+        SJMP    ??OV7670_Contrast_4
+//  173 		case 3://1
+//  174 			reg56val=0X50;	 	 
+??OV7670_Contrast_2:
+        MOV     R7,#0x50
+//  175 			break;	
+        SJMP    ??OV7670_Contrast_4
+//  176 		case 4://2
+//  177 			reg56val=0X60;	 	 
+??OV7670_Contrast_3:
+        MOV     R7,#0x60
+//  178 			break;	
+//  179 	}
+//  180 	SCCB_WR_Reg(0X56,reg56val);	//对比度调节 
+??OV7670_Contrast_4:
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,#0x56
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  181 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  182 //特效设置
+//  183 //0:普通模式    
+//  184 //1,负片
+//  185 //2,黑白   
+//  186 //3,偏红色
+//  187 //4,偏绿色
+//  188 //5,偏蓝色
+//  189 //6,复古	    
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  190 void OV7670_Special_Effects(uint8 eft)
+OV7670_Special_Effects:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function OV7670_Special_Effects
+        CODE
+//  191 {
+        FUNCALL OV7670_Special_Effects, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Special_Effects, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Special_Effects, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+//  192 	uint8 reg3aval=0X04;//默认为普通模式
+        MOV     ?V0 + 1,#0x4
+//  193 	uint8 reg67val=0XC0;
+        MOV     R7,#-0x40
+//  194 	uint8 reg68val=0X80;
+        MOV     R6,#-0x80
+//  195 	switch(eft)
+        MOV     A,?V0 + 0
+        DEC     A
+        JZ      ??OV7670_Special_Effects_0
+        DEC     A
+        JZ      ??OV7670_Special_Effects_1
+        DEC     A
+        JZ      ??OV7670_Special_Effects_2
+        DEC     A
+        JZ      ??OV7670_Special_Effects_3
+        DEC     A
+        JZ      ??OV7670_Special_Effects_4
+        DEC     A
+        JZ      ??OV7670_Special_Effects_5
+        SJMP    ??OV7670_Special_Effects_6
+//  196 	{
+//  197 		case 1://负片
+//  198 			reg3aval=0X24;
+??OV7670_Special_Effects_0:
+        MOV     ?V0 + 1,#0x24
+//  199 			reg67val=0X80;
+        MOV     R7,#-0x80
+//  200 			reg68val=0X80;
+        MOV     R6,#-0x80
+//  201 			break;	
+        SJMP    ??OV7670_Special_Effects_6
+//  202 		case 2://黑白
+//  203 			reg3aval=0X14;
+??OV7670_Special_Effects_1:
+        MOV     ?V0 + 1,#0x14
+//  204 			reg67val=0X80;
+        MOV     R7,#-0x80
+//  205 			reg68val=0X80;
+        MOV     R6,#-0x80
+//  206 			break;	
+        SJMP    ??OV7670_Special_Effects_6
+//  207 		case 3://偏红色
+//  208 			reg3aval=0X14;
+??OV7670_Special_Effects_2:
+        MOV     ?V0 + 1,#0x14
+//  209 			reg67val=0Xc0;
+        MOV     R7,#-0x40
+//  210 			reg68val=0X80;
+        MOV     R6,#-0x80
+//  211 			break;	
+        SJMP    ??OV7670_Special_Effects_6
+//  212 		case 4://偏绿色
+//  213 			reg3aval=0X14;
+??OV7670_Special_Effects_3:
+        MOV     ?V0 + 1,#0x14
+//  214 			reg67val=0X40;
+        MOV     R7,#0x40
+//  215 			reg68val=0X40;
+        MOV     R6,#0x40
+//  216 			break;	
+        SJMP    ??OV7670_Special_Effects_6
+//  217 		case 5://偏蓝色
+//  218 			reg3aval=0X14;
+??OV7670_Special_Effects_4:
+        MOV     ?V0 + 1,#0x14
+//  219 			reg67val=0X80;
+        MOV     R7,#-0x80
+//  220 			reg68val=0XC0;
+        MOV     R6,#-0x40
+//  221 			break;	
+        SJMP    ??OV7670_Special_Effects_6
+//  222 		case 6://复古
+//  223 			reg3aval=0X14;
+??OV7670_Special_Effects_5:
+        MOV     ?V0 + 1,#0x14
+//  224 			reg67val=0XA0;
+        MOV     R7,#-0x60
+//  225 			reg68val=0X40;
+        MOV     R6,#0x40
+//  226 			break;	 
+//  227 	}
+//  228 	SCCB_WR_Reg(0X3A,reg3aval);//TSLB设置 
+??OV7670_Special_Effects_6:
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 1
+        MOV     R1,#0x3a
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  229 	SCCB_WR_Reg(0X68,reg67val);//MANU,手动U值 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R7
+        MOV     R2,A
+        MOV     R1,#0x68
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  230 	SCCB_WR_Reg(0X67,reg68val);//MANV,手动V值 
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     A,R6
+        MOV     R2,A
+        MOV     R1,#0x67
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  231 }	
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//  232 //设置图像输出窗口
+//  233 //对QVGA设置。
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  234 void OV7670_Window_Set(uint16 sx,uint16 sy,uint16 width,uint16 height)
+OV7670_Window_Set:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function OV7670_Window_Set
+        CODE
+//  235 {
+        FUNCALL OV7670_Window_Set, SCCB_RD_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_RD_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL OV7670_Window_Set, SCCB_WR_Reg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 22, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 22, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x16
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 22)
+        ; Saved register size: 22
+        ; Auto size: 0
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+        MOV     A,#0x16
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 9,A
+        MOV     A,#0x18
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 7,A
+//  236 	uint16 endx;
+//  237 	uint16 endy;
+//  238 	uint8 temp; 
+//  239 	endx=sx+width*2;	//V*2
+        MOV     R0,?V0 + 8
+        MOV     R1,?V0 + 9
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,?V0 + 9
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,?V0 + 4
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,?V0 + 5
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+//  240  	endy=sy+height*2;
+        MOV     R0,?V0 + 6
+        MOV     R1,?V0 + 7
+        MOV     A,R0
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R0
+        MOV     R2,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R2
+        MOV     R2,A
+        MOV     B,#0x2
+        MOV     A,?V0 + 7
+        MUL     AB
+        ADD     A,R2
+        MOV     R1,A
+        MOV     A,?V0 + 0
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+//  241 	if(endy>784)endy-=784;
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x11
+        MOV     A,R7
+        SUBB    A,#0x3
+        JC      ??OV7670_Window_Set_0
+        MOV     A,R6
+        ADD     A,#-0x10
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#-0x4
+        MOV     R7,A
+//  242 	temp=SCCB_RD_Reg(0X03);				//读取Vref之前的值
+??OV7670_Window_Set_0:
+        ; Setup parameters for call to function SCCB_RD_Reg
+        MOV     R1,#0x3
+        LCALL   ??SCCB_RD_Reg?relay
+        MOV     A,R1
+        MOV     ?V0 + 10,A
+//  243 	temp&=0XF0;
+        ANL     ?V0 + 10,#0xf0
+//  244 	temp|=((endx&0X03)<<2)|(sx&0X03);
+        MOV     A,?V0 + 4
+        ANL     A,#0x3
+        MOV     R0,A
+        MOV     A,?V0 + 2
+        ANL     A,#0x3
+        RLC     A
+        RLC     A
+        ANL     A,#0xfc
+        ORL     A,R0
+        ORL     ?V0 + 10,A
+//  245 	SCCB_WR_Reg(0X03,temp);				//设置Vref的start和end的最低2位
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     R2,?V0 + 10
+        MOV     R1,#0x3
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  246 	SCCB_WR_Reg(0X19,sx>>2);			//设置Vref的start高8位
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     ?V0 + 12,?V0 + 4
+        MOV     ?V0 + 13,?V0 + 5
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 12
+        LCALL   ?US_SHR
+        MOV     R2,?V0 + 12
+        MOV     R1,#0x19
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  247 	SCCB_WR_Reg(0X1A,endx>>2);			//设置Vref的end的高8位
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     ?V0 + 12,?V0 + 2
+        MOV     ?V0 + 13,?V0 + 3
+        MOV     A,#0x2
+        MOV     R0,#?V0 + 12
+        LCALL   ?US_SHR
+        MOV     R2,?V0 + 12
+        MOV     R1,#0x1a
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  248 
+//  249 	temp=SCCB_RD_Reg(0X32);				//读取Href之前的值
+        ; Setup parameters for call to function SCCB_RD_Reg
+        MOV     R1,#0x32
+        LCALL   ??SCCB_RD_Reg?relay
+        MOV     A,R1
+        MOV     ?V0 + 10,A
+//  250 	temp&=0XC0;
+        ANL     ?V0 + 10,#0xc0
+//  251 	temp|=((endy&0X07)<<3)|(sy&0X07);
+        MOV     A,?V0 + 0
+        ANL     A,#0x7
+        MOV     R0,A
+        MOV     A,R6
+        ANL     A,#0x7
+        RLC     A
+        RLC     A
+        RLC     A
+        ANL     A,#0xf8
+        ORL     A,R0
+        ORL     ?V0 + 10,A
+//  252 	SCCB_WR_Reg(0X17,sy>>3);			//设置Href的start高8位
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     ?V0 + 12,?V0 + 0
+        MOV     ?V0 + 13,?V0 + 1
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 12
+        LCALL   ?US_SHR
+        MOV     R2,?V0 + 12
+        MOV     R1,#0x17
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  253 	SCCB_WR_Reg(0X18,endy>>3);			//设置Href的end的高8位
+        ; Setup parameters for call to function SCCB_WR_Reg
+        MOV     ?V0 + 12,R6
+        MOV     ?V0 + 13,R7
+        MOV     A,#0x3
+        MOV     R0,#?V0 + 12
+        LCALL   ?US_SHR
+        MOV     R2,?V0 + 12
+        MOV     R1,#0x18
+        LCALL   ??SCCB_WR_Reg?relay
+        MOV     A,R1
+//  254 }
+        MOV     R7,#0xe
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Init?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Light_Mode?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Light_Mode
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Color_Saturation?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Color_Saturation
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Brightness?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Brightness
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Contrast?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Contrast
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Special_Effects?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Special_Effects
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??OV7670_Window_Set?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    OV7670_Window_Set
+
+        END
+//  255 
+//  256 
+//  257 
+//  258 
+//  259 
+//  260 
+//  261 
+//  262 
+//  263 
+//  264 
+//  265 
+//  266 
+//  267 
+//  268 
+//  269 
+//  270 
+//  271 
+//  272 
+//  273 
+//  274 
+//  275 
+//  276 
+//  277 
+//  278 
+//  279 
+//  280 
+// 
+// 948 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//  11 bytes in segment SFR_AN
+// 336 bytes in segment XDATA_ROM_C
+// 
+// 990 bytes of CODE  memory
+// 336 bytes of CONST memory
+//   0 bytes of DATA  memory (+ 11 bytes shared)
+//
+//Errors: none
+//Warnings: none

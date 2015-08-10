@@ -1,0 +1,1885 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         14/Jul/2015  13:43:38 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\hal\target\CC2530EB\hal_i2c.c                   #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\ta #
+#                          rget\CC2530EB\hal_i2c.c" -D HAL_UART -lC           #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\LC #
+#                          D\List\" -lA "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\LCD\List\" --diag_suppress Pe001,Pa010  #
+#                          -o "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \LCD\Obj\" -e --no_cse --no_unroll --no_inline     #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \List\hal_i2c.lst                                  #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \Obj\hal_i2c.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\hal_i2c.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_i2c.c
+      3            Revised:        $Date: 2010-10-12 17:32:20 -0700 (Tue, 12 Oct 2010) $
+      4            Revision:       $Revision: 24108 $
+      5          
+      6            Description:    I2C driver implementation.
+      7          
+      8          
+      9            Copyright 2006 - 2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com. 
+     38          **************************************************************************************************/
+     39          
+     40          /**************************************************************************************************
+     41              This file contains the I2C interface to off-chip serial EEPROM. While
+     42              much of the driver is generic, certain portions are specific to the
+     43              Atmel part AT24C1024. For example, the 17th address bit occurs in the
+     44              device address byte where one of the address pins should be. Different
+     45              1 Mb parts use a different bit location. This could be abstracted at
+     46              a later time if this is the only differentce among these parts.
+     47          **************************************************************************************************/
+     48          
+     49          #include "ioCC2530.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf3
+   \   unsigned char volatile __sfr P0SEL
+   \                     P0SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+     50          #include "zcomdef.h"
+     51          #include "hal_i2c.h"
+     52          
+     53          #define STATIC static
+     54          
+     55          #if !defined HAL_I2C_RETRY_CNT
+     56          #define HAL_I2C_RETRY_CNT  3
+     57          #endif
+     58          
+     59          // the default cofiguration below uses P1.6 for SDA and P0.0 for SCL.
+     60          // change these as needed.
+     61          /*
+     62           *
+     63           * ReverseTime: 2015/4/19
+     64           * Author: smileboy
+     65           * SCL P0.7  SDA P0.6
+     66           * Change To :
+     67           * p2_3, p2_4
+     68           */
+     69          // the vibrate must use p0_7 and p0_6
+     70          #ifndef OCM_CLK_PORT
+     71            #define OCM_CLK_PORT  0
+     72          #endif
+     73          
+     74          #ifndef OCM_DATA_PORT
+     75            #define OCM_DATA_PORT   0
+     76          #endif
+     77          
+     78          #ifndef OCM_CLK_PIN
+     79            #define OCM_CLK_PIN   7
+     80          #endif
+     81          
+     82          #ifndef OCM_DATA_PIN
+     83            #define OCM_DATA_PIN    6
+     84          #endif
+     85          
+     86          // General I/O definitions
+     87          #define IO_GIO  0  // General purpose I/O
+     88          #define IO_PER  1  // Peripheral function
+     89          #define IO_IN   0  // Input pin
+     90          #define IO_OUT  1  // Output pin
+     91          #define IO_PUD  0  // Pullup/pulldn input
+     92          #define IO_TRI  1  // Tri-state input
+     93          #define IO_PUP  0  // Pull-up input pin
+     94          #define IO_PDN  1  // Pull-down input pin
+     95          
+     96          /**********************************************************
+     97           *
+     98           * Author: smileboy
+     99           * ReverseTime: 2015/4/19
+    100           * introduction: 
+    101           *				just change this device address to ADXL345
+    102           *********************************************************/
+    103          #define	ADXL345_ADDRESS	(0x53)		// this is ADXL345 slave addr
+    104          //#define OCM_ADDRESS  (0xA0)
+    105          
+    106          #define OCM_READ     (0x01)
+    107          #define OCM_WRITE    (0x00)
+    108          #define SMB_ACK      (0)
+    109          #define SMB_NAK      (1)
+    110          #define SEND_STOP    (0)
+    111          #define NOSEND_STOP  (1)
+    112          #define SEND_START   (0)
+    113          #define NOSEND_START (1)
+    114          
+    115          // device specific as to where the 17th address bit goes...
+    116          #define OCM_ADDRESS_BYTE(target,rw)  (OCM_ADDRESS | rw | ((target > 0xFFFF) ? 0x02 : 0x00))
+    117          
+    118          // *************************   MACROS   ************************************
+    119          #undef P
+    120          
+    121            /* I/O PORT CONFIGURATION */
+    122          #define CAT1(x,y) x##y  // Concatenates 2 strings
+    123          #define CAT2(x,y) CAT1(x,y)  // Forces evaluation of CAT1
+    124          
+    125          // OCM port I/O defintions
+    126          // Builds I/O port name: PNAME(1,INP) ==> P1INP
+    127          #define PNAME(y,z) CAT2(P,CAT2(y,z))
+    128          // Builds I/O bit name: BNAME(1,2) ==> P1_2
+    129          #define BNAME(port,pin) CAT2(CAT2(P,port),CAT2(_,pin))
+    130          
+    131          // OCM port I/O defintions
+    132          #define OCM_SCL BNAME(OCM_CLK_PORT, OCM_CLK_PIN)
+    133          #define OCM_SDA BNAME(OCM_DATA_PORT, OCM_DATA_PIN)
+    134          
+    135          #define IO_DIR_PORT_PIN(port, pin, dir) \
+    136          {\
+    137            if ( dir == IO_OUT ) \
+    138              PNAME(port,DIR) |= (1<<(pin)); \
+    139            else \
+    140              PNAME(port,DIR) &= ~(1<<(pin)); \
+    141          }
+    142          
+    143          #define OCM_DATA_HIGH()\
+    144          { \
+    145            IO_DIR_PORT_PIN(OCM_DATA_PORT, OCM_DATA_PIN, IO_IN); \
+    146          }
+    147          
+    148          #define OCM_DATA_LOW() \
+    149          { \
+    150            IO_DIR_PORT_PIN(OCM_DATA_PORT, OCM_DATA_PIN, IO_OUT); \
+    151            OCM_SDA = 0;\
+    152          }
+    153          
+    154          #define IO_FUNC_PORT_PIN(port, pin, func) \
+    155          { \
+    156            if( port < 2 ) \
+    157            { \
+    158              if ( func == IO_PER ) \
+    159                PNAME(port,SEL) |= (1<<(pin)); \
+    160              else \
+    161                PNAME(port,SEL) &= ~(1<<(pin)); \
+    162            } \
+    163            else \
+    164            { \
+    165              if ( func == IO_PER ) \
+    166                P2SEL |= (1<<(pin>>1)); \
+    167              else \
+    168                P2SEL &= ~(1<<(pin>>1)); \
+    169            } \
+    170          }
+    171          
+    172          #define IO_IMODE_PORT_PIN(port, pin, mode) \
+    173          { \
+    174            if ( mode == IO_TRI ) \
+    175              PNAME(port,INP) |= (1<<(pin)); \
+    176            else \
+    177              PNAME(port,INP) &= ~(1<<(pin)); \
+    178          }
+    179          
+    180          #define IO_PUD_PORT(port, dir) \
+    181          { \
+    182            if ( dir == IO_PDN ) \
+    183              P2INP |= (1<<(port+5)); \
+    184            else \
+    185              P2INP &= ~(1<<(port+5)); \
+    186          }
+    187          
+    188          STATIC void   hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop );
+    189          STATIC _Bool  hali2cSendByte( uint8 dByte );
+    190          STATIC void   hali2cWrite( bool dBit );
+    191          STATIC void   hali2cClock( bool dir );
+    192          STATIC void   hali2cStart( void );
+    193          STATIC void   hali2cStop( void );
+    194          STATIC void   hali2cReceive( uint8 address, uint8 *buffer, uint16 len );
+    195          STATIC uint8  hali2cReceiveByte( void );
+    196          STATIC _Bool  hali2cRead( void );
+    197          STATIC void   hali2cSendDeviceAddress(uint8 address);
+    198          
+    199          
+    200          STATIC __near_func void   hali2cWait( uint8 );
+    201          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    202          STATIC uint8 s_xmemIsInit;
+   \                     s_xmemIsInit:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    203          
+    204          /*********************************************************************
+    205           * @fn      HalI2CInit
+    206           * @brief   Initializes two-wire serial I/O bus
+    207           * @param   void
+    208           * @return  void
+    209           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    210          void HalI2CInit( void )
+   \                     HalI2CInit:
+    211          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    212            if (!s_xmemIsInit)  {
+   \   000004   90....       MOV     DPTR,#s_xmemIsInit
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   701C         JNZ     ??HalI2CInit_0
+    213              s_xmemIsInit = 1;
+   \   00000A   90....       MOV     DPTR,#s_xmemIsInit
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    214          
+    215              // Set port pins as inputs
+    216              IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_IN );
+   \   000010   53FD7F       ANL     0xfd,#0x7f
+    217              IO_DIR_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_IN );
+   \   000013   53FDBF       ANL     0xfd,#0xbf
+    218          
+    219              // Set for general I/O operation
+    220              IO_FUNC_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_GIO );
+   \   000016   53F37F       ANL     0xf3,#0x7f
+    221              IO_FUNC_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_GIO );
+   \   000019   53F3BF       ANL     0xf3,#0xbf
+    222          
+    223              // Set I/O mode for pull-up/pull-down
+    224              IO_IMODE_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_PUD );
+   \   00001C   C287         CLR     0x80.7
+    225              IO_IMODE_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_PUD );
+   \   00001E   C286         CLR     0x80.6
+    226          
+    227              // Set pins to pull-up
+    228              IO_PUD_PORT( OCM_CLK_PORT, IO_PUP );
+   \   000020   53F7DF       ANL     0xf7,#0xdf
+    229              IO_PUD_PORT( OCM_DATA_PORT, IO_PUP );
+   \   000023   53F7DF       ANL     0xf7,#0xdf
+    230            }
+    231          }
+   \                     ??HalI2CInit_0:
+   \   000026   D083         POP     DPH
+   \   000028   D082         POP     DPL
+   \   00002A   02....       LJMP    ?BRET
+   \   00002D                REQUIRE P0DIR
+   \   00002D                REQUIRE P0SEL
+   \   00002D                REQUIRE P2SEL
+   \   00002D                REQUIRE _A_P0
+   \   00002D                REQUIRE P2INP
+    232          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    233          uint8 HalI2CReceive(uint8 address, uint8 *buf, uint16 len)
+   \                     HalI2CReceive:
+    234          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   8B..         MOV     ?V0 + 1,R3
+   \   00000B   EC           MOV     A,R4
+   \   00000C   FE           MOV     R6,A
+   \   00000D   ED           MOV     A,R5
+   \   00000E   FF           MOV     R7,A
+    235            hali2cReceive(address, buf, len);
+   \   00000F                ; Setup parameters for call to function hali2cReceive
+   \   00000F   EE           MOV     A,R6
+   \   000010   FC           MOV     R4,A
+   \   000011   EF           MOV     A,R7
+   \   000012   FD           MOV     R5,A
+   \   000013   AA..         MOV     R2,?V0 + 0
+   \   000015   AB..         MOV     R3,?V0 + 1
+   \   000017   A9..         MOV     R1,?V0 + 2
+   \   000019   12....       LCALL   ??hali2cReceive?relay
+    236          
+    237            return 0;
+   \   00001C   7900         MOV     R1,#0x0
+   \   00001E   7F03         MOV     R7,#0x3
+   \   000020   02....       LJMP    ?BANKED_LEAVE_XDATA
+    238          }
+    239          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    240          uint8 HalI2CSend(uint8 address, uint8 *buf, uint16 len)
+   \                     HalI2CSend:
+    241          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 0,R4
+   \   00000D   8D..         MOV     ?V0 + 1,R5
+    242            // begin the write sequence with the address byte
+    243            hali2cSendDeviceAddress(address);
+   \   00000F                ; Setup parameters for call to function hali2cSendDeviceAddress
+   \   00000F   A9..         MOV     R1,?V0 + 2
+   \   000011   12....       LCALL   ??hali2cSendDeviceAddress?relay
+    244            hali2cSend(buf, len, NOSEND_START, SEND_STOP);
+   \   000014                ; Setup parameters for call to function hali2cSend
+   \   000014   75..00       MOV     ?V0 + 3,#0x0
+   \   000017   78..         MOV     R0,#?V0 + 3
+   \   000019   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   00001C   7901         MOV     R1,#0x1
+   \   00001E   AC..         MOV     R4,?V0 + 0
+   \   000020   AD..         MOV     R5,?V0 + 1
+   \   000022   EE           MOV     A,R6
+   \   000023   FA           MOV     R2,A
+   \   000024   EF           MOV     A,R7
+   \   000025   FB           MOV     R3,A
+   \   000026   12....       LCALL   ??hali2cSend?relay
+   \   000029   7401         MOV     A,#0x1
+   \   00002B   12....       LCALL   ?DEALLOC_XSTACK8
+    245          
+    246            return 0;
+   \   00002E   7900         MOV     R1,#0x0
+   \   000030   7F04         MOV     R7,#0x4
+   \   000032   02....       LJMP    ?BANKED_LEAVE_XDATA
+    247          }
+    248          
+    249          /////////////////////////////////////////////////////////////
+    250          // ADXL345 Vibrate Sensor
+    251          //STATIC void   hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop );
+    252          //STATIC _Bool  hali2cSendByte( uint8 dByte );
+    253          //STATIC void   hali2cWrite( bool dBit );
+    254          //STATIC void   hali2cClock( bool dir );
+    255          //STATIC void   hali2cStart( void );
+    256          //STATIC void   hali2cStop( void );
+    257          //STATIC void   hali2cReceive( uint8 address, uint8 *buffer, uint16 len );
+    258          //STATIC uint8  hali2cReceiveByte( void );
+    259          //STATIC _Bool  hali2cRead( void );
+    260          //STATIC void   hali2cSendDeviceAddress(uint8 address);
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    261          void ADXL345WriteByte(byte address, byte value)
+   \                     ADXL345WriteByte:
+    262          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    263            // Address and W/R bit
+    264            byte firstByte = 0x00;
+   \   000009   7E00         MOV     R6,#0x0
+    265            // wait turns to receive the slave ack
+    266            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   00000B   75..03       MOV     ?V0 + 1,#0x3
+    267            
+    268            // Send the start condition
+    269            hali2cStart();
+   \   00000E                ; Setup parameters for call to function hali2cStart
+   \   00000E   12....       LCALL   ??hali2cStart?relay
+    270            
+    271            // Send the slave address + w flag
+    272            firstByte = 0xA6;	
+   \   000011   7EA6         MOV     R6,#-0x5a
+    273            do {
+    274                if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+   \                     ??ADXL345WriteByte_0:
+   \   000013                ; Setup parameters for call to function hali2cSendByte
+   \   000013   EE           MOV     A,R6
+   \   000014   F9           MOV     R1,A
+   \   000015   12....       LCALL   ??hali2cSendByte?relay
+   \   000018   5005         JNC     ??ADXL345WriteByte_1
+    275                {
+    276          		retry = HAL_I2C_RETRY_CNT;
+   \   00001A   75..03       MOV     ?V0 + 1,#0x3
+    277                  break;
+   \   00001D   800A         SJMP    ??ADXL345WriteByte_2
+    278                }
+    279            } while ( --retry );
+   \                     ??ADXL345WriteByte_1:
+   \   00001F   74FF         MOV     A,#-0x1
+   \   000021   25..         ADD     A,?V0 + 1
+   \   000023   F8           MOV     R0,A
+   \   000024   88..         MOV     ?V0 + 1,R0
+   \   000026   E8           MOV     A,R0
+   \   000027   70EA         JNZ     ??ADXL345WriteByte_0
+    280            
+    281            // Send the reg address
+    282            do {
+    283                if ( hali2cSendByte(address) )  // takes care of ack polling
+   \                     ??ADXL345WriteByte_2:
+   \   000029                ; Setup parameters for call to function hali2cSendByte
+   \   000029   A9..         MOV     R1,?V0 + 0
+   \   00002B   12....       LCALL   ??hali2cSendByte?relay
+   \   00002E   5005         JNC     ??ADXL345WriteByte_3
+    284                {
+    285          		retry = HAL_I2C_RETRY_CNT;
+   \   000030   75..03       MOV     ?V0 + 1,#0x3
+    286                  break;
+   \   000033   800A         SJMP    ??ADXL345WriteByte_4
+    287                }
+    288            } while ( --retry );
+   \                     ??ADXL345WriteByte_3:
+   \   000035   74FF         MOV     A,#-0x1
+   \   000037   25..         ADD     A,?V0 + 1
+   \   000039   F8           MOV     R0,A
+   \   00003A   88..         MOV     ?V0 + 1,R0
+   \   00003C   E8           MOV     A,R0
+   \   00003D   70EA         JNZ     ??ADXL345WriteByte_2
+    289            
+    290            // Send the value
+    291            do {
+    292                if ( hali2cSendByte(value) )  // takes care of ack polling
+   \                     ??ADXL345WriteByte_4:
+   \   00003F                ; Setup parameters for call to function hali2cSendByte
+   \   00003F   EF           MOV     A,R7
+   \   000040   F9           MOV     R1,A
+   \   000041   12....       LCALL   ??hali2cSendByte?relay
+   \   000044   400A         JC      ??ADXL345WriteByte_5
+    293                {
+    294                  break;
+    295                }
+    296            } while ( --retry );
+   \   000046   74FF         MOV     A,#-0x1
+   \   000048   25..         ADD     A,?V0 + 1
+   \   00004A   F8           MOV     R0,A
+   \   00004B   88..         MOV     ?V0 + 1,R0
+   \   00004D   E8           MOV     A,R0
+   \   00004E   70EF         JNZ     ??ADXL345WriteByte_4
+    297            
+    298            // Send stop condition
+    299            hali2cStop();
+   \                     ??ADXL345WriteByte_5:
+   \   000050                ; Setup parameters for call to function hali2cStop
+   \   000050   12....       LCALL   ??hali2cStop?relay
+    300          }
+   \   000053   7F02         MOV     R7,#0x2
+   \   000055   02....       LJMP    ?BANKED_LEAVE_XDATA
+    301          
+    302          /*****************************************************************************
+    303           *
+    304           *
+    305           *	Read ADXL345
+    306           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    307          byte ADXL345ReadByte(byte address)
+   \                     ADXL345ReadByte:
+    308          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+    309            // address and W/R bit
+    310            byte firstByte = 0x00;
+   \   000007   7E00         MOV     R6,#0x0
+    311            // reserve the read byte
+    312            byte value = 0x00;
+   \   000009   7F00         MOV     R7,#0x0
+    313            
+    314            // wait turns to receive the slave ack
+    315            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   00000B   75..03       MOV     ?V0 + 1,#0x3
+    316            
+    317            // Send the start condition
+    318            hali2cStart();
+   \   00000E                ; Setup parameters for call to function hali2cStart
+   \   00000E   12....       LCALL   ??hali2cStart?relay
+    319            
+    320            // Send the slave address and wirte bit
+    321            firstByte = 0xA6;	
+   \   000011   7EA6         MOV     R6,#-0x5a
+    322            do {
+    323                if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+   \                     ??ADXL345ReadByte_0:
+   \   000013                ; Setup parameters for call to function hali2cSendByte
+   \   000013   EE           MOV     A,R6
+   \   000014   F9           MOV     R1,A
+   \   000015   12....       LCALL   ??hali2cSendByte?relay
+   \   000018   5005         JNC     ??ADXL345ReadByte_1
+    324                {
+    325          		retry = HAL_I2C_RETRY_CNT;
+   \   00001A   75..03       MOV     ?V0 + 1,#0x3
+    326                  break;
+   \   00001D   800A         SJMP    ??ADXL345ReadByte_2
+    327                }
+    328            } while ( --retry );
+   \                     ??ADXL345ReadByte_1:
+   \   00001F   74FF         MOV     A,#-0x1
+   \   000021   25..         ADD     A,?V0 + 1
+   \   000023   F8           MOV     R0,A
+   \   000024   88..         MOV     ?V0 + 1,R0
+   \   000026   E8           MOV     A,R0
+   \   000027   70EA         JNZ     ??ADXL345ReadByte_0
+    329            
+    330            // Send the reg address
+    331            do {
+    332                if ( hali2cSendByte(address) )  // takes care of ack polling
+   \                     ??ADXL345ReadByte_2:
+   \   000029                ; Setup parameters for call to function hali2cSendByte
+   \   000029   A9..         MOV     R1,?V0 + 0
+   \   00002B   12....       LCALL   ??hali2cSendByte?relay
+   \   00002E   5005         JNC     ??ADXL345ReadByte_3
+    333                {
+    334          		retry = HAL_I2C_RETRY_CNT;
+   \   000030   75..03       MOV     ?V0 + 1,#0x3
+    335                  break;
+   \   000033   800A         SJMP    ??ADXL345ReadByte_4
+    336                }
+    337            } while ( --retry );
+   \                     ??ADXL345ReadByte_3:
+   \   000035   74FF         MOV     A,#-0x1
+   \   000037   25..         ADD     A,?V0 + 1
+   \   000039   F8           MOV     R0,A
+   \   00003A   88..         MOV     ?V0 + 1,R0
+   \   00003C   E8           MOV     A,R0
+   \   00003D   70EA         JNZ     ??ADXL345ReadByte_2
+    338            
+    339            // Send the start condition again
+    340            hali2cStart();
+   \                     ??ADXL345ReadByte_4:
+   \   00003F                ; Setup parameters for call to function hali2cStart
+   \   00003F   12....       LCALL   ??hali2cStart?relay
+    341            
+    342            // Send the slave address and read bit
+    343            firstByte = 0xA7;
+   \   000042   7EA7         MOV     R6,#-0x59
+    344            do {
+    345                if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+   \                     ??ADXL345ReadByte_5:
+   \   000044                ; Setup parameters for call to function hali2cSendByte
+   \   000044   EE           MOV     A,R6
+   \   000045   F9           MOV     R1,A
+   \   000046   12....       LCALL   ??hali2cSendByte?relay
+   \   000049   5005         JNC     ??ADXL345ReadByte_6
+    346                {
+    347          		retry = HAL_I2C_RETRY_CNT;
+   \   00004B   75..03       MOV     ?V0 + 1,#0x3
+    348                  break;
+   \   00004E   800A         SJMP    ??ADXL345ReadByte_7
+    349                }
+    350            } while ( --retry );
+   \                     ??ADXL345ReadByte_6:
+   \   000050   74FF         MOV     A,#-0x1
+   \   000052   25..         ADD     A,?V0 + 1
+   \   000054   F8           MOV     R0,A
+   \   000055   88..         MOV     ?V0 + 1,R0
+   \   000057   E8           MOV     A,R0
+   \   000058   70EA         JNZ     ??ADXL345ReadByte_5
+    351            
+    352            // Read a byte from ADXL345
+    353            value = hali2cReceiveByte();
+   \                     ??ADXL345ReadByte_7:
+   \   00005A                ; Setup parameters for call to function hali2cReceiveByte
+   \   00005A   12....       LCALL   ??hali2cReceiveByte?relay
+   \   00005D   E9           MOV     A,R1
+   \   00005E   FF           MOV     R7,A
+    354            
+    355            // write NACK
+    356            hali2cWrite(SMB_NAK);
+   \   00005F                ; Setup parameters for call to function hali2cWrite
+   \   00005F   7901         MOV     R1,#0x1
+   \   000061   12....       LCALL   ??hali2cWrite?relay
+    357            
+    358            // Send stop condition
+    359            hali2cStop();
+   \   000064                ; Setup parameters for call to function hali2cStop
+   \   000064   12....       LCALL   ??hali2cStop?relay
+    360            
+    361            return value;
+   \   000067   EF           MOV     A,R7
+   \   000068   F9           MOV     R1,A
+   \   000069   7F02         MOV     R7,#0x2
+   \   00006B   02....       LJMP    ?BANKED_LEAVE_XDATA
+    362          }
+    363          
+    364          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    365          void ADXL345ReadBytes(uint8 startAddr, uint8* buffer, uint8 len)
+   \                     ADXL345ReadBytes:
+    366          {
+   \   000000   74EF         MOV     A,#-0x11
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 17
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 8,R4
+    367            // wait turns to receive the slave ack
+    368            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   00000D   75..03       MOV     ?V0 + 7,#0x3
+    369            // 7-bit address and W/R bit
+    370            byte firstByte = 0x00;
+   \   000010   75..00       MOV     ?V0 + 0,#0x0
+    371            
+    372            byte i = 0;
+   \   000013   75..00       MOV     ?V0 + 6,#0x0
+    373            
+    374            // Send start condition
+    375            hali2cStart();
+   \   000016                ; Setup parameters for call to function hali2cStart
+   \   000016   12....       LCALL   ??hali2cStart?relay
+    376            
+    377            // Send the slave address and wirte bit
+    378            firstByte = 0xA6;	// seven-bit slave address and write bit '0', 0x1111_1110
+   \   000019   75..A6       MOV     ?V0 + 0,#-0x5a
+    379            do {
+    380                if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+   \                     ??ADXL345ReadBytes_0:
+   \   00001C                ; Setup parameters for call to function hali2cSendByte
+   \   00001C   A9..         MOV     R1,?V0 + 0
+   \   00001E   12....       LCALL   ??hali2cSendByte?relay
+   \   000021   5005         JNC     ??ADXL345ReadBytes_1
+    381                {
+    382          		retry = HAL_I2C_RETRY_CNT;
+   \   000023   75..03       MOV     ?V0 + 7,#0x3
+    383                  break;
+   \   000026   800A         SJMP    ??ADXL345ReadBytes_2
+    384                }
+    385            } while ( --retry );
+   \                     ??ADXL345ReadBytes_1:
+   \   000028   74FF         MOV     A,#-0x1
+   \   00002A   25..         ADD     A,?V0 + 7
+   \   00002C   F8           MOV     R0,A
+   \   00002D   88..         MOV     ?V0 + 7,R0
+   \   00002F   E8           MOV     A,R0
+   \   000030   70EA         JNZ     ??ADXL345ReadBytes_0
+    386            
+    387            // Send the reg address
+    388            do {
+    389                if ( hali2cSendByte(startAddr) )  // takes care of ack polling
+   \                     ??ADXL345ReadBytes_2:
+   \   000032                ; Setup parameters for call to function hali2cSendByte
+   \   000032   A9..         MOV     R1,?V0 + 1
+   \   000034   12....       LCALL   ??hali2cSendByte?relay
+   \   000037   5005         JNC     ??ADXL345ReadBytes_3
+    390                {
+    391          		retry = HAL_I2C_RETRY_CNT;
+   \   000039   75..03       MOV     ?V0 + 7,#0x3
+    392                  break;
+   \   00003C   800A         SJMP    ??ADXL345ReadBytes_4
+    393                }
+    394            } while ( --retry );
+   \                     ??ADXL345ReadBytes_3:
+   \   00003E   74FF         MOV     A,#-0x1
+   \   000040   25..         ADD     A,?V0 + 7
+   \   000042   F8           MOV     R0,A
+   \   000043   88..         MOV     ?V0 + 7,R0
+   \   000045   E8           MOV     A,R0
+   \   000046   70EA         JNZ     ??ADXL345ReadBytes_2
+    395            
+    396            // this is the repeat start condition
+    397            hali2cStart();
+   \                     ??ADXL345ReadBytes_4:
+   \   000048                ; Setup parameters for call to function hali2cStart
+   \   000048   12....       LCALL   ??hali2cStart?relay
+    398            
+    399            // Send the slave address and read bit
+    400            firstByte = 0xA7;	
+   \   00004B   75..A7       MOV     ?V0 + 0,#-0x59
+    401            do {
+    402                if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+   \                     ??ADXL345ReadBytes_5:
+   \   00004E                ; Setup parameters for call to function hali2cSendByte
+   \   00004E   A9..         MOV     R1,?V0 + 0
+   \   000050   12....       LCALL   ??hali2cSendByte?relay
+   \   000053   5005         JNC     ??ADXL345ReadBytes_6
+    403                {
+    404          		retry = HAL_I2C_RETRY_CNT;
+   \   000055   75..03       MOV     ?V0 + 7,#0x3
+    405                  break;
+   \   000058   800A         SJMP    ??ADXL345ReadBytes_7
+    406                }
+    407            } while ( --retry );
+   \                     ??ADXL345ReadBytes_6:
+   \   00005A   74FF         MOV     A,#-0x1
+   \   00005C   25..         ADD     A,?V0 + 7
+   \   00005E   F8           MOV     R0,A
+   \   00005F   88..         MOV     ?V0 + 7,R0
+   \   000061   E8           MOV     A,R0
+   \   000062   70EA         JNZ     ??ADXL345ReadBytes_5
+    408            
+    409            // read several bytes
+    410            for ( i = 0; i<len-1; i++ )
+   \                     ??ADXL345ReadBytes_7:
+   \   000064   75..00       MOV     ?V0 + 6,#0x0
+   \                     ??ADXL345ReadBytes_8:
+   \   000067   85....       MOV     ?V0 + 2,?V0 + 6
+   \   00006A   75..00       MOV     ?V0 + 3,#0x0
+   \   00006D   85....       MOV     ?V0 + 4,?V0 + 8
+   \   000070   75..00       MOV     ?V0 + 5,#0x0
+   \   000073   E5..         MOV     A,?V0 + 4
+   \   000075   24FF         ADD     A,#-0x1
+   \   000077   F8           MOV     R0,A
+   \   000078   E5..         MOV     A,?V0 + 5
+   \   00007A   34FF         ADDC    A,#-0x1
+   \   00007C   F9           MOV     R1,A
+   \   00007D   C3           CLR     C
+   \   00007E   E5..         MOV     A,?V0 + 2
+   \   000080   98           SUBB    A,R0
+   \   000081   E5..         MOV     A,?V0 + 3
+   \   000083   99           SUBB    A,R1
+   \   000084   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000086   65D0         XRL     A,PSW
+   \   000088   33           RLC     A
+   \   000089   502A         JNC     ??ADXL345ReadBytes_9
+    411            {
+    412              // SCL may be high. set SCL low. If SDA goes high when input
+    413              // mode is set the slave won't see a STOP
+    414              hali2cClock(0);
+   \   00008B                ; Setup parameters for call to function hali2cClock
+   \   00008B   7900         MOV     R1,#0x0
+   \   00008D   12....       LCALL   ??hali2cClock?relay
+    415              OCM_DATA_HIGH();
+   \   000090   53FDBF       ANL     0xfd,#0xbf
+    416          
+    417              buffer[i] = hali2cReceiveByte();
+   \   000093                ; Setup parameters for call to function hali2cReceiveByte
+   \   000093   12....       LCALL   ??hali2cReceiveByte?relay
+   \   000096   E9           MOV     A,R1
+   \   000097   C0E0         PUSH    A
+   \   000099   85....       MOV     ?V0 + 2,?V0 + 6
+   \   00009C   75..00       MOV     ?V0 + 3,#0x0
+   \   00009F   EE           MOV     A,R6
+   \   0000A0   25..         ADD     A,?V0 + 2
+   \   0000A2   F582         MOV     DPL,A
+   \   0000A4   EF           MOV     A,R7
+   \   0000A5   35..         ADDC    A,?V0 + 3
+   \   0000A7   F583         MOV     DPH,A
+   \   0000A9   D0E0         POP     A
+   \   0000AB   F0           MOVX    @DPTR,A
+    418              hali2cWrite(SMB_ACK);           // write leaves SCL high
+   \   0000AC                ; Setup parameters for call to function hali2cWrite
+   \   0000AC   7900         MOV     R1,#0x0
+   \   0000AE   12....       LCALL   ??hali2cWrite?relay
+    419            }
+   \   0000B1   05..         INC     ?V0 + 6
+   \   0000B3   80B2         SJMP    ??ADXL345ReadBytes_8
+    420            
+    421            // condition SDA one more time...
+    422          //  hali2cClock(0);
+    423          //  OCM_DATA_HIGH();
+    424          //  buffer[i] = hali2cReceiveByte();
+    425          //  hali2cWrite(SMB_NAK);
+    426            
+    427            // Send stop condition
+    428            hali2cStop();
+   \                     ??ADXL345ReadBytes_9:
+   \   0000B5                ; Setup parameters for call to function hali2cStop
+   \   0000B5   12....       LCALL   ??hali2cStop?relay
+    429          }
+   \   0000B8   7F09         MOV     R7,#0x9
+   \   0000BA   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000BD                REQUIRE P0DIR
+    430          
+    431          
+    432          
+    433          /*********************************************************************
+    434           * @fn      hali2cSend
+    435           * @brief   Sends buffer contents to SM-Bus device
+    436           * @param   buffer - ptr to buffered data to send
+    437           * @param   len - number of bytes in buffer
+    438           * @param   sendStart - whether or not to send start condition.
+    439           * @param   sendStop - whether or not to send stop condition.
+    440           * @return  void
+    441           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    442          STATIC void hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop )
+   \                     hali2cSend:
+    443          {
+   \   000000   74F1         MOV     A,#-0xf
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+   \   00000D   89..         MOV     ?V0 + 4,R1
+   \   00000F   740F         MOV     A,#0xf
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 5,A
+    444            uint16 i;
+    445            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   000017   75..03       MOV     ?V0 + 6,#0x3
+    446          
+    447            if (!len)  {
+   \   00001A   EE           MOV     A,R6
+   \   00001B   4F           ORL     A,R7
+   \   00001C   6048         JZ      ??hali2cSend_0
+    448              return;
+    449            }
+    450          
+    451            if (sendStart == SEND_START)  {
+   \   00001E   E5..         MOV     A,?V0 + 4
+   \   000020   7003         JNZ     ??hali2cSend_1
+    452              hali2cStart();
+   \   000022                ; Setup parameters for call to function hali2cStart
+   \   000022   12....       LCALL   ??hali2cStart?relay
+    453            }
+    454          
+    455            for ( i = 0; i < len; i++ )
+   \                     ??hali2cSend_1:
+   \   000025   75..00       MOV     ?V0 + 2,#0x0
+   \   000028   75..00       MOV     ?V0 + 3,#0x0
+   \                     ??hali2cSend_2:
+   \   00002B   C3           CLR     C
+   \   00002C   E5..         MOV     A,?V0 + 2
+   \   00002E   9E           SUBB    A,R6
+   \   00002F   E5..         MOV     A,?V0 + 3
+   \   000031   9F           SUBB    A,R7
+   \   000032   502B         JNC     ??hali2cSend_3
+    456            {
+    457              do {
+    458                if ( hali2cSendByte( buffer[i] ) )  // takes care of ack polling
+   \                     ??hali2cSend_4:
+   \   000034                ; Setup parameters for call to function hali2cSendByte
+   \   000034   E5..         MOV     A,?V0 + 0
+   \   000036   25..         ADD     A,?V0 + 2
+   \   000038   F582         MOV     DPL,A
+   \   00003A   E5..         MOV     A,?V0 + 1
+   \   00003C   35..         ADDC    A,?V0 + 3
+   \   00003E   F583         MOV     DPH,A
+   \   000040   E0           MOVX    A,@DPTR
+   \   000041   F9           MOV     R1,A
+   \   000042   12....       LCALL   ??hali2cSendByte?relay
+   \   000045   400A         JC      ??hali2cSend_5
+    459                {
+    460                  break;
+    461                }
+    462              } while ( --retry );
+   \   000047   74FF         MOV     A,#-0x1
+   \   000049   25..         ADD     A,?V0 + 6
+   \   00004B   F8           MOV     R0,A
+   \   00004C   88..         MOV     ?V0 + 6,R0
+   \   00004E   E8           MOV     A,R0
+   \   00004F   70E3         JNZ     ??hali2cSend_4
+    463            }
+   \                     ??hali2cSend_5:
+   \   000051   E5..         MOV     A,?V0 + 2
+   \   000053   2401         ADD     A,#0x1
+   \   000055   F5..         MOV     ?V0 + 2,A
+   \   000057   E5..         MOV     A,?V0 + 3
+   \   000059   3400         ADDC    A,#0x0
+   \   00005B   F5..         MOV     ?V0 + 3,A
+   \   00005D   80CC         SJMP    ??hali2cSend_2
+    464          
+    465            if (sendStop == SEND_STOP) {
+   \                     ??hali2cSend_3:
+   \   00005F   E5..         MOV     A,?V0 + 5
+   \   000061   7003         JNZ     ??hali2cSend_0
+    466              hali2cStop();
+   \   000063                ; Setup parameters for call to function hali2cStop
+   \   000063   12....       LCALL   ??hali2cStop?relay
+    467            }
+    468          }
+   \                     ??hali2cSend_0:
+   \   000066   7F07         MOV     R7,#0x7
+   \   000068   02....       LJMP    ?BANKED_LEAVE_XDATA
+    469          
+    470          /*********************************************************************
+    471           * @fn      hali2cSendByte
+    472           * @brief   Serialize and send one byte to SM-Bus device
+    473           * @param   dByte - data byte to send
+    474           * @return  ACK status - 0=none, 1=received
+    475           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    476          STATIC _Bool hali2cSendByte( uint8 dByte )
+   \                     hali2cSendByte:
+    477          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    478            uint8 i;
+    479          
+    480            for ( i = 0; i < 8; i++ )
+   \   000007   7E00         MOV     R6,#0x0
+   \                     ??hali2cSendByte_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   C3           CLR     C
+   \   00000B   9408         SUBB    A,#0x8
+   \   00000D   500E         JNC     ??hali2cSendByte_1
+    481            {
+    482              // Send the MSB
+    483              hali2cWrite( dByte & 0x80 );
+   \   00000F                ; Setup parameters for call to function hali2cWrite
+   \   00000F   7480         MOV     A,#-0x80
+   \   000011   5F           ANL     A,R7
+   \   000012   F9           MOV     R1,A
+   \   000013   12....       LCALL   ??hali2cWrite?relay
+    484              // Next bit into MSB
+    485              dByte <<= 1;
+   \   000016   EF           MOV     A,R7
+   \   000017   C3           CLR     C
+   \   000018   33           RLC     A
+   \   000019   FF           MOV     R7,A
+    486            }
+   \   00001A   0E           INC     R6
+   \   00001B   80EC         SJMP    ??hali2cSendByte_0
+    487            // need clock low so if the SDA transitions on the next statement the
+    488            // slave doesn't stop. Also give opportunity for slave to set SDA
+    489            hali2cClock( 0 );
+   \                     ??hali2cSendByte_1:
+   \   00001D                ; Setup parameters for call to function hali2cClock
+   \   00001D   7900         MOV     R1,#0x0
+   \   00001F   12....       LCALL   ??hali2cClock?relay
+    490            OCM_DATA_HIGH(); // set to input to receive ack...
+   \   000022   53FDBF       ANL     0xfd,#0xbf
+    491            hali2cClock( 1 );
+   \   000025                ; Setup parameters for call to function hali2cClock
+   \   000025   7901         MOV     R1,#0x1
+   \   000027   12....       LCALL   ??hali2cClock?relay
+    492            hali2cWait(1);
+   \   00002A                ; Setup parameters for call to function hali2cWait
+   \   00002A   7901         MOV     R1,#0x1
+   \   00002C   12....       LCALL   hali2cWait & 0xFFFF
+    493          
+    494            return ( !OCM_SDA );  // Return ACK status
+   \   00002F   A286         MOV     C,0x80.6
+   \   000031   4004         JC      ??hali2cSendByte_2
+   \   000033   D2F0         SETB    B.0
+   \   000035   8002         SJMP    ??hali2cSendByte_3
+   \                     ??hali2cSendByte_2:
+   \   000037   C2F0         CLR     B.0
+   \                     ??hali2cSendByte_3:
+   \   000039   A2F0         MOV     C,B.0
+   \   00003B   7F01         MOV     R7,#0x1
+   \   00003D   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000040                REQUIRE P0DIR
+   \   000040                REQUIRE _A_P0
+    495          }
+    496          
+    497          /*********************************************************************
+    498           * @fn      hali2cWrite
+    499           * @brief   Send one bit to SM-Bus device
+    500           * @param   dBit - data bit to clock onto SM-Bus
+    501           * @return  void
+    502           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    503          STATIC void hali2cWrite( bool dBit )
+   \                     hali2cWrite:
+    504          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    505            hali2cClock( 0 );
+   \   000007                ; Setup parameters for call to function hali2cClock
+   \   000007   7900         MOV     R1,#0x0
+   \   000009   12....       LCALL   ??hali2cClock?relay
+    506            hali2cWait(1);
+   \   00000C                ; Setup parameters for call to function hali2cWait
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   12....       LCALL   hali2cWait & 0xFFFF
+    507            if ( dBit )
+   \   000011   EE           MOV     A,R6
+   \   000012   6005         JZ      ??hali2cWrite_0
+    508            {
+    509              OCM_DATA_HIGH();
+   \   000014   53FDBF       ANL     0xfd,#0xbf
+   \   000017   8005         SJMP    ??hali2cWrite_1
+    510            }
+    511            else
+    512            {
+    513              OCM_DATA_LOW();
+   \                     ??hali2cWrite_0:
+   \   000019   43FD40       ORL     0xfd,#0x40
+   \   00001C   C286         CLR     0x80.6
+    514            }
+    515          
+    516            hali2cClock( 1 );
+   \                     ??hali2cWrite_1:
+   \   00001E                ; Setup parameters for call to function hali2cClock
+   \   00001E   7901         MOV     R1,#0x1
+   \   000020   12....       LCALL   ??hali2cClock?relay
+    517            hali2cWait(1);
+   \   000023                ; Setup parameters for call to function hali2cWait
+   \   000023   7901         MOV     R1,#0x1
+   \   000025   12....       LCALL   hali2cWait & 0xFFFF
+    518          }
+   \   000028   7F01         MOV     R7,#0x1
+   \   00002A   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00002D                REQUIRE P0DIR
+   \   00002D                REQUIRE _A_P0
+    519          
+    520          /*********************************************************************
+    521           * @fn      hali2cClock
+    522           * @brief   Clocks the SM-Bus. If a negative edge is going out, the
+    523           *          I/O pin is set as an output and driven low. If a positive
+    524           *          edge is going out, the pin is set as an input and the pin
+    525           *          pull-up drives the line high. This way, the slave device
+    526           *          can hold the node low if longer setup time is desired.
+    527           * @param   dir - clock line direction
+    528           * @return  void
+    529           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    530          STATIC void hali2cClock( bool dir )
+   \                     hali2cClock:
+    531          {
+   \   000000   EE           MOV     A,R6
+   \   000001   C0E0         PUSH    A
+   \   000003                ; Saved register size: 1
+   \   000003                ; Auto size: 0
+   \   000003   E9           MOV     A,R1
+   \   000004   FE           MOV     R6,A
+    532            if ( dir )
+   \   000005   6005         JZ      ??hali2cClock_0
+    533            {
+    534              IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_IN );
+   \   000007   53FD7F       ANL     0xfd,#0x7f
+   \   00000A   8005         SJMP    ??hali2cClock_1
+    535            }
+    536            else
+    537            {
+    538              IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_OUT );
+   \                     ??hali2cClock_0:
+   \   00000C   43FD80       ORL     0xfd,#0x80
+    539              OCM_SCL = 0;
+   \   00000F   C287         CLR     0x80.7
+    540            }
+    541            hali2cWait(1);
+   \                     ??hali2cClock_1:
+   \   000011                ; Setup parameters for call to function hali2cWait
+   \   000011   7901         MOV     R1,#0x1
+   \   000013   12....       LCALL   hali2cWait & 0xFFFF
+    542          }
+   \   000016   D0E0         POP     A
+   \   000018   FE           MOV     R6,A
+   \   000019   02....       LJMP    ?BRET
+   \   00001C                REQUIRE P0DIR
+   \   00001C                REQUIRE _A_P0
+    543          
+    544          /*********************************************************************
+    545           * @fn      hali2cStart
+    546           * @brief   Initiates SM-Bus communication. Makes sure that both the
+    547           *          clock and data lines of the SM-Bus are high. Then the data
+    548           *          line is set high and clock line is set low to start I/O.
+    549           * @param   void
+    550           * @return  void
+    551           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    552          STATIC void hali2cStart( void )
+   \                     hali2cStart:
+    553          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    554            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   000005   7E03         MOV     R6,#0x3
+    555          
+    556            // set SCL to input but with pull-up. if slave is pulling down it will stay down.
+    557            hali2cClock(1);
+   \   000007                ; Setup parameters for call to function hali2cClock
+   \   000007   7901         MOV     R1,#0x1
+   \   000009   12....       LCALL   ??hali2cClock?relay
+    558          
+    559            do {
+    560              // wait for slave to release clock line...
+    561              if (OCM_SCL)  // wait until the line is high...
+   \                     ??hali2cStart_0:
+   \   00000C   A287         MOV     C,0x80.7
+   \   00000E   400E         JC      ??hali2cStart_1
+    562              {
+    563                break;
+    564              }
+    565              hali2cWait(1);
+   \   000010                ; Setup parameters for call to function hali2cWait
+   \   000010   7901         MOV     R1,#0x1
+   \   000012   12....       LCALL   hali2cWait & 0xFFFF
+    566            } while ( --retry );
+   \   000015   74FF         MOV     A,#-0x1
+   \   000017   2E           ADD     A,R6
+   \   000018   F8           MOV     R0,A
+   \   000019   E8           MOV     A,R0
+   \   00001A   FE           MOV     R6,A
+   \   00001B   E8           MOV     A,R0
+   \   00001C   70EE         JNZ     ??hali2cStart_0
+    567          
+    568            // SCL low to set SDA high so the transition will be correct.
+    569            hali2cClock(0);
+   \                     ??hali2cStart_1:
+   \   00001E                ; Setup parameters for call to function hali2cClock
+   \   00001E   7900         MOV     R1,#0x0
+   \   000020   12....       LCALL   ??hali2cClock?relay
+    570            OCM_DATA_HIGH();  // SDA high
+   \   000023   53FDBF       ANL     0xfd,#0xbf
+    571            hali2cClock(1);   // set up for transition
+   \   000026                ; Setup parameters for call to function hali2cClock
+   \   000026   7901         MOV     R1,#0x1
+   \   000028   12....       LCALL   ??hali2cClock?relay
+    572            hali2cWait(1);
+   \   00002B                ; Setup parameters for call to function hali2cWait
+   \   00002B   7901         MOV     R1,#0x1
+   \   00002D   12....       LCALL   hali2cWait & 0xFFFF
+    573            OCM_DATA_LOW();   // start
+   \   000030   43FD40       ORL     0xfd,#0x40
+   \   000033   C286         CLR     0x80.6
+    574          
+    575            hali2cWait(1);
+   \   000035                ; Setup parameters for call to function hali2cWait
+   \   000035   7901         MOV     R1,#0x1
+   \   000037   12....       LCALL   hali2cWait & 0xFFFF
+    576            hali2cClock( 0 );
+   \   00003A                ; Setup parameters for call to function hali2cClock
+   \   00003A   7900         MOV     R1,#0x0
+   \   00003C   12....       LCALL   ??hali2cClock?relay
+    577          }
+   \   00003F   7F01         MOV     R7,#0x1
+   \   000041   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000044                REQUIRE _A_P0
+   \   000044                REQUIRE P0DIR
+    578          
+    579          /*********************************************************************
+    580           * @fn      hali2cStop
+    581           * @brief   Terminates SM-Bus communication. Waits unitl the data line
+    582           *          is low and the clock line is high. Then sets the data line
+    583           *          high, keeping the clock line high to stop I/O.
+    584           * @param   void
+    585           * @return  void
+    586           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    587          STATIC void hali2cStop( void )
+   \                     hali2cStop:
+    588          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    589            // Wait for clock high and data low
+    590            hali2cClock(0);
+   \   000004                ; Setup parameters for call to function hali2cClock
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   12....       LCALL   ??hali2cClock?relay
+    591            OCM_DATA_LOW();  // force low with SCL low
+   \   000009   43FD40       ORL     0xfd,#0x40
+   \   00000C   C286         CLR     0x80.6
+    592            hali2cWait(1);
+   \   00000E                ; Setup parameters for call to function hali2cWait
+   \   00000E   7901         MOV     R1,#0x1
+   \   000010   12....       LCALL   hali2cWait & 0xFFFF
+    593          
+    594            hali2cClock( 1 );
+   \   000013                ; Setup parameters for call to function hali2cClock
+   \   000013   7901         MOV     R1,#0x1
+   \   000015   12....       LCALL   ??hali2cClock?relay
+    595            OCM_DATA_HIGH(); // stop condition
+   \   000018   53FDBF       ANL     0xfd,#0xbf
+    596            hali2cWait(1);
+   \   00001B                ; Setup parameters for call to function hali2cWait
+   \   00001B   7901         MOV     R1,#0x1
+   \   00001D   12....       LCALL   hali2cWait & 0xFFFF
+    597          
+    598          }
+   \   000020   D083         POP     DPH
+   \   000022   D082         POP     DPL
+   \   000024   02....       LJMP    ?BRET
+   \   000027                REQUIRE P0DIR
+   \   000027                REQUIRE _A_P0
+    599          
+    600          /*********************************************************************
+    601           * @fn      hali2cWait
+    602           * @brief   Wastes a an amount of time.
+    603           * @param   count: down count in busy-wait
+    604           * @return  void
+    605           */
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    606          STATIC __near_func void hali2cWait( uint8 count )
+   \                     hali2cWait:
+    607          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    608            while ( count-- );
+   \                     ??hali2cWait_0:
+   \   000000   E9           MOV     A,R1
+   \   000001   F8           MOV     R0,A
+   \   000002   74FF         MOV     A,#-0x1
+   \   000004   28           ADD     A,R0
+   \   000005   F9           MOV     R1,A
+   \   000006   E8           MOV     A,R0
+   \   000007   70F7         JNZ     ??hali2cWait_0
+    609          }
+   \   000009   22           RET
+    610          
+    611          /*********************************************************************
+    612           * @fn      hali2cReceiveByte
+    613           * @brief   Read the 8 data bits.
+    614           * @param   void
+    615           * @return  character read
+    616           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    617          STATIC uint8 hali2cReceiveByte()
+   \                     hali2cReceiveByte:
+    618          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    619            int8 i, rval = 0;
+   \   000005   75..00       MOV     ?V0 + 0,#0x0
+    620          
+    621            for (i=7; i>=0; --i)  {
+   \   000008   7E07         MOV     R6,#0x7
+   \                     ??hali2cReceiveByte_0:
+   \   00000A   EE           MOV     A,R6
+   \   00000B   C3           CLR     C
+   \   00000C   9400         SUBB    A,#0x0
+   \   00000E   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000010   65D0         XRL     A,PSW
+   \   000012   33           RLC     A
+   \   000013   401B         JC      ??hali2cReceiveByte_1
+    622              if (hali2cRead())  {
+   \   000015                ; Setup parameters for call to function hali2cRead
+   \   000015   12....       LCALL   ??hali2cRead?relay
+   \   000018   5010         JNC     ??hali2cReceiveByte_2
+    623                rval |= 1<<i;
+   \   00001A   75..01       MOV     ?V0 + 2,#0x1
+   \   00001D   75..00       MOV     ?V0 + 3,#0x0
+   \   000020   EE           MOV     A,R6
+   \   000021   78..         MOV     R0,#?V0 + 2
+   \   000023   12....       LCALL   ?S_SHL
+   \   000026   E5..         MOV     A,?V0 + 2
+   \   000028   42..         ORL     ?V0 + 0,A
+    624              }
+    625            }
+   \                     ??hali2cReceiveByte_2:
+   \   00002A   74FF         MOV     A,#-0x1
+   \   00002C   2E           ADD     A,R6
+   \   00002D   FE           MOV     R6,A
+   \   00002E   80DA         SJMP    ??hali2cReceiveByte_0
+    626          
+    627            return rval;
+   \                     ??hali2cReceiveByte_1:
+   \   000030   A9..         MOV     R1,?V0 + 0
+   \   000032   7F04         MOV     R7,#0x4
+   \   000034   02....       LJMP    ?BANKED_LEAVE_XDATA
+    628          }
+    629          /**************************************************************************************************
+    630          **************************************************************************************************/
+    631          /*********************************************************************
+    632           * @fn      hali2cReceive
+    633           * @brief   reads data into a buffer
+    634           * @param   address: linear address on part from which to read
+    635           * @param   buffer: target array for read characters
+    636           * @param   len: max number of characters to read
+    637           * @return  void
+    638           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    639          STATIC void hali2cReceive( uint8 address, uint8 *buffer, uint16 len )
+   \                     hali2cReceive:
+    640          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 4,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+   \   00000B   8C..         MOV     ?V0 + 0,R4
+   \   00000D   8D..         MOV     ?V0 + 1,R5
+    641          //  uint8  ch;
+    642            uint16 i;
+    643          
+    644            if (!len)  {
+   \   00000F   E5..         MOV     A,?V0 + 0
+   \   000011   45..         ORL     A,?V0 + 1
+   \   000013   606F         JZ      ??hali2cReceive_0
+    645              return;
+    646            }
+    647          
+    648            hali2cSendDeviceAddress(address);
+   \   000015                ; Setup parameters for call to function hali2cSendDeviceAddress
+   \   000015   A9..         MOV     R1,?V0 + 4
+   \   000017   12....       LCALL   ??hali2cSendDeviceAddress?relay
+    649          
+    650          //  ch = OCM_ADDRESS_BYTE(0, OCM_READ);
+    651          //  hali2cSend(&ch, 1, SEND_START, NOSEND_STOP);
+    652          
+    653            for ( i = 0; i < len-1; i++ )
+   \   00001A   75..00       MOV     ?V0 + 2,#0x0
+   \   00001D   75..00       MOV     ?V0 + 3,#0x0
+   \                     ??hali2cReceive_1:
+   \   000020   E5..         MOV     A,?V0 + 0
+   \   000022   24FF         ADD     A,#-0x1
+   \   000024   F8           MOV     R0,A
+   \   000025   E5..         MOV     A,?V0 + 1
+   \   000027   34FF         ADDC    A,#-0x1
+   \   000029   F9           MOV     R1,A
+   \   00002A   C3           CLR     C
+   \   00002B   E5..         MOV     A,?V0 + 2
+   \   00002D   98           SUBB    A,R0
+   \   00002E   E5..         MOV     A,?V0 + 3
+   \   000030   99           SUBB    A,R1
+   \   000031   502E         JNC     ??hali2cReceive_2
+    654            {
+    655              // SCL may be high. set SCL low. If SDA goes high when input
+    656              // mode is set the slave won't see a STOP
+    657              hali2cClock(0);
+   \   000033                ; Setup parameters for call to function hali2cClock
+   \   000033   7900         MOV     R1,#0x0
+   \   000035   12....       LCALL   ??hali2cClock?relay
+    658              OCM_DATA_HIGH();
+   \   000038   53FDBF       ANL     0xfd,#0xbf
+    659          
+    660              buffer[i] = hali2cReceiveByte();
+   \   00003B                ; Setup parameters for call to function hali2cReceiveByte
+   \   00003B   12....       LCALL   ??hali2cReceiveByte?relay
+   \   00003E   E9           MOV     A,R1
+   \   00003F   C0E0         PUSH    A
+   \   000041   EE           MOV     A,R6
+   \   000042   25..         ADD     A,?V0 + 2
+   \   000044   F582         MOV     DPL,A
+   \   000046   EF           MOV     A,R7
+   \   000047   35..         ADDC    A,?V0 + 3
+   \   000049   F583         MOV     DPH,A
+   \   00004B   D0E0         POP     A
+   \   00004D   F0           MOVX    @DPTR,A
+    661              hali2cWrite(SMB_ACK);           // write leaves SCL high
+   \   00004E                ; Setup parameters for call to function hali2cWrite
+   \   00004E   7900         MOV     R1,#0x0
+   \   000050   12....       LCALL   ??hali2cWrite?relay
+    662            }
+   \   000053   E5..         MOV     A,?V0 + 2
+   \   000055   2401         ADD     A,#0x1
+   \   000057   F5..         MOV     ?V0 + 2,A
+   \   000059   E5..         MOV     A,?V0 + 3
+   \   00005B   3400         ADDC    A,#0x0
+   \   00005D   F5..         MOV     ?V0 + 3,A
+   \   00005F   80BF         SJMP    ??hali2cReceive_1
+    663          
+    664            // condition SDA one more time...
+    665            hali2cClock(0);
+   \                     ??hali2cReceive_2:
+   \   000061                ; Setup parameters for call to function hali2cClock
+   \   000061   7900         MOV     R1,#0x0
+   \   000063   12....       LCALL   ??hali2cClock?relay
+    666            OCM_DATA_HIGH();
+   \   000066   53FDBF       ANL     0xfd,#0xbf
+    667            buffer[i] = hali2cReceiveByte();
+   \   000069                ; Setup parameters for call to function hali2cReceiveByte
+   \   000069   12....       LCALL   ??hali2cReceiveByte?relay
+   \   00006C   E9           MOV     A,R1
+   \   00006D   C0E0         PUSH    A
+   \   00006F   EE           MOV     A,R6
+   \   000070   25..         ADD     A,?V0 + 2
+   \   000072   F582         MOV     DPL,A
+   \   000074   EF           MOV     A,R7
+   \   000075   35..         ADDC    A,?V0 + 3
+   \   000077   F583         MOV     DPH,A
+   \   000079   D0E0         POP     A
+   \   00007B   F0           MOVX    @DPTR,A
+    668            hali2cWrite(SMB_NAK);
+   \   00007C                ; Setup parameters for call to function hali2cWrite
+   \   00007C   7901         MOV     R1,#0x1
+   \   00007E   12....       LCALL   ??hali2cWrite?relay
+    669          
+    670            hali2cStop();
+   \   000081                ; Setup parameters for call to function hali2cStop
+   \   000081   12....       LCALL   ??hali2cStop?relay
+    671          }
+   \                     ??hali2cReceive_0:
+   \   000084   7F05         MOV     R7,#0x5
+   \   000086   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000089                REQUIRE P0DIR
+    672          
+    673          /*********************************************************************
+    674           * @fn      hali2cRead
+    675           * @brief   Toggle the clock line to let the slave set the data line.
+    676           *          Then read the data line.
+    677           * @param   void
+    678           * @return  TRUE if bit read is 1 else FALSE
+    679           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    680          STATIC _Bool hali2cRead( void )
+   \                     hali2cRead:
+    681          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    682            // SCL low to let slave set SDA. SCL high for SDA
+    683            // valid and then get bit
+    684            hali2cClock( 0 );
+   \   000004                ; Setup parameters for call to function hali2cClock
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   12....       LCALL   ??hali2cClock?relay
+    685            hali2cWait(1);
+   \   000009                ; Setup parameters for call to function hali2cWait
+   \   000009   7901         MOV     R1,#0x1
+   \   00000B   12....       LCALL   hali2cWait & 0xFFFF
+    686            hali2cClock( 1 );
+   \   00000E                ; Setup parameters for call to function hali2cClock
+   \   00000E   7901         MOV     R1,#0x1
+   \   000010   12....       LCALL   ??hali2cClock?relay
+    687            hali2cWait(1);
+   \   000013                ; Setup parameters for call to function hali2cWait
+   \   000013   7901         MOV     R1,#0x1
+   \   000015   12....       LCALL   hali2cWait & 0xFFFF
+    688          
+    689            return OCM_SDA;
+   \   000018   A286         MOV     C,0x80.6
+   \   00001A   5004         JNC     ??hali2cRead_0
+   \   00001C   D2F0         SETB    B.0
+   \   00001E   8002         SJMP    ??hali2cRead_1
+   \                     ??hali2cRead_0:
+   \   000020   C2F0         CLR     B.0
+   \                     ??hali2cRead_1:
+   \   000022   A2F0         MOV     C,B.0
+   \   000024   D083         POP     DPH
+   \   000026   D082         POP     DPL
+   \   000028   02....       LJMP    ?BRET
+   \   00002B                REQUIRE _A_P0
+    690          }
+    691          
+    692          /*********************************************************************
+    693           * @fn      hali2cSendDeviceAddress
+    694           * @brief   Send onlythe device address. Do ack polling
+    695           *
+    696           * @param   void
+    697           * @return  none
+    698           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    699          STATIC void hali2cSendDeviceAddress(uint8 address)
+   \                     hali2cSendDeviceAddress:
+    700          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    701            uint8 retry = HAL_I2C_RETRY_CNT;
+   \   000007   7F03         MOV     R7,#0x3
+    702          
+    703            do {
+    704              hali2cStart();
+   \                     ??hali2cSendDeviceAddress_0:
+   \   000009                ; Setup parameters for call to function hali2cStart
+   \   000009   12....       LCALL   ??hali2cStart?relay
+    705              if (hali2cSendByte(address))  // do ack polling...
+   \   00000C                ; Setup parameters for call to function hali2cSendByte
+   \   00000C   EE           MOV     A,R6
+   \   00000D   F9           MOV     R1,A
+   \   00000E   12....       LCALL   ??hali2cSendByte?relay
+   \   000011   4009         JC      ??hali2cSendDeviceAddress_1
+    706              {
+    707                break;
+    708              }
+    709            } while ( --retry );
+   \   000013   74FF         MOV     A,#-0x1
+   \   000015   2F           ADD     A,R7
+   \   000016   F8           MOV     R0,A
+   \   000017   E8           MOV     A,R0
+   \   000018   FF           MOV     R7,A
+   \   000019   E8           MOV     A,R0
+   \   00001A   70ED         JNZ     ??hali2cSendDeviceAddress_0
+    710          }
+   \                     ??hali2cSendDeviceAddress_1:
+   \   00001C   7F01         MOV     R7,#0x1
+   \   00001E   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalI2CInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalI2CInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalI2CReceive?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalI2CReceive
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalI2CSend?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalI2CSend
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345WriteByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345WriteByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345ReadByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345ReadByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ADXL345ReadBytes?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ADXL345ReadBytes
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cSend?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cSend
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cSendByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cSendByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cWrite?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cWrite
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cClock?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cClock
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cStart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cStart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cStop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cStop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cReceiveByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cReceiveByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cReceive?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cReceive
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cRead?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cRead
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??hali2cSendDeviceAddress?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    hali2cSendDeviceAddress
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     ADXL345ReadByte                  0      0     10
+       -> hali2cStart                 0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cStart                 0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cReceiveByte           0      0     20
+       -> hali2cWrite                 0      0     20
+       -> hali2cStop                  0      0     20
+     ADXL345ReadBytes                 1      0     17
+       -> hali2cStart                 0      0     34
+       -> hali2cSendByte              0      0     34
+       -> hali2cSendByte              0      0     34
+       -> hali2cStart                 0      0     34
+       -> hali2cSendByte              0      0     34
+       -> hali2cClock                 0      0     34
+       -> hali2cReceiveByte           0      0     34
+       -> hali2cWrite                 0      0     34
+       -> hali2cStop                  0      0     34
+     ADXL345WriteByte                 0      0     10
+       -> hali2cStart                 0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cSendByte              0      0     20
+       -> hali2cStop                  0      0     20
+     HalI2CInit                       2      0      0
+     HalI2CReceive                    0      0     11
+       -> hali2cReceive               0      0     22
+     HalI2CSend                       0      0     13
+       -> hali2cSendDeviceAddress     0      0     24
+       -> hali2cSend                  0      0     26
+     hali2cClock                      1      0     17
+       -> hali2cWait                  2      0      0
+     hali2cRead                       2      0     12
+       -> hali2cClock                 4      0      0
+       -> hali2cWait                  4      0      0
+       -> hali2cClock                 4      0      0
+       -> hali2cWait                  4      0      0
+     hali2cReceive                    1      0     24
+       -> hali2cSendDeviceAddress     0      0     26
+       -> hali2cClock                 0      0     26
+       -> hali2cReceiveByte           0      0     26
+       -> hali2cWrite                 0      0     26
+       -> hali2cClock                 0      0     26
+       -> hali2cReceiveByte           0      0     26
+       -> hali2cWrite                 0      0     26
+       -> hali2cStop                  0      0     26
+     hali2cReceiveByte                0      0     29
+       -> hali2cRead                  0      0     24
+     hali2cSend                       0      0     28
+       -> hali2cStart                 0      0     30
+       -> hali2cSendByte              0      0     30
+       -> hali2cStop                  0      0     30
+     hali2cSendByte                   0      0     26
+       -> hali2cWrite                 0      0     18
+       -> hali2cClock                 0      0     18
+       -> hali2cClock                 0      0     18
+       -> hali2cWait                  0      0     18
+     hali2cSendDeviceAddress          0      0     22
+       -> hali2cStart                 0      0     18
+       -> hali2cSendByte              0      0     18
+     hali2cStart                      0      0     26
+       -> hali2cClock                 0      0     18
+       -> hali2cWait                  0      0     18
+       -> hali2cClock                 0      0     18
+       -> hali2cClock                 0      0     18
+       -> hali2cWait                  0      0     18
+       -> hali2cWait                  0      0     18
+       -> hali2cClock                 0      0     18
+     hali2cStop                       2      0     17
+       -> hali2cClock                 4      0      0
+       -> hali2cWait                  4      0      0
+       -> hali2cClock                 4      0      0
+       -> hali2cWait                  4      0      0
+     hali2cWait                       0      0      9
+     hali2cWrite                      0      0     26
+       -> hali2cClock                 0      0     18
+       -> hali2cWait                  0      0     18
+       -> hali2cClock                 0      0     18
+       -> hali2cWait                  0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_P0                              1
+     P0SEL                              1
+     P2SEL                              1
+     P2INP                              1
+     P0DIR                              1
+     s_xmemIsInit                       1
+     HalI2CInit                        45
+     HalI2CReceive                     35
+     HalI2CSend                        53
+     ADXL345WriteByte                  88
+     ADXL345ReadByte                  110
+     ADXL345ReadBytes                 189
+     hali2cSend                       107
+     hali2cSendByte                    64
+     hali2cWrite                       45
+     hali2cClock                       28
+     hali2cStart                       68
+     hali2cStop                        39
+     hali2cWait                        10
+     hali2cReceiveByte                 55
+     hali2cReceive                    137
+     hali2cRead                        43
+     hali2cSendDeviceAddress           33
+     ??HalI2CInit?relay                 6
+     ??HalI2CReceive?relay              6
+     ??HalI2CSend?relay                 6
+     ??ADXL345WriteByte?relay           6
+     ??ADXL345ReadByte?relay            6
+     ??ADXL345ReadBytes?relay           6
+     ??hali2cSend?relay                 6
+     ??hali2cSendByte?relay             6
+     ??hali2cWrite?relay                6
+     ??hali2cClock?relay                6
+     ??hali2cStart?relay                6
+     ??hali2cStop?relay                 6
+     ??hali2cReceiveByte?relay          6
+     ??hali2cReceive?relay              6
+     ??hali2cRead?relay                 6
+     ??hali2cSendDeviceAddress?relay    6
+
+ 
+ 1 139 bytes in segment BANKED_CODE
+    96 bytes in segment BANK_RELAYS
+    10 bytes in segment NEAR_CODE
+     5 bytes in segment SFR_AN
+     1 byte  in segment XDATA_Z
+ 
+ 1 245 bytes of CODE  memory
+     0 bytes of DATA  memory (+ 5 bytes shared)
+     1 byte  of XDATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,5213 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        13/Jul/2015  17:23:41 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Compone /
+//                          nts\mt\MT_AF.c                                    /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"          /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\T /
+//                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO         /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500        /
+//                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)   /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Components\mt\MT /
+//                          _AF.c" -D HAL_UART -lC "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Camera\Lis /
+//                          t\" -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1 /
+//                          a\Projects\zstack\Samples\WirelessMonitorSystem\C /
+//                          C2530DB\Camera\List\" --diag_suppress             /
+//                          Pe001,Pa010 -o "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\Camera\Obj /
+//                          \" -e --no_cse --no_unroll --no_inline            /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\" -I       /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\Source\" -I "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\Z /
+//                          Main\TI2530DB\" -I "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\include\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\target\CC2530EB\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\include\" -I        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\high_level\" -I     /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\low_level\srf04\"   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\..\..\Components\mac\low_level\srf04\ /
+//                          single_chip\" -I "C:\Texas                        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\mt\" -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\osal\include\" -I "C:\Texas       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\saddr\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\sdata\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\af\" -I "C:\Texas           /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\nwk\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sapi\" -I "C:\Texas         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sec\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sys\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\zdo\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\" -I "C:\Texas               /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\f8w\" -On                    /
+//                          --require_prototypes                              /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\C /
+//                          amera\List\MT_AF.s51                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME MT_AF
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?ALLOC_XSTACK8
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?L_ADD
+        EXTERN ?L_EQ_X
+        EXTERN ?L_MOV_X
+        EXTERN ?L_SHL
+        EXTERN ?PUSH_XSTACK8_X_TWO
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?PUSH_XSTACK_I_THREE
+        EXTERN ?PUSH_XSTACK_I_TWO
+        EXTERN ?UL_SHR
+        EXTERN ?V0
+        EXTERN ?XLOAD_R2345
+        EXTERN ?XSP
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN ?XSTORE_R2345
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION ??MT_AfAPSF_ConfigSet?relay,0203H
+        PUBLIC ??MT_AfCommandProcessing?relay
+        FUNCTION ??MT_AfCommandProcessing?relay,0203H
+        PUBLIC ??MT_AfDataConfirm?relay
+        FUNCTION ??MT_AfDataConfirm?relay,0203H
+        PUBLIC ??MT_AfDataRequest?relay
+        FUNCTION ??MT_AfDataRequest?relay,0203H
+        PUBLIC ??MT_AfDataRequestSrcRtg?relay
+        FUNCTION ??MT_AfDataRequestSrcRtg?relay,0203H
+        FUNCTION ??MT_AfDataRetrieve?relay,0203H
+        FUNCTION ??MT_AfDataStore?relay,0203H
+        PUBLIC ??MT_AfExec?relay
+        FUNCTION ??MT_AfExec?relay,0203H
+        PUBLIC ??MT_AfIncomingMsg?relay
+        FUNCTION ??MT_AfIncomingMsg?relay,0203H
+        PUBLIC ??MT_AfRegister?relay
+        FUNCTION ??MT_AfRegister?relay,0203H
+        FUNCTION MT_AfAPSF_ConfigSet,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC MT_AfCommandProcessing
+        FUNCTION MT_AfCommandProcessing,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC MT_AfDataConfirm
+        FUNCTION MT_AfDataConfirm,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 12, STACK
+        PUBLIC MT_AfDataRequest
+        FUNCTION MT_AfDataRequest,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 48, STACK
+        PUBLIC MT_AfDataRequestSrcRtg
+        FUNCTION MT_AfDataRequestSrcRtg,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 50, STACK
+        FUNCTION MT_AfDataRetrieve,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 29, STACK
+        FUNCTION MT_AfDataStore,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 25, STACK
+        PUBLIC MT_AfExec
+        FUNCTION MT_AfExec,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC MT_AfIncomingMsg
+        FUNCTION MT_AfIncomingMsg,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 28, STACK
+        PUBLIC MT_AfRegister
+        FUNCTION MT_AfRegister,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 15, STACK
+        PUBLIC pMtAfDataReq
+        PUBLIC pMtAfInMsgList
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+osal_mem_free       SYMBOL "osal_mem_free"
+osal_start_timerEx  SYMBOL "osal_start_timerEx"
+osal_set_event      SYMBOL "osal_set_event"
+osal_mem_alloc      SYMBOL "osal_mem_alloc"
+MT_BuildEndpointDesc SYMBOL "MT_BuildEndpointDesc"
+afRegister          SYMBOL "afRegister"
+MT_BuildAndSendZToolResponse SYMBOL "MT_BuildAndSendZToolResponse"
+osal_memcpy         SYMBOL "osal_memcpy"
+afFindEndPointDesc  SYMBOL "afFindEndPointDesc"
+AF_DataRequest      SYMBOL "AF_DataRequest"
+osal_memset         SYMBOL "osal_memset"
+AF_DataRequestSrcRtg SYMBOL "AF_DataRequestSrcRtg"
+afAPSF_ConfigSet    SYMBOL "afAPSF_ConfigSet"
+??AF_DataRequest?relay SYMBOL "?relay", AF_DataRequest
+??AF_DataRequestSrcRtg?relay SYMBOL "?relay", AF_DataRequestSrcRtg
+??MT_BuildAndSendZToolResponse?relay SYMBOL "?relay", MT_BuildAndSendZToolResponse
+??MT_BuildEndpointDesc?relay SYMBOL "?relay", MT_BuildEndpointDesc
+??afAPSF_ConfigSet?relay SYMBOL "?relay", afAPSF_ConfigSet
+??afFindEndPointDesc?relay SYMBOL "?relay", afFindEndPointDesc
+??afRegister?relay  SYMBOL "?relay", afRegister
+??osal_mem_alloc?relay SYMBOL "?relay", osal_mem_alloc
+??osal_mem_free?relay SYMBOL "?relay", osal_mem_free
+??osal_memcpy?relay SYMBOL "?relay", osal_memcpy
+??osal_memset?relay SYMBOL "?relay", osal_memset
+??osal_set_event?relay SYMBOL "?relay", osal_set_event
+??osal_start_timerEx?relay SYMBOL "?relay", osal_start_timerEx
+MT_AfCommandProcessing SYMBOL "MT_AfCommandProcessing"
+??MT_AfCommandProcessing?relay SYMBOL "?relay", MT_AfCommandProcessing
+MT_AfDataConfirm    SYMBOL "MT_AfDataConfirm"
+??MT_AfDataConfirm?relay SYMBOL "?relay", MT_AfDataConfirm
+MT_AfDataRequest    SYMBOL "MT_AfDataRequest"
+??MT_AfDataRequest?relay SYMBOL "?relay", MT_AfDataRequest
+MT_AfDataRequestSrcRtg SYMBOL "MT_AfDataRequestSrcRtg"
+??MT_AfDataRequestSrcRtg?relay SYMBOL "?relay", MT_AfDataRequestSrcRtg
+MT_AfExec           SYMBOL "MT_AfExec"
+??MT_AfExec?relay   SYMBOL "?relay", MT_AfExec
+MT_AfIncomingMsg    SYMBOL "MT_AfIncomingMsg"
+??MT_AfIncomingMsg?relay SYMBOL "?relay", MT_AfIncomingMsg
+MT_AfRegister       SYMBOL "MT_AfRegister"
+??MT_AfRegister?relay SYMBOL "?relay", MT_AfRegister
+
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_start_timerEx
+        FUNCTION osal_start_timerEx,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_set_event
+        FUNCTION osal_set_event,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_alloc
+        FUNCTION osal_mem_alloc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MT_BuildEndpointDesc
+        FUNCTION MT_BuildEndpointDesc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN MT_BuildAndSendZToolResponse
+        FUNCTION MT_BuildAndSendZToolResponse,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memcpy
+        FUNCTION osal_memcpy,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afFindEndPointDesc
+        FUNCTION afFindEndPointDesc,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequest
+        FUNCTION AF_DataRequest,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 48, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_memset
+        FUNCTION osal_memset,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN AF_DataRequestSrcRtg
+        FUNCTION AF_DataRequestSrcRtg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 50, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afAPSF_ConfigSet
+        FUNCTION afAPSF_ConfigSet,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ??AF_DataRequest?relay
+        FUNCTION ??AF_DataRequest?relay,00H
+        EXTERN ??AF_DataRequestSrcRtg?relay
+        FUNCTION ??AF_DataRequestSrcRtg?relay,00H
+        EXTERN ??MT_BuildAndSendZToolResponse?relay
+        FUNCTION ??MT_BuildAndSendZToolResponse?relay,00H
+        EXTERN ??MT_BuildEndpointDesc?relay
+        FUNCTION ??MT_BuildEndpointDesc?relay,00H
+        EXTERN ??afAPSF_ConfigSet?relay
+        FUNCTION ??afAPSF_ConfigSet?relay,00H
+        EXTERN ??afFindEndPointDesc?relay
+        FUNCTION ??afFindEndPointDesc?relay,00H
+        EXTERN ??afRegister?relay
+        FUNCTION ??afRegister?relay,00H
+        EXTERN ??osal_mem_alloc?relay
+        FUNCTION ??osal_mem_alloc?relay,00H
+        EXTERN ??osal_mem_free?relay
+        FUNCTION ??osal_mem_free?relay,00H
+        EXTERN ??osal_memcpy?relay
+        FUNCTION ??osal_memcpy?relay,00H
+        EXTERN ??osal_memset?relay
+        FUNCTION ??osal_memset?relay,00H
+        EXTERN ??osal_set_event?relay
+        FUNCTION ??osal_set_event?relay,00H
+        EXTERN ??osal_start_timerEx?relay
+        FUNCTION ??osal_start_timerEx?relay,00H
+        EXTERN MT_TaskID
+
+// C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\mt\MT_AF.c
+//    1 /**************************************************************************************************
+//    2   Filename:       MT_AF.c
+//    3   Revised:        $Date: 2011-05-27 16:00:27 -0700 (Fri, 27 May 2011) $
+//    4   Revision:       $Revision: 26145 $
+//    5 
+//    6 
+//    7   Description:    MonitorTest functions for the AF layer.
+//    8 
+//    9 
+//   10   Copyright 2007-2011 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12   IMPORTANT: Your use of this Software is limited to those specific rights
+//   13   granted under the terms of a software license agreement between the user
+//   14   who downloaded the software, his/her employer (which must be your employer)
+//   15   and Texas Instruments Incorporated (the "License").  You may not use this
+//   16   Software unless you agree to abide by the terms of the License. The License
+//   17   limits your use, and you acknowledge, that the Software may not be modified,
+//   18   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20   frequency transceiver, which is integrated into your product.  Other than for
+//   21   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22   works of, modify, distribute, perform, display or sell this Software and/or
+//   23   its documentation for any purpose.
+//   24 
+//   25   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26   PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37   Should you have any questions regarding your right to use this Software,
+//   38   contact Texas Instruments Incorporated at www.TI.com.
+//   39 
+//   40 **************************************************************************************************/
+//   41 
+//   42 /* ------------------------------------------------------------------------------------------------
+//   43  *                                          Includes
+//   44  * ------------------------------------------------------------------------------------------------
+//   45  */
+//   46 #include "ZComDef.h"
+//   47 #include "OSAL.h"
+//   48 #include "MT.h"
+//   49 #include "MT_AF.h"
+//   50 #include "MT_ZDO.h"
+//   51 #include "nwk.h"
+//   52 #include "OnBoard.h"
+//   53 #include "MT_UART.h"
+//   54 
+//   55 #if defined INTER_PAN
+//   56 #include "stub_aps.h"
+//   57 #endif
+//   58 
+//   59 /* ------------------------------------------------------------------------------------------------
+//   60  *                                          Constants
+//   61  * ------------------------------------------------------------------------------------------------
+//   62  */
+//   63 
+//   64 #if !defined MT_AF_EXEC_CNT
+//   65 #define MT_AF_EXEC_CNT  15
+//   66 #endif
+//   67 
+//   68 #if !defined MT_AF_EXEC_DLY
+//   69 #define MT_AF_EXEC_DLY  1000
+//   70 #endif
+//   71 
+//   72 /* ------------------------------------------------------------------------------------------------
+//   73  *                                           Typedefs
+//   74  * ------------------------------------------------------------------------------------------------
+//   75  */
+//   76 
+//   77 typedef struct
+//   78 {
+//   79   uint8 *data;
+//   80   afAddrType_t dstAddr;
+//   81   endPointDesc_t *epDesc;
+//   82   uint16 cId;
+//   83   uint16 dataLen;
+//   84   uint8 transId;
+//   85   uint8 txOpts;
+//   86   uint8 radius;
+//   87   uint8 tick;
+//   88 } mtAfDataReq_t;
+//   89 
+//   90 typedef struct _mtAfInMsgList_t
+//   91 {
+//   92   struct _mtAfInMsgList_t *next;
+//   93   uint8 *data;
+//   94   uint32 timestamp;         // Receipt timestamp from MAC.
+//   95   uint8 tick;
+//   96 } mtAfInMsgList_t;
+//   97 
+//   98 /* ------------------------------------------------------------------------------------------------
+//   99  *                                        Local Variables
+//  100  * ------------------------------------------------------------------------------------------------
+//  101  */
+//  102 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  103 mtAfInMsgList_t *pMtAfInMsgList = NULL;
+pMtAfInMsgList:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  104 mtAfDataReq_t *pMtAfDataReq = NULL;
+pMtAfDataReq:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  105 
+//  106 /* ------------------------------------------------------------------------------------------------
+//  107  *                                        Global Variables
+//  108  * ------------------------------------------------------------------------------------------------
+//  109  */
+//  110 
+//  111 #if defined ( MT_AF_CB_FUNC )
+//  112 uint16 _afCallbackSub;
+//  113 #endif
+//  114 
+//  115 /* ------------------------------------------------------------------------------------------------
+//  116  *                                        Local Functions
+//  117  * ------------------------------------------------------------------------------------------------
+//  118  */
+//  119 
+//  120 void MT_AfRegister(uint8 *pBuf);
+//  121 void MT_AfDataRequest(uint8 *pBuf);
+//  122 
+//  123 #if defined ( ZIGBEE_SOURCE_ROUTING )
+//  124 void MT_AfDataRequestSrcRtg(uint8 *pBuf);
+//  125 #endif
+//  126 
+//  127 #if defined INTER_PAN
+//  128 static void MT_AfInterPanCtl(uint8 *pBuf);
+//  129 #endif
+//  130 
+//  131 static void MT_AfDataRetrieve(uint8 *pBuf);
+//  132 static void MT_AfDataStore(uint8 *pBuf);
+//  133 static void MT_AfAPSF_ConfigSet(uint8 *pBuf);
+//  134 
+//  135 /**************************************************************************************************
+//  136  * @fn          MT_AfExec
+//  137  *
+//  138  * @brief       This function is invoked by an MT timer event.
+//  139  *
+//  140  * input parameters
+//  141  *
+//  142  * None.
+//  143  *
+//  144  * output parameters
+//  145  *
+//  146  * None.
+//  147  *
+//  148  * @return      None.
+//  149  **************************************************************************************************
+//  150  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  151 void MT_AfExec(void)
+MT_AfExec:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function MT_AfExec
+        CODE
+//  152 {
+        FUNCALL MT_AfExec, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfExec, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfExec, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfExec, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfExec, osal_set_event
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//  153   mtAfInMsgList_t *pPrev, *pItem = pMtAfInMsgList;
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+//  154 
+//  155   while (pItem != NULL)
+??MT_AfExec_0:
+        MOV     A,R6
+        ORL     A,R7
+        JNZ     $+5
+        LJMP    ??MT_AfExec_1 & 0xFFFF
+//  156   {
+//  157     if (--(pItem->tick) == 0)
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    @DPTR,A
+        MOV     A,R0
+        JNZ     ??MT_AfExec_2
+//  158     {
+//  159       if (pMtAfInMsgList == pItem)
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R6
+        XRL     A,R0
+        JNZ     ??MT_AfExec_3
+        MOV     A,R7
+        XRL     A,R1
+??MT_AfExec_3:
+        JNZ     ??MT_AfExec_4
+//  160       {
+//  161         pMtAfInMsgList = pItem->next;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#pMtAfInMsgList
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  162         (void)osal_mem_free(pItem);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  163         pItem = pMtAfInMsgList;
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        SJMP    ??MT_AfExec_0
+//  164       }
+//  165       else
+//  166       {
+//  167         pPrev->next = pItem->next;
+??MT_AfExec_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  168         (void)osal_mem_free(pItem);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  169         pItem = pPrev->next;
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R1
+        MOV     R7,A
+        LJMP    ??MT_AfExec_0 & 0xFFFF
+//  170       }
+//  171     }
+//  172     else
+//  173     {
+//  174       pPrev = pItem;
+??MT_AfExec_2:
+        MOV     ?V0 + 0,R6
+        MOV     ?V0 + 1,R7
+//  175       pItem = pItem->next;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R6,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R7,A
+        LJMP    ??MT_AfExec_0 & 0xFFFF
+//  176     }
+//  177   }
+//  178 
+//  179   if (pMtAfDataReq != NULL)
+??MT_AfExec_1:
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??MT_AfExec_5
+//  180   {
+//  181     if (--(pMtAfDataReq->tick) == 0)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x17
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        ADD     A,#-0x1
+        MOV     R2,A
+        MOV     A,R2
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x17
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     A,R2
+        JNZ     ??MT_AfExec_5
+//  182     {
+//  183       (void)osal_mem_free(pMtAfDataReq);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  184       pMtAfDataReq = NULL;
+        MOV     DPTR,#pMtAfDataReq
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  185     }
+//  186   }
+//  187 
+//  188   if ((pMtAfInMsgList != NULL) || (pMtAfDataReq != NULL))
+??MT_AfExec_5:
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??MT_AfExec_6
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??MT_AfExec_7
+//  189   {
+//  190     if (ZSuccess != osal_start_timerEx(MT_TaskID, MT_AF_EXEC_EVT, MT_AF_EXEC_DLY))
+??MT_AfExec_6:
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??MT_AfExec_7
+//  191     {
+//  192       osal_set_event(MT_TaskID, MT_AF_EXEC_EVT);
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+        MOV     A,R1
+//  193     }
+//  194   }
+//  195 }
+??MT_AfExec_7:
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock0
+//  196 
+//  197 /***************************************************************************************************
+//  198  * @fn      MT_AfCommandProcessing
+//  199  *
+//  200  * @brief   Process all the AF commands that are issued by test tool
+//  201  *
+//  202  * @param   pBuf - pointer to the received buffer
+//  203  *
+//  204  * @return  status
+//  205  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  206 uint8 MT_AfCommandProcessing(uint8 *pBuf)
+MT_AfCommandProcessing:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function MT_AfCommandProcessing
+        CODE
+//  207 {
+        FUNCALL MT_AfCommandProcessing, MT_AfRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfCommandProcessing, MT_AfDataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfCommandProcessing, MT_AfDataRequestSrcRtg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfCommandProcessing, MT_AfDataRetrieve
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfCommandProcessing, MT_AfDataStore
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfCommandProcessing, MT_AfAPSF_ConfigSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  208   uint8 status = MT_RPC_SUCCESS;
+        MOV     ?V0 + 0,#0x0
+//  209 
+//  210   switch (pBuf[MT_RPC_POS_CMD1])
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        JZ      ??MT_AfCommandProcessing_0
+        DEC     A
+        JZ      ??MT_AfCommandProcessing_1
+        DEC     A
+        JZ      ??MT_AfCommandProcessing_1
+        DEC     A
+        JZ      ??MT_AfCommandProcessing_2
+        ADD     A,#-0xe
+        JZ      ??MT_AfCommandProcessing_3
+        DEC     A
+        JZ      ??MT_AfCommandProcessing_4
+        DEC     A
+        JZ      ??MT_AfCommandProcessing_5
+        SJMP    ??MT_AfCommandProcessing_6
+//  211   {
+//  212     case MT_AF_REGISTER:
+//  213       MT_AfRegister(pBuf);
+??MT_AfCommandProcessing_0:
+        ; Setup parameters for call to function MT_AfRegister
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfRegister?relay
+//  214       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  215 
+//  216     case MT_AF_DATA_REQUEST:
+//  217     case MT_AF_DATA_REQUEST_EXT:
+//  218       MT_AfDataRequest(pBuf);
+??MT_AfCommandProcessing_1:
+        ; Setup parameters for call to function MT_AfDataRequest
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfDataRequest?relay
+//  219       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  220 
+//  221 #if defined ( ZIGBEE_SOURCE_ROUTING )
+//  222     case MT_AF_DATA_REQUEST_SRCRTG:
+//  223       MT_AfDataRequestSrcRtg(pBuf);
+??MT_AfCommandProcessing_2:
+        ; Setup parameters for call to function MT_AfDataRequestSrcRtg
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfDataRequestSrcRtg?relay
+//  224       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  225 #endif
+//  226 
+//  227 #if defined INTER_PAN
+//  228     case MT_AF_INTER_PAN_CTL:
+//  229       MT_AfInterPanCtl(pBuf);
+//  230       break;
+//  231 #endif
+//  232 
+//  233     case MT_AF_DATA_RETRIEVE:
+//  234       MT_AfDataRetrieve(pBuf);
+??MT_AfCommandProcessing_4:
+        ; Setup parameters for call to function MT_AfDataRetrieve
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfDataRetrieve?relay
+//  235       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  236 
+//  237     case MT_AF_DATA_STORE:
+//  238       MT_AfDataStore(pBuf);
+??MT_AfCommandProcessing_3:
+        ; Setup parameters for call to function MT_AfDataStore
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfDataStore?relay
+//  239       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  240 
+//  241     case MT_AF_APSF_CONFIG_SET:
+//  242       MT_AfAPSF_ConfigSet(pBuf);
+??MT_AfCommandProcessing_5:
+        ; Setup parameters for call to function MT_AfAPSF_ConfigSet
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??MT_AfAPSF_ConfigSet?relay
+//  243       break;
+        SJMP    ??MT_AfCommandProcessing_7
+//  244 
+//  245     default:
+//  246       status = MT_RPC_ERR_COMMAND_ID;
+??MT_AfCommandProcessing_6:
+        MOV     ?V0 + 0,#0x2
+//  247       break;
+//  248   }
+//  249 
+//  250   return status;
+??MT_AfCommandProcessing_7:
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  251 }
+//  252 
+//  253 /***************************************************************************************************
+//  254  * @fn      MT_AfRegister
+//  255  *
+//  256  * @brief   Process AF Register command
+//  257  *
+//  258  * @param   pBuf - pointer to the received buffer
+//  259  *
+//  260  * @return  none
+//  261  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  262 void MT_AfRegister(uint8 *pBuf)
+MT_AfRegister:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function MT_AfRegister
+        CODE
+//  263 {
+        FUNCALL MT_AfRegister, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfRegister, MT_BuildEndpointDesc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfRegister, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfRegister, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfRegister, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xe
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 14)
+        ; Saved register size: 14
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+//  264   uint8 cmdId;
+//  265   uint8 retValue = ZMemError;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x10
+        MOVX    @DPTR,A
+//  266   endPointDesc_t *epDesc;
+//  267 
+//  268   /* parse header */
+//  269   cmdId = pBuf[MT_RPC_POS_CMD1];
+        MOV     DPL,?V0 + 0
+        MOV     DPH,?V0 + 1
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+//  270   pBuf += MT_RPC_FRAME_HDR_SZ;
+        MOV     A,?V0 + 0
+        ADD     A,#0x3
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+//  271 
+//  272   epDesc = (endPointDesc_t *)osal_mem_alloc(sizeof(endPointDesc_t));
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,#0x6
+        MOV     R3,#0x0
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R6,?V0 + 4
+        MOV     R7,?V0 + 5
+//  273   if ( epDesc )
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??MT_AfRegister_0
+//  274   {
+//  275     epDesc->task_id = &MT_TaskID;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     A,#MT_TaskID & 0xff
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#(MT_TaskID >> 8) & 0xff
+        MOVX    @DPTR,A
+//  276     retValue = MT_BuildEndpointDesc( pBuf, epDesc );
+        ; Setup parameters for call to function MT_BuildEndpointDesc
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??MT_BuildEndpointDesc?relay
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  277     if ( retValue == ZSuccess )
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        JNZ     ??MT_AfRegister_1
+//  278     {
+//  279       retValue = afRegister( epDesc );
+        ; Setup parameters for call to function afRegister
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??afRegister?relay
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  280     }
+//  281 
+//  282     if ( retValue != ZSuccess )
+??MT_AfRegister_1:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        JZ      ??MT_AfRegister_0
+//  283     {
+//  284       osal_mem_free( epDesc );
+        ; Setup parameters for call to function osal_mem_free
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  285     }
+//  286   }
+//  287 
+//  288   /* Build and send back the response */
+//  289   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF), cmdId, 1, &retValue);
+??MT_AfRegister_0:
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x1
+        MOV     R2,?V0 + 2
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  290 }
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 14)
+        MOV     R7,#0x6
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  291 
+//  292 /***************************************************************************************************
+//  293  * @fn      MT_AfDataRequest
+//  294  *
+//  295  * @brief   Process AF Register command
+//  296  *
+//  297  * @param   pBuf - pointer to the received buffer
+//  298  *
+//  299  * @return  none
+//  300  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  301 void MT_AfDataRequest(uint8 *pBuf)
+MT_AfDataRequest:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function MT_AfDataRequest
+        CODE
+//  302 {
+        FUNCALL MT_AfDataRequest, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, afFindEndPointDesc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 42, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 42, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, osal_set_event
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 48, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 48, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequest, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 39, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 39, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x17
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-23)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 23)
+        ; Saved register size: 23
+        ; Auto size: 16
+        MOV     A,#-0x10
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 39)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  303   #define MT_AF_REQ_MSG_LEN  10
+//  304   #define MT_AF_REQ_MSG_EXT  10
+//  305 
+//  306   endPointDesc_t *epDesc;
+//  307   afAddrType_t dstAddr;
+//  308   cId_t cId;
+//  309   uint8 transId, txOpts, radius;
+//  310   uint8 cmd0, cmd1;
+//  311   uint8 retValue = ZFailure;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  312   uint16 dataLen, tempLen;
+//  313 
+//  314   /* Parse header */
+//  315   cmd0 = pBuf[MT_RPC_POS_CMD0];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 14,A
+//  316   cmd1 = pBuf[MT_RPC_POS_CMD1];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 7,A
+//  317   pBuf += MT_RPC_FRAME_HDR_SZ;
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  318 
+//  319   if (cmd1 == MT_AF_DATA_REQUEST_EXT)
+        MOV     A,#0x2
+        XRL     A,?V0 + 7
+        JZ      $+5
+        LJMP    ??MT_AfDataRequest_0 & 0xFFFF
+//  320   {
+//  321     dstAddr.addrMode = (afAddrMode_t)*pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  322 
+//  323     if (dstAddr.addrMode == afAddr64Bit)
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??MT_AfDataRequest_1
+//  324     {
+//  325       (void)osal_memcpy(dstAddr.addr.extAddr, pBuf, Z_EXTADDR_LEN);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 4,R6
+        MOV     ?V0 + 5,R7
+        MOV     ?V0 + 6,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 39)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        SJMP    ??MT_AfDataRequest_2
+//  326     }
+//  327     else
+//  328     {
+//  329       dstAddr.addr.shortAddr = BUILD_UINT16(pBuf[0], pBuf[1]);
+??MT_AfDataRequest_1:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  330     }
+//  331     pBuf += Z_EXTADDR_LEN;
+??MT_AfDataRequest_2:
+        MOV     A,R6
+        ADD     A,#0x8
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  332 
+//  333     dstAddr.endPoint = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  334     dstAddr.panId = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  335     pBuf += 2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        SJMP    ??MT_AfDataRequest_3
+//  336   }
+//  337   else
+//  338   {
+//  339     /* Destination address */
+//  340     dstAddr.addrMode = afAddr16Bit;
+??MT_AfDataRequest_0:
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  341     dstAddr.addr.shortAddr = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  342     pBuf += 2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  343 
+//  344     /* Destination endpoint */
+//  345     dstAddr.endPoint = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  346     dstAddr.panId = 0;
+        MOV     A,#0xc
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  347   }
+//  348 
+//  349   /* Source endpoint */
+//  350   epDesc = afFindEndPointDesc(*pBuf++);
+??MT_AfDataRequest_3:
+        ; Setup parameters for call to function afFindEndPointDesc
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??afFindEndPointDesc?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     ?V0 + 12,?V0 + 4
+        MOV     ?V0 + 13,?V0 + 5
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  351 
+//  352   /* ClusterId */
+//  353   cId = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 2,R0
+        MOV     ?V0 + 3,R1
+//  354   pBuf +=2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  355 
+//  356   /* TransId */
+//  357   transId = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  358 
+//  359   /* TxOption */
+//  360   txOpts = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 11,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  361 
+//  362   /* Radius */
+//  363   radius = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 10,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  364 
+//  365   /* Length */
+//  366   if (cmd1 == MT_AF_DATA_REQUEST_EXT)
+        MOV     A,#0x2
+        XRL     A,?V0 + 7
+        JNZ     ??MT_AfDataRequest_4
+//  367   {
+//  368     dataLen = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+//  369     tempLen = dataLen + MT_AF_REQ_MSG_LEN + MT_AF_REQ_MSG_EXT;
+        MOV     A,?V0 + 0
+        ADD     A,#0x14
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     ?V0 + 8,R0
+        MOV     ?V0 + 9,R1
+//  370     pBuf += 2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+        SJMP    ??MT_AfDataRequest_5
+//  371   }
+//  372   else
+//  373   {
+//  374     dataLen = *pBuf++;
+??MT_AfDataRequest_4:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  375     tempLen = dataLen + MT_AF_REQ_MSG_LEN;
+        MOV     A,?V0 + 0
+        ADD     A,#0xa
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     ?V0 + 8,R0
+        MOV     ?V0 + 9,R1
+//  376   }
+//  377 
+//  378   if ( epDesc == NULL )
+??MT_AfDataRequest_5:
+        MOV     A,?V0 + 12
+        ORL     A,?V0 + 13
+        JNZ     ??MT_AfDataRequest_6
+//  379   {
+//  380     retValue = afStatus_INVALID_PARAMETER;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        LJMP    ??MT_AfDataRequest_7 & 0xFFFF
+//  381   }
+//  382   else if (tempLen > (uint16)MT_RPC_DATA_MAX)
+??MT_AfDataRequest_6:
+        CLR     C
+        MOV     A,?V0 + 8
+        SUBB    A,#-0x5
+        MOV     A,?V0 + 9
+        SUBB    A,#0x0
+        JNC     $+5
+        LJMP    ??MT_AfDataRequest_8 & 0xFFFF
+//  383   {
+//  384     if (pMtAfDataReq != NULL)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JZ      ??MT_AfDataRequest_9
+//  385     {
+//  386       retValue = afStatus_INVALID_PARAMETER;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        LJMP    ??MT_AfDataRequest_7 & 0xFFFF
+//  387     }
+//  388     else if ((pMtAfDataReq = osal_mem_alloc(sizeof(mtAfDataReq_t) + dataLen)) == NULL)
+??MT_AfDataRequest_9:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     A,?V0 + 0
+        ADD     A,#0x18
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+        MOV     DPTR,#pMtAfDataReq
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??MT_AfDataRequest_10
+//  389     {
+//  390       retValue = afStatus_MEM_FAIL;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x10
+        MOVX    @DPTR,A
+        LJMP    ??MT_AfDataRequest_7 & 0xFFFF
+//  391     }
+//  392     else
+//  393     {
+//  394       retValue = afStatus_SUCCESS;
+??MT_AfDataRequest_10:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  395 
+//  396       pMtAfDataReq->data = (uint8 *)(pMtAfDataReq+1);
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x18
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  397       (void)osal_memcpy(&(pMtAfDataReq->dstAddr), &dstAddr, sizeof(afAddrType_t));
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R1,DPL
+        MOV     R2,DPH
+        MOV     R3,#0x0
+        MOV     ?V0 + 4,R1
+        MOV     ?V0 + 5,R2
+        MOV     ?V0 + 6,R3
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 42)
+        MOV     R4,#0xc
+        MOV     R5,#0x0
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 39)
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  398       pMtAfDataReq->epDesc = epDesc;
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0xe
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,?V0 + 12
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 13
+        MOVX    @DPTR,A
+//  399       pMtAfDataReq->cId = cId;
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x10
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+//  400       pMtAfDataReq->dataLen = dataLen;
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x12
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,?V0 + 0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 1
+        MOVX    @DPTR,A
+//  401       pMtAfDataReq->transId = transId;
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x14
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  402       pMtAfDataReq->txOpts = txOpts;
+        MOV     A,?V0 + 11
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x15
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,?V0 + 11
+        MOVX    @DPTR,A
+//  403       pMtAfDataReq->radius = radius;
+        MOV     A,?V0 + 10
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x16
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,?V0 + 10
+        MOVX    @DPTR,A
+//  404 
+//  405       // Setup to time-out the huge outgoing item if host does not MT_AF_DATA_STORE it.
+//  406       pMtAfDataReq->tick = MT_AF_EXEC_CNT;
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x17
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOV     A,#0xf
+        MOVX    @DPTR,A
+//  407       if (ZSuccess != osal_start_timerEx(MT_TaskID, MT_AF_EXEC_EVT, MT_AF_EXEC_DLY))
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??MT_AfDataRequest_7
+//  408       {
+//  409         (void)osal_set_event(MT_TaskID, MT_AF_EXEC_EVT);
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+        MOV     A,R1
+        SJMP    ??MT_AfDataRequest_7
+//  410       }
+//  411     }
+//  412   }
+//  413   else
+//  414   {
+//  415     retValue = AF_DataRequest(&dstAddr, epDesc, cId, dataLen, pBuf, &transId, txOpts, radius);
+??MT_AfDataRequest_8:
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     A,?V0 + 10
+        MOV     ?V0 + 4,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 40)
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 4,DPL
+        MOV     ?V0 + 5,DPH
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 42)
+        MOV     ?V0 + 4,R6
+        MOV     ?V0 + 5,R7
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 44)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 46)
+        MOV     R0,#?V0 + 2
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 48)
+        MOV     R1,?V0 + 11
+        MOV     R4,?V0 + 12
+        MOV     R5,?V0 + 13
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 39)
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  416   }
+//  417 
+//  418   if (MT_RPC_CMD_SREQ == (cmd0 & MT_RPC_CMD_TYPE_MASK))
+??MT_AfDataRequest_7:
+        MOV     A,#-0x20
+        ANL     A,?V0 + 14
+        XRL     A,#0x20
+        JNZ     ??MT_AfDataRequest_11
+//  419   {
+//  420     MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP|(uint8)MT_RPC_SYS_AF), cmd1, 1, &retValue);
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x1
+        MOV     R2,?V0 + 7
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  421   }
+//  422 }
+??MT_AfDataRequest_11:
+        MOV     A,#0x10
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     R7,#0xf
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  423 
+//  424 #if defined ( ZIGBEE_SOURCE_ROUTING )
+//  425 
+//  426 /***************************************************************************************************
+//  427  * @fn      MT_AfDataRequestSrcRtg
+//  428  *
+//  429  * @brief   Process AF Register command
+//  430  *
+//  431  * @param   pBuf - pointer to the received buffer
+//  432  *
+//  433  * @return  none
+//  434  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  435 void MT_AfDataRequestSrcRtg(uint8 *pBuf)
+MT_AfDataRequestSrcRtg:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function MT_AfDataRequestSrcRtg
+        CODE
+//  436 {
+        FUNCALL MT_AfDataRequestSrcRtg, osal_memset
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequestSrcRtg, afFindEndPointDesc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequestSrcRtg, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequestSrcRtg, AF_DataRequestSrcRtg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 50, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 50, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequestSrcRtg, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRequestSrcRtg, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 38, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 38, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V15 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-23)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-24)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 24)
+        ; Saved register size: 24
+        ; Auto size: 14
+        MOV     A,#-0xe
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 38)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  437   uint8 cmdId, dataLen = 0;
+        MOV     ?V0 + 3,#0x0
+//  438   uint8 retValue = ZFailure;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  439   endPointDesc_t *epDesc;
+//  440   byte transId;
+//  441   afAddrType_t dstAddr;
+//  442   cId_t cId;
+//  443   byte txOpts, radius, srcEP, relayCnt;
+//  444   uint16 *pRelayList;
+//  445   uint8 i;
+//  446 
+//  447   /* parse header */
+//  448   cmdId = pBuf[MT_RPC_POS_CMD1];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+//  449   pBuf += MT_RPC_FRAME_HDR_SZ;
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  450 
+//  451   /* Destination address */
+//  452   /* Initialize the panID field to zero to avoid inter-pan */
+//  453   osal_memset( &dstAddr, 0, sizeof(afAddrType_t) );
+        ; Setup parameters for call to function osal_memset
+        MOV     R4,#0xc
+        MOV     R5,#0x0
+        MOV     R1,#0x0
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??osal_memset?relay
+//  454   dstAddr.addrMode = afAddr16Bit;
+        MOV     A,#0xa
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+//  455   dstAddr.addr.shortAddr = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        CLR     A
+        XCH     A,R2
+        MOV     R3,A
+        MOV     A,R0
+        ADD     A,R2
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R3
+        MOV     R1,A
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  456   pBuf += 2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  457 
+//  458   /* Destination endpoint */
+//  459   dstAddr.endPoint = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0xb
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  460 
+//  461   /* Source endpoint */
+//  462   srcEP = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 10,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  463   epDesc = afFindEndPointDesc( srcEP );
+        ; Setup parameters for call to function afFindEndPointDesc
+        MOV     R1,?V0 + 10
+        LCALL   ??afFindEndPointDesc?relay
+        MOV     ?V0 + 8,R2
+        MOV     ?V0 + 9,R3
+        MOV     ?V0 + 14,?V0 + 8
+        MOV     ?V0 + 15,?V0 + 9
+//  464 
+//  465   /* ClusterId */
+//  466   cId = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        CLR     A
+        XCH     A,R2
+        MOV     R3,A
+        MOV     A,R0
+        ADD     A,R2
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R3
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+//  467   pBuf +=2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  468 
+//  469   /* TransId */
+//  470   transId = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  471 
+//  472   /* TxOption */
+//  473   txOpts = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 12,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  474 
+//  475   /* Radius */
+//  476   radius = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 11,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  477 
+//  478   /* Source route relay count */
+//  479   relayCnt = *pBuf++;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  480 
+//  481   /* Convert the source route relay list */
+//  482   if( (pRelayList = osal_mem_alloc( relayCnt * sizeof( uint16 ))) != NULL )
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     A,?V0 + 4
+        MOV     R2,?V0 + 4
+        MOV     R3,#0x0
+        MOV     A,R2
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R2
+        MOV     R0,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R0
+        MOV     R0,A
+        MOV     B,#0x2
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R0
+        MOV     R3,A
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 8,R2
+        MOV     ?V0 + 9,R3
+        MOV     R0,?V0 + 8
+        MOV     R1,?V0 + 9
+        MOV     ?V0 + 6,R0
+        MOV     ?V0 + 7,R1
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     $+5
+        LJMP    ??MT_AfDataRequestSrcRtg_0 & 0xFFFF
+//  483   {
+//  484     for( i = 0; i < relayCnt; i++ )
+        MOV     ?V0 + 2,#0x0
+??MT_AfDataRequestSrcRtg_1:
+        MOV     A,?V0 + 2
+        CLR     C
+        SUBB    A,?V0 + 4
+        JNC     ??MT_AfDataRequestSrcRtg_2
+//  485     {
+//  486       pRelayList[i]  = BUILD_UINT16( pBuf[0], pBuf[1] );
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        CLR     A
+        XCH     A,R2
+        MOV     R3,A
+        MOV     A,R0
+        ADD     A,R2
+        MOV     R0,A
+        MOV     A,R1
+        ADDC    A,R3
+        MOV     R1,A
+        MOV     A,?V0 + 2
+        MOV     R2,?V0 + 2
+        MOV     R3,#0x0
+        MOV     A,R2
+        MOV     B,#0x2
+        MUL     AB
+        XCH     A,R2
+        MOV     R4,B
+        MOV     B,#0x0
+        MUL     AB
+        ADD     A,R4
+        MOV     R4,A
+        MOV     B,#0x2
+        MOV     A,R3
+        MUL     AB
+        ADD     A,R4
+        MOV     R3,A
+        MOV     A,?V0 + 6
+        ADD     A,R2
+        MOV     DPL,A
+        MOV     A,?V0 + 7
+        ADDC    A,R3
+        MOV     DPH,A
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  487       pBuf += 2;
+        MOV     A,R6
+        ADD     A,#0x2
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  488     }
+        INC     ?V0 + 2
+        SJMP    ??MT_AfDataRequestSrcRtg_1
+//  489 
+//  490     /* Data payload Length */
+//  491     dataLen = *pBuf++;
+??MT_AfDataRequestSrcRtg_2:
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  492 
+//  493     if ( epDesc == NULL )
+        MOV     A,?V0 + 14
+        ORL     A,?V0 + 15
+        JNZ     ??MT_AfDataRequestSrcRtg_3
+//  494     {
+//  495       retValue = afStatus_INVALID_PARAMETER;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x2
+        MOVX    @DPTR,A
+        SJMP    ??MT_AfDataRequestSrcRtg_4
+//  496     }
+//  497     else
+//  498     {
+//  499       retValue = AF_DataRequestSrcRtg( &dstAddr, epDesc, cId, dataLen, pBuf,
+//  500                                      &transId, txOpts, radius, relayCnt, pRelayList );
+??MT_AfDataRequestSrcRtg_3:
+        ; Setup parameters for call to function AF_DataRequestSrcRtg
+        MOV     R0,#?V0 + 6
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 40)
+        MOV     A,?V0 + 4
+        MOV     ?V0 + 8,A
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 41)
+        MOV     A,?V0 + 11
+        MOV     ?V0 + 8,A
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 42)
+        MOV     A,#0x5
+        LCALL   ?XSTACK_DISP0_8
+        MOV     ?V0 + 8,DPL
+        MOV     ?V0 + 9,DPH
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 44)
+        MOV     ?V0 + 8,R6
+        MOV     ?V0 + 9,R7
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 46)
+        MOV     ?V0 + 8,?V0 + 3
+        MOV     ?V0 + 9,#0x0
+        MOV     R0,#?V0 + 8
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 48)
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 50)
+        MOV     R1,?V0 + 12
+        MOV     R4,?V0 + 14
+        MOV     R5,?V0 + 15
+        MOV     A,#0xe
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        LCALL   ??AF_DataRequestSrcRtg?relay
+        MOV     A,#0xc
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 38)
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  501     }
+//  502 
+//  503     /* Free the memory allocated */
+//  504     osal_mem_free( pRelayList );
+??MT_AfDataRequestSrcRtg_4:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     R2,?V0 + 6
+        MOV     R3,?V0 + 7
+        LCALL   ??osal_mem_free?relay
+        SJMP    ??MT_AfDataRequestSrcRtg_5
+//  505   }
+//  506   else
+//  507   {
+//  508     retValue = afStatus_MEM_FAIL;
+??MT_AfDataRequestSrcRtg_0:
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x10
+        MOVX    @DPTR,A
+//  509   }
+//  510 
+//  511 
+//  512   /* Build and send back the response */
+//  513   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF), cmdId, 1, &retValue);
+??MT_AfDataRequestSrcRtg_5:
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x1
+        MOV     R2,?V0 + 5
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  514 }
+        MOV     A,#0xe
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  515 #endif
+//  516 
+//  517 #if defined INTER_PAN
+//  518 /***************************************************************************************************
+//  519  * @fn      MT_AfInterPanCtl
+//  520  *
+//  521  * @brief   Process the AF Inter Pan control command.
+//  522  *
+//  523  * @param   pBuf - pointer to the received buffer
+//  524  *
+//  525  * @return  none
+//  526  ***************************************************************************************************/
+//  527 static void MT_AfInterPanCtl(uint8 *pBuf)
+//  528 {
+//  529   uint8 cmd, rtrn;
+//  530   uint16 panId;
+//  531   endPointDesc_t *pEP;
+//  532 
+//  533   cmd = pBuf[MT_RPC_POS_CMD1];
+//  534   pBuf += MT_RPC_FRAME_HDR_SZ;
+//  535 
+//  536   switch (*pBuf++)  // Inter-pan request parameter.
+//  537   {
+//  538   case InterPanClr:
+//  539     rtrn = StubAPS_SetIntraPanChannel();           // Switch channel back to the NIB channel.
+//  540     break;
+//  541 
+//  542   case InterPanSet:
+//  543     rtrn = StubAPS_SetInterPanChannel(*pBuf);      // Set channel for inter-pan communication.
+//  544     break;
+//  545 
+//  546   case InterPanReg:
+//  547     if ((pEP = afFindEndPointDesc(*pBuf)))
+//  548     {
+//  549       StubAPS_RegisterApp(pEP);
+//  550       rtrn = SUCCESS;
+//  551     }
+//  552     else
+//  553     {
+//  554       rtrn = FAILURE;
+//  555     }
+//  556     break;
+//  557 
+//  558   case InterPanChk:
+//  559     panId = BUILD_UINT16(pBuf[0], pBuf[1]);
+//  560     rtrn = (StubAPS_InterPan(panId, pBuf[2])) ? ZSuccess : ZFailure;
+//  561     break;
+//  562 
+//  563   default:
+//  564     rtrn = afStatus_INVALID_PARAMETER;
+//  565     break;
+//  566   }
+//  567 
+//  568   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF), cmd, 1, &rtrn);
+//  569 }
+//  570 #endif
+//  571 
+//  572 /***************************************************************************************************
+//  573  * @fn      MT_AfDataConfirm
+//  574  *
+//  575  * @brief   Process
+//  576  *
+//  577  * @param   pBuf - pointer to the received buffer
+//  578  *
+//  579  * @return  none
+//  580  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  581 void MT_AfDataConfirm(afDataConfirm_t *pMsg)
+MT_AfDataConfirm:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function MT_AfDataConfirm
+        CODE
+//  582 {
+        FUNCALL MT_AfDataConfirm, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  583   uint8 retArray[3];
+//  584 
+//  585   retArray[0] = pMsg->hdr.status;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  586   retArray[1] = pMsg->endpoint;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  587   retArray[2] = pMsg->transID;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  588 
+//  589   /* Build and send back the response */
+//  590   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ | (uint8)MT_RPC_SYS_AF), MT_AF_DATA_CONFIRM, 3, retArray);
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x3
+        MOV     R2,#-0x80
+        MOV     R1,#0x44
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  591 }
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+//  592 
+//  593 /***************************************************************************************************
+//  594  * @fn          MT_AfIncomingMsg
+//  595  *
+//  596  * @brief       Process the callback subscription for AF Incoming data.
+//  597  *
+//  598  * @param       pkt - Incoming AF data.
+//  599  *
+//  600  * @return      none
+//  601  ***************************************************************************************************/
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  602 void MT_AfIncomingMsg(afIncomingMSGPacket_t *pMsg)
+MT_AfIncomingMsg:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function MT_AfIncomingMsg
+        CODE
+//  603 {
+        FUNCALL MT_AfIncomingMsg, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_start_timerEx
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_set_event
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 28, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 28, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfIncomingMsg, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V15 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-23)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-24)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 24)
+        ; Saved register size: 24
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V0 + 8,R2
+        MOV     ?V0 + 9,R3
+//  604   #define MT_AF_INC_MSG_LEN  17
+//  605   #define MT_AF_INC_MSG_EXT  10
+//  606 
+//  607   uint16 dataLen = pMsg->cmd.DataLength;  // Length of the data section in the response packet.
+        MOV     A,?V0 + 8
+        ADD     A,#0x20
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+//  608   uint16 respLen = MT_AF_INC_MSG_LEN + dataLen;
+        MOV     A,?V0 + 2
+        ADD     A,#0x11
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+//  609   uint8 cmd = MT_AF_INCOMING_MSG;
+        MOV     ?V0 + 12,#-0x7f
+//  610   uint8 *pRsp, *pTmp;
+//  611   mtAfInMsgList_t *pItem = NULL;
+        MOV     ?V0 + 10,#0x0
+        MOV     ?V0 + 11,#0x0
+//  612 
+//  613 #if defined INTER_PAN
+//  614   if (StubAPS_InterPan(pMsg->srcAddr.panId, pMsg->srcAddr.endPoint))
+//  615   {
+//  616     cmd = MT_AF_INCOMING_MSG_EXT;
+//  617   }
+//  618   else
+//  619 #endif
+//  620   if ((pMsg->srcAddr.addrMode == afAddr64Bit) ||
+//  621       (respLen > (uint16)(MT_RPC_DATA_MAX - MT_AF_INC_MSG_EXT)))
+        MOV     A,?V0 + 8
+        ADD     A,#0xe
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JZ      ??MT_AfIncomingMsg_0
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#-0xf
+        MOV     A,?V0 + 1
+        SUBB    A,#0x0
+        JC      ??MT_AfIncomingMsg_1
+//  622   {
+//  623     cmd = MT_AF_INCOMING_MSG_EXT;
+??MT_AfIncomingMsg_0:
+        MOV     ?V0 + 12,#-0x7e
+//  624   }
+//  625 
+//  626   if (cmd == MT_AF_INCOMING_MSG_EXT)
+??MT_AfIncomingMsg_1:
+        MOV     A,#-0x7e
+        XRL     A,?V0 + 12
+        JNZ     ??MT_AfIncomingMsg_2
+//  627   {
+//  628     respLen += MT_AF_INC_MSG_EXT;
+        MOV     A,?V0 + 0
+        ADD     A,#0xa
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     ?V0 + 1,A
+//  629   }
+//  630 
+//  631   if (respLen > (uint16)MT_RPC_DATA_MAX)
+??MT_AfIncomingMsg_2:
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,#-0x5
+        MOV     A,?V0 + 1
+        SUBB    A,#0x0
+        JC      ??MT_AfIncomingMsg_3
+//  632   {
+//  633     if ((pItem = (mtAfInMsgList_t *)osal_mem_alloc(sizeof(mtAfInMsgList_t) + dataLen)) == NULL)
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     A,?V0 + 2
+        ADD     A,#0x9
+        MOV     R2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+        MOV     ?V0 + 10,R0
+        MOV     ?V0 + 11,R1
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     $+5
+        LJMP    ??MT_AfIncomingMsg_4 & 0xFFFF
+//  634     {
+//  635       return;  // If cannot hold a huge message, cannot give indication at all.
+//  636     }
+//  637 
+//  638     pItem->data = (uint8 *)(pItem+1);
+        MOV     A,?V0 + 10
+        ADD     A,#0x9
+        MOV     R0,A
+        MOV     A,?V0 + 11
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        INC     DPTR
+        INC     DPTR
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  639     respLen -= dataLen;  // Zero data bytes are sent with an over-sized incoming indication.
+        CLR     C
+        MOV     A,?V0 + 0
+        SUBB    A,?V0 + 2
+        MOV     ?V0 + 0,A
+        MOV     A,?V0 + 1
+        SUBB    A,?V0 + 3
+        MOV     ?V0 + 1,A
+//  640   }
+//  641 
+//  642   // Attempt to allocate memory for the response packet.
+//  643   if ((pRsp = osal_mem_alloc(respLen)) == NULL)
+??MT_AfIncomingMsg_3:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+        MOV     ?V0 + 14,R0
+        MOV     ?V0 + 15,R1
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??MT_AfIncomingMsg_5
+//  644   {
+//  645     if (pItem != NULL)
+        MOV     A,?V0 + 10
+        ORL     A,?V0 + 11
+        JZ      ??MT_AfIncomingMsg_6
+//  646     {
+//  647       (void)osal_mem_free(pItem);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     R2,?V0 + 10
+        MOV     R3,?V0 + 11
+        LCALL   ??osal_mem_free?relay
+//  648     }
+//  649     return;
+??MT_AfIncomingMsg_6:
+        LJMP    ??MT_AfIncomingMsg_4 & 0xFFFF
+//  650   }
+//  651   pTmp = pRsp;
+??MT_AfIncomingMsg_5:
+        MOV     R6,?V0 + 14
+        MOV     R7,?V0 + 15
+//  652 
+//  653   /* Group ID */
+//  654   *pTmp++ = LO_UINT16(pMsg->groupId);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  655   *pTmp++ = HI_UINT16(pMsg->groupId);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  656 
+//  657   /* Cluster ID */
+//  658   *pTmp++ = LO_UINT16(pMsg->clusterId);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  659   *pTmp++ = HI_UINT16(pMsg->clusterId);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  660 
+//  661   if (cmd == MT_AF_INCOMING_MSG_EXT)
+        MOV     A,#-0x7e
+        XRL     A,?V0 + 12
+        JZ      $+5
+        LJMP    ??MT_AfIncomingMsg_7 & 0xFFFF
+//  662   {
+//  663     *pTmp++ = pMsg->srcAddr.addrMode;
+        MOV     A,?V0 + 8
+        ADD     A,#0xe
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  664 
+//  665     if (pMsg->srcAddr.addrMode == afAddr64Bit)
+        MOV     A,?V0 + 8
+        ADD     A,#0xe
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        XRL     A,#0x3
+        JNZ     ??MT_AfIncomingMsg_8
+//  666     {
+//  667       (void)osal_memcpy(pTmp, pMsg->srcAddr.addr.extAddr, Z_EXTADDR_LEN);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,?V0 + 8
+        ADD     A,#0x6
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 6,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R4,#0x8
+        MOV     R5,#0x0
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        SJMP    ??MT_AfIncomingMsg_9
+//  668     }
+//  669     else
+//  670     {
+//  671       pTmp[0] = LO_UINT16(pMsg->srcAddr.addr.shortAddr);
+??MT_AfIncomingMsg_8:
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+//  672       pTmp[1] = HI_UINT16(pMsg->srcAddr.addr.shortAddr);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    @DPTR,A
+//  673     }
+//  674     pTmp += Z_EXTADDR_LEN;
+??MT_AfIncomingMsg_9:
+        MOV     A,R6
+        ADD     A,#0x8
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  675 
+//  676     *pTmp++ = pMsg->srcAddr.endPoint;
+        MOV     A,?V0 + 8
+        ADD     A,#0xf
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  677 #if defined INTER_PAN
+//  678     *pTmp++ = LO_UINT16(pMsg->srcAddr.panId);
+//  679     *pTmp++ = HI_UINT16(pMsg->srcAddr.panId);
+//  680 #else
+//  681     *pTmp++ = 0;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  682     *pTmp++ = 0;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        SJMP    ??MT_AfIncomingMsg_10
+//  683 #endif
+//  684   }
+//  685   else
+//  686   {
+//  687     /* Source Address */
+//  688     *pTmp++ = LO_UINT16(pMsg->srcAddr.addr.shortAddr);
+??MT_AfIncomingMsg_7:
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  689     *pTmp++ = HI_UINT16(pMsg->srcAddr.addr.shortAddr);
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        CLR     A
+        MOV     A,R1
+        MOV     R0,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  690 
+//  691     /* Source EP */
+//  692     *pTmp++ = pMsg->srcAddr.endPoint;
+        MOV     A,?V0 + 8
+        ADD     A,#0xf
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  693   }
+//  694 
+//  695   /* Destination EP */
+//  696   *pTmp++ = pMsg->endPoint;
+??MT_AfIncomingMsg_10:
+        MOV     A,?V0 + 8
+        ADD     A,#0x14
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  697 
+//  698   /* WasBroadCast */
+//  699   *pTmp++ = pMsg->wasBroadcast;
+        MOV     A,?V0 + 8
+        ADD     A,#0x15
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  700 
+//  701   /* LinkQuality */
+//  702   *pTmp++ = pMsg->LinkQuality;
+        MOV     A,?V0 + 8
+        ADD     A,#0x16
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  703 
+//  704   /* SecurityUse */
+//  705   *pTmp++ = pMsg->SecurityUse;
+        MOV     A,?V0 + 8
+        ADD     A,#0x19
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  706 
+//  707   /* Timestamp */
+//  708   *pTmp++ = BREAK_UINT32(pMsg->timestamp, 0);
+        MOV     A,?V0 + 8
+        ADD     A,#0x1a
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     A,?V0 + 4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  709   *pTmp++ = BREAK_UINT32(pMsg->timestamp, 1);
+        MOV     A,?V0 + 8
+        ADD     A,#0x1a
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        CLR     A
+        MOV     A,?V0 + 5
+        MOV     ?V0 + 4,A
+        MOV     A,?V0 + 4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  710   *pTmp++ = BREAK_UINT32(pMsg->timestamp, 2);
+        MOV     A,?V0 + 8
+        ADD     A,#0x1a
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     A,#0x10
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_SHR
+        MOV     A,?V0 + 4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  711   *pTmp++ = BREAK_UINT32(pMsg->timestamp, 3);
+        MOV     A,?V0 + 8
+        ADD     A,#0x1a
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_MOV_X
+        MOV     A,#0x18
+        MOV     R0,#?V0 + 4
+        LCALL   ?UL_SHR
+        MOV     A,?V0 + 4
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 4
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  712 
+//  713 
+//  714   /* Data Length */
+//  715   if (cmd == MT_AF_INCOMING_MSG_EXT)
+        MOV     A,#-0x7e
+        XRL     A,?V0 + 12
+        JNZ     ??MT_AfIncomingMsg_11
+//  716   {
+//  717     /* Z-Tool apparently takes the last Byte before the data buffer as the dynamic length and
+//  718      * ignores the bigger UInt16 length of an EXT incoming message. But no data bytes will be sent
+//  719      * with a huge message, so it's necessary to work-around and fake-out Z-Tool with a zero here.
+//  720      */
+//  721     *pTmp++ = 0;  // TODO - workaround Z-Tool shortcoming; should be: = pMsg->cmd.TransSeqNumber;
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  722     *pTmp++ = LO_UINT16(dataLen);
+        MOV     A,?V0 + 2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  723     *pTmp++ = HI_UINT16(dataLen);
+        MOV     R0,?V0 + 2
+        MOV     R1,?V0 + 3
+        CLR     A
+        MOV     A,?V0 + 3
+        MOV     R0,?V0 + 3
+        MOV     A,?V0 + 3
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 3
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+        SJMP    ??MT_AfIncomingMsg_12
+//  724   }
+//  725   else
+//  726   {
+//  727     *pTmp++ = pMsg->cmd.TransSeqNumber;
+??MT_AfIncomingMsg_11:
+        MOV     A,?V0 + 8
+        ADD     A,#0x1f
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  728     *pTmp++ = dataLen;
+        MOV     A,?V0 + 2
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 2
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     R6,DPL
+        MOV     R7,DPH
+//  729   }
+//  730 
+//  731   /* Data */
+//  732   if (pItem != NULL)
+??MT_AfIncomingMsg_12:
+        MOV     A,?V0 + 10
+        ORL     A,?V0 + 11
+        JNZ     $+5
+        LJMP    ??MT_AfIncomingMsg_13 & 0xFFFF
+//  733   {
+//  734     // Enqueue the new huge incoming item.
+//  735     pItem->next = pMtAfInMsgList;
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+//  736     pMtAfInMsgList = pItem;
+        MOV     DPTR,#pMtAfInMsgList
+        MOV     A,?V0 + 10
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 11
+        MOVX    @DPTR,A
+//  737 
+//  738     // Setup to time-out the huge incoming item if host does not MT_AF_DATA_RETRIEVE it.
+//  739     pItem->tick = MT_AF_EXEC_CNT;
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     A,#0xf
+        MOVX    @DPTR,A
+//  740     if (ZSuccess != osal_start_timerEx(MT_TaskID, MT_AF_EXEC_EVT, MT_AF_EXEC_DLY))
+        ; Setup parameters for call to function osal_start_timerEx
+        MOV     R4,#-0x18
+        MOV     R5,#0x3
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_start_timerEx?relay
+        MOV     A,R1
+        JZ      ??MT_AfIncomingMsg_14
+//  741     {
+//  742       (void)osal_set_event(MT_TaskID, MT_AF_EXEC_EVT);
+        ; Setup parameters for call to function osal_set_event
+        MOV     R2,#0x8
+        MOV     R3,#0x0
+        MOV     DPTR,#MT_TaskID
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??osal_set_event?relay
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  743     }
+//  744 
+//  745     pItem->timestamp = pMsg->timestamp;
+??MT_AfIncomingMsg_14:
+        MOV     A,?V0 + 8
+        ADD     A,#0x1a
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        LCALL   ?XLOAD_R2345
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        LCALL   ?XSTORE_R2345
+//  746     (void)osal_memcpy(pItem->data, pMsg->cmd.Data, dataLen);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,?V0 + 8
+        ADD     A,#0x22
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 6,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     DPL,?V0 + 10
+        MOV     DPH,?V0 + 11
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+        SJMP    ??MT_AfIncomingMsg_15
+//  747   }
+//  748   else
+//  749   {
+//  750     (void)osal_memcpy(pTmp, pMsg->cmd.Data, dataLen);
+??MT_AfIncomingMsg_13:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     A,?V0 + 8
+        ADD     A,#0x22
+        MOV     DPL,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+        MOV     ?V0 + 6,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 28)
+        MOV     R4,?V0 + 2
+        MOV     R5,?V0 + 3
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     DPL,?V0 + 4
+        MOV     DPH,?V0 + 5
+//  751   }
+//  752 
+//  753   /* Build and send back the response */
+//  754   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_AREQ|(uint8)MT_RPC_SYS_AF), cmd, respLen, pRsp);
+??MT_AfIncomingMsg_15:
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     R4,?V0 + 14
+        MOV     R5,?V0 + 15
+        MOV     R3,?V0 + 0
+        MOV     R2,?V0 + 12
+        MOV     R1,#0x44
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  755 
+//  756   (void)osal_mem_free(pRsp);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     R2,?V0 + 14
+        MOV     R3,?V0 + 15
+        LCALL   ??osal_mem_free?relay
+//  757 }
+??MT_AfIncomingMsg_4:
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  758 
+//  759 /**************************************************************************************************
+//  760  * @fn          MT_AfDataRetrieve
+//  761  *
+//  762  * @brief   Process AF Data Retrieve command to incrementally read out a very large
+//  763  *          incoming AF message.
+//  764  *
+//  765  * input parameters
+//  766  *
+//  767  * @param pBuf - pointer to the received buffer
+//  768  *
+//  769  * output parameters
+//  770  *
+//  771  * @param rtrn - AF-Status of the operation.
+//  772  *
+//  773  * @return      None.
+//  774  **************************************************************************************************
+//  775  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  776 void MT_AfDataRetrieve(uint8 *pBuf)
+MT_AfDataRetrieve:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function MT_AfDataRetrieve
+        CODE
+//  777 {
+        FUNCALL MT_AfDataRetrieve, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRetrieve, osal_mem_alloc
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRetrieve, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 29, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 29, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRetrieve, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRetrieve, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataRetrieve, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 26, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 26, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x18
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V15 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V14 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V13 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V12 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V11 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V10 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V9 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-18)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-19)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-20)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-21)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-22)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-23)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-24)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 24)
+        ; Saved register size: 24
+        ; Auto size: 2
+        MOV     A,#-0x2
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  778   #define MT_AF_RTV_HDR_SZ  2
+//  779 
+//  780   uint32 timestamp;
+//  781   mtAfInMsgList_t *pPrev, *pItem = pMtAfInMsgList;
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     ?V0 + 14,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 15,A
+//  782   uint8 rtrn = afStatus_FAILED;
+        MOV     ?V0 + 13,#0x1
+//  783   uint8 len = 0;
+        MOV     ?V0 + 12,#0x0
+//  784 
+//  785   pBuf += MT_RPC_FRAME_HDR_SZ;
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  786   timestamp = BUILD_UINT32(pBuf[0], pBuf[1], pBuf[2], pBuf[3]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     ?V0 + 0,A
+        CLR     A
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 2,A
+        MOV     ?V0 + 3,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        CLR     A
+        MOV     ?V0 + 9,A
+        MOV     ?V0 + 10,A
+        MOV     ?V0 + 11,A
+        MOV     A,#0x8
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_ADD
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        CLR     A
+        MOV     ?V0 + 9,A
+        MOV     ?V0 + 10,A
+        MOV     ?V0 + 11,A
+        MOV     A,#0x10
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_ADD
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 8,A
+        CLR     A
+        MOV     ?V0 + 9,A
+        MOV     ?V0 + 10,A
+        MOV     ?V0 + 11,A
+        MOV     A,#0x18
+        MOV     R0,#?V0 + 8
+        LCALL   ?L_SHL
+        MOV     R0,#?V0 + 0
+        MOV     R1,#?V0 + 8
+        LCALL   ?L_ADD
+        MOV     ?V0 + 4,?V0 + 0
+        MOV     ?V0 + 5,?V0 + 1
+        MOV     ?V0 + 6,?V0 + 2
+        MOV     ?V0 + 7,?V0 + 3
+//  787 
+//  788   while (pItem != NULL)
+??MT_AfDataRetrieve_0:
+        MOV     A,?V0 + 14
+        ORL     A,?V0 + 15
+        JZ      ??MT_AfDataRetrieve_1
+//  789   {
+//  790     pPrev = pItem;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,?V0 + 14
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,?V0 + 15
+        MOVX    @DPTR,A
+//  791     if (pItem->timestamp == timestamp)
+        MOV     DPL,?V0 + 14
+        MOV     DPH,?V0 + 15
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOV     R0,#?V0 + 4
+        LCALL   ?L_EQ_X
+        JZ      ??MT_AfDataRetrieve_1
+//  792     {
+//  793       break;
+//  794     }
+//  795     pItem = pItem->next;
+        MOV     DPL,?V0 + 14
+        MOV     DPH,?V0 + 15
+        MOVX    A,@DPTR
+        MOV     ?V0 + 14,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 15,A
+        SJMP    ??MT_AfDataRetrieve_0
+//  796   }
+//  797 
+//  798   if (pItem != NULL)
+??MT_AfDataRetrieve_1:
+        MOV     A,?V0 + 14
+        ORL     A,?V0 + 15
+        JNZ     $+5
+        LJMP    ??MT_AfDataRetrieve_2 & 0xFFFF
+//  799   {
+//  800     uint16 idx;
+//  801     uint8 *pRsp;
+//  802 
+//  803     pBuf += 4;
+        MOV     A,R6
+        ADD     A,#0x4
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  804     idx = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 10,R0
+        MOV     ?V0 + 11,R1
+//  805     len = pBuf[2];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 12,A
+//  806 
+//  807     if (len == 0)  // Indication to delete the afIncomingMSGPacket.
+        MOV     A,?V0 + 12
+        JNZ     ??MT_AfDataRetrieve_3
+//  808     {
+//  809       if (pMtAfInMsgList == pItem)
+        MOV     DPTR,#pMtAfInMsgList
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,?V0 + 14
+        XRL     A,R0
+        JNZ     ??MT_AfDataRetrieve_4
+        MOV     A,?V0 + 15
+        XRL     A,R1
+??MT_AfDataRetrieve_4:
+        JNZ     ??MT_AfDataRetrieve_5
+//  810       {
+//  811         pMtAfInMsgList = pItem->next;
+        MOV     DPL,?V0 + 14
+        MOV     DPH,?V0 + 15
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#pMtAfInMsgList
+        MOV     A,R0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R1
+        MOVX    @DPTR,A
+        SJMP    ??MT_AfDataRetrieve_6
+//  812       }
+//  813       else
+//  814       {
+//  815         pPrev->next = pItem->next;
+??MT_AfDataRetrieve_5:
+        MOV     DPL,?V0 + 14
+        MOV     DPH,?V0 + 15
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOV     A,R2
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,R3
+        MOVX    @DPTR,A
+//  816       }
+//  817       (void)osal_mem_free(pItem);
+??MT_AfDataRetrieve_6:
+        ; Setup parameters for call to function osal_mem_free
+        MOV     R2,?V0 + 14
+        MOV     R3,?V0 + 15
+        LCALL   ??osal_mem_free?relay
+//  818       rtrn = afStatus_SUCCESS;
+        MOV     ?V0 + 13,#0x0
+        LJMP    ??MT_AfDataRetrieve_2 & 0xFFFF
+//  819     }
+//  820     else if ((pRsp = osal_mem_alloc(len + MT_AF_RTV_HDR_SZ)) == NULL)
+??MT_AfDataRetrieve_3:
+        ; Setup parameters for call to function osal_mem_alloc
+        MOV     ?V0 + 0,?V0 + 12
+        MOV     ?V0 + 1,#0x0
+        MOV     A,?V0 + 0
+        ADD     A,#0x2
+        MOV     R2,A
+        MOV     A,?V0 + 1
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_mem_alloc?relay
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     R0,?V0 + 0
+        MOV     R1,?V0 + 1
+        MOV     ?V0 + 8,R0
+        MOV     ?V0 + 9,R1
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??MT_AfDataRetrieve_7
+//  821     {
+//  822       rtrn = afStatus_MEM_FAIL;
+        MOV     ?V0 + 13,#0x10
+//  823       len = 0;
+        MOV     ?V0 + 12,#0x0
+        SJMP    ??MT_AfDataRetrieve_2
+//  824     }
+//  825     else
+//  826     {
+//  827       pRsp[0] = ZSuccess;
+??MT_AfDataRetrieve_7:
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  828       pRsp[1] = len;
+        MOV     A,?V0 + 12
+        MOV     DPL,?V0 + 8
+        MOV     DPH,?V0 + 9
+        INC     DPTR
+        MOV     A,?V0 + 12
+        MOVX    @DPTR,A
+//  829       (void)osal_memcpy(pRsp + MT_AF_RTV_HDR_SZ, pItem->data+idx, len);
+        ; Setup parameters for call to function osal_memcpy
+        MOV     DPL,?V0 + 14
+        MOV     DPH,?V0 + 15
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 10
+        MOV     ?V0 + 0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 11
+        MOV     ?V0 + 1,A
+        MOV     ?V0 + 2,#0x0
+        MOV     R0,#?V0 + 0
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 29)
+        MOV     ?V0 + 0,?V0 + 12
+        MOV     ?V0 + 1,#0x0
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,?V0 + 8
+        ADD     A,#0x2
+        MOV     R2,A
+        MOV     A,?V0 + 9
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 26)
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     ?V0 + 2,?V0 + 0
+        MOV     ?V0 + 3,?V0 + 1
+//  830       MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF),
+//  831                                            MT_AF_DATA_RETRIEVE, len + MT_AF_RTV_HDR_SZ, pRsp);
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     R4,?V0 + 8
+        MOV     R5,?V0 + 9
+        MOV     A,#0x2
+        ADD     A,?V0 + 12
+        MOV     R3,A
+        MOV     R2,#0x12
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  832       (void)osal_mem_free(pRsp);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     R2,?V0 + 8
+        MOV     R3,?V0 + 9
+        LCALL   ??osal_mem_free?relay
+//  833       return;
+        SJMP    ??MT_AfDataRetrieve_8
+//  834     }
+//  835   }
+//  836 
+//  837   pBuf[0] = rtrn;
+??MT_AfDataRetrieve_2:
+        MOV     A,?V0 + 13
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOV     A,?V0 + 13
+        MOVX    @DPTR,A
+//  838   pBuf[1] = len;
+        MOV     A,?V0 + 12
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOV     A,?V0 + 12
+        MOVX    @DPTR,A
+//  839   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF),
+//  840                                        MT_AF_DATA_RETRIEVE, MT_AF_RTV_HDR_SZ, pBuf);
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R3,#0x2
+        MOV     R2,#0x12
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  841 }
+??MT_AfDataRetrieve_8:
+        MOV     A,#0x2
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 24)
+        MOV     R7,#0x10
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+//  842 
+//  843 /**************************************************************************************************
+//  844  * @fn          MT_AfDataStore
+//  845  *
+//  846  * @brief   Process AF Data Store command to incrementally store the data buffer for very large
+//  847  *          outgoing AF message.
+//  848  *
+//  849  * input parameters
+//  850  *
+//  851  * @param pBuf - pointer to the received buffer
+//  852  *
+//  853  * output parameters
+//  854  *
+//  855  * @param rtrn - AF-Status of the operation.
+//  856  *
+//  857  * @return      None.
+//  858  **************************************************************************************************
+//  859  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  860 void MT_AfDataStore(uint8 *pBuf)
+MT_AfDataStore:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function MT_AfDataStore
+        CODE
+//  861 {
+        FUNCALL MT_AfDataStore, AF_DataRequest
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 25, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 25, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataStore, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataStore, osal_memcpy
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 19, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 19, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfDataStore, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 16, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 16, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 1
+        MOV     A,#-0x1
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  862   uint16 idx;
+//  863   uint8 len, rtrn = afStatus_FAILED;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  864 
+//  865   pBuf += MT_RPC_FRAME_HDR_SZ;
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  866   idx = BUILD_UINT16(pBuf[0], pBuf[1]);
+        MOV     DPL,R6
+        MOV     DPH,R7
+        MOVX    A,@DPTR
+        MOV     R2,A
+        MOV     R3,#0x0
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R0,A
+        MOV     R1,#0x0
+        CLR     A
+        XCH     A,R0
+        MOV     R1,A
+        MOV     A,R2
+        ADD     A,R0
+        MOV     R0,A
+        MOV     A,R3
+        ADDC    A,R1
+        MOV     R1,A
+        MOV     ?V0 + 0,R0
+        MOV     ?V0 + 1,R1
+//  867   len = pBuf[2];
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     ?V0 + 2,A
+//  868   pBuf += 3;
+        MOV     A,R6
+        ADD     A,#0x3
+        MOV     R6,A
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//  869 
+//  870   if (pMtAfDataReq == NULL)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??MT_AfDataStore_0
+//  871   {
+//  872     rtrn = afStatus_MEM_FAIL;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x10
+        MOVX    @DPTR,A
+        LJMP    ??MT_AfDataStore_1 & 0xFFFF
+//  873   }
+//  874   else if (len == 0)  // Indication to send the message.
+??MT_AfDataStore_0:
+        MOV     A,?V0 + 2
+        JZ      $+5
+        LJMP    ??MT_AfDataStore_2 & 0xFFFF
+//  875   {
+//  876     rtrn = AF_DataRequest(&(pMtAfDataReq->dstAddr), pMtAfDataReq->epDesc, pMtAfDataReq->cId,
+//  877                             pMtAfDataReq->dataLen,  pMtAfDataReq->data,
+//  878                           &(pMtAfDataReq->transId), pMtAfDataReq->txOpts, pMtAfDataReq->radius);
+        ; Setup parameters for call to function AF_DataRequest
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x16
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     ?V0 + 3,A
+        MOV     R0,#?V0 + 3
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 17)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x14
+        MOV     ?V0 + 4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     ?V0 + 5,A
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_TWO
+        CFI CFA_XSP16 add(XSP16, 19)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        LCALL   ?PUSH_XSTACK8_X_TWO
+        CFI CFA_XSP16 add(XSP16, 21)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x12
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        LCALL   ?PUSH_XSTACK8_X_TWO
+        CFI CFA_XSP16 add(XSP16, 23)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x10
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        LCALL   ?PUSH_XSTACK8_X_TWO
+        CFI CFA_XSP16 add(XSP16, 25)
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x15
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R1,A
+        MOV     DPL,R0
+        MOV     DPH,R1
+        MOVX    A,@DPTR
+        MOV     R1,A
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0xe
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        MOV     DPL,R2
+        MOV     DPH,R3
+        MOVX    A,@DPTR
+        MOV     R4,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R5,A
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        ADD     A,#0x2
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,#0x0
+        MOV     R3,A
+        LCALL   ??AF_DataRequest?relay
+        MOV     A,#0x9
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  879     (void)osal_mem_free(pMtAfDataReq);
+        ; Setup parameters for call to function osal_mem_free
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R3,A
+        LCALL   ??osal_mem_free?relay
+//  880     pMtAfDataReq = NULL;
+        MOV     DPTR,#pMtAfDataReq
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        INC     DPTR
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+        SJMP    ??MT_AfDataStore_1
+//  881   }
+//  882   else
+//  883   {
+//  884     (void)osal_memcpy(pMtAfDataReq->data+idx, pBuf, len);
+??MT_AfDataStore_2:
+        ; Setup parameters for call to function osal_memcpy
+        MOV     ?V0 + 4,R6
+        MOV     ?V0 + 5,R7
+        MOV     ?V0 + 6,#0x0
+        MOV     R0,#?V0 + 4
+        LCALL   ?PUSH_XSTACK_I_THREE
+        CFI CFA_XSP16 add(XSP16, 19)
+        MOV     ?V0 + 4,?V0 + 2
+        MOV     ?V0 + 5,#0x0
+        MOV     R4,?V0 + 4
+        MOV     R5,?V0 + 5
+        MOV     DPTR,#pMtAfDataReq
+        MOVX    A,@DPTR
+        MOV     R0,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     DPH,A
+        MOV     DPL,R0
+        MOVX    A,@DPTR
+        ADD     A,?V0 + 0
+        MOV     R2,A
+        INC     DPTR
+        MOVX    A,@DPTR
+        ADDC    A,?V0 + 1
+        MOV     R3,A
+        LCALL   ??osal_memcpy?relay
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 16)
+        MOV     ?V0 + 4,R2
+        MOV     ?V0 + 5,R3
+        MOV     R0,?V0 + 4
+        MOV     R1,?V0 + 5
+//  885     rtrn = afStatus_SUCCESS;
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     A,#0x0
+        MOVX    @DPTR,A
+//  886   }
+//  887 
+//  888   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF),
+//  889                                                                 MT_AF_DATA_STORE, 1, &rtrn);
+??MT_AfDataStore_1:
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x1
+        MOV     R2,#0x11
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  890 }
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 15)
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+//  891 
+//  892 /**************************************************************************************************
+//  893  * @fn          MT_AfAPSF_ConfigSet
+//  894  *
+//  895  * @brief       This function is the MT proxy for afAPSF_ConfigSet().
+//  896  *
+//  897  * input parameters
+//  898  *
+//  899  * @param       pBuf - Pointer to the received buffer.
+//  900  *
+//  901  * output parameters
+//  902  *
+//  903  * None.
+//  904  *
+//  905  * @return      None.
+//  906  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  907 static void MT_AfAPSF_ConfigSet(uint8 *pBuf)
+MT_AfAPSF_ConfigSet:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function MT_AfAPSF_ConfigSet
+        CODE
+//  908 {
+        FUNCALL MT_AfAPSF_ConfigSet, afAPSF_ConfigSet
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL MT_AfAPSF_ConfigSet, MT_BuildAndSendZToolResponse
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 3
+        MOV     A,#-0x3
+        LCALL   ?ALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+//  909   afAPSF_Config_t cfg = { pBuf[MT_RPC_POS_DAT0+1], pBuf[MT_RPC_POS_DAT0+2] };
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,#0x2
+        LCALL   ?XSTACK_DISP0_8
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  910   afStatus_t rtrn = afAPSF_ConfigSet(pBuf[MT_RPC_POS_DAT0], &cfg);
+        ; Setup parameters for call to function afAPSF_ConfigSet
+        MOV     A,#0x1
+        LCALL   ?XSTACK_DISP0_8
+        MOV     R2,DPL
+        MOV     R3,DPH
+        MOV     DPL,R6
+        MOV     DPH,R7
+        INC     DPTR
+        INC     DPTR
+        INC     DPTR
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??afAPSF_ConfigSet?relay
+        MOV     A,R1
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOVX    @DPTR,A
+//  911 
+//  912   MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_AF),
+//  913                                        MT_AF_APSF_CONFIG_SET, 1, (uint8 *)&rtrn);
+        ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+        MOV     DPL,?XSP + 0
+        MOV     DPH,?XSP + 1
+        MOV     R4,DPL
+        MOV     R5,DPH
+        MOV     R3,#0x1
+        MOV     R2,#0x13
+        MOV     R1,#0x64
+        LCALL   ??MT_BuildAndSendZToolResponse?relay
+//  914 }
+        MOV     A,#0x3
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 9)
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock9
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfExec?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfExec
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfCommandProcessing?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfCommandProcessing
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfRegister?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfRegister
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfDataRequest?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfDataRequest
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfDataRequestSrcRtg?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfDataRequestSrcRtg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfDataConfirm?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfDataConfirm
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfIncomingMsg?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfIncomingMsg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfDataRetrieve?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfDataRetrieve
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfDataStore?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfDataStore
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??MT_AfAPSF_ConfigSet?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    MT_AfAPSF_ConfigSet
+
+        END
+//  915 
+//  916 /***************************************************************************************************
+//  917 ***************************************************************************************************/
+// 
+// 4 664 bytes in segment BANKED_CODE
+//    60 bytes in segment BANK_RELAYS
+//     4 bytes in segment XDATA_Z
+// 
+// 4 724 bytes of CODE  memory
+//     4 bytes of XDATA memory
+//
+//Errors: none
+//Warnings: none

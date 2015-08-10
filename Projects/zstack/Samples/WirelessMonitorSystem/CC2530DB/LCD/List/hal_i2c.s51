@@ -1,0 +1,3044 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.1.10194/W32 for 8051        14/Jul/2015  13:43:38 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Compone /
+//                          nts\hal\target\CC2530EB\hal_i2c.c                 /
+//    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"          /
+//                          (-DCPU32MHZ -DROOT=__near_func                    /
+//                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6        /
+//                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\T /
+//                          ools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO         /
+//                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DLINK_STATUS_JITTER_MASK=0x007F                  /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const    /
+//                          __code" -DGENERIC=__generic                       /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500        /
+//                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)   /
+//                          -DREJOIN_POLL_RATE=440 "C:\Texas                  /
+//                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\t /
+//                          arget\CC2530EB\hal_i2c.c" -D HAL_UART -lC         /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          LCD\List\" -lA "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\LCD\List\" /
+//                           --diag_suppress Pe001,Pa010 -o "C:\Texas         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\LCD\Obj\"  /
+//                          -e --no_cse --no_unroll --no_inline               /
+//                          --no_code_motion --no_tbaa --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\" -I       /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\Source\" -I "C:\Texas                          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\Z /
+//                          Main\TI2530DB\" -I "C:\Texas                      /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\include\" -I "C:\Texas        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\hal\target\CC2530EB\" -I          /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\include\" -I        /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\high_level\" -I     /
+//                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projec /
+//                          ts\zstack\Samples\WirelessMonitorSystem\CC2530DB\ /
+//                          ..\..\..\..\..\Components\mac\low_level\srf04\"   /
+//                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro /
+//                          jects\zstack\Samples\WirelessMonitorSystem\CC2530 /
+//                          DB\..\..\..\..\..\Components\mac\low_level\srf04\ /
+//                          single_chip\" -I "C:\Texas                        /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\mt\" -I "C:\Texas                 /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\osal\include\" -I "C:\Texas       /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\saddr\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\services\sdata\" -I "C:\Texas     /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\af\" -I "C:\Texas           /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\nwk\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sapi\" -I "C:\Texas         /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sec\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\sys\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\stack\zdo\" -I "C:\Texas          /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\" -I "C:\Texas               /
+//                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\ /
+//                          Samples\WirelessMonitorSystem\CC2530DB\..\..\..\. /
+//                          .\..\Components\zmac\f8w\" -On                    /
+//                          --require_prototypes                              /
+//    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project /
+//                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\L /
+//                          CD\List\hal_i2c.s51                               /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME hal_i2c
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?DEALLOC_XSTACK8
+        EXTERN ?PUSH_XSTACK_I_ONE
+        EXTERN ?S_SHL
+        EXTERN ?V0
+        EXTERN ?XSTACK_DISP0_8
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??ADXL345ReadByte?relay
+        FUNCTION ??ADXL345ReadByte?relay,0203H
+        PUBLIC ??ADXL345ReadBytes?relay
+        FUNCTION ??ADXL345ReadBytes?relay,0203H
+        PUBLIC ??ADXL345WriteByte?relay
+        FUNCTION ??ADXL345WriteByte?relay,0203H
+        PUBLIC ??HalI2CInit?relay
+        FUNCTION ??HalI2CInit?relay,0203H
+        PUBLIC ??HalI2CReceive?relay
+        FUNCTION ??HalI2CReceive?relay,0203H
+        PUBLIC ??HalI2CSend?relay
+        FUNCTION ??HalI2CSend?relay,0203H
+        FUNCTION ??hali2cClock?relay,0203H
+        FUNCTION ??hali2cRead?relay,0203H
+        FUNCTION ??hali2cReceive?relay,0203H
+        FUNCTION ??hali2cReceiveByte?relay,0203H
+        FUNCTION ??hali2cSend?relay,0203H
+        FUNCTION ??hali2cSendByte?relay,0203H
+        FUNCTION ??hali2cSendDeviceAddress?relay,0203H
+        FUNCTION ??hali2cStart?relay,0203H
+        FUNCTION ??hali2cStop?relay,0203H
+        FUNCTION ??hali2cWrite?relay,0203H
+        PUBLIC ADXL345ReadByte
+        FUNCTION ADXL345ReadByte,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC ADXL345ReadBytes
+        FUNCTION ADXL345ReadBytes,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 17, STACK
+        PUBLIC ADXL345WriteByte
+        FUNCTION ADXL345WriteByte,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC HalI2CInit
+        FUNCTION HalI2CInit,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC HalI2CReceive
+        FUNCTION HalI2CReceive,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        PUBLIC HalI2CSend
+        FUNCTION HalI2CSend,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        PUBWEAK P0DIR
+        PUBWEAK P0SEL
+        PUBWEAK P2INP
+        PUBWEAK P2SEL
+        PUBWEAK _A_P0
+        FUNCTION hali2cClock,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        FUNCTION hali2cRead,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION hali2cReceive,021203H
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME XSTACK, 13, STACK
+        FUNCTION hali2cReceiveByte,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 12, STACK
+        FUNCTION hali2cSend,021203H
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 15, STACK
+        FUNCTION hali2cSendByte,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        FUNCTION hali2cSendDeviceAddress,021203H
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        FUNCTION hali2cStart,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        FUNCTION hali2cStop,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION hali2cWait,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCTION hali2cWrite,021203H
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+ADXL345ReadByte     SYMBOL "ADXL345ReadByte"
+??ADXL345ReadByte?relay SYMBOL "?relay", ADXL345ReadByte
+ADXL345ReadBytes    SYMBOL "ADXL345ReadBytes"
+??ADXL345ReadBytes?relay SYMBOL "?relay", ADXL345ReadBytes
+ADXL345WriteByte    SYMBOL "ADXL345WriteByte"
+??ADXL345WriteByte?relay SYMBOL "?relay", ADXL345WriteByte
+HalI2CInit          SYMBOL "HalI2CInit"
+??HalI2CInit?relay  SYMBOL "?relay", HalI2CInit
+HalI2CReceive       SYMBOL "HalI2CReceive"
+??HalI2CReceive?relay SYMBOL "?relay", HalI2CReceive
+HalI2CSend          SYMBOL "HalI2CSend"
+??HalI2CSend?relay  SYMBOL "?relay", HalI2CSend
+
+// C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\hal_i2c.c
+//    1 /**************************************************************************************************
+//    2   Filename:       hal_i2c.c
+//    3   Revised:        $Date: 2010-10-12 17:32:20 -0700 (Tue, 12 Oct 2010) $
+//    4   Revision:       $Revision: 24108 $
+//    5 
+//    6   Description:    I2C driver implementation.
+//    7 
+//    8 
+//    9   Copyright 2006 - 2010 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com. 
+//   38 **************************************************************************************************/
+//   39 
+//   40 /**************************************************************************************************
+//   41     This file contains the I2C interface to off-chip serial EEPROM. While
+//   42     much of the driver is generic, certain portions are specific to the
+//   43     Atmel part AT24C1024. For example, the 17th address bit occurs in the
+//   44     device address byte where one of the address pins should be. Different
+//   45     1 Mb parts use a different bit location. This could be abstracted at
+//   46     a later time if this is the only differentce among these parts.
+//   47 **************************************************************************************************/
+//   48 
+//   49 #include "ioCC2530.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f3H
+// unsigned char volatile __sfr P0SEL
+P0SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f5H
+// unsigned char volatile __sfr P2SEL
+P2SEL:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0f7H
+// unsigned char volatile __sfr P2INP
+P2INP:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//   50 #include "zcomdef.h"
+//   51 #include "hal_i2c.h"
+//   52 
+//   53 #define STATIC static
+//   54 
+//   55 #if !defined HAL_I2C_RETRY_CNT
+//   56 #define HAL_I2C_RETRY_CNT  3
+//   57 #endif
+//   58 
+//   59 // the default cofiguration below uses P1.6 for SDA and P0.0 for SCL.
+//   60 // change these as needed.
+//   61 /*
+//   62  *
+//   63  * ReverseTime: 2015/4/19
+//   64  * Author: smileboy
+//   65  * SCL P0.7  SDA P0.6
+//   66  * Change To :
+//   67  * p2_3, p2_4
+//   68  */
+//   69 // the vibrate must use p0_7 and p0_6
+//   70 #ifndef OCM_CLK_PORT
+//   71   #define OCM_CLK_PORT  0
+//   72 #endif
+//   73 
+//   74 #ifndef OCM_DATA_PORT
+//   75   #define OCM_DATA_PORT   0
+//   76 #endif
+//   77 
+//   78 #ifndef OCM_CLK_PIN
+//   79   #define OCM_CLK_PIN   7
+//   80 #endif
+//   81 
+//   82 #ifndef OCM_DATA_PIN
+//   83   #define OCM_DATA_PIN    6
+//   84 #endif
+//   85 
+//   86 // General I/O definitions
+//   87 #define IO_GIO  0  // General purpose I/O
+//   88 #define IO_PER  1  // Peripheral function
+//   89 #define IO_IN   0  // Input pin
+//   90 #define IO_OUT  1  // Output pin
+//   91 #define IO_PUD  0  // Pullup/pulldn input
+//   92 #define IO_TRI  1  // Tri-state input
+//   93 #define IO_PUP  0  // Pull-up input pin
+//   94 #define IO_PDN  1  // Pull-down input pin
+//   95 
+//   96 /**********************************************************
+//   97  *
+//   98  * Author: smileboy
+//   99  * ReverseTime: 2015/4/19
+//  100  * introduction: 
+//  101  *				just change this device address to ADXL345
+//  102  *********************************************************/
+//  103 #define	ADXL345_ADDRESS	(0x53)		// this is ADXL345 slave addr
+//  104 //#define OCM_ADDRESS  (0xA0)
+//  105 
+//  106 #define OCM_READ     (0x01)
+//  107 #define OCM_WRITE    (0x00)
+//  108 #define SMB_ACK      (0)
+//  109 #define SMB_NAK      (1)
+//  110 #define SEND_STOP    (0)
+//  111 #define NOSEND_STOP  (1)
+//  112 #define SEND_START   (0)
+//  113 #define NOSEND_START (1)
+//  114 
+//  115 // device specific as to where the 17th address bit goes...
+//  116 #define OCM_ADDRESS_BYTE(target,rw)  (OCM_ADDRESS | rw | ((target > 0xFFFF) ? 0x02 : 0x00))
+//  117 
+//  118 // *************************   MACROS   ************************************
+//  119 #undef P
+//  120 
+//  121   /* I/O PORT CONFIGURATION */
+//  122 #define CAT1(x,y) x##y  // Concatenates 2 strings
+//  123 #define CAT2(x,y) CAT1(x,y)  // Forces evaluation of CAT1
+//  124 
+//  125 // OCM port I/O defintions
+//  126 // Builds I/O port name: PNAME(1,INP) ==> P1INP
+//  127 #define PNAME(y,z) CAT2(P,CAT2(y,z))
+//  128 // Builds I/O bit name: BNAME(1,2) ==> P1_2
+//  129 #define BNAME(port,pin) CAT2(CAT2(P,port),CAT2(_,pin))
+//  130 
+//  131 // OCM port I/O defintions
+//  132 #define OCM_SCL BNAME(OCM_CLK_PORT, OCM_CLK_PIN)
+//  133 #define OCM_SDA BNAME(OCM_DATA_PORT, OCM_DATA_PIN)
+//  134 
+//  135 #define IO_DIR_PORT_PIN(port, pin, dir) \ 
+//  136 {\ 
+//  137   if ( dir == IO_OUT ) \ 
+//  138     PNAME(port,DIR) |= (1<<(pin)); \ 
+//  139   else \ 
+//  140     PNAME(port,DIR) &= ~(1<<(pin)); \ 
+//  141 }
+//  142 
+//  143 #define OCM_DATA_HIGH()\ 
+//  144 { \ 
+//  145   IO_DIR_PORT_PIN(OCM_DATA_PORT, OCM_DATA_PIN, IO_IN); \ 
+//  146 }
+//  147 
+//  148 #define OCM_DATA_LOW() \ 
+//  149 { \ 
+//  150   IO_DIR_PORT_PIN(OCM_DATA_PORT, OCM_DATA_PIN, IO_OUT); \ 
+//  151   OCM_SDA = 0;\ 
+//  152 }
+//  153 
+//  154 #define IO_FUNC_PORT_PIN(port, pin, func) \ 
+//  155 { \ 
+//  156   if( port < 2 ) \ 
+//  157   { \ 
+//  158     if ( func == IO_PER ) \ 
+//  159       PNAME(port,SEL) |= (1<<(pin)); \ 
+//  160     else \ 
+//  161       PNAME(port,SEL) &= ~(1<<(pin)); \ 
+//  162   } \ 
+//  163   else \ 
+//  164   { \ 
+//  165     if ( func == IO_PER ) \ 
+//  166       P2SEL |= (1<<(pin>>1)); \ 
+//  167     else \ 
+//  168       P2SEL &= ~(1<<(pin>>1)); \ 
+//  169   } \ 
+//  170 }
+//  171 
+//  172 #define IO_IMODE_PORT_PIN(port, pin, mode) \ 
+//  173 { \ 
+//  174   if ( mode == IO_TRI ) \ 
+//  175     PNAME(port,INP) |= (1<<(pin)); \ 
+//  176   else \ 
+//  177     PNAME(port,INP) &= ~(1<<(pin)); \ 
+//  178 }
+//  179 
+//  180 #define IO_PUD_PORT(port, dir) \ 
+//  181 { \ 
+//  182   if ( dir == IO_PDN ) \ 
+//  183     P2INP |= (1<<(port+5)); \ 
+//  184   else \ 
+//  185     P2INP &= ~(1<<(port+5)); \ 
+//  186 }
+//  187 
+//  188 STATIC void   hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop );
+//  189 STATIC _Bool  hali2cSendByte( uint8 dByte );
+//  190 STATIC void   hali2cWrite( bool dBit );
+//  191 STATIC void   hali2cClock( bool dir );
+//  192 STATIC void   hali2cStart( void );
+//  193 STATIC void   hali2cStop( void );
+//  194 STATIC void   hali2cReceive( uint8 address, uint8 *buffer, uint16 len );
+//  195 STATIC uint8  hali2cReceiveByte( void );
+//  196 STATIC _Bool  hali2cRead( void );
+//  197 STATIC void   hali2cSendDeviceAddress(uint8 address);
+//  198 
+//  199 
+//  200 STATIC __near_func void   hali2cWait( uint8 );
+//  201 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  202 STATIC uint8 s_xmemIsInit;
+s_xmemIsInit:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  203 
+//  204 /*********************************************************************
+//  205  * @fn      HalI2CInit
+//  206  * @brief   Initializes two-wire serial I/O bus
+//  207  * @param   void
+//  208  * @return  void
+//  209  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  210 void HalI2CInit( void )
+HalI2CInit:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function HalI2CInit
+        CODE
+//  211 {
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  212   if (!s_xmemIsInit)  {
+        MOV     DPTR,#s_xmemIsInit
+        MOVX    A,@DPTR
+        JNZ     ??HalI2CInit_0
+//  213     s_xmemIsInit = 1;
+        MOV     DPTR,#s_xmemIsInit
+        MOV     A,#0x1
+        MOVX    @DPTR,A
+//  214 
+//  215     // Set port pins as inputs
+//  216     IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_IN );
+        ANL     0xfd,#0x7f
+//  217     IO_DIR_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_IN );
+        ANL     0xfd,#0xbf
+//  218 
+//  219     // Set for general I/O operation
+//  220     IO_FUNC_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_GIO );
+        ANL     0xf3,#0x7f
+//  221     IO_FUNC_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_GIO );
+        ANL     0xf3,#0xbf
+//  222 
+//  223     // Set I/O mode for pull-up/pull-down
+//  224     IO_IMODE_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_PUD );
+        CLR     0x80.7
+//  225     IO_IMODE_PORT_PIN( OCM_DATA_PORT, OCM_DATA_PIN, IO_PUD );
+        CLR     0x80.6
+//  226 
+//  227     // Set pins to pull-up
+//  228     IO_PUD_PORT( OCM_CLK_PORT, IO_PUP );
+        ANL     0xf7,#0xdf
+//  229     IO_PUD_PORT( OCM_DATA_PORT, IO_PUP );
+        ANL     0xf7,#0xdf
+//  230   }
+//  231 }
+??HalI2CInit_0:
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+        REQUIRE P0DIR
+        REQUIRE P0SEL
+        REQUIRE P2SEL
+        REQUIRE _A_P0
+        REQUIRE P2INP
+//  232 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  233 uint8 HalI2CReceive(uint8 address, uint8 *buf, uint16 len)
+HalI2CReceive:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function HalI2CReceive
+        CODE
+//  234 {
+        FUNCALL HalI2CReceive, hali2cReceive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 11, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 11, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xb
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 11)
+        ; Saved register size: 11
+        ; Auto size: 0
+        MOV     ?V0 + 2,R1
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+//  235   hali2cReceive(address, buf, len);
+        ; Setup parameters for call to function hali2cReceive
+        MOV     A,R6
+        MOV     R4,A
+        MOV     A,R7
+        MOV     R5,A
+        MOV     R2,?V0 + 0
+        MOV     R3,?V0 + 1
+        MOV     R1,?V0 + 2
+        LCALL   ??hali2cReceive?relay
+//  236 
+//  237   return 0;
+        MOV     R1,#0x0
+        MOV     R7,#0x3
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock1
+//  238 }
+//  239 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  240 uint8 HalI2CSend(uint8 address, uint8 *buf, uint16 len)
+HalI2CSend:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function HalI2CSend
+        CODE
+//  241 {
+        FUNCALL HalI2CSend, hali2cSendDeviceAddress
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL HalI2CSend, hali2cSend
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV     ?V0 + 2,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//  242   // begin the write sequence with the address byte
+//  243   hali2cSendDeviceAddress(address);
+        ; Setup parameters for call to function hali2cSendDeviceAddress
+        MOV     R1,?V0 + 2
+        LCALL   ??hali2cSendDeviceAddress?relay
+//  244   hali2cSend(buf, len, NOSEND_START, SEND_STOP);
+        ; Setup parameters for call to function hali2cSend
+        MOV     ?V0 + 3,#0x0
+        MOV     R0,#?V0 + 3
+        LCALL   ?PUSH_XSTACK_I_ONE
+        CFI CFA_XSP16 add(XSP16, 13)
+        MOV     R1,#0x1
+        MOV     R4,?V0 + 0
+        MOV     R5,?V0 + 1
+        MOV     A,R6
+        MOV     R2,A
+        MOV     A,R7
+        MOV     R3,A
+        LCALL   ??hali2cSend?relay
+        MOV     A,#0x1
+        LCALL   ?DEALLOC_XSTACK8
+        CFI CFA_XSP16 add(XSP16, 12)
+//  245 
+//  246   return 0;
+        MOV     R1,#0x0
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock2
+//  247 }
+//  248 
+//  249 /////////////////////////////////////////////////////////////
+//  250 // ADXL345 Vibrate Sensor
+//  251 //STATIC void   hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop );
+//  252 //STATIC _Bool  hali2cSendByte( uint8 dByte );
+//  253 //STATIC void   hali2cWrite( bool dBit );
+//  254 //STATIC void   hali2cClock( bool dir );
+//  255 //STATIC void   hali2cStart( void );
+//  256 //STATIC void   hali2cStop( void );
+//  257 //STATIC void   hali2cReceive( uint8 address, uint8 *buffer, uint16 len );
+//  258 //STATIC uint8  hali2cReceiveByte( void );
+//  259 //STATIC _Bool  hali2cRead( void );
+//  260 //STATIC void   hali2cSendDeviceAddress(uint8 address);
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  261 void ADXL345WriteByte(byte address, byte value)
+ADXL345WriteByte:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function ADXL345WriteByte
+        CODE
+//  262 {
+        FUNCALL ADXL345WriteByte, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345WriteByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345WriteByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345WriteByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345WriteByte, hali2cStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+        MOV     A,R2
+        MOV     R7,A
+//  263   // Address and W/R bit
+//  264   byte firstByte = 0x00;
+        MOV     R6,#0x0
+//  265   // wait turns to receive the slave ack
+//  266   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  267   
+//  268   // Send the start condition
+//  269   hali2cStart();
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  270   
+//  271   // Send the slave address + w flag
+//  272   firstByte = 0xA6;	
+        MOV     R6,#-0x5a
+//  273   do {
+//  274       if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+??ADXL345WriteByte_0:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345WriteByte_1
+//  275       {
+//  276 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  277         break;
+        SJMP    ??ADXL345WriteByte_2
+//  278       }
+//  279   } while ( --retry );
+??ADXL345WriteByte_1:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345WriteByte_0
+//  280   
+//  281   // Send the reg address
+//  282   do {
+//  283       if ( hali2cSendByte(address) )  // takes care of ack polling
+??ADXL345WriteByte_2:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     R1,?V0 + 0
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345WriteByte_3
+//  284       {
+//  285 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  286         break;
+        SJMP    ??ADXL345WriteByte_4
+//  287       }
+//  288   } while ( --retry );
+??ADXL345WriteByte_3:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345WriteByte_2
+//  289   
+//  290   // Send the value
+//  291   do {
+//  292       if ( hali2cSendByte(value) )  // takes care of ack polling
+??ADXL345WriteByte_4:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,R7
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JC      ??ADXL345WriteByte_5
+//  293       {
+//  294         break;
+//  295       }
+//  296   } while ( --retry );
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345WriteByte_4
+//  297   
+//  298   // Send stop condition
+//  299   hali2cStop();
+??ADXL345WriteByte_5:
+        ; Setup parameters for call to function hali2cStop
+        LCALL   ??hali2cStop?relay
+//  300 }
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+//  301 
+//  302 /*****************************************************************************
+//  303  *
+//  304  *
+//  305  *	Read ADXL345
+//  306  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  307 byte ADXL345ReadByte(byte address)
+ADXL345ReadByte:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function ADXL345ReadByte
+        CODE
+//  308 {
+        FUNCALL ADXL345ReadByte, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cReceiveByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadByte, hali2cStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+        MOV     ?V0 + 0,R1
+//  309   // address and W/R bit
+//  310   byte firstByte = 0x00;
+        MOV     R6,#0x0
+//  311   // reserve the read byte
+//  312   byte value = 0x00;
+        MOV     R7,#0x0
+//  313   
+//  314   // wait turns to receive the slave ack
+//  315   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  316   
+//  317   // Send the start condition
+//  318   hali2cStart();
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  319   
+//  320   // Send the slave address and wirte bit
+//  321   firstByte = 0xA6;	
+        MOV     R6,#-0x5a
+//  322   do {
+//  323       if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+??ADXL345ReadByte_0:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadByte_1
+//  324       {
+//  325 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  326         break;
+        SJMP    ??ADXL345ReadByte_2
+//  327       }
+//  328   } while ( --retry );
+??ADXL345ReadByte_1:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadByte_0
+//  329   
+//  330   // Send the reg address
+//  331   do {
+//  332       if ( hali2cSendByte(address) )  // takes care of ack polling
+??ADXL345ReadByte_2:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     R1,?V0 + 0
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadByte_3
+//  333       {
+//  334 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  335         break;
+        SJMP    ??ADXL345ReadByte_4
+//  336       }
+//  337   } while ( --retry );
+??ADXL345ReadByte_3:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadByte_2
+//  338   
+//  339   // Send the start condition again
+//  340   hali2cStart();
+??ADXL345ReadByte_4:
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  341   
+//  342   // Send the slave address and read bit
+//  343   firstByte = 0xA7;
+        MOV     R6,#-0x59
+//  344   do {
+//  345       if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+??ADXL345ReadByte_5:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadByte_6
+//  346       {
+//  347 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 1,#0x3
+//  348         break;
+        SJMP    ??ADXL345ReadByte_7
+//  349       }
+//  350   } while ( --retry );
+??ADXL345ReadByte_6:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 1
+        MOV     R0,A
+        MOV     ?V0 + 1,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadByte_5
+//  351   
+//  352   // Read a byte from ADXL345
+//  353   value = hali2cReceiveByte();
+??ADXL345ReadByte_7:
+        ; Setup parameters for call to function hali2cReceiveByte
+        LCALL   ??hali2cReceiveByte?relay
+        MOV     A,R1
+        MOV     R7,A
+//  354   
+//  355   // write NACK
+//  356   hali2cWrite(SMB_NAK);
+        ; Setup parameters for call to function hali2cWrite
+        MOV     R1,#0x1
+        LCALL   ??hali2cWrite?relay
+//  357   
+//  358   // Send stop condition
+//  359   hali2cStop();
+        ; Setup parameters for call to function hali2cStop
+        LCALL   ??hali2cStop?relay
+//  360   
+//  361   return value;
+        MOV     A,R7
+        MOV     R1,A
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock4
+//  362 }
+//  363 
+//  364 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  365 void ADXL345ReadBytes(uint8 startAddr, uint8* buffer, uint8 len)
+ADXL345ReadBytes:
+        CFI Block cfiBlock5 Using cfiCommon0
+        CFI Function ADXL345ReadBytes
+        CODE
+//  366 {
+        FUNCALL ADXL345ReadBytes, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cReceiveByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ADXL345ReadBytes, hali2cStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 17, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 17, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x11
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V8 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V7 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-16)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-17)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 17)
+        ; Saved register size: 17
+        ; Auto size: 0
+        MOV     ?V0 + 1,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 8,R4
+//  367   // wait turns to receive the slave ack
+//  368   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 7,#0x3
+//  369   // 7-bit address and W/R bit
+//  370   byte firstByte = 0x00;
+        MOV     ?V0 + 0,#0x0
+//  371   
+//  372   byte i = 0;
+        MOV     ?V0 + 6,#0x0
+//  373   
+//  374   // Send start condition
+//  375   hali2cStart();
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  376   
+//  377   // Send the slave address and wirte bit
+//  378   firstByte = 0xA6;	// seven-bit slave address and write bit '0', 0x1111_1110
+        MOV     ?V0 + 0,#-0x5a
+//  379   do {
+//  380       if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+??ADXL345ReadBytes_0:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     R1,?V0 + 0
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadBytes_1
+//  381       {
+//  382 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 7,#0x3
+//  383         break;
+        SJMP    ??ADXL345ReadBytes_2
+//  384       }
+//  385   } while ( --retry );
+??ADXL345ReadBytes_1:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 7
+        MOV     R0,A
+        MOV     ?V0 + 7,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadBytes_0
+//  386   
+//  387   // Send the reg address
+//  388   do {
+//  389       if ( hali2cSendByte(startAddr) )  // takes care of ack polling
+??ADXL345ReadBytes_2:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     R1,?V0 + 1
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadBytes_3
+//  390       {
+//  391 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 7,#0x3
+//  392         break;
+        SJMP    ??ADXL345ReadBytes_4
+//  393       }
+//  394   } while ( --retry );
+??ADXL345ReadBytes_3:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 7
+        MOV     R0,A
+        MOV     ?V0 + 7,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadBytes_2
+//  395   
+//  396   // this is the repeat start condition
+//  397   hali2cStart();
+??ADXL345ReadBytes_4:
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  398   
+//  399   // Send the slave address and read bit
+//  400   firstByte = 0xA7;	
+        MOV     ?V0 + 0,#-0x59
+//  401   do {
+//  402       if ( hali2cSendByte(firstByte) )  // takes care of ack polling
+??ADXL345ReadBytes_5:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     R1,?V0 + 0
+        LCALL   ??hali2cSendByte?relay
+        JNC     ??ADXL345ReadBytes_6
+//  403       {
+//  404 		retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 7,#0x3
+//  405         break;
+        SJMP    ??ADXL345ReadBytes_7
+//  406       }
+//  407   } while ( --retry );
+??ADXL345ReadBytes_6:
+        MOV     A,#-0x1
+        ADD     A,?V0 + 7
+        MOV     R0,A
+        MOV     ?V0 + 7,R0
+        MOV     A,R0
+        JNZ     ??ADXL345ReadBytes_5
+//  408   
+//  409   // read several bytes
+//  410   for ( i = 0; i<len-1; i++ )
+??ADXL345ReadBytes_7:
+        MOV     ?V0 + 6,#0x0
+??ADXL345ReadBytes_8:
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,#0x0
+        MOV     ?V0 + 4,?V0 + 8
+        MOV     ?V0 + 5,#0x0
+        MOV     A,?V0 + 4
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,?V0 + 5
+        ADDC    A,#-0x1
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     A,?V0 + 3
+        SUBB    A,R1
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JNC     ??ADXL345ReadBytes_9
+//  411   {
+//  412     // SCL may be high. set SCL low. If SDA goes high when input
+//  413     // mode is set the slave won't see a STOP
+//  414     hali2cClock(0);
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  415     OCM_DATA_HIGH();
+        ANL     0xfd,#0xbf
+//  416 
+//  417     buffer[i] = hali2cReceiveByte();
+        ; Setup parameters for call to function hali2cReceiveByte
+        LCALL   ??hali2cReceiveByte?relay
+        MOV     A,R1
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     ?V0 + 2,?V0 + 6
+        MOV     ?V0 + 3,#0x0
+        MOV     A,R6
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  418     hali2cWrite(SMB_ACK);           // write leaves SCL high
+        ; Setup parameters for call to function hali2cWrite
+        MOV     R1,#0x0
+        LCALL   ??hali2cWrite?relay
+//  419   }
+        INC     ?V0 + 6
+        SJMP    ??ADXL345ReadBytes_8
+//  420   
+//  421   // condition SDA one more time...
+//  422 //  hali2cClock(0);
+//  423 //  OCM_DATA_HIGH();
+//  424 //  buffer[i] = hali2cReceiveByte();
+//  425 //  hali2cWrite(SMB_NAK);
+//  426   
+//  427   // Send stop condition
+//  428   hali2cStop();
+??ADXL345ReadBytes_9:
+        ; Setup parameters for call to function hali2cStop
+        LCALL   ??hali2cStop?relay
+//  429 }
+        MOV     R7,#0x9
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock5
+        REQUIRE P0DIR
+//  430 
+//  431 
+//  432 
+//  433 /*********************************************************************
+//  434  * @fn      hali2cSend
+//  435  * @brief   Sends buffer contents to SM-Bus device
+//  436  * @param   buffer - ptr to buffered data to send
+//  437  * @param   len - number of bytes in buffer
+//  438  * @param   sendStart - whether or not to send start condition.
+//  439  * @param   sendStop - whether or not to send stop condition.
+//  440  * @return  void
+//  441  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  442 STATIC void hali2cSend( uint8 *buffer, uint16 len, uint8 sendStart, uint8 sendStop )
+hali2cSend:
+        CFI Block cfiBlock6 Using cfiCommon0
+        CFI Function hali2cSend
+        CODE
+//  443 {
+        FUNCALL hali2cSend, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSend, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSend, hali2cStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 15, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 15, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xf
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V6 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V5 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-14)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-15)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 15)
+        ; Saved register size: 15
+        ; Auto size: 0
+        MOV     ?V0 + 0,R2
+        MOV     ?V0 + 1,R3
+        MOV     A,R4
+        MOV     R6,A
+        MOV     A,R5
+        MOV     R7,A
+        MOV     ?V0 + 4,R1
+        MOV     A,#0xf
+        LCALL   ?XSTACK_DISP0_8
+        MOVX    A,@DPTR
+        MOV     ?V0 + 5,A
+//  444   uint16 i;
+//  445   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     ?V0 + 6,#0x3
+//  446 
+//  447   if (!len)  {
+        MOV     A,R6
+        ORL     A,R7
+        JZ      ??hali2cSend_0
+//  448     return;
+//  449   }
+//  450 
+//  451   if (sendStart == SEND_START)  {
+        MOV     A,?V0 + 4
+        JNZ     ??hali2cSend_1
+//  452     hali2cStart();
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  453   }
+//  454 
+//  455   for ( i = 0; i < len; i++ )
+??hali2cSend_1:
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+??hali2cSend_2:
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R6
+        MOV     A,?V0 + 3
+        SUBB    A,R7
+        JNC     ??hali2cSend_3
+//  456   {
+//  457     do {
+//  458       if ( hali2cSendByte( buffer[i] ) )  // takes care of ack polling
+??hali2cSend_4:
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,?V0 + 0
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,?V0 + 1
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        MOVX    A,@DPTR
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JC      ??hali2cSend_5
+//  459       {
+//  460         break;
+//  461       }
+//  462     } while ( --retry );
+        MOV     A,#-0x1
+        ADD     A,?V0 + 6
+        MOV     R0,A
+        MOV     ?V0 + 6,R0
+        MOV     A,R0
+        JNZ     ??hali2cSend_4
+//  463   }
+??hali2cSend_5:
+        MOV     A,?V0 + 2
+        ADD     A,#0x1
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        SJMP    ??hali2cSend_2
+//  464 
+//  465   if (sendStop == SEND_STOP) {
+??hali2cSend_3:
+        MOV     A,?V0 + 5
+        JNZ     ??hali2cSend_0
+//  466     hali2cStop();
+        ; Setup parameters for call to function hali2cStop
+        LCALL   ??hali2cStop?relay
+//  467   }
+//  468 }
+??hali2cSend_0:
+        MOV     R7,#0x7
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock6
+//  469 
+//  470 /*********************************************************************
+//  471  * @fn      hali2cSendByte
+//  472  * @brief   Serialize and send one byte to SM-Bus device
+//  473  * @param   dByte - data byte to send
+//  474  * @return  ACK status - 0=none, 1=received
+//  475  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  476 STATIC _Bool hali2cSendByte( uint8 dByte )
+hali2cSendByte:
+        CFI Block cfiBlock7 Using cfiCommon0
+        CFI Function hali2cSendByte
+        CODE
+//  477 {
+        FUNCALL hali2cSendByte, hali2cWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSendByte, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSendByte, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSendByte, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//  478   uint8 i;
+//  479 
+//  480   for ( i = 0; i < 8; i++ )
+        MOV     R6,#0x0
+??hali2cSendByte_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x8
+        JNC     ??hali2cSendByte_1
+//  481   {
+//  482     // Send the MSB
+//  483     hali2cWrite( dByte & 0x80 );
+        ; Setup parameters for call to function hali2cWrite
+        MOV     A,#-0x80
+        ANL     A,R7
+        MOV     R1,A
+        LCALL   ??hali2cWrite?relay
+//  484     // Next bit into MSB
+//  485     dByte <<= 1;
+        MOV     A,R7
+        CLR     C
+        RLC     A
+        MOV     R7,A
+//  486   }
+        INC     R6
+        SJMP    ??hali2cSendByte_0
+//  487   // need clock low so if the SDA transitions on the next statement the
+//  488   // slave doesn't stop. Also give opportunity for slave to set SDA
+//  489   hali2cClock( 0 );
+??hali2cSendByte_1:
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  490   OCM_DATA_HIGH(); // set to input to receive ack...
+        ANL     0xfd,#0xbf
+//  491   hali2cClock( 1 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  492   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  493 
+//  494   return ( !OCM_SDA );  // Return ACK status
+        MOV     C,0x80.6
+        JC      ??hali2cSendByte_2
+        SETB    B.0
+        SJMP    ??hali2cSendByte_3
+??hali2cSendByte_2:
+        CLR     B.0
+??hali2cSendByte_3:
+        MOV     C,B.0
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock7
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+//  495 }
+//  496 
+//  497 /*********************************************************************
+//  498  * @fn      hali2cWrite
+//  499  * @brief   Send one bit to SM-Bus device
+//  500  * @param   dBit - data bit to clock onto SM-Bus
+//  501  * @return  void
+//  502  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  503 STATIC void hali2cWrite( bool dBit )
+hali2cWrite:
+        CFI Block cfiBlock8 Using cfiCommon0
+        CFI Function hali2cWrite
+        CODE
+//  504 {
+        FUNCALL hali2cWrite, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cWrite, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cWrite, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cWrite, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  505   hali2cClock( 0 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  506   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  507   if ( dBit )
+        MOV     A,R6
+        JZ      ??hali2cWrite_0
+//  508   {
+//  509     OCM_DATA_HIGH();
+        ANL     0xfd,#0xbf
+        SJMP    ??hali2cWrite_1
+//  510   }
+//  511   else
+//  512   {
+//  513     OCM_DATA_LOW();
+??hali2cWrite_0:
+        ORL     0xfd,#0x40
+        CLR     0x80.6
+//  514   }
+//  515 
+//  516   hali2cClock( 1 );
+??hali2cWrite_1:
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  517   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  518 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock8
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+//  519 
+//  520 /*********************************************************************
+//  521  * @fn      hali2cClock
+//  522  * @brief   Clocks the SM-Bus. If a negative edge is going out, the
+//  523  *          I/O pin is set as an output and driven low. If a positive
+//  524  *          edge is going out, the pin is set as an input and the pin
+//  525  *          pull-up drives the line high. This way, the slave device
+//  526  *          can hold the node low if longer setup time is desired.
+//  527  * @param   dir - clock line direction
+//  528  * @return  void
+//  529  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  530 STATIC void hali2cClock( bool dir )
+hali2cClock:
+        CFI Block cfiBlock9 Using cfiCommon0
+        CFI Function hali2cClock
+        CODE
+//  531 {
+        FUNCALL hali2cClock, hali2cWait
+        LOCFRAME ISTACK, 1, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 1, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,R6
+        CFI R6 A
+        PUSH    A
+        CFI R6 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        ; Saved register size: 1
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  532   if ( dir )
+        JZ      ??hali2cClock_0
+//  533   {
+//  534     IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_IN );
+        ANL     0xfd,#0x7f
+        SJMP    ??hali2cClock_1
+//  535   }
+//  536   else
+//  537   {
+//  538     IO_DIR_PORT_PIN( OCM_CLK_PORT, OCM_CLK_PIN, IO_OUT );
+??hali2cClock_0:
+        ORL     0xfd,#0x80
+//  539     OCM_SCL = 0;
+        CLR     0x80.7
+//  540   }
+//  541   hali2cWait(1);
+??hali2cClock_1:
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  542 }
+        POP     A
+        CFI R6 A
+        CFI CFA_SP SP+-3
+        MOV     R6,A
+        CFI R6 SameValue
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock9
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+//  543 
+//  544 /*********************************************************************
+//  545  * @fn      hali2cStart
+//  546  * @brief   Initiates SM-Bus communication. Makes sure that both the
+//  547  *          clock and data lines of the SM-Bus are high. Then the data
+//  548  *          line is set high and clock line is set low to start I/O.
+//  549  * @param   void
+//  550  * @return  void
+//  551  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  552 STATIC void hali2cStart( void )
+hali2cStart:
+        CFI Block cfiBlock10 Using cfiCommon0
+        CFI Function hali2cStart
+        CODE
+//  553 {
+        FUNCALL hali2cStart, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cWait
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStart, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  554   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     R6,#0x3
+//  555 
+//  556   // set SCL to input but with pull-up. if slave is pulling down it will stay down.
+//  557   hali2cClock(1);
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  558 
+//  559   do {
+//  560     // wait for slave to release clock line...
+//  561     if (OCM_SCL)  // wait until the line is high...
+??hali2cStart_0:
+        MOV     C,0x80.7
+        JC      ??hali2cStart_1
+//  562     {
+//  563       break;
+//  564     }
+//  565     hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  566   } while ( --retry );
+        MOV     A,#-0x1
+        ADD     A,R6
+        MOV     R0,A
+        MOV     A,R0
+        MOV     R6,A
+        MOV     A,R0
+        JNZ     ??hali2cStart_0
+//  567 
+//  568   // SCL low to set SDA high so the transition will be correct.
+//  569   hali2cClock(0);
+??hali2cStart_1:
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  570   OCM_DATA_HIGH();  // SDA high
+        ANL     0xfd,#0xbf
+//  571   hali2cClock(1);   // set up for transition
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  572   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  573   OCM_DATA_LOW();   // start
+        ORL     0xfd,#0x40
+        CLR     0x80.6
+//  574 
+//  575   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  576   hali2cClock( 0 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  577 }
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock10
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+//  578 
+//  579 /*********************************************************************
+//  580  * @fn      hali2cStop
+//  581  * @brief   Terminates SM-Bus communication. Waits unitl the data line
+//  582  *          is low and the clock line is high. Then sets the data line
+//  583  *          high, keeping the clock line high to stop I/O.
+//  584  * @param   void
+//  585  * @return  void
+//  586  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  587 STATIC void hali2cStop( void )
+hali2cStop:
+        CFI Block cfiBlock11 Using cfiCommon0
+        CFI Function hali2cStop
+        CODE
+//  588 {
+        FUNCALL hali2cStop, hali2cClock
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStop, hali2cWait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStop, hali2cClock
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cStop, hali2cWait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  589   // Wait for clock high and data low
+//  590   hali2cClock(0);
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  591   OCM_DATA_LOW();  // force low with SCL low
+        ORL     0xfd,#0x40
+        CLR     0x80.6
+//  592   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  593 
+//  594   hali2cClock( 1 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  595   OCM_DATA_HIGH(); // stop condition
+        ANL     0xfd,#0xbf
+//  596   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  597 
+//  598 }
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock11
+        REQUIRE P0DIR
+        REQUIRE _A_P0
+//  599 
+//  600 /*********************************************************************
+//  601  * @fn      hali2cWait
+//  602  * @brief   Wastes a an amount of time.
+//  603  * @param   count: down count in busy-wait
+//  604  * @return  void
+//  605  */
+
+        RSEG NEAR_CODE:CODE:NOROOT(0)
+//  606 STATIC __near_func void hali2cWait( uint8 count )
+hali2cWait:
+        CFI Block cfiBlock12 Using cfiCommon1
+        CFI Function hali2cWait
+        CODE
+//  607 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  608   while ( count-- );
+??hali2cWait_0:
+        MOV     A,R1
+        MOV     R0,A
+        MOV     A,#-0x1
+        ADD     A,R0
+        MOV     R1,A
+        MOV     A,R0
+        JNZ     ??hali2cWait_0
+//  609 }
+        RET
+        CFI EndBlock cfiBlock12
+//  610 
+//  611 /*********************************************************************
+//  612  * @fn      hali2cReceiveByte
+//  613  * @brief   Read the 8 data bits.
+//  614  * @param   void
+//  615  * @return  character read
+//  616  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  617 STATIC uint8 hali2cReceiveByte()
+hali2cReceiveByte:
+        CFI Block cfiBlock13 Using cfiCommon0
+        CFI Function hali2cReceiveByte
+        CODE
+//  618 {
+        FUNCALL hali2cReceiveByte, hali2cRead
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xc
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+//  619   int8 i, rval = 0;
+        MOV     ?V0 + 0,#0x0
+//  620 
+//  621   for (i=7; i>=0; --i)  {
+        MOV     R6,#0x7
+??hali2cReceiveByte_0:
+        MOV     A,R6
+        CLR     C
+        SUBB    A,#0x0
+        MOV     C,0xD0 /* PSW */.2
+        XRL     A,PSW
+        RLC     A
+        JC      ??hali2cReceiveByte_1
+//  622     if (hali2cRead())  {
+        ; Setup parameters for call to function hali2cRead
+        LCALL   ??hali2cRead?relay
+        JNC     ??hali2cReceiveByte_2
+//  623       rval |= 1<<i;
+        MOV     ?V0 + 2,#0x1
+        MOV     ?V0 + 3,#0x0
+        MOV     A,R6
+        MOV     R0,#?V0 + 2
+        LCALL   ?S_SHL
+        MOV     A,?V0 + 2
+        ORL     ?V0 + 0,A
+//  624     }
+//  625   }
+??hali2cReceiveByte_2:
+        MOV     A,#-0x1
+        ADD     A,R6
+        MOV     R6,A
+        SJMP    ??hali2cReceiveByte_0
+//  626 
+//  627   return rval;
+??hali2cReceiveByte_1:
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x4
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock13
+//  628 }
+//  629 /**************************************************************************************************
+//  630 **************************************************************************************************/
+//  631 /*********************************************************************
+//  632  * @fn      hali2cReceive
+//  633  * @brief   reads data into a buffer
+//  634  * @param   address: linear address on part from which to read
+//  635  * @param   buffer: target array for read characters
+//  636  * @param   len: max number of characters to read
+//  637  * @return  void
+//  638  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  639 STATIC void hali2cReceive( uint8 address, uint8 *buffer, uint16 len )
+hali2cReceive:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function hali2cReceive
+        CODE
+//  640 {
+        FUNCALL hali2cReceive, hali2cSendDeviceAddress
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cReceiveByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cClock
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cReceiveByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cWrite
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cReceive, hali2cStop
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 13, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 13, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xd
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V4 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-11)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-12)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-13)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 13)
+        ; Saved register size: 13
+        ; Auto size: 0
+        MOV     ?V0 + 4,R1
+        MOV     A,R2
+        MOV     R6,A
+        MOV     A,R3
+        MOV     R7,A
+        MOV     ?V0 + 0,R4
+        MOV     ?V0 + 1,R5
+//  641 //  uint8  ch;
+//  642   uint16 i;
+//  643 
+//  644   if (!len)  {
+        MOV     A,?V0 + 0
+        ORL     A,?V0 + 1
+        JZ      ??hali2cReceive_0
+//  645     return;
+//  646   }
+//  647 
+//  648   hali2cSendDeviceAddress(address);
+        ; Setup parameters for call to function hali2cSendDeviceAddress
+        MOV     R1,?V0 + 4
+        LCALL   ??hali2cSendDeviceAddress?relay
+//  649 
+//  650 //  ch = OCM_ADDRESS_BYTE(0, OCM_READ);
+//  651 //  hali2cSend(&ch, 1, SEND_START, NOSEND_STOP);
+//  652 
+//  653   for ( i = 0; i < len-1; i++ )
+        MOV     ?V0 + 2,#0x0
+        MOV     ?V0 + 3,#0x0
+??hali2cReceive_1:
+        MOV     A,?V0 + 0
+        ADD     A,#-0x1
+        MOV     R0,A
+        MOV     A,?V0 + 1
+        ADDC    A,#-0x1
+        MOV     R1,A
+        CLR     C
+        MOV     A,?V0 + 2
+        SUBB    A,R0
+        MOV     A,?V0 + 3
+        SUBB    A,R1
+        JNC     ??hali2cReceive_2
+//  654   {
+//  655     // SCL may be high. set SCL low. If SDA goes high when input
+//  656     // mode is set the slave won't see a STOP
+//  657     hali2cClock(0);
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  658     OCM_DATA_HIGH();
+        ANL     0xfd,#0xbf
+//  659 
+//  660     buffer[i] = hali2cReceiveByte();
+        ; Setup parameters for call to function hali2cReceiveByte
+        LCALL   ??hali2cReceiveByte?relay
+        MOV     A,R1
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  661     hali2cWrite(SMB_ACK);           // write leaves SCL high
+        ; Setup parameters for call to function hali2cWrite
+        MOV     R1,#0x0
+        LCALL   ??hali2cWrite?relay
+//  662   }
+        MOV     A,?V0 + 2
+        ADD     A,#0x1
+        MOV     ?V0 + 2,A
+        MOV     A,?V0 + 3
+        ADDC    A,#0x0
+        MOV     ?V0 + 3,A
+        SJMP    ??hali2cReceive_1
+//  663 
+//  664   // condition SDA one more time...
+//  665   hali2cClock(0);
+??hali2cReceive_2:
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  666   OCM_DATA_HIGH();
+        ANL     0xfd,#0xbf
+//  667   buffer[i] = hali2cReceiveByte();
+        ; Setup parameters for call to function hali2cReceiveByte
+        LCALL   ??hali2cReceiveByte?relay
+        MOV     A,R1
+        PUSH    A
+        CFI CFA_SP SP+-1
+        MOV     A,R6
+        ADD     A,?V0 + 2
+        MOV     DPL,A
+        MOV     A,R7
+        ADDC    A,?V0 + 3
+        MOV     DPH,A
+        POP     A
+        CFI CFA_SP SP+0
+        MOVX    @DPTR,A
+//  668   hali2cWrite(SMB_NAK);
+        ; Setup parameters for call to function hali2cWrite
+        MOV     R1,#0x1
+        LCALL   ??hali2cWrite?relay
+//  669 
+//  670   hali2cStop();
+        ; Setup parameters for call to function hali2cStop
+        LCALL   ??hali2cStop?relay
+//  671 }
+??hali2cReceive_0:
+        MOV     R7,#0x5
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock14
+        REQUIRE P0DIR
+//  672 
+//  673 /*********************************************************************
+//  674  * @fn      hali2cRead
+//  675  * @brief   Toggle the clock line to let the slave set the data line.
+//  676  *          Then read the data line.
+//  677  * @param   void
+//  678  * @return  TRUE if bit read is 1 else FALSE
+//  679  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  680 STATIC _Bool hali2cRead( void )
+hali2cRead:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI Function hali2cRead
+        CODE
+//  681 {
+        FUNCALL hali2cRead, hali2cClock
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cRead, hali2cWait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cRead, hali2cClock
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cRead, hali2cWait
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH    DPL
+        CFI DPL0 Frame(CFA_SP, 4)
+        CFI CFA_SP SP+-4
+        PUSH    DPH
+        CFI DPH0 Frame(CFA_SP, 5)
+        CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  682   // SCL low to let slave set SDA. SCL high for SDA
+//  683   // valid and then get bit
+//  684   hali2cClock( 0 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x0
+        LCALL   ??hali2cClock?relay
+//  685   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  686   hali2cClock( 1 );
+        ; Setup parameters for call to function hali2cClock
+        MOV     R1,#0x1
+        LCALL   ??hali2cClock?relay
+//  687   hali2cWait(1);
+        ; Setup parameters for call to function hali2cWait
+        MOV     R1,#0x1
+        LCALL   hali2cWait & 0xFFFF
+//  688 
+//  689   return OCM_SDA;
+        MOV     C,0x80.6
+        JNC     ??hali2cRead_0
+        SETB    B.0
+        SJMP    ??hali2cRead_1
+??hali2cRead_0:
+        CLR     B.0
+??hali2cRead_1:
+        MOV     C,B.0
+        POP     DPH
+        CFI DPH0 SameValue
+        CFI CFA_SP SP+-4
+        POP     DPL
+        CFI DPL0 SameValue
+        CFI CFA_SP SP+-3
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock15
+        REQUIRE _A_P0
+//  690 }
+//  691 
+//  692 /*********************************************************************
+//  693  * @fn      hali2cSendDeviceAddress
+//  694  * @brief   Send onlythe device address. Do ack polling
+//  695  *
+//  696  * @param   void
+//  697  * @return  none
+//  698  */
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  699 STATIC void hali2cSendDeviceAddress(uint8 address)
+hali2cSendDeviceAddress:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI Function hali2cSendDeviceAddress
+        CODE
+//  700 {
+        FUNCALL hali2cSendDeviceAddress, hali2cStart
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL hali2cSendDeviceAddress, hali2cSendByte
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R6,A
+//  701   uint8 retry = HAL_I2C_RETRY_CNT;
+        MOV     R7,#0x3
+//  702 
+//  703   do {
+//  704     hali2cStart();
+??hali2cSendDeviceAddress_0:
+        ; Setup parameters for call to function hali2cStart
+        LCALL   ??hali2cStart?relay
+//  705     if (hali2cSendByte(address))  // do ack polling...
+        ; Setup parameters for call to function hali2cSendByte
+        MOV     A,R6
+        MOV     R1,A
+        LCALL   ??hali2cSendByte?relay
+        JC      ??hali2cSendDeviceAddress_1
+//  706     {
+//  707       break;
+//  708     }
+//  709   } while ( --retry );
+        MOV     A,#-0x1
+        ADD     A,R7
+        MOV     R0,A
+        MOV     A,R0
+        MOV     R7,A
+        MOV     A,R0
+        JNZ     ??hali2cSendDeviceAddress_0
+//  710 }
+??hali2cSendDeviceAddress_1:
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock16
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CInit?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalI2CInit
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CReceive?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalI2CReceive
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??HalI2CSend?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    HalI2CSend
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ADXL345WriteByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ADXL345WriteByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ADXL345ReadByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ADXL345ReadByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ADXL345ReadBytes?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ADXL345ReadBytes
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cSend?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cSend
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cSendByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cSendByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cWrite?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cWrite
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cClock?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cClock
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cStart?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cStart
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cStop?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cStop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cReceiveByte?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cReceiveByte
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cReceive?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cReceive
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cRead?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cRead
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??hali2cSendDeviceAddress?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    hali2cSendDeviceAddress
+
+        END
+// 
+// 1 139 bytes in segment BANKED_CODE
+//    96 bytes in segment BANK_RELAYS
+//    10 bytes in segment NEAR_CODE
+//     5 bytes in segment SFR_AN
+//     1 byte  in segment XDATA_Z
+// 
+// 1 245 bytes of CODE  memory
+//     0 bytes of DATA  memory (+ 5 bytes shared)
+//     1 byte  of XDATA memory
+//
+//Errors: none
+//Warnings: none

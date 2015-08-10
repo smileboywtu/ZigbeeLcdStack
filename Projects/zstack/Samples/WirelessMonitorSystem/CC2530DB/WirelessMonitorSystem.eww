@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\WirelessMonitorSystem.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+      <member>
+        <project>WirelessMonitorSystem</project>
+        <configuration>CoordinatorEB</configuration>
+      </member>
+      <member>
+        <project>WirelessMonitorSystem</project>
+        <configuration>RouterEB</configuration>
+      </member>
+      <member>
+        <project>WirelessMonitorSystem</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

@@ -1,0 +1,1018 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         31/May/2015  11:15:16 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\hal\target\CC2530EB\hal_spi.c                   #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\ta #
+#                          rget\CC2530EB\hal_spi.c" -D HAL_UART -D            #
+#                          xOCM_CLK_PORT=0 -D xOCM_CLK_PIN=7 -D               #
+#                          xOCM_DATA_PORT=0 -D xOCM_DATA_PIN=6 -lC "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Vibrate\List #
+#                          \" -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\ #
+#                          Projects\zstack\Samples\WirelessMonitorSystem\CC25 #
+#                          30DB\Vibrate\List\" --diag_suppress Pe001,Pa010    #
+#                          -o "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \Vibrate\Obj\" -e --no_cse --no_unroll             #
+#                          --no_inline --no_code_motion --no_tbaa --debug     #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Vib #
+#                          rate\List\hal_spi.lst                              #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Vib #
+#                          rate\Obj\hal_spi.r51                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\hal_spi.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_spi.c
+      3            Revised:        $Date: 2012-10-02 15:13:51 -0700 (Tue, 02 Oct 2012) $
+      4            Revision:       $Revision: 31675 $
+      5          
+      6            Description: This file contains the interface for the SPI driver.
+      7          
+      8          
+      9            Copyright 2006-2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          #include "hal_board.h"
+     46          #if (defined HAL_SPI) && (HAL_SPI == TRUE)
+     47          #include "hal_assert.h"
+     48          #include "hal_dma.h"
+     49          #include "hal_spi.h"
+     50          #include "osal.h"
+     51          
+     52          // SPI Callbacks for Client
+     53          extern uint8 *npSpiPollCallback( void );       // call client when POLL frame is received
+     54          extern void   npSpiReqCallback( uint8 type );  // call client when a AREQ or SREQ frame is received
+     55          extern bool   npSpiReadyCallback( void );      // call client to check if it has data ready to send
+     56          
+     57          /* ------------------------------------------------------------------------------------------------
+     58           *                                           Macros
+     59           * ------------------------------------------------------------------------------------------------
+     60           */
+     61          
+     62          /*
+     63           *  The MAC_ASSERT macro is for use during debugging.
+     64           *  The given expression must evaluate as "true" or else fatal error occurs.
+     65           *  At that point, the call stack feature of the debugger can pinpoint where the problem occurred.
+     66           *
+     67           *  To disable this feature and save code size, the project should define NP_SPI_NODEBUG to TRUE.
+     68           */
+     69          
+     70          #if !defined ( NP_SPI_NODEBUG )
+     71            #define NP_SPI_NODEBUG              TRUE
+     72          #endif
+     73          
+     74          #if ( NP_SPI_NODEBUG )
+     75            #define NP_SPI_ASSERT( expr )
+     76          #else
+     77            #define NP_SPI_ASSERT( expr)        HAL_ASSERT( expr )
+     78          #endif
+     79          
+     80          #define DMATRIG_RX  HAL_DMA_TRIG_URX1
+     81          #define DMATRIG_TX  HAL_DMA_TRIG_UTX1
+     82          #define DMA_UDBUF   HAL_SPI_U1DBUF
+     83          
+     84          #define DMA_RX() \
+     85            st( \
+     86              volatile uint8 ClearTheRxTrigger = *(volatile uint8 *)DMA_UDBUF; \
+     87              \
+     88              HAL_DMA_CLEAR_IRQ(HAL_DMA_CH_RX); \
+     89              \
+     90              HAL_DMA_ARM_CH(HAL_DMA_CH_RX); \
+     91            )
+     92          
+     93          #define DMA_TX( buf ) \
+     94            st( \
+     95              halDMADesc_t *ch = HAL_DMA_GET_DESC1234(HAL_DMA_CH_TX); \
+     96              \
+     97              HAL_DMA_SET_SOURCE(ch, (buf)); \
+     98              \
+     99              HAL_DMA_CLEAR_IRQ(HAL_DMA_CH_TX); \
+    100              \
+    101              HAL_DMA_ARM_CH(HAL_DMA_CH_TX); \
+    102              \
+    103              HAL_DMA_START_CH(HAL_DMA_CH_TX); \
+    104            )
+    105          
+    106          #define HAL_DMA_GET_SOURCE( pDesc, src ) \
+    107            st( \
+    108              src = (uint16)(pDesc->srcAddrH) << 8; \
+    109              src += pDesc->srcAddrL; \
+    110            )
+    111          
+    112          /* ------------------------------------------------------------------------------------------------
+    113           *                                           Constants
+    114           * ------------------------------------------------------------------------------------------------
+    115           */
+    116          
+    117          /* UxDBUF - USART Receive/Transmit Data Buffer */
+    118          #define HAL_SPI_U0DBUF  0x70C1 // UART0
+    119          #define HAL_SPI_U1DBUF  0x70F9 // UART1
+    120          
+    121          #define UTX0IE          0x04
+    122          #define UTX1IE          0x08
+    123          
+    124          #ifdef SPI_CONFIG_ON_PORT1
+    125          // MRDY
+    126          #define NP_RDYIn      P1_3
+    127          #define NP_RDYIn_BIT  BV(3)
+    128          #define NP_RDYIn_IFG  P1IFG
+    129          // SRDY
+    130          #define NP_RDYOut     P1_2
+    131          #define NP_RDYOut_BIT BV(2)
+    132          
+    133          #else
+    134          #define NP_RDYIn      P0_3
+    135          #define NP_RDYIn_BIT  BV(3)
+    136          #define NP_RDYIn_IFG  P0IFG
+    137          
+    138          // SRDY
+    139          #define NP_RDYOut     P0_4
+    140          #define NP_RDYOut_BIT BV(4)
+    141          
+    142          #endif
+    143          
+    144          /* ------------------------------------------------------------------------------------------------
+    145           *                                           TypeDefs
+    146           * ------------------------------------------------------------------------------------------------
+    147           */
+    148          
+    149          typedef enum
+    150          {
+    151            NP_SPI_SYNCH,          // new state added to synch with master; not used after startup
+    152            NP_SPI_IDLE,           /* Idle, no transaction in progress. */
+    153            NP_SPI_WAIT_RX,        /* Waiting for RX to complete. */
+    154            NP_SPI_WAIT_TX,        /* Waiting for TX to complete. */
+    155            NP_SPI_WAIT_AREQ       /* Waiting for asynchronous request to finish processing. */
+    156          } halSpiState_t;
+    157          
+    158          /* ------------------------------------------------------------------------------------------------
+    159           *                                           Local Variables
+    160           * ------------------------------------------------------------------------------------------------
+    161           */
+    162          
+    163          // buffer used to store the frame currently received or transmitted over SPI
+    164          static uint8 halSpiBuf[ HAL_SPI_BUF_LEN ];
+    165          
+    166          // state of the current SPI transaction
+    167          static volatile halSpiState_t halSpiState;
+    168          
+    169          // debug log
+    170          #if NP_SPI_NODEBUG
+    171          #define HAL_SPI_DBG_LOG(_trace)
+    172          #else
+    173          static volatile __no_init uint8 halSpiDbgLog[256] @ "PM0_XDATA";
+    174          static uint8 halSpiDbgLogIdx = 0;
+    175          #define HAL_SPI_DBG_LOG(_trace) (halSpiDbgLog[halSpiDbgLogIdx++]=(_trace))
+    176          #endif
+    177          
+    178          /* ------------------------------------------------------------------------------------------------
+    179           *                                           Local Functions
+    180           * -----------------------------------------------------------------------------------------------
+    181           */
+    182          
+    183          static void HalSpiDmaInit( void );
+    184          static void HalSpiUsartInit( void );
+    185          static void HalSpiGpioInit( void );
+    186          
+    187          /* ------------------------------------------------------------------------------------------------
+    188           *                              HAL SPI API
+    189           * ------------------------------------------------------------------------------------------------
+    190           */
+    191          
+    192          /**************************************************************************************************
+    193           * @fn          HalSpiInit
+    194           *
+    195           * @brief       This function is called to set up the SPI interface.
+    196           *
+    197           * input parameters
+    198           *
+    199           * None.
+    200           *
+    201           * output parameters
+    202           *
+    203           * None.
+    204           *
+    205           * @return      None.
+    206           **************************************************************************************************
+    207           */
+    208          void HalSpiInit(void)
+    209          {
+    210            // setup the MRDY and SRDY GPIO pins
+    211            HalSpiGpioInit();
+    212          
+    213            // deassert SRDY as soon as possible; master gives 250ms after releasing the
+    214            // slave from reset before it polls for an asserted SRDY (indicating that the
+    215            // slave has completed startup and is ready)
+    216            NP_RDYOut = 1;
+    217          
+    218            // setup USART1 to operate as a SPI slave
+    219            HalSpiUsartInit();
+    220          
+    221            // setup DMA configuration tables for SPI RX and TX
+    222            HalSpiDmaInit();
+    223          
+    224            // set the SPI FSM to SYNCH initially to wait for master sychronization
+    225            halSpiState = NP_SPI_SYNCH;
+    226          }
+    227          
+    228          
+    229          /**************************************************************************************************
+    230           * @fn          HalSpiGpioInit
+    231           *
+    232           * @brief       This function configures two GPIO ports for MRDY and SRDY. The
+    233           *              MRDY input generates an interrupt on its falling edge.
+    234           *
+    235           * input parameters
+    236           *
+    237           * None.
+    238           *
+    239           * output parameters
+    240           *
+    241           * None.
+    242           *
+    243           * @return      None.
+    244           **************************************************************************************************
+    245           */
+    246          static void HalSpiGpioInit( void )
+    247          {
+    248          #ifdef SPI_CONFIG_ON_PORT1
+    249            // setup GPIO pins for MRDY and SRDY
+    250            P1SEL &= ~(NP_RDYIn_BIT | NP_RDYOut_BIT);
+    251            P1DIR &= ~NP_RDYIn_BIT;
+    252            P1DIR |=  NP_RDYOut_BIT;
+    253            PICTL |= BV(1);                           // falling edge on P1 interrupt
+    254            P1IFG &= ~NP_RDYIn_BIT;
+    255            P1IEN |= BV(3);                           // interrupt enable on P1.3
+    256            IEN2  |= BV(4);                           // enable P1 interrupts
+    257          #else
+    258            // setup GPIO pins for MRDY and SRDY
+    259            P0SEL &= ~(NP_RDYIn_BIT | NP_RDYOut_BIT);
+    260            P0DIR &= ~NP_RDYIn_BIT;
+    261            P0DIR |=  NP_RDYOut_BIT;
+    262            PICTL |= BV(0);                           // falling edge on P0 interrupt
+    263            P0IFG &= ~NP_RDYIn_BIT;
+    264            P0IEN |= BV(3);                           // interrupt enable on P0.3
+    265            IEN1  |= BV(5);                           // enable P0 interrupts
+    266          #endif
+    267          }
+    268          
+    269          
+    270          /**************************************************************************************************
+    271           * @fn          HalSpiUsartInit
+    272           *
+    273           * @brief       This function configures the USART to be used for SPI slave
+    274           *              control. Note that baud is not set as the master controls the
+    275           *              clock.
+    276           *
+    277           * input parameters
+    278           *
+    279           * None.
+    280           *
+    281           * output parameters
+    282           *
+    283           * None.
+    284           *
+    285           * @return      None.
+    286           **************************************************************************************************
+    287           */
+    288          static void HalSpiUsartInit( void )
+    289          {
+    290            // set USART1 serial bit order to MSB
+    291            U1GCR |= BV(5);                   // ORDER: MSB first
+    292          
+    293            // set USART1 to SPI slave mode and enable RX
+    294            U1CSR = BV(5) | BV(6);            // MODE: SPI mode, RE: enab RX, SLAVE: SPI slave
+    295          
+    296            // set USART1 I/O pins to Port 1 pins (alternative 2 location)
+    297            PERCFG |= BV(1);                  // U1CFG: USART I/O Alt. 2 Location, P1.4-P1.7 are peripherals
+    298          
+    299            // select Port 1 pins for peripheral function for USART1
+    300            P1SEL |= 0xF0;                    // SELP1_[7:4]
+    301          
+    302            // give USART1 priority over Timer3
+    303            P2SEL &= ~(BV(5));                 // PRI2P1
+    304          }
+    305          
+    306          
+    307          /**************************************************************************************************
+    308           * @fn          HalSpiDmaInit
+    309           *
+    310           * @brief       This function initializes the DMA for the SPI driver.
+    311           *
+    312           * input parameters
+    313           *
+    314           * None.
+    315           *
+    316           * output parameters
+    317           *
+    318           * None.
+    319           *
+    320           * @return      None.
+    321           **************************************************************************************************
+    322           */
+    323          static void HalSpiDmaInit(void)
+    324          {
+    325            halDMADesc_t *ch;
+    326          
+    327            // Setup Tx by DMA
+    328            ch = HAL_DMA_GET_DESC1234(HAL_DMA_CH_TX);
+    329          
+    330            // The start address of the source and destination.
+    331            HAL_DMA_SET_SOURCE(ch, halSpiBuf);
+    332            HAL_DMA_SET_DEST(ch, DMA_UDBUF);
+    333          
+    334            // Transfer the first byte + the number of bytes indicated by the first byte + 2 more bytes.
+    335            HAL_DMA_SET_VLEN(ch, HAL_DMA_VLEN_1_P_VALOFFIRST_P_2);
+    336            HAL_DMA_SET_LEN(ch, HAL_SPI_BUF_LEN);
+    337          
+    338            // One byte is transferred each time.
+    339            HAL_DMA_SET_WORD_SIZE(ch, HAL_DMA_WORDSIZE_BYTE);
+    340          
+    341            // The bytes are transferred 1-by-1 on Tx Complete trigger.
+    342            HAL_DMA_SET_TRIG_MODE(ch, HAL_DMA_TMODE_SINGLE);
+    343            HAL_DMA_SET_TRIG_SRC(ch, DMATRIG_TX);
+    344          
+    345            // The source address is incremented by 1 byte after each transfer.
+    346            HAL_DMA_SET_SRC_INC(ch, HAL_DMA_SRCINC_1);
+    347          
+    348            // The destination address is constant - the Tx Data Buffer.
+    349            HAL_DMA_SET_DST_INC(ch, HAL_DMA_DSTINC_0);
+    350          
+    351            // The DMA shall issue an IRQ upon completion.
+    352            HAL_DMA_SET_IRQ(ch, HAL_DMA_IRQMASK_ENABLE);
+    353          
+    354            // Xfer all 8 bits of a byte xfer.
+    355            HAL_DMA_SET_M8(ch, HAL_DMA_M8_USE_8_BITS);
+    356          
+    357            // DMA has highest priority for memory access.
+    358            HAL_DMA_SET_PRIORITY(ch, HAL_DMA_PRI_HIGH);
+    359          
+    360            //////////////////////////////////////////////////////////////////////////////
+    361          
+    362            // Setup Rx by DMA.
+    363            ch = HAL_DMA_GET_DESC1234(HAL_DMA_CH_RX);
+    364          
+    365            // The start address of the source and destination.
+    366            HAL_DMA_SET_SOURCE(ch, DMA_UDBUF);
+    367            HAL_DMA_SET_DEST(ch, halSpiBuf);
+    368          
+    369            // Transfer the first byte + the number of bytes indicated by the first byte + 2 more bytes.
+    370            HAL_DMA_SET_VLEN(ch, HAL_DMA_VLEN_1_P_VALOFFIRST_P_2);
+    371            HAL_DMA_SET_LEN(ch, HAL_SPI_BUF_LEN);
+    372          
+    373            HAL_DMA_SET_WORD_SIZE(ch, HAL_DMA_WORDSIZE_BYTE);
+    374          
+    375            // The bytes are transferred 1-by-1 on Rx Complete trigger.
+    376            HAL_DMA_SET_TRIG_MODE(ch, HAL_DMA_TMODE_SINGLE);
+    377            HAL_DMA_SET_TRIG_SRC(ch, DMATRIG_RX);
+    378          
+    379            // The source address is constant - the Rx Data Buffer.
+    380            HAL_DMA_SET_SRC_INC(ch, HAL_DMA_SRCINC_0);
+    381          
+    382            // The destination address is incremented by 1 byte after each transfer.
+    383            HAL_DMA_SET_DST_INC(ch, HAL_DMA_DSTINC_1);
+    384          
+    385            // The DMA shall issue an IRQ upon completion.
+    386            HAL_DMA_SET_IRQ(ch, HAL_DMA_IRQMASK_ENABLE);
+    387          
+    388            // Xfer all 8 bits of a byte xfer.
+    389            HAL_DMA_SET_M8(ch, HAL_DMA_M8_USE_8_BITS);
+    390          
+    391            // DMA has highest priority for memory access.
+    392            HAL_DMA_SET_PRIORITY(ch, HAL_DMA_PRI_HIGH);
+    393          }
+    394          
+    395          
+    396          /**************************************************************************************************
+    397           * @fn          npSpiIdle
+    398           *
+    399           * @brief       This function returns true if SPI is idle and there is no queued data.
+    400           *
+    401           * input parameters
+    402           *
+    403           * None.
+    404           *
+    405           * output parameters
+    406           *
+    407           * None.
+    408           *
+    409           * @return      True if SPI is idle with no queued data.
+    410           **************************************************************************************************
+    411           */
+    412          bool npSpiIdle(void)
+    413          {
+    414            return (halSpiState == NP_SPI_IDLE && !npSpiReadyCallback());
+    415          }
+    416          
+    417          
+    418          /**************************************************************************************************
+    419           * @fn          npSpiAReqAlloc
+    420           *
+    421           * @brief       This function is called by SPI client to allocate a buffer in
+    422           *              which to build an AREQ frame.
+    423           *
+    424           * input parameters
+    425           *
+    426           * @param       len - Length of the buffer required.
+    427           *
+    428           * output parameters
+    429           *
+    430           * None.
+    431           *
+    432           * @return      NULL for failure; otherwise a pointer to the data of an osal message.
+    433           **************************************************************************************************
+    434           */
+    435          uint8 *npSpiAReqAlloc(uint8 len)
+    436          {
+    437            return osal_msg_allocate(len + RPC_FRAME_HDR_SZ);
+    438          }
+    439          
+    440          
+    441          /**************************************************************************************************
+    442           * @fn          npSpiAReqReady
+    443           *
+    444           * @brief       This function is called by MT to notify the SPI driver that an AREQ frame is ready
+    445           *              to be transmitted.
+    446           *
+    447           * input parameters
+    448           *
+    449           * None.
+    450           *
+    451           * output parameters
+    452           *
+    453           * None.
+    454           *
+    455           * @return      None.
+    456           **************************************************************************************************
+    457           */
+    458          void npSpiAReqReady(void)
+    459          {
+    460            halIntState_t intState;
+    461            HAL_ENTER_CRITICAL_SECTION(intState);
+    462          
+    463            HAL_SPI_DBG_LOG(0x01);
+    464            if (halSpiState == NP_SPI_IDLE)
+    465            {
+    466              halSpiState = NP_SPI_WAIT_RX;
+    467              DMA_RX();
+    468              NP_RDYOut = 0; // assert SRDY to request POLL from master
+    469            }
+    470          
+    471            HAL_EXIT_CRITICAL_SECTION(intState);
+    472          }
+    473          
+    474          
+    475          /**************************************************************************************************
+    476           * @fn          npSpiAReqComplete
+    477           *
+    478           * @brief       This function is called by MT to notify the SPI driver that the processing of a
+    479           *              received AREQ is complete.
+    480           *
+    481           * input parameters
+    482           *
+    483           * None.
+    484           *
+    485           * output parameters
+    486           *
+    487           * None.
+    488           *
+    489           * @return      None.
+    490           **************************************************************************************************
+    491           */
+    492          void npSpiAReqComplete(void)
+    493          {
+    494            HAL_SPI_DBG_LOG(0x02);
+    495            if (halSpiState == NP_SPI_WAIT_AREQ)
+    496            {
+    497              halSpiState = NP_SPI_IDLE;
+    498            }
+    499          }
+    500          
+    501          
+    502          /**************************************************************************************************
+    503           * @fn          npSpiSRspAlloc
+    504           *
+    505           * @brief       This function is called by MT to allocate a buffer in which to build an SRSP frame.
+    506           *              MT must only call this function after processing a received SREQ frame.
+    507           *
+    508           * input parameters
+    509           *
+    510           * @param       len - Length of the buffer required.
+    511           *
+    512           * output parameters
+    513           *
+    514           * None.
+    515           *
+    516           * @return      NULL for failure; a pointer to the halSpiBuf on success. Success is determined by
+    517           *              the correct halSpiState and H/W signals as well as a valid length request.
+    518           **************************************************************************************************
+    519           */
+    520          uint8 *npSpiSRspAlloc(uint8 len)
+    521          {
+    522            // Remove unused parameter warning when NP_SPI_ASSERT macro is not enabled
+    523            (void) len;
+    524          
+    525            if (halSpiState == NP_SPI_WAIT_TX)
+    526            {
+    527              NP_SPI_ASSERT(len <= HAL_SPI_BUF_LEN);
+    528              return halSpiBuf;
+    529            }
+    530            else
+    531            {
+    532              return NULL;
+    533            }
+    534          }
+    535          
+    536          
+    537          /**************************************************************************************************
+    538           * @fn          npSpiSRspReady
+    539           *
+    540           * @brief       This function is called by MT to notify SPI driver that an SRSP is ready to Tx.
+    541           *
+    542           * input parameters
+    543           *
+    544           * @param       pBuf - Pointer to the buffer to transmit on the SPI.
+    545           *
+    546           * output parameters
+    547           *
+    548           * None.
+    549           *
+    550           * @return      None.
+    551           **************************************************************************************************
+    552           */
+    553          void npSpiSRspReady(uint8 *pBuf)
+    554          {
+    555            volatile uint8 i = 1;
+    556          
+    557            HAL_SPI_DBG_LOG(0x03);
+    558            if ((halSpiState == NP_SPI_WAIT_TX) && (NP_RDYOut == 0))
+    559            {
+    560              HAL_SPI_DBG_LOG(0x04);
+    561              DMA_TX( pBuf );
+    562              NP_RDYOut = 1;
+    563            }
+    564            else
+    565            {
+    566             while(i);
+    567            }
+    568          }
+    569          
+    570          /**************************************************************************************************
+    571           * @fn          npSpiGetReqBuf
+    572           *
+    573           * @brief       This function is called by the application to get the buffer containing the
+    574           *              currently received AREQ or SREQ.
+    575           *
+    576           * input parameters
+    577           *
+    578           * None.
+    579           *
+    580           * output parameters
+    581           *
+    582           * None.
+    583           *
+    584           * @return      Pointer to the buffer containing the currently received AREQ or SREQ.
+    585           **************************************************************************************************
+    586           */
+    587          uint8 *npSpiGetReqBuf(void)
+    588          {
+    589            if (halSpiState != NP_SPI_IDLE)
+    590            {
+    591              return halSpiBuf;
+    592            }
+    593            else
+    594            {
+    595              return NULL;
+    596            }
+    597          }
+    598          
+    599          
+    600          /**************************************************************************************************
+    601           * @fn          npSpiMrdyIsr
+    602           *
+    603           * @brief       This function is called when a GPIO falling-edge interrupt occurs on the MRDY.
+    604           *
+    605           * input parameters
+    606           *
+    607           * None.
+    608           *
+    609           * output parameters
+    610           *
+    611           * None.
+    612           *
+    613           * @return      None.
+    614           **************************************************************************************************
+    615           */
+    616          void npSpiMrdyIsr(void)
+    617          {
+    618            HAL_SPI_DBG_LOG(0x11);
+    619            if (halSpiState == NP_SPI_SYNCH)
+    620            {
+    621              // we have just been released from reset by the master, so deassert SRDY
+    622              NP_RDYOut = 1;
+    623          
+    624              // ready SPI FSM for transactions
+    625              halSpiState = NP_SPI_IDLE;
+    626            }
+    627            else if (halSpiState == NP_SPI_IDLE)
+    628            {
+    629              halSpiState = NP_SPI_WAIT_RX;
+    630          
+    631              // setup the DMA for receiving data
+    632              DMA_RX();
+    633          
+    634              // assert SRDY
+    635              NP_RDYOut = 0;
+    636            }
+    637          }
+    638          
+    639          /**************************************************************************************************
+    640           * @fn          npSpiRxIsr
+    641           *
+    642           * @brief       This function handles the DMA Rx complete interrupt.
+    643           *
+    644           * input parameters
+    645           *
+    646           * None.
+    647           *
+    648           * output parameters
+    649           *
+    650           * None.
+    651           *
+    652           * @return      None.
+    653           **************************************************************************************************
+    654           */
+    655          void HalSpiRxIsr(void)
+    656          {
+    657            uint8 type = halSpiBuf[1] & RPC_CMD_TYPE_MASK;
+    658            uint8 *pBuf, rdy = 1;
+    659          
+    660            NP_SPI_ASSERT(halSpiState == NP_SPI_WAIT_RX);
+    661          
+    662            switch (type)
+    663            {
+    664            case RPC_CMD_AREQ:
+    665              // call client with message type so it can schedule an OSAL event
+    666              // ISN'T THIS PROBLEMATIC? IF THE BUFFER HASN'T BEEN COPIED, OR THE DMA
+    667              // POINTER CHANGED, WHAT'S TO STOP THE MASTER FROM SENDING ANOTHER AREQ?
+    668              // THE STATE MIGHT CAUSE AN ASSERT, BUT THIS DOESN'T SEEM LIKE THE RIGHT
+    669              // SOLUTION.
+    670              HAL_SPI_DBG_LOG(0x12);
+    671              npSpiReqCallback( RPC_CMD_AREQ );
+    672              halSpiState = NP_SPI_WAIT_AREQ;
+    673              break;
+    674          
+    675            case RPC_CMD_SREQ:
+    676              // synchronous request received, so need to send back a synchronous reply
+    677              // call client with message type so it can schedule an OSAL event
+    678              HAL_SPI_DBG_LOG(0x13);
+    679              npSpiReqCallback( RPC_CMD_SREQ );
+    680              halSpiState = NP_SPI_WAIT_TX;
+    681              rdy = 0; // keep SRDY asserted until SRSP is ready to be sent, then deassert so master can read back SRSP
+    682              break;
+    683          
+    684            case RPC_CMD_POLL:
+    685              // callback to assign pBuf with AREQ to send from slave
+    686              // Note: this AREQ was already queued by the slave when it wanted to send
+    687              //       an asynchronous command to the master by asserting SRDY.
+    688              HAL_SPI_DBG_LOG(0x14);
+    689              if ( (pBuf = npSpiPollCallback()) == NULL )
+    690              {
+    691                // nothing was queued, which is odd, so just send an empty frame?
+    692                halSpiBuf[0] = 0;
+    693                halSpiBuf[1] = 0;
+    694                halSpiBuf[2] = 0;
+    695                pBuf = halSpiBuf;
+    696              }
+    697              halSpiState = NP_SPI_WAIT_TX;
+    698              DMA_TX(pBuf);
+    699              break;
+    700          
+    701            default:
+    702              HAL_SPI_DBG_LOG(0x15);
+    703              halSpiState = NP_SPI_IDLE;
+    704              break;
+    705            }
+    706            NP_RDYOut = rdy;
+    707          }
+    708          
+    709          /**************************************************************************************************
+    710           * @fn          npSpiTxIsr
+    711           *
+    712           * @brief       This function handles the DMA Tx complete interrupt.
+    713           *
+    714           * input parameters
+    715           *
+    716           * None.
+    717           *
+    718           * output parameters
+    719           *
+    720           * None.
+    721           *
+    722           * @return      None.
+    723           **************************************************************************************************
+    724           */
+    725          void HalSpiTxIsr(void)
+    726          {
+    727            halDMADesc_t *ch = HAL_DMA_GET_DESC1234(HAL_DMA_CH_TX);
+    728            uint16 src;
+    729          
+    730            HAL_SPI_DBG_LOG(0x20);
+    731            NP_SPI_ASSERT(halSpiState == NP_SPI_WAIT_TX);
+    732          
+    733            HAL_DMA_GET_SOURCE( ch, src );
+    734          
+    735            if ((uint8 *)src != halSpiBuf)
+    736            {
+    737              osal_msg_deallocate((uint8 *)src);
+    738            }
+    739          
+    740            halSpiState = NP_SPI_IDLE;
+    741          
+    742            // Callback is required so that client can schedule to call npSpiMonitor
+    743            // function.
+    744            npSpiTxCompleteCallback();
+    745          }
+    746          
+    747          /**************************************************************************************************
+    748           * @fn          portIsr
+    749           *
+    750           * @brief       This function handles the GPIO port interrupt to handle the
+    751           *              MRDY signal.
+    752           *
+    753           * input parameters
+    754           *
+    755           * None.
+    756           *
+    757           * output parameters
+    758           *
+    759           * None.
+    760           *
+    761           * @return      None.
+    762           **************************************************************************************************
+    763           */
+    764          #ifdef SPI_CONFIG_ON_PORT1
+    765          HAL_ISR_FUNCTION(port1Isr, P1INT_VECTOR)
+    766          {
+    767            HAL_ENTER_ISR();
+    768          
+    769            if (P1IFG & NP_RDYIn_BIT)
+    770            {
+    771              npSpiMrdyIsr();
+    772            }
+    773          
+    774            P1IFG = 0; // since interrupt is enabled for all four bits together clear all.
+    775            P1IF = 0;
+    776          
+    777            HAL_EXIT_ISR();
+    778          }
+    779          #else
+    780          HAL_ISR_FUNCTION(port0Isr, P0INT_VECTOR)
+    781          {
+    782            HAL_ENTER_ISR();
+    783          
+    784            if (P0IFG & NP_RDYIn_BIT)
+    785            {
+    786              npSpiMrdyIsr();
+    787            }
+    788          
+    789            P0IFG = 0; // since interrupt is enabled for all four bits together clear all.
+    790            P0IF = 0;
+    791          
+    792            HAL_EXIT_ISR();
+    793          }
+    794          #endif
+    795          
+    796          /**************************************************************************************************
+    797           * @fn          npSpiMonitor
+    798           *
+    799           * @brief       This function monitors the SPI signals for error conditions and for the end of a
+    800           *              transaction. If an error is detected it attempts to recover.
+    801           *
+    802           * input parameters
+    803           *
+    804           * None.
+    805           *
+    806           * output parameters
+    807           *
+    808           * None.
+    809           *
+    810           * @return      None.
+    811           **************************************************************************************************
+    812           */
+    813          void npSpiMonitor(void)
+    814          {
+    815            switch (halSpiState)
+    816            {
+    817            case NP_SPI_SYNCH:
+    818              break;
+    819          
+    820            case NP_SPI_IDLE:
+    821              NP_SPI_ASSERT((NP_RDYIn_IFG & NP_RDYIn_BIT) == 0);
+    822              break;
+    823          
+    824            case NP_SPI_WAIT_RX:
+    825              NP_SPI_ASSERT((HAL_DMA_CHECK_IRQ(HAL_DMA_CH_RX)) == 0);
+    826              break;
+    827          
+    828            case NP_SPI_WAIT_TX:
+    829              NP_SPI_ASSERT((HAL_DMA_CHECK_IRQ(HAL_DMA_CH_TX)) == 0);
+    830              break;
+    831          
+    832            case NP_SPI_WAIT_AREQ:
+    833              break;
+    834          
+    835            default:
+    836              NP_SPI_ASSERT(0);
+    837              break;
+    838            }
+    839          
+    840            if (halSpiState == NP_SPI_IDLE)
+    841            {
+    842              /* Poll for MRDY in case it was set before slave had setup the ISR.
+    843               * Also, async responses may get queued, so flush them out here.
+    844               */
+    845              if ((NP_RDYIn == 0) || (npSpiReadyCallback()))
+    846              {
+    847                npSpiAReqReady();
+    848              }
+    849            }
+    850          }
+    851          
+    852          /**************************************************************************************************
+    853           * @fn          HalSpiAssertSrdy
+    854           *
+    855           * @brief       This function is called to assert the SRDY signal.
+    856           *
+    857           * input parameters
+    858           *
+    859           * None.
+    860           *
+    861           * output parameters
+    862           *
+    863           * None.
+    864           *
+    865           * @return      None.
+    866           **************************************************************************************************
+    867           */
+    868          void HalSpiAssertSrdy(void)
+    869          {
+    870            // assert SRDY to indicate to the master that the slave is ready
+    871            NP_RDYOut = 0;
+    872          }
+    873          
+    874          #endif
+    875          /**************************************************************************************************
+    876          */
+
+
+ 
+ 
+ 0 bytes of memory
+
+Errors: none
+Warnings: none

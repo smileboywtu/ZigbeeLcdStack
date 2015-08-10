@@ -1,0 +1,319 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         08/Jul/2015  21:20:05 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\Source\queue #
+#                          .c                                                 #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\Source\queue.c" -D    #
+#                          HAL_UART -D HAL_PA_LNA -lC "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\LCD\List\"   #
+#                          -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Pro #
+#                          jects\zstack\Samples\WirelessMonitorSystem\CC2530D #
+#                          B\LCD\List\" --diag_suppress Pe001,Pa010 -o        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\LC #
+#                          D\Obj\" -e --debug --core=plain --dptr=16,1        #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \" -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\WirelessMonitorSystem\CC253 #
+#                          0DB\..\Source\" -I "C:\Texas                       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\ZMa #
+#                          in\TI2530DB\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -Ohz --require_prototypes #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \List\queue.lst                                    #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \Obj\queue.r51                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c
+      1          // include the header
+      2          #include "queue.h"
+
+    QueueNode* pNext;
+    ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",17  Error[Pe020]: 
+          identifier "QueueNode" is undefined
+
+    QueueNode* pHeader;
+    ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",22  Error[Pe020]: 
+          identifier "QueueNode" is undefined
+
+    QueueNode* pTail;
+    ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",23  Error[Pe020]: 
+          identifier "QueueNode" is undefined
+
+  void initQueue(Queue* q);   // initQueue
+                 ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",29  Error[Pe020]: 
+          identifier "Queue" is undefined
+
+  void push(Queue* q, byte[] str); // push
+            ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",30  Error[Pe020]: 
+          identifier "Queue" is undefined
+
+  void push(Queue* q, byte[] str); // push
+                             ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",30  Error[Pe018]: 
+          expected a ")"
+
+  byte* pop(Queue* q); // pop
+            ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",31  Error[Pe020]: 
+          identifier "Queue" is undefined
+
+  byte isEmpty(Queue q);  // empty
+               ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.h",32  Error[Pe020]: 
+          identifier "Queue" is undefined
+      3          
+      4          // initQueue
+      5          void initQueue(Queue* q){
+                                ^
+Error[Pe020]: identifier "Queue" is undefined
+      6            // reset the header
+      7            q->pHeader = NULL:
+                   ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+
+    q->pHeader = NULL:
+                     ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",7  Error[Pe065]: 
+          expected a ";"
+      8            // reset the tail
+      9            q->pTail = NULL;
+     10          }
+     11          
+     12          // push
+     13          void push(Queue* q, byte[] str){
+                           ^
+Error[Pe020]: identifier "Queue" is undefined
+
+  void push(Queue* q, byte[] str){
+                             ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",13  Error[Pe018]: 
+          expected a ")"
+
+  void push(Queue* q, byte[] str){
+       ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",13  Error[Pe141]: 
+          unnamed prototyped parameters not allowed when body is present
+     14            // new the node
+     15            QueueNode* newNode = (QueueNode*)osal_mem_alloc(sizeof(QueueNode));
+                   ^
+Error[Pe020]: identifier "QueueNode" is undefined
+
+    QueueNode* newNode = (QueueNode*)osal_mem_alloc(sizeof(QueueNode));
+               ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",15  Error[Pe020]: 
+          identifier "newNode" is undefined
+
+    QueueNode* newNode = (QueueNode*)osal_mem_alloc(sizeof(QueueNode));
+                                    ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",15  Error[Pe029]: 
+          expected an expression
+
+    QueueNode* newNode = (QueueNode*)osal_mem_alloc(sizeof(QueueNode));
+                                     ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",15  Error[Pe065]: 
+          expected a ";"
+     16            // check new memory
+     17            if(NULL == newNode){
+     18              return;
+     19            }else{
+     20              // push the data
+     21              newNode.data = str; // here just record the reference
+                                    ^
+Error[Pe020]: identifier "str" is undefined
+     22              // set the tail
+     23              newNode.pNext = q->pTail;
+                                     ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+     24              // insert into the queue
+     25              q->pTail = newNode;
+                     ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+     26              // if the queue is empty
+     27              if(!q->pHeaderead){
+                         ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+     28                q->pHeader = newNode;
+                       ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+     29              }
+     30            }
+     31          }
+     32          
+     33          // pop
+     34          byte* pop(Queue* q){
+                           ^
+Error[Pe020]: identifier "Queue" is undefined
+     35            // check if not empty
+     36            if(NULL != q->pHeader){
+                              ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+     37              QueueNode* freeNode = q->pHeader;
+                     ^
+Error[Pe020]: identifier "QueueNode" is undefined
+
+      QueueNode* freeNode = q->pHeader;
+                 ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",37  Error[Pe020]: 
+          identifier "freeNode" is undefined
+
+      QueueNode* freeNode = q->pHeader;
+                            ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",37  Error[Pe132]: 
+          expression must have pointer-to-struct-or-union type
+     38              // move the header
+     39              q->pHeader = q->pHeader->pNext;
+                     ^
+Error[Pe132]: expression must have pointer-to-struct-or-union type
+
+      q->pHeader = q->pHeader->pNext;
+                   ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",39  Error[Pe132]: 
+          expression must have pointer-to-struct-or-union type
+     40              // free the string first
+     41              osal_mem_free((byte*)freeNode->data);
+                     ^
+Error[Pe223]: function "osal_mem_free" declared implicitly
+     42              // free the
+     43              osal_mem_free((QueueNode*)freeNode);
+                     ^
+Error[Pa045]: function "osal_mem_free" has no prototype
+
+      osal_mem_free((QueueNode*)freeNode);
+                               ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",43  Error[Pe029]: 
+          expected an expression
+
+      osal_mem_free((QueueNode*)freeNode);
+                                ^
+"C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\queue.c",43  Error[Pe018]: 
+          expected a ")"
+     44            }
+     45          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function "pop"
+     46          
+     47          // is empty
+     48          byte isEmpty(Queue q){
+                              ^
+Error[Pe020]: identifier "Queue" is undefined
+     49            if(q.pHeader == q.pTail){
+     50              return 0x01;
+     51            }else{
+     52              return 0x00;
+     53            }
+     54          }
+
+Errors: 35
+Warnings: 1

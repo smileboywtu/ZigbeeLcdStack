@@ -1,0 +1,2752 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         14/Jul/2015  13:43:55 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\Source\LCD.c #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\Source\LCD.c" -D      #
+#                          HAL_UART -lC "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\LCD\List\" -lA "C:\Texas                #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\LCD\List\"   #
+#                          --diag_suppress Pe001,Pa010 -o "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\LCD\Obj\"    #
+#                          -e --no_cse --no_unroll --no_inline                #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \List\LCD.lst                                      #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\LCD #
+#                          \Obj\LCD.r51                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\LCD.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "AF.h"
+      6          #include "ZDApp.h"
+      7          #include "ZDObject.h"
+      8          #include "ZDProfile.h"
+      9          
+     10          #include "WirelessMonitorSystem.h"
+     11          #include "DebugTrace.h"
+     12          
+     13          #if !defined( WIN32 )
+     14            #include "OnBoard.h"
+     15          #endif
+     16          
+     17          /* HAL */
+     18          #include "hal_uart.h"
+     19          
+     20          /*********************************************************************
+     21           * MACROS
+     22           */
+     23          // Cluster number for LCD
+     24          #define LCD_MAX_IN_CLUSTERS 	7
+     25          #define LCD_MAX_OUT_CLUSTERS	1
+     26          
+     27          // ACK command
+     28          #define LCD_ACK_CMD 	0xFFFE
+     29          #define LCD_RETRY_CMD	0xFFFD
+     30          
+     31          /*********************************************************************
+     32           * TYPEDEFS
+     33           */
+     34          typedef struct{
+     35            byte data[64];
+     36            byte len;
+     37          }MessageNode;
+     38          
+     39          /*********************************************************************
+     40           * GLOBAL VARIABLES
+     41           */
+     42          // This list should be filled with Application specific Cluster IDs.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     43          const cId_t LCD_ClusterInList[LCD_MAX_IN_CLUSTERS] =
+   \                     LCD_ClusterInList:
+   \   000000   0200         DW 2
+   \   000002   0300         DW 3
+   \   000004   0400         DW 4
+   \   000006   0500         DW 5
+   \   000008   0600         DW 6
+   \   00000A   0A00         DW 10
+   \   00000C   0D00         DW 13
+     44          {
+     45            LCD_SUBJECT_CMD,			
+     46            LCD_CLASS_CMD,				
+     47            LCD_TEACHER_CMD,				
+     48            LCD_PEOPLE_CMD,				
+     49            LCD_TIME_CMD,
+     50            TOPO_REQ,
+     51            ROOM_CMD
+     52          };
+     53          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     54          const cId_t LCD_ClusterOutList[LCD_MAX_OUT_CLUSTERS] =
+   \                     LCD_ClusterOutList:
+   \   000000   0B00         DW 11
+     55          {
+     56            ZIGBEE_COMMON_CLUSTER
+     57          };
+     58          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     59          const SimpleDescriptionFormat_t LCD_SimpleDesc =
+   \                     LCD_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   07           DB 7
+   \   000007   ....         DW LCD_ClusterInList
+   \   000009   01           DB 1
+   \   00000A   ....         DW LCD_ClusterOutList
+     60          {
+     61            Monitor_ENDPOINT,              //  int Endpoint;
+     62            Monitor_PROFID,                //  uint16 AppProfId[2];
+     63            Monitor_DEVICEID,              //  uint16 AppDeviceId[2];
+     64            Monitor_DEVICE_VERSION,        //  int   AppDevVer:4;
+     65            Monitor_FLAGS,                 //  int   AppFlags:4;
+     66            LCD_MAX_IN_CLUSTERS,           //  byte  AppNumInClusters;
+     67            (cId_t *)LCD_ClusterInList, //  byte *pAppInClusterList;
+     68            LCD_MAX_OUT_CLUSTERS,          //  byte  AppNumOutClusters;
+     69            (cId_t *)LCD_ClusterOutList //  byte *pAppOutClusterList;
+     70          };
+     71          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     72          endPointDesc_t LCD_epDesc;
+   \                     LCD_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL VARIABLES
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL FUNCTIONS
+     80           */
+     81          
+     82          /*********************************************************************
+     83           * LOCAL VARIABLES
+     84           */
+     85          /**************************** OSAL *********************************/
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     86          byte LCD_TaskID;    // Task ID for internal task/event processing
+   \                     LCD_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     87          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     88          byte LCD_TransID;  // This is the unique message ID (counter)
+   \                     LCD_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     89          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     90          devStates_t LCD_NwkState;
+   \                     LCD_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     91          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     92          afAddrType_t LCD_DstAddr;	
+   \                     LCD_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+     93          
+     94          /***************************** screen parameters ******************/
+     95          // here hold the message and send to the LCD
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     96          static byte pHeader = 0;
+   \                     pHeader:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     97          static byte pTail = 0;
+   \                     pTail:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     98          static MessageNode messageArray[12];
+   \                     messageArray:
+   \   000000                DS 780
+   \   00030C                REQUIRE __INIT_XDATA_Z
+     99          
+    100          // state for the ack flag
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    101          static byte ackFlag = 0;
+   \                     ackFlag:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    102          static byte shiftToRoomInformation = 0;
+   \                     shiftToRoomInformation:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    103          // list for lcd
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    104          const uint16 roomReg = 		0x0010;
+   \                     roomReg:
+   \   000000   1000         DW 16
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    105          const uint16 courseReg = 	0x0020;
+   \                     courseReg:
+   \   000000   2000         DW 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    106          const uint16 teacherReg = 	0x0040;
+   \                     teacherReg:
+   \   000000   4000         DW 64
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    107          const uint16 classReg	= 	0x0050;
+   \                     classReg:
+   \   000000   5000         DW 80
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    108          const uint16 peopleReg = 	0x0070;
+   \                     peopleReg:
+   \   000000   7000         DW 112
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    109          const uint16 timeReg = 		0x0080;
+   \                     timeReg:
+   \   000000   8000         DW 128
+    110          
+    111          /*********************************************************************
+    112           * LOCAL FUNCTIONS
+    113           */
+    114          static void LCD_Loading( void );
+    115          static void LCD_RoomPlate( void );
+    116          static void LCD_UartInit( void );
+    117          static void LCD_SendRetry( void );
+    118          static void LCD_SendACK( byte flag );
+    119          static void LCD_SendTopoInformation( void );
+    120          static void copyExtAddr(byte* src, byte* dst);
+    121          static byte LCD_CalcFCS( uint8 *msg_ptr, uint8 len );
+    122          static void LCD_UartCallBack( uint8 port, uint8 event );
+    123          static void LCD_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    124          static void LCD_BuildScreenFrame(uint8* gbk, uint8 len, uint16 reg);
+    125          
+    126          // hold for the queue
+    127          static void LCD_InitMessageQueue( void );
+    128          static void LCD_PushMessage( byte* str, byte len );
+    129          static MessageNode* LCD_PopMessage( void );
+    130          static byte LCD_IsMessageEmpty( void );
+    131          
+    132          // send one message to the lcd
+    133          static void LCD_SendOneMessage( void );
+    134          
+    135          /*********************************************************************
+    136           * @fn      LCD_Init
+    137           *
+    138           * @brief   Initialization function for the Sensor App Task.
+    139           *          This is called during initialization and should contain
+    140           *          any application specific initialization (ie. hardware
+    141           *          initialization/setup, table initialization, power up
+    142           *          notificaiton ... ).
+    143           *
+    144           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    145           *                    used to send messages and set timers.
+    146           *
+    147           * @return  none
+    148           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    149          void WirelessMonitorSystem_Init( uint8 task_id )
+   \                     WirelessMonitorSystem_Init:
+    150          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    151            // Init the Stack
+    152            LCD_TaskID = task_id;
+   \   000007   90....       MOV     DPTR,#LCD_TaskID
+   \   00000A   F0           MOVX    @DPTR,A
+    153            LCD_NwkState = DEV_INIT;
+   \   00000B   90....       MOV     DPTR,#LCD_NwkState
+   \   00000E   7401         MOV     A,#0x1
+   \   000010   F0           MOVX    @DPTR,A
+    154            LCD_TransID = 0;
+   \   000011   90....       MOV     DPTR,#LCD_TransID
+   \   000014   7400         MOV     A,#0x0
+   \   000016   F0           MOVX    @DPTR,A
+    155          	
+    156            // Init the LCD state
+    157            ackFlag = 0;
+   \   000017   90....       MOV     DPTR,#ackFlag
+   \   00001A   7400         MOV     A,#0x0
+   \   00001C   F0           MOVX    @DPTR,A
+    158            shiftToRoomInformation = 0;
+   \   00001D   90....       MOV     DPTR,#shiftToRoomInformation
+   \   000020   7400         MOV     A,#0x0
+   \   000022   F0           MOVX    @DPTR,A
+    159            // init the queue
+    160            LCD_InitMessageQueue();
+   \   000023                ; Setup parameters for call to function LCD_InitMessageQueue
+   \   000023   12....       LCALL   ??LCD_InitMessageQueue?relay
+    161            
+    162            // Init the uart for the LCD
+    163            LCD_UartInit();
+   \   000026                ; Setup parameters for call to function LCD_UartInit
+   \   000026   12....       LCALL   ??LCD_UartInit?relay
+    164          
+    165            // init destination address
+    166            LCD_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   000029   90....       MOV     DPTR,#LCD_DstAddr + 8
+   \   00002C   7402         MOV     A,#0x2
+   \   00002E   F0           MOVX    @DPTR,A
+    167            LCD_DstAddr.endPoint = Monitor_ENDPOINT;
+   \   00002F   90....       MOV     DPTR,#LCD_DstAddr + 9
+   \   000032   740A         MOV     A,#0xa
+   \   000034   F0           MOVX    @DPTR,A
+    168            LCD_DstAddr.addr.shortAddr = 0x0000;		// coordinator
+   \   000035   90....       MOV     DPTR,#LCD_DstAddr
+   \   000038   7400         MOV     A,#0x0
+   \   00003A   F0           MOVX    @DPTR,A
+   \   00003B   A3           INC     DPTR
+   \   00003C   7400         MOV     A,#0x0
+   \   00003E   F0           MOVX    @DPTR,A
+    169          	
+    170            // Fill out the endpoint description.
+    171            LCD_epDesc.endPoint = Monitor_ENDPOINT;
+   \   00003F   90....       MOV     DPTR,#LCD_epDesc
+   \   000042   740A         MOV     A,#0xa
+   \   000044   F0           MOVX    @DPTR,A
+    172            LCD_epDesc.task_id = &LCD_TaskID;
+   \   000045   90....       MOV     DPTR,#LCD_epDesc + 1
+   \   000048   74..         MOV     A,#LCD_TaskID & 0xff
+   \   00004A   F0           MOVX    @DPTR,A
+   \   00004B   A3           INC     DPTR
+   \   00004C   74..         MOV     A,#(LCD_TaskID >> 8) & 0xff
+   \   00004E   F0           MOVX    @DPTR,A
+    173            LCD_epDesc.simpleDesc
+    174                      = (SimpleDescriptionFormat_t *)&LCD_SimpleDesc;
+   \   00004F   90....       MOV     DPTR,#LCD_epDesc + 3
+   \   000052   74..         MOV     A,#LCD_SimpleDesc & 0xff
+   \   000054   F0           MOVX    @DPTR,A
+   \   000055   A3           INC     DPTR
+   \   000056   74..         MOV     A,#(LCD_SimpleDesc >> 8) & 0xff
+   \   000058   F0           MOVX    @DPTR,A
+    175            LCD_epDesc.latencyReq = noLatencyReqs;
+   \   000059   90....       MOV     DPTR,#LCD_epDesc + 5
+   \   00005C   7400         MOV     A,#0x0
+   \   00005E   F0           MOVX    @DPTR,A
+    176          
+    177            // Register the endpoint description with the AF
+    178            afRegister( &LCD_epDesc );
+   \   00005F                ; Setup parameters for call to function afRegister
+   \   00005F   7A..         MOV     R2,#LCD_epDesc & 0xff
+   \   000061   7B..         MOV     R3,#(LCD_epDesc >> 8) & 0xff
+   \   000063   12....       LCALL   ??afRegister?relay
+   \   000066   E9           MOV     A,R1
+    179          }
+   \   000067   7F01         MOV     R7,#0x1
+   \   000069   02....       LJMP    ?BANKED_LEAVE_XDATA
+    180          
+    181          /*********************************************************************
+    182           * @fn      LCD_ProcessEvent
+    183           *
+    184           * @brief   Sensor Application Task event processor.  This function
+    185           *          is called to process all events for the task.  Events
+    186           *          include timers, messages and any other user defined events.
+    187           *
+    188           * @param   task_id  - The OSAL assigned task ID.
+    189           * @param   events - events to process.  This is a bit map and can
+    190           *                   contain more than one event.
+    191           *
+    192           * @return  none
+    193           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    194          uint16 WirelessMonitorSystem_ProcessEvent( uint8 task_id, uint16 events )
+   \                     WirelessMonitorSystem_ProcessEvent:
+    195          {
+   \   000000   74EE         MOV     A,#-0x12
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 18
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 4,R1
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   8B..         MOV     ?V0 + 1,R3
+    196            afIncomingMSGPacket_t *MSGpkt;
+    197            afDataConfirm_t *afDataConfirm;
+    198          
+    199            // Data Confirmation message fields
+    200            byte sentEP;
+    201            ZStatus_t sentStatus;
+    202            byte sentTransID;       // This should match the value sent
+    203            (void)task_id;  		  // Intentionally unreferenced parameter
+    204          
+    205            if ( events & SYS_EVENT_MSG )
+   \   00000B   E5..         MOV     A,?V0 + 0
+   \   00000D   5400         ANL     A,#0x0
+   \   00000F   F8           MOV     R0,A
+   \   000010   E5..         MOV     A,?V0 + 1
+   \   000012   5480         ANL     A,#0x80
+   \   000014   F9           MOV     R1,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   7003         JNZ     $+5
+   \   000019   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_0 & 0xFFFF
+    206            {
+    207              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( LCD_TaskID );
+   \   00001C                ; Setup parameters for call to function osal_msg_receive
+   \   00001C   90....       MOV     DPTR,#LCD_TaskID
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   F9           MOV     R1,A
+   \   000021   12....       LCALL   ??osal_msg_receive?relay
+   \   000024   8A..         MOV     ?V0 + 8,R2
+   \   000026   8B..         MOV     ?V0 + 9,R3
+   \   000028   AE..         MOV     R6,?V0 + 8
+   \   00002A   AF..         MOV     R7,?V0 + 9
+    208              while ( MSGpkt )
+   \                     ??WirelessMonitorSystem_ProcessEvent_1:
+   \   00002C   EE           MOV     A,R6
+   \   00002D   4F           ORL     A,R7
+   \   00002E   7003         JNZ     $+5
+   \   000030   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_2 & 0xFFFF
+    209              {
+    210                switch ( MSGpkt->hdr.event )
+   \   000033   8E82         MOV     DPL,R6
+   \   000035   8F83         MOV     DPH,R7
+   \   000037   E0           MOVX    A,@DPTR
+   \   000038   24E6         ADD     A,#-0x1a
+   \   00003A   6036         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   00003C   2449         ADD     A,#0x49
+   \   00003E   603B         JZ      ??WirelessMonitorSystem_ProcessEvent_4
+   \   000040   24D4         ADD     A,#-0x2c
+   \   000042   705F         JNZ     ??WirelessMonitorSystem_ProcessEvent_5
+    211                {
+    212          
+    213                  case AF_DATA_CONFIRM_CMD:
+    214                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+   \   000044   8E..         MOV     ?V0 + 2,R6
+   \   000046   8F..         MOV     ?V0 + 3,R7
+    215                    sentEP = afDataConfirm->endpoint;
+   \   000048   85..82       MOV     DPL,?V0 + 2
+   \   00004B   85..83       MOV     DPH,?V0 + 3
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   F5..         MOV     ?V0 + 5,A
+    216                    sentStatus = afDataConfirm->hdr.status;
+   \   000053   85..82       MOV     DPL,?V0 + 2
+   \   000056   85..83       MOV     DPH,?V0 + 3
+   \   000059   A3           INC     DPTR
+   \   00005A   E0           MOVX    A,@DPTR
+   \   00005B   F5..         MOV     ?V0 + 6,A
+    217                    sentTransID = afDataConfirm->transID;
+   \   00005D   85..82       MOV     DPL,?V0 + 2
+   \   000060   85..83       MOV     DPH,?V0 + 3
+   \   000063   A3           INC     DPTR
+   \   000064   A3           INC     DPTR
+   \   000065   A3           INC     DPTR
+   \   000066   E0           MOVX    A,@DPTR
+   \   000067   F5..         MOV     ?V0 + 7,A
+    218                    (void)sentEP;
+    219                    (void)sentTransID;
+    220          
+    221                    // Action taken when confirmation is received.
+    222                    if ( sentStatus == ZSuccess )
+   \   000069   E5..         MOV     A,?V0 + 6
+   \   00006B   7036         JNZ     ??WirelessMonitorSystem_ProcessEvent_5
+    223                    {
+    224          			// here when the ack send, just send the message to the lcd
+    225          			// send one message
+    226          	  		LCD_SendOneMessage();
+   \   00006D                ; Setup parameters for call to function LCD_SendOneMessage
+   \   00006D   12....       LCALL   ??LCD_SendOneMessage?relay
+    227          		  }
+    228                    break;
+   \   000070   8031         SJMP    ??WirelessMonitorSystem_ProcessEvent_5
+    229          
+    230                  case AF_INCOMING_MSG_CMD:
+    231                    LCD_MessageMSGCB( MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_3:
+   \   000072                ; Setup parameters for call to function LCD_MessageMSGCB
+   \   000072   EE           MOV     A,R6
+   \   000073   FA           MOV     R2,A
+   \   000074   EF           MOV     A,R7
+   \   000075   FB           MOV     R3,A
+   \   000076   12....       LCALL   ??LCD_MessageMSGCB?relay
+    232                    break;
+   \   000079   8028         SJMP    ??WirelessMonitorSystem_ProcessEvent_5
+    233          
+    234                  case ZDO_STATE_CHANGE:
+    235                    LCD_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??WirelessMonitorSystem_ProcessEvent_4:
+   \   00007B   8E82         MOV     DPL,R6
+   \   00007D   8F83         MOV     DPH,R7
+   \   00007F   A3           INC     DPTR
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   90....       MOV     DPTR,#LCD_NwkState
+   \   000084   F0           MOVX    @DPTR,A
+    236                    if ( (LCD_NwkState == DEV_ZB_COORD)
+    237                        || (LCD_NwkState == DEV_ROUTER)
+    238                        || (LCD_NwkState == DEV_END_DEVICE) )
+   \   000085   90....       MOV     DPTR,#LCD_NwkState
+   \   000088   E0           MOVX    A,@DPTR
+   \   000089   6409         XRL     A,#0x9
+   \   00008B   6010         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   00008D   90....       MOV     DPTR,#LCD_NwkState
+   \   000090   E0           MOVX    A,@DPTR
+   \   000091   6407         XRL     A,#0x7
+   \   000093   6008         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   000095   90....       MOV     DPTR,#LCD_NwkState
+   \   000098   E0           MOVX    A,@DPTR
+   \   000099   6406         XRL     A,#0x6
+   \   00009B   7006         JNZ     ??WirelessMonitorSystem_ProcessEvent_5
+    239                    {
+    240          			  // initialize the  LCD 
+    241          			  LCD_Loading();
+   \                     ??WirelessMonitorSystem_ProcessEvent_6:
+   \   00009D                ; Setup parameters for call to function LCD_Loading
+   \   00009D   12....       LCALL   ??LCD_Loading?relay
+    242          			  // send topology information
+    243          			  LCD_SendTopoInformation();
+   \   0000A0                ; Setup parameters for call to function LCD_SendTopoInformation
+   \   0000A0   12....       LCALL   ??LCD_SendTopoInformation?relay
+    244                    }
+    245                    break;
+    246          
+    247                  default:
+    248                    break;
+    249                }
+    250          
+    251                // Release the memory
+    252                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_5:
+   \   0000A3                ; Setup parameters for call to function osal_msg_deallocate
+   \   0000A3   EE           MOV     A,R6
+   \   0000A4   FA           MOV     R2,A
+   \   0000A5   EF           MOV     A,R7
+   \   0000A6   FB           MOV     R3,A
+   \   0000A7   12....       LCALL   ??osal_msg_deallocate?relay
+   \   0000AA   E9           MOV     A,R1
+    253          
+    254                // Next
+    255                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( LCD_TaskID );
+   \   0000AB                ; Setup parameters for call to function osal_msg_receive
+   \   0000AB   90....       MOV     DPTR,#LCD_TaskID
+   \   0000AE   E0           MOVX    A,@DPTR
+   \   0000AF   F9           MOV     R1,A
+   \   0000B0   12....       LCALL   ??osal_msg_receive?relay
+   \   0000B3   8A..         MOV     ?V0 + 8,R2
+   \   0000B5   8B..         MOV     ?V0 + 9,R3
+   \   0000B7   AE..         MOV     R6,?V0 + 8
+   \   0000B9   AF..         MOV     R7,?V0 + 9
+   \   0000BB   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_1 & 0xFFFF
+    256              }
+    257          
+    258              // return unprocessed events
+    259              return (events ^ SYS_EVENT_MSG);
+   \                     ??WirelessMonitorSystem_ProcessEvent_2:
+   \   0000BE   E5..         MOV     A,?V0 + 0
+   \   0000C0   6400         XRL     A,#0x0
+   \   0000C2   FA           MOV     R2,A
+   \   0000C3   E5..         MOV     A,?V0 + 1
+   \   0000C5   6480         XRL     A,#0x80
+   \   0000C7   FB           MOV     R3,A
+   \   0000C8   8004         SJMP    ??WirelessMonitorSystem_ProcessEvent_7
+    260            }
+    261          
+    262            // Discard unknown events
+    263            return 0;
+   \                     ??WirelessMonitorSystem_ProcessEvent_0:
+   \   0000CA   7A00         MOV     R2,#0x0
+   \   0000CC   7B00         MOV     R3,#0x0
+   \                     ??WirelessMonitorSystem_ProcessEvent_7:
+   \   0000CE   7F0A         MOV     R7,#0xa
+   \   0000D0   02....       LJMP    ?BANKED_LEAVE_XDATA
+    264          }
+    265          
+    266          /*********************************************************************
+    267           * LOCAL FUNCTIONS
+    268           */
+    269          
+    270          /*********************************************************************
+    271           * @fn      LCD_MessageMSGCB
+    272           *
+    273           * @brief   Data message processor callback.  This function processes
+    274           *          any incoming data - probably from other devices.  So, based
+    275           *          on cluster ID, perform the intended action.
+    276           *
+    277           * @param   none
+    278           *
+    279           * @return  none
+    280           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    281          static void LCD_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+   \                     LCD_MessageMSGCB:
+    282          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+    283          	  // record the params
+    284          	  byte* gbk = pkt->cmd.Data;
+   \   000009   E5..         MOV     A,?V0 + 0
+   \   00000B   2422         ADD     A,#0x22
+   \   00000D   F582         MOV     DPL,A
+   \   00000F   E5..         MOV     A,?V0 + 1
+   \   000011   3400         ADDC    A,#0x0
+   \   000013   F583         MOV     DPH,A
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   F5..         MOV     ?V0 + 2,A
+   \   000018   A3           INC     DPTR
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   F5..         MOV     ?V0 + 3,A
+    285          	  byte  len = pkt->cmd.DataLength;
+   \   00001C   E5..         MOV     A,?V0 + 0
+   \   00001E   2420         ADD     A,#0x20
+   \   000020   F582         MOV     DPL,A
+   \   000022   E5..         MOV     A,?V0 + 1
+   \   000024   3400         ADDC    A,#0x0
+   \   000026   F583         MOV     DPH,A
+   \   000028   E0           MOVX    A,@DPTR
+   \   000029   F8           MOV     R0,A
+   \   00002A   A3           INC     DPTR
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   F9           MOV     R1,A
+   \   00002D   E8           MOV     A,R0
+   \   00002E   FE           MOV     R6,A
+    286          	  // According to the clusterID
+    287          	  switch( pkt->clusterId )
+   \   00002F   85..82       MOV     DPL,?V0 + 0
+   \   000032   85..83       MOV     DPH,?V0 + 1
+   \   000035   A3           INC     DPTR
+   \   000036   A3           INC     DPTR
+   \   000037   A3           INC     DPTR
+   \   000038   A3           INC     DPTR
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   F5..         MOV     ?V0 + 4,A
+   \   00003C   A3           INC     DPTR
+   \   00003D   E0           MOVX    A,@DPTR
+   \   00003E   F5..         MOV     ?V0 + 5,A
+   \   000040   78..         MOV     R0,#?V0 + 4
+   \   000042   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for LCD_MessageMSGCB>_0`:
+   \   000045   0200         DW        2
+   \   000047   0B           DB        11
+   \   000048   ....         DW        ??LCD_MessageMSGCB_0
+   \   00004A   ....         DW        ??LCD_MessageMSGCB_1
+   \   00004C   ....         DW        ??LCD_MessageMSGCB_2
+   \   00004E   ....         DW        ??LCD_MessageMSGCB_3
+   \   000050   ....         DW        ??LCD_MessageMSGCB_4
+   \   000052   ....         DW        ??LCD_MessageMSGCB_5
+   \   000054   ....         DW        ??LCD_MessageMSGCB_0
+   \   000056   ....         DW        ??LCD_MessageMSGCB_0
+   \   000058   ....         DW        ??LCD_MessageMSGCB_0
+   \   00005A   ....         DW        ??LCD_MessageMSGCB_6
+   \   00005C   ....         DW        ??LCD_MessageMSGCB_0
+   \   00005E   ....         DW        ??LCD_MessageMSGCB_0
+   \   000060   ....         DW        ??LCD_MessageMSGCB_7
+    288          	  {
+    289          		// write subject information
+    290          		case LCD_SUBJECT_CMD:
+    291          		    // set the bit 1
+    292          		  	ackFlag += 2;
+   \                     ??LCD_MessageMSGCB_1:
+   \   000062   90....       MOV     DPTR,#ackFlag
+   \   000065   E0           MOVX    A,@DPTR
+   \   000066   2402         ADD     A,#0x2
+   \   000068   F0           MOVX    @DPTR,A
+    293          			LCD_BuildScreenFrame(gbk, len, courseReg);
+   \   000069                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   000069   90....       MOV     DPTR,#courseReg
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   FC           MOV     R4,A
+   \   00006E   A3           INC     DPTR
+   \   00006F   E0           MOVX    A,@DPTR
+   \   000070   FD           MOV     R5,A
+   \   000071   EE           MOV     A,R6
+   \   000072   F9           MOV     R1,A
+   \   000073   AA..         MOV     R2,?V0 + 2
+   \   000075   AB..         MOV     R3,?V0 + 3
+   \   000077   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    294          		break;
+   \   00007A   02....       LJMP    ??LCD_MessageMSGCB_0 & 0xFFFF
+    295          		
+    296          		// write class information
+    297          		case LCD_CLASS_CMD:
+    298          		  	// this is the index of 0, so set the bit 0 to 1
+    299          		    ackFlag += 1;
+   \                     ??LCD_MessageMSGCB_2:
+   \   00007D   90....       MOV     DPTR,#ackFlag
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   2401         ADD     A,#0x1
+   \   000083   F0           MOVX    @DPTR,A
+    300          			// send the data to the LCD
+    301          			LCD_BuildScreenFrame(gbk, len, classReg);
+   \   000084                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   000084   90....       MOV     DPTR,#classReg
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   FC           MOV     R4,A
+   \   000089   A3           INC     DPTR
+   \   00008A   E0           MOVX    A,@DPTR
+   \   00008B   FD           MOV     R5,A
+   \   00008C   EE           MOV     A,R6
+   \   00008D   F9           MOV     R1,A
+   \   00008E   AA..         MOV     R2,?V0 + 2
+   \   000090   AB..         MOV     R3,?V0 + 3
+   \   000092   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    302          		break;
+   \   000095   02....       LJMP    ??LCD_MessageMSGCB_0 & 0xFFFF
+    303          		
+    304          		// write teacher information
+    305          		case LCD_TEACHER_CMD:
+    306          		    // set the bit 2
+    307          		    ackFlag += 4;
+   \                     ??LCD_MessageMSGCB_3:
+   \   000098   90....       MOV     DPTR,#ackFlag
+   \   00009B   E0           MOVX    A,@DPTR
+   \   00009C   2404         ADD     A,#0x4
+   \   00009E   F0           MOVX    @DPTR,A
+    308          			LCD_BuildScreenFrame(gbk, len, teacherReg);  
+   \   00009F                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   00009F   90....       MOV     DPTR,#teacherReg
+   \   0000A2   E0           MOVX    A,@DPTR
+   \   0000A3   FC           MOV     R4,A
+   \   0000A4   A3           INC     DPTR
+   \   0000A5   E0           MOVX    A,@DPTR
+   \   0000A6   FD           MOV     R5,A
+   \   0000A7   EE           MOV     A,R6
+   \   0000A8   F9           MOV     R1,A
+   \   0000A9   AA..         MOV     R2,?V0 + 2
+   \   0000AB   AB..         MOV     R3,?V0 + 3
+   \   0000AD   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    309          		break;
+   \   0000B0   807E         SJMP    ??LCD_MessageMSGCB_0
+    310          		
+    311          		// write people number information
+    312          		case LCD_PEOPLE_CMD:
+    313          		    // set the bit 3
+    314          		    ackFlag += 8;
+   \                     ??LCD_MessageMSGCB_4:
+   \   0000B2   90....       MOV     DPTR,#ackFlag
+   \   0000B5   E0           MOVX    A,@DPTR
+   \   0000B6   2408         ADD     A,#0x8
+   \   0000B8   F0           MOVX    @DPTR,A
+    315          			LCD_BuildScreenFrame(gbk, len, peopleReg);
+   \   0000B9                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   0000B9   90....       MOV     DPTR,#peopleReg
+   \   0000BC   E0           MOVX    A,@DPTR
+   \   0000BD   FC           MOV     R4,A
+   \   0000BE   A3           INC     DPTR
+   \   0000BF   E0           MOVX    A,@DPTR
+   \   0000C0   FD           MOV     R5,A
+   \   0000C1   EE           MOV     A,R6
+   \   0000C2   F9           MOV     R1,A
+   \   0000C3   AA..         MOV     R2,?V0 + 2
+   \   0000C5   AB..         MOV     R3,?V0 + 3
+   \   0000C7   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    316          		break;
+   \   0000CA   8064         SJMP    ??LCD_MessageMSGCB_0
+    317          		
+    318          		// write time duration infor
+    319          		case LCD_TIME_CMD:
+    320          		  	// set the bit 4
+    321          		  	ackFlag += 16;
+   \                     ??LCD_MessageMSGCB_5:
+   \   0000CC   90....       MOV     DPTR,#ackFlag
+   \   0000CF   E0           MOVX    A,@DPTR
+   \   0000D0   2410         ADD     A,#0x10
+   \   0000D2   F0           MOVX    @DPTR,A
+    322          			ackFlag |= 0x20;
+   \   0000D3   90....       MOV     DPTR,#ackFlag
+   \   0000D6   E0           MOVX    A,@DPTR
+   \   0000D7   D2E5         SETB    0xE0 /* A   */.5
+   \   0000D9   F0           MOVX    @DPTR,A
+    323          			LCD_BuildScreenFrame(gbk, len, timeReg);
+   \   0000DA                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   0000DA   90....       MOV     DPTR,#timeReg
+   \   0000DD   E0           MOVX    A,@DPTR
+   \   0000DE   FC           MOV     R4,A
+   \   0000DF   A3           INC     DPTR
+   \   0000E0   E0           MOVX    A,@DPTR
+   \   0000E1   FD           MOV     R5,A
+   \   0000E2   EE           MOV     A,R6
+   \   0000E3   F9           MOV     R1,A
+   \   0000E4   AA..         MOV     R2,?V0 + 2
+   \   0000E6   AB..         MOV     R3,?V0 + 3
+   \   0000E8   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    324          			// send the ack here
+    325          	  		LCD_SendACK(ackFlag);
+   \   0000EB                ; Setup parameters for call to function LCD_SendACK
+   \   0000EB   90....       MOV     DPTR,#ackFlag
+   \   0000EE   E0           MOVX    A,@DPTR
+   \   0000EF   F9           MOV     R1,A
+   \   0000F0   12....       LCALL   ??LCD_SendACK?relay
+    326          			// send one message
+    327          	  		//LCD_SendOneMessage();
+    328          			// reset to zero
+    329          			ackFlag = 0;
+   \   0000F3   90....       MOV     DPTR,#ackFlag
+   \   0000F6   7400         MOV     A,#0x0
+   \   0000F8   F0           MOVX    @DPTR,A
+    330          		break;
+   \   0000F9   8035         SJMP    ??LCD_MessageMSGCB_0
+    331          		
+    332          		// here write the room number
+    333          		case ROOM_CMD:
+    334          			// here shift to the plate
+    335          		  	if(0 == shiftToRoomInformation){
+   \                     ??LCD_MessageMSGCB_7:
+   \   0000FB   90....       MOV     DPTR,#shiftToRoomInformation
+   \   0000FE   E0           MOVX    A,@DPTR
+   \   0000FF   700E         JNZ     ??LCD_MessageMSGCB_8
+    336          			  	// shift to the room
+    337          				LCD_RoomPlate();
+   \   000101                ; Setup parameters for call to function LCD_RoomPlate
+   \   000101   12....       LCALL   ??LCD_RoomPlate?relay
+    338          				// send retry
+    339          				LCD_SendRetry();
+   \   000104                ; Setup parameters for call to function LCD_SendRetry
+   \   000104   12....       LCALL   ??LCD_SendRetry?relay
+    340          				// set the room state
+    341          				shiftToRoomInformation = 1;
+   \   000107   90....       MOV     DPTR,#shiftToRoomInformation
+   \   00010A   7401         MOV     A,#0x1
+   \   00010C   F0           MOVX    @DPTR,A
+   \   00010D   8021         SJMP    ??LCD_MessageMSGCB_0
+    342          		  	}else{
+    343          				// set the number
+    344          				LCD_BuildScreenFrame(gbk, len, roomReg);
+   \                     ??LCD_MessageMSGCB_8:
+   \   00010F                ; Setup parameters for call to function LCD_BuildScreenFrame
+   \   00010F   90....       MOV     DPTR,#roomReg
+   \   000112   E0           MOVX    A,@DPTR
+   \   000113   FC           MOV     R4,A
+   \   000114   A3           INC     DPTR
+   \   000115   E0           MOVX    A,@DPTR
+   \   000116   FD           MOV     R5,A
+   \   000117   EE           MOV     A,R6
+   \   000118   F9           MOV     R1,A
+   \   000119   AA..         MOV     R2,?V0 + 2
+   \   00011B   AB..         MOV     R3,?V0 + 3
+   \   00011D   12....       LCALL   ??LCD_BuildScreenFrame?relay
+    345          				// send the ack here
+    346          	  			LCD_SendACK(0x3F);
+   \   000120                ; Setup parameters for call to function LCD_SendACK
+   \   000120   793F         MOV     R1,#0x3f
+   \   000122   12....       LCALL   ??LCD_SendACK?relay
+    347          				// send one message
+    348          	  			//LCD_SendOneMessage();
+    349          				ackFlag = 0;
+   \   000125   90....       MOV     DPTR,#ackFlag
+   \   000128   7400         MOV     A,#0x0
+   \   00012A   F0           MOVX    @DPTR,A
+    350          			}
+    351          		break;
+   \   00012B   8003         SJMP    ??LCD_MessageMSGCB_0
+    352          		
+    353          		// send the topology information
+    354          		case TOPO_REQ:
+    355          			// send the topology 
+    356          			LCD_SendTopoInformation();
+   \                     ??LCD_MessageMSGCB_6:
+   \   00012D                ; Setup parameters for call to function LCD_SendTopoInformation
+   \   00012D   12....       LCALL   ??LCD_SendTopoInformation?relay
+    357          		break;
+    358          	  }// end switch
+    359          }
+   \                     ??LCD_MessageMSGCB_0:
+   \   000130   7F06         MOV     R7,#0x6
+   \   000132   02....       LJMP    ?BANKED_LEAVE_XDATA
+    360          
+    361          /*******************************************************
+    362          	build screen uart frame
+    363          *******************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    364          static void LCD_BuildScreenFrame(uint8* gbk, uint8 len, uint16 reg){
+   \                     LCD_BuildScreenFrame:
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 0,R2
+   \   000007   8B..         MOV     ?V0 + 1,R3
+   \   000009   89..         MOV     ?V0 + 7,R1
+   \   00000B   8C..         MOV     ?V0 + 2,R4
+   \   00000D   8D..         MOV     ?V0 + 3,R5
+    365            // new byte array
+    366            byte* frame = (byte*)osal_mem_alloc(len+6);
+   \   00000F                ; Setup parameters for call to function osal_mem_alloc
+   \   00000F   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000012   75..00       MOV     ?V0 + 5,#0x0
+   \   000015   E5..         MOV     A,?V0 + 4
+   \   000017   2406         ADD     A,#0x6
+   \   000019   FA           MOV     R2,A
+   \   00001A   E5..         MOV     A,?V0 + 5
+   \   00001C   3400         ADDC    A,#0x0
+   \   00001E   FB           MOV     R3,A
+   \   00001F   12....       LCALL   ??osal_mem_alloc?relay
+   \   000022   8A..         MOV     ?V0 + 4,R2
+   \   000024   8B..         MOV     ?V0 + 5,R3
+   \   000026   AE..         MOV     R6,?V0 + 4
+   \   000028   AF..         MOV     R7,?V0 + 5
+    367            // set uart header
+    368            frame[0] = 0xE5;
+   \   00002A   8E82         MOV     DPL,R6
+   \   00002C   8F83         MOV     DPH,R7
+   \   00002E   74E5         MOV     A,#-0x1b
+   \   000030   F0           MOVX    @DPTR,A
+    369            frame[1] = 0xE5;
+   \   000031   8E82         MOV     DPL,R6
+   \   000033   8F83         MOV     DPH,R7
+   \   000035   A3           INC     DPTR
+   \   000036   74E5         MOV     A,#-0x1b
+   \   000038   F0           MOVX    @DPTR,A
+    370            // set len
+    371            frame[2] = 3 + len;
+   \   000039   7403         MOV     A,#0x3
+   \   00003B   25..         ADD     A,?V0 + 7
+   \   00003D   8E82         MOV     DPL,R6
+   \   00003F   8F83         MOV     DPH,R7
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   F0           MOVX    @DPTR,A
+    372            // set wirte reg command
+    373            frame[3] = 0x82;
+   \   000044   8E82         MOV     DPL,R6
+   \   000046   8F83         MOV     DPH,R7
+   \   000048   A3           INC     DPTR
+   \   000049   A3           INC     DPTR
+   \   00004A   A3           INC     DPTR
+   \   00004B   7482         MOV     A,#-0x7e
+   \   00004D   F0           MOVX    @DPTR,A
+    374            // set reg address
+    375            frame[4] = HI_UINT16(reg);
+   \   00004E   A8..         MOV     R0,?V0 + 2
+   \   000050   A9..         MOV     R1,?V0 + 3
+   \   000052   E4           CLR     A
+   \   000053   E5..         MOV     A,?V0 + 3
+   \   000055   A8..         MOV     R0,?V0 + 3
+   \   000057   E5..         MOV     A,?V0 + 3
+   \   000059   8E82         MOV     DPL,R6
+   \   00005B   8F83         MOV     DPH,R7
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   E5..         MOV     A,?V0 + 3
+   \   000063   F0           MOVX    @DPTR,A
+    376            frame[5] = LO_UINT16(reg);
+   \   000064   E5..         MOV     A,?V0 + 2
+   \   000066   8E82         MOV     DPL,R6
+   \   000068   8F83         MOV     DPH,R7
+   \   00006A   A3           INC     DPTR
+   \   00006B   A3           INC     DPTR
+   \   00006C   A3           INC     DPTR
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   E5..         MOV     A,?V0 + 2
+   \   000071   F0           MOVX    @DPTR,A
+    377            // copy data
+    378            osal_memcpy(&frame[6], gbk, len);
+   \   000072                ; Setup parameters for call to function osal_memcpy
+   \   000072   85....       MOV     ?V0 + 4,?V0 + 0
+   \   000075   85....       MOV     ?V0 + 5,?V0 + 1
+   \   000078   75..00       MOV     ?V0 + 6,#0x0
+   \   00007B   78..         MOV     R0,#?V0 + 4
+   \   00007D   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000080   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000083   75..00       MOV     ?V0 + 5,#0x0
+   \   000086   AC..         MOV     R4,?V0 + 4
+   \   000088   AD..         MOV     R5,?V0 + 5
+   \   00008A   EE           MOV     A,R6
+   \   00008B   2406         ADD     A,#0x6
+   \   00008D   FA           MOV     R2,A
+   \   00008E   EF           MOV     A,R7
+   \   00008F   3400         ADDC    A,#0x0
+   \   000091   FB           MOV     R3,A
+   \   000092   12....       LCALL   ??osal_memcpy?relay
+   \   000095   7403         MOV     A,#0x3
+   \   000097   12....       LCALL   ?DEALLOC_XSTACK8
+    379            // add to the message array
+    380            LCD_PushMessage(frame, len+6);
+   \   00009A                ; Setup parameters for call to function LCD_PushMessage
+   \   00009A   7406         MOV     A,#0x6
+   \   00009C   25..         ADD     A,?V0 + 7
+   \   00009E   F9           MOV     R1,A
+   \   00009F   EE           MOV     A,R6
+   \   0000A0   FA           MOV     R2,A
+   \   0000A1   EF           MOV     A,R7
+   \   0000A2   FB           MOV     R3,A
+   \   0000A3   12....       LCALL   ??LCD_PushMessage?relay
+    381            // free 
+    382            osal_mem_free((byte*)frame);
+   \   0000A6                ; Setup parameters for call to function osal_mem_free
+   \   0000A6   EE           MOV     A,R6
+   \   0000A7   FA           MOV     R2,A
+   \   0000A8   EF           MOV     A,R7
+   \   0000A9   FB           MOV     R3,A
+   \   0000AA   12....       LCALL   ??osal_mem_free?relay
+    383          }
+   \   0000AD   7F08         MOV     R7,#0x8
+   \   0000AF   02....       LJMP    ?BANKED_LEAVE_XDATA
+    384          
+    385          /*******************************************************
+    386          		show the loading screen
+    387          *******************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    388          static void LCD_Loading(){
+   \                     LCD_Loading:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 7
+   \   000004   74F9         MOV     A,#-0x7
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    389            // here just shift the screen to the 1
+    390            byte shift[] = {0xE5, 0xE5, 0x04, 0x80, 0x03, 0x00, 0x01};
+   \   000009   90....       MOV     DPTR,#`?<Constant {229, 229, 4, 128, 3, 0, 1}>`
+   \   00000C   C082         PUSH    DPL
+   \   00000E   C083         PUSH    DPH
+   \   000010   85..82       MOV     DPL,?XSP + 0
+   \   000013   85..83       MOV     DPH,?XSP + 1
+   \   000016   AC82         MOV     R4,DPL
+   \   000018   AD83         MOV     R5,DPH
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   7407         MOV     A,#0x7
+   \   000020   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    391            // write this to the usart
+    392            HalUARTWrite(UART_PORT, shift, 7);
+   \   000023                ; Setup parameters for call to function HalUARTWrite
+   \   000023   7C07         MOV     R4,#0x7
+   \   000025   7D00         MOV     R5,#0x0
+   \   000027   85..82       MOV     DPL,?XSP + 0
+   \   00002A   85..83       MOV     DPH,?XSP + 1
+   \   00002D   AA82         MOV     R2,DPL
+   \   00002F   AB83         MOV     R3,DPH
+   \   000031   7900         MOV     R1,#0x0
+   \   000033   12....       LCALL   ??HalUARTWrite?relay
+    393          }
+   \   000036   7407         MOV     A,#0x7
+   \   000038   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00003B   D083         POP     DPH
+   \   00003D   D082         POP     DPL
+   \   00003F   02....       LJMP    ?BRET
+    394          
+    395          /******************************************************
+    396          		show the room
+    397          ******************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    398          static void LCD_RoomPlate(){
+   \                     LCD_RoomPlate:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 7
+   \   000004   74F9         MOV     A,#-0x7
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    399            // shift to the six screen
+    400            byte shift[] = {0xE5, 0xE5, 0x04, 0x80, 0x03, 0x00, 0x06};
+   \   000009   90....       MOV     DPTR,#`?<Constant {229, 229, 4, 128, 3, 0, 6}>`
+   \   00000C   C082         PUSH    DPL
+   \   00000E   C083         PUSH    DPH
+   \   000010   85..82       MOV     DPL,?XSP + 0
+   \   000013   85..83       MOV     DPH,?XSP + 1
+   \   000016   AC82         MOV     R4,DPL
+   \   000018   AD83         MOV     R5,DPH
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   7407         MOV     A,#0x7
+   \   000020   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    401            // write to the uart
+    402            HalUARTWrite(UART_PORT, shift, 7);
+   \   000023                ; Setup parameters for call to function HalUARTWrite
+   \   000023   7C07         MOV     R4,#0x7
+   \   000025   7D00         MOV     R5,#0x0
+   \   000027   85..82       MOV     DPL,?XSP + 0
+   \   00002A   85..83       MOV     DPH,?XSP + 1
+   \   00002D   AA82         MOV     R2,DPL
+   \   00002F   AB83         MOV     R3,DPH
+   \   000031   7900         MOV     R1,#0x0
+   \   000033   12....       LCALL   ??HalUARTWrite?relay
+    403          }
+   \   000036   7407         MOV     A,#0x7
+   \   000038   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00003B   D083         POP     DPH
+   \   00003D   D082         POP     DPL
+   \   00003F   02....       LJMP    ?BRET
+    404          
+    405          /*********************************************************************
+    406           *
+    407           * @fn		LCD_UartInit
+    408           *
+    409           * @brief	this method init the usart for the coordinator
+    410           *
+    411           *
+    412           * @param   None
+    413           *
+    414           * @return  void
+    415           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    416          static void LCD_UartInit()
+   \                     LCD_UartInit:
+    417          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    418            // create the uart structure
+    419            halUARTCfg_t uartConfig;
+    420            // set the parameters
+    421            uartConfig.configured           = TRUE;               
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    422            uartConfig.baudRate             = HAL_UART_BR_115200;
+   \   000012   7401         MOV     A,#0x1
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   7404         MOV     A,#0x4
+   \   000019   F0           MOVX    @DPTR,A
+    423            uartConfig.flowControl          = FALSE;
+   \   00001A   7402         MOV     A,#0x2
+   \   00001C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001F   7400         MOV     A,#0x0
+   \   000021   F0           MOVX    @DPTR,A
+    424            uartConfig.flowControlThreshold = 64;   				
+   \   000022   7403         MOV     A,#0x3
+   \   000024   12....       LCALL   ?XSTACK_DISP0_8
+   \   000027   7440         MOV     A,#0x40
+   \   000029   F0           MOVX    @DPTR,A
+   \   00002A   A3           INC     DPTR
+   \   00002B   7400         MOV     A,#0x0
+   \   00002D   F0           MOVX    @DPTR,A
+    425            uartConfig.rx.maxBufSize        = 128;  				
+   \   00002E   740A         MOV     A,#0xa
+   \   000030   12....       LCALL   ?XSTACK_DISP0_8
+   \   000033   7480         MOV     A,#-0x80
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   A3           INC     DPTR
+   \   000037   7400         MOV     A,#0x0
+   \   000039   F0           MOVX    @DPTR,A
+    426            uartConfig.tx.maxBufSize        = 128;  				
+   \   00003A   7412         MOV     A,#0x12
+   \   00003C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003F   7480         MOV     A,#-0x80
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   A3           INC     DPTR
+   \   000043   7400         MOV     A,#0x0
+   \   000045   F0           MOVX    @DPTR,A
+    427            uartConfig.idleTimeout          = 6;    				
+   \   000046   7405         MOV     A,#0x5
+   \   000048   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004B   7406         MOV     A,#0x6
+   \   00004D   F0           MOVX    @DPTR,A
+    428            uartConfig.intEnable            = TRUE;               
+   \   00004E   7416         MOV     A,#0x16
+   \   000050   12....       LCALL   ?XSTACK_DISP0_8
+   \   000053   7401         MOV     A,#0x1
+   \   000055   F0           MOVX    @DPTR,A
+    429            uartConfig.callBackFunc         = LCD_UartCallBack;
+   \   000056   741B         MOV     A,#0x1b
+   \   000058   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005B   74..         MOV     A,#??LCD_UartCallBack?relay & 0xff
+   \   00005D   F0           MOVX    @DPTR,A
+   \   00005E   A3           INC     DPTR
+   \   00005F   74..         MOV     A,#(??LCD_UartCallBack?relay >> 8) & 0xff
+   \   000061   F0           MOVX    @DPTR,A
+    430            // open it
+    431            HalUARTOpen (UART_PORT, &uartConfig);
+   \   000062                ; Setup parameters for call to function HalUARTOpen
+   \   000062   85..82       MOV     DPL,?XSP + 0
+   \   000065   85..83       MOV     DPH,?XSP + 1
+   \   000068   AA82         MOV     R2,DPL
+   \   00006A   AB83         MOV     R3,DPH
+   \   00006C   7900         MOV     R1,#0x0
+   \   00006E   12....       LCALL   ??HalUARTOpen?relay
+   \   000071   E9           MOV     A,R1
+    432          }
+   \   000072   741D         MOV     A,#0x1d
+   \   000074   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000077   D083         POP     DPH
+   \   000079   D082         POP     DPL
+   \   00007B   02....       LJMP    ?BRET
+    433          
+    434          /*********************************************************************
+    435           *
+    436           * @fn		LCD_SendTopoInfo
+    437           *
+    438           *
+    439           *
+    440           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    441          static void LCD_SendTopoInformation()
+   \                     LCD_SendTopoInformation:
+    442          { 
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 19
+   \   000005   74ED         MOV     A,#-0x13
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    443            // Define the Frame
+    444            unsigned char* srcExtAddr;
+    445            srcExtAddr = NLME_GetExtAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetExtAddr
+   \   00000A   12....       LCALL   ??NLME_GetExtAddr?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+   \   000011   85....       MOV     ?V0 + 2,?V0 + 0
+   \   000014   85....       MOV     ?V0 + 3,?V0 + 1
+    446            uint16 srcAddr = NLME_GetShortAddr();
+   \   000017                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000017   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00001A   8A..         MOV     ?V0 + 4,R2
+   \   00001C   8B..         MOV     ?V0 + 5,R3
+   \   00001E   85....       MOV     ?V0 + 0,?V0 + 4
+   \   000021   85....       MOV     ?V0 + 1,?V0 + 5
+    447            uint16 parAddr = NLME_GetCoordShortAddr();
+   \   000024                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000024   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+   \   000027   8A..         MOV     ?V0 + 4,R2
+   \   000029   8B..         MOV     ?V0 + 5,R3
+   \   00002B   AE..         MOV     R6,?V0 + 4
+   \   00002D   AF..         MOV     R7,?V0 + 5
+    448            byte frame[19] = {0};
+   \   00002F   90....       MOV     DPTR,#`?<Constant {0}>`
+   \   000032   C082         PUSH    DPL
+   \   000034   C083         PUSH    DPH
+   \   000036   85..82       MOV     DPL,?XSP + 0
+   \   000039   85..83       MOV     DPH,?XSP + 1
+   \   00003C   AC82         MOV     R4,DPL
+   \   00003E   AD83         MOV     R5,DPH
+   \   000040   D083         POP     DPH
+   \   000042   D082         POP     DPL
+   \   000044   7413         MOV     A,#0x13
+   \   000046   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    449            
+    450            // Build the Frame
+    451            // Fill SOF	0xFE
+    452            frame[0] = 0xFE;
+   \   000049   85..82       MOV     DPL,?XSP + 0
+   \   00004C   85..83       MOV     DPH,?XSP + 1
+   \   00004F   74FE         MOV     A,#-0x2
+   \   000051   F0           MOVX    @DPTR,A
+    453            // Fill len
+    454            frame[1] = 12;
+   \   000052   7401         MOV     A,#0x1
+   \   000054   12....       LCALL   ?XSTACK_DISP0_8
+   \   000057   740C         MOV     A,#0xc
+   \   000059   F0           MOVX    @DPTR,A
+    455            // Fill CMD
+    456            frame[2] = LO_UINT16(TOPOLOGY_CMD);
+   \   00005A   7402         MOV     A,#0x2
+   \   00005C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005F   7401         MOV     A,#0x1
+   \   000061   F0           MOVX    @DPTR,A
+    457            frame[3] = HI_UINT16(TOPOLOGY_CMD);
+   \   000062   7403         MOV     A,#0x3
+   \   000064   12....       LCALL   ?XSTACK_DISP0_8
+   \   000067   7400         MOV     A,#0x0
+   \   000069   F0           MOVX    @DPTR,A
+    458            // Fill Addr
+    459            frame[4] = LO_UINT16(srcAddr);
+   \   00006A   E5..         MOV     A,?V0 + 0
+   \   00006C   7404         MOV     A,#0x4
+   \   00006E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000071   E5..         MOV     A,?V0 + 0
+   \   000073   F0           MOVX    @DPTR,A
+    460            frame[5] = HI_UINT16(srcAddr);
+   \   000074   A8..         MOV     R0,?V0 + 0
+   \   000076   A9..         MOV     R1,?V0 + 1
+   \   000078   E4           CLR     A
+   \   000079   E5..         MOV     A,?V0 + 1
+   \   00007B   A8..         MOV     R0,?V0 + 1
+   \   00007D   E5..         MOV     A,?V0 + 1
+   \   00007F   7405         MOV     A,#0x5
+   \   000081   12....       LCALL   ?XSTACK_DISP0_8
+   \   000084   E5..         MOV     A,?V0 + 1
+   \   000086   F0           MOVX    @DPTR,A
+    461            // fill type
+    462            frame[6] = LO_UINT16(LCD);
+   \   000087   7406         MOV     A,#0x6
+   \   000089   12....       LCALL   ?XSTACK_DISP0_8
+   \   00008C   7403         MOV     A,#0x3
+   \   00008E   F0           MOVX    @DPTR,A
+    463            frame[7] = HI_UINT16(LCD);
+   \   00008F   7407         MOV     A,#0x7
+   \   000091   12....       LCALL   ?XSTACK_DISP0_8
+   \   000094   7400         MOV     A,#0x0
+   \   000096   F0           MOVX    @DPTR,A
+    464            // Fill Parent
+    465            frame[8] = LO_UINT16(parAddr);
+   \   000097   EE           MOV     A,R6
+   \   000098   C0E0         PUSH    A
+   \   00009A   7408         MOV     A,#0x8
+   \   00009C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009F   D0E0         POP     A
+   \   0000A1   F0           MOVX    @DPTR,A
+    466            frame[9] = HI_UINT16(parAddr);
+   \   0000A2   EE           MOV     A,R6
+   \   0000A3   F8           MOV     R0,A
+   \   0000A4   E5..         MOV     A,?V0 + 5
+   \   0000A6   A9..         MOV     R1,?V0 + 5
+   \   0000A8   E4           CLR     A
+   \   0000A9   E5..         MOV     A,?V0 + 5
+   \   0000AB   A8..         MOV     R0,?V0 + 5
+   \   0000AD   E5..         MOV     A,?V0 + 5
+   \   0000AF   7409         MOV     A,#0x9
+   \   0000B1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B4   E5..         MOV     A,?V0 + 5
+   \   0000B6   F0           MOVX    @DPTR,A
+    467            // fill the ieee64 address
+    468            copyExtAddr(srcExtAddr, (byte*)&frame[10]); 
+   \   0000B7                ; Setup parameters for call to function copyExtAddr
+   \   0000B7   740A         MOV     A,#0xa
+   \   0000B9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000BC   AC82         MOV     R4,DPL
+   \   0000BE   AD83         MOV     R5,DPH
+   \   0000C0   AA..         MOV     R2,?V0 + 2
+   \   0000C2   AB..         MOV     R3,?V0 + 3
+   \   0000C4   12....       LCALL   ??copyExtAddr?relay
+    469            // Cal and fill FCS
+    470            frame[18] = LCD_CalcFCS((byte*)&frame[1], 17);
+   \   0000C7                ; Setup parameters for call to function LCD_CalcFCS
+   \   0000C7   7911         MOV     R1,#0x11
+   \   0000C9   7401         MOV     A,#0x1
+   \   0000CB   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000CE   AA82         MOV     R2,DPL
+   \   0000D0   AB83         MOV     R3,DPH
+   \   0000D2   12....       LCALL   ??LCD_CalcFCS?relay
+   \   0000D5   E9           MOV     A,R1
+   \   0000D6   C0E0         PUSH    A
+   \   0000D8   7412         MOV     A,#0x12
+   \   0000DA   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000DD   D0E0         POP     A
+   \   0000DF   F0           MOVX    @DPTR,A
+    471            
+    472            // Send the data to Coordinator
+    473            AF_DataRequest( &LCD_DstAddr, 
+    474          				  &LCD_epDesc,
+    475          				  ZIGBEE_COMMON_CLUSTER,
+    476          				  19,
+    477          				  (byte *)frame,
+    478          				  &LCD_TransID,
+    479          				  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000E0                ; Setup parameters for call to function AF_DataRequest
+   \   0000E0   75..1E       MOV     ?V0 + 4,#0x1e
+   \   0000E3   78..         MOV     R0,#?V0 + 4
+   \   0000E5   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000E8   75....       MOV     ?V0 + 4,#LCD_TransID & 0xff
+   \   0000EB   75....       MOV     ?V0 + 5,#(LCD_TransID >> 8) & 0xff
+   \   0000EE   78..         MOV     R0,#?V0 + 4
+   \   0000F0   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F3   7403         MOV     A,#0x3
+   \   0000F5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000F8   8582..       MOV     ?V0 + 4,DPL
+   \   0000FB   8583..       MOV     ?V0 + 5,DPH
+   \   0000FE   78..         MOV     R0,#?V0 + 4
+   \   000100   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000103   75..13       MOV     ?V0 + 4,#0x13
+   \   000106   75..00       MOV     ?V0 + 5,#0x0
+   \   000109   78..         MOV     R0,#?V0 + 4
+   \   00010B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00010E   75..0B       MOV     ?V0 + 4,#0xb
+   \   000111   75..00       MOV     ?V0 + 5,#0x0
+   \   000114   78..         MOV     R0,#?V0 + 4
+   \   000116   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000119   7920         MOV     R1,#0x20
+   \   00011B   7C..         MOV     R4,#LCD_epDesc & 0xff
+   \   00011D   7D..         MOV     R5,#(LCD_epDesc >> 8) & 0xff
+   \   00011F   7A..         MOV     R2,#LCD_DstAddr & 0xff
+   \   000121   7B..         MOV     R3,#(LCD_DstAddr >> 8) & 0xff
+   \   000123   12....       LCALL   ??AF_DataRequest?relay
+   \   000126   7409         MOV     A,#0x9
+   \   000128   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00012B   E9           MOV     A,R1
+    480          }
+   \   00012C   7413         MOV     A,#0x13
+   \   00012E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000131   7F06         MOV     R7,#0x6
+   \   000133   02....       LJMP    ?BANKED_LEAVE_XDATA
+    481          
+    482          /*********************************************************************
+    483           *
+    484           * @fn		LCD_UartCallBack
+    485           *
+    486           * @brief	this method deal with the uart event
+    487           *
+    488           *
+    489           * @param   port  -- uart port
+    490           *			event -- event occur
+    491           *
+    492           * @return  void
+    493           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    494          static void LCD_UartCallBack( uint8 port, uint8 event )
+   \                     LCD_UartCallBack:
+    495          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    496            (void)port;
+    497          
+    498            // if Tx interrupt has occur
+    499            if (event & HAL_UART_TX_EMPTY)
+   \   000009   A2E4         MOV     C,0xE0 /* A   */.4
+   \   00000B   5009         JNC     ??LCD_UartCallBack_0
+    500            {
+    501          	// hava message in the queue
+    502          	if(LCD_IsMessageEmpty() == 0x00){
+   \   00000D                ; Setup parameters for call to function LCD_IsMessageEmpty
+   \   00000D   12....       LCALL   ??LCD_IsMessageEmpty?relay
+   \   000010   E9           MOV     A,R1
+   \   000011   7003         JNZ     ??LCD_UartCallBack_0
+    503          	  // send another message
+    504          	  LCD_SendOneMessage();
+   \   000013                ; Setup parameters for call to function LCD_SendOneMessage
+   \   000013   12....       LCALL   ??LCD_SendOneMessage?relay
+    505          	}
+    506            }
+    507          }
+   \                     ??LCD_UartCallBack_0:
+   \   000016   7F01         MOV     R7,#0x1
+   \   000018   02....       LJMP    ?BANKED_LEAVE_XDATA
+    508          /**************************************************************
+    509          		send the ack command to the monitor 
+    510          **************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    511          static void LCD_SendACK(byte flag){
+   \                     LCD_SendACK:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 8
+   \   000005   74F8         MOV     A,#-0x8
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    512            // new the frame
+    513            byte frame[8] = {0};
+   \   00000C   90....       MOV     DPTR,#`?<Constant {0}>_1`
+   \   00000F   C082         PUSH    DPL
+   \   000011   C083         PUSH    DPH
+   \   000013   85..82       MOV     DPL,?XSP + 0
+   \   000016   85..83       MOV     DPH,?XSP + 1
+   \   000019   AC82         MOV     R4,DPL
+   \   00001B   AD83         MOV     R5,DPH
+   \   00001D   D083         POP     DPH
+   \   00001F   D082         POP     DPL
+   \   000021   7408         MOV     A,#0x8
+   \   000023   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    514            // fill the header
+    515            frame[0] = 0xFE;
+   \   000026   85..82       MOV     DPL,?XSP + 0
+   \   000029   85..83       MOV     DPH,?XSP + 1
+   \   00002C   74FE         MOV     A,#-0x2
+   \   00002E   F0           MOVX    @DPTR,A
+    516            // fill the length
+    517            frame[1] = 1;
+   \   00002F   7401         MOV     A,#0x1
+   \   000031   12....       LCALL   ?XSTACK_DISP0_8
+   \   000034   7401         MOV     A,#0x1
+   \   000036   F0           MOVX    @DPTR,A
+    518            // fill the command
+    519            frame[2] = LO_UINT16(LCD_ACK_CMD);
+   \   000037   7402         MOV     A,#0x2
+   \   000039   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003C   74FE         MOV     A,#-0x2
+   \   00003E   F0           MOVX    @DPTR,A
+    520            frame[3] = HI_UINT16(LCD_ACK_CMD);
+   \   00003F   7403         MOV     A,#0x3
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   74FF         MOV     A,#-0x1
+   \   000046   F0           MOVX    @DPTR,A
+    521            // fill Addr
+    522            frame[4] = LO_UINT16(0);
+   \   000047   7404         MOV     A,#0x4
+   \   000049   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004C   7400         MOV     A,#0x0
+   \   00004E   F0           MOVX    @DPTR,A
+    523            frame[5] = HI_UINT16(0);
+   \   00004F   7405         MOV     A,#0x5
+   \   000051   12....       LCALL   ?XSTACK_DISP0_8
+   \   000054   7400         MOV     A,#0x0
+   \   000056   F0           MOVX    @DPTR,A
+    524            // fill the flag
+    525            frame[6] = flag;
+   \   000057   EE           MOV     A,R6
+   \   000058   C0E0         PUSH    A
+   \   00005A   7406         MOV     A,#0x6
+   \   00005C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005F   D0E0         POP     A
+   \   000061   F0           MOVX    @DPTR,A
+    526            // fill the fcs
+    527            frame[7] = LCD_CalcFCS((byte*)&frame[1], 6);
+   \   000062                ; Setup parameters for call to function LCD_CalcFCS
+   \   000062   7906         MOV     R1,#0x6
+   \   000064   7401         MOV     A,#0x1
+   \   000066   12....       LCALL   ?XSTACK_DISP0_8
+   \   000069   AA82         MOV     R2,DPL
+   \   00006B   AB83         MOV     R3,DPH
+   \   00006D   12....       LCALL   ??LCD_CalcFCS?relay
+   \   000070   E9           MOV     A,R1
+   \   000071   C0E0         PUSH    A
+   \   000073   7407         MOV     A,#0x7
+   \   000075   12....       LCALL   ?XSTACK_DISP0_8
+   \   000078   D0E0         POP     A
+   \   00007A   F0           MOVX    @DPTR,A
+    528            
+    529            // Send the data to Coordinator
+    530            AF_DataRequest( &LCD_DstAddr, 
+    531          				  &LCD_epDesc,
+    532          				  ZIGBEE_COMMON_CLUSTER,
+    533          				  8,
+    534          				  (byte *)frame,
+    535          				  &LCD_TransID,
+    536          				  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   00007B                ; Setup parameters for call to function AF_DataRequest
+   \   00007B   75..1E       MOV     ?V0 + 0,#0x1e
+   \   00007E   78..         MOV     R0,#?V0 + 0
+   \   000080   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000083   75....       MOV     ?V0 + 0,#LCD_TransID & 0xff
+   \   000086   75....       MOV     ?V0 + 1,#(LCD_TransID >> 8) & 0xff
+   \   000089   78..         MOV     R0,#?V0 + 0
+   \   00008B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00008E   7403         MOV     A,#0x3
+   \   000090   12....       LCALL   ?XSTACK_DISP0_8
+   \   000093   8582..       MOV     ?V0 + 0,DPL
+   \   000096   8583..       MOV     ?V0 + 1,DPH
+   \   000099   78..         MOV     R0,#?V0 + 0
+   \   00009B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00009E   75..08       MOV     ?V0 + 0,#0x8
+   \   0000A1   75..00       MOV     ?V0 + 1,#0x0
+   \   0000A4   78..         MOV     R0,#?V0 + 0
+   \   0000A6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000A9   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000AC   75..00       MOV     ?V0 + 1,#0x0
+   \   0000AF   78..         MOV     R0,#?V0 + 0
+   \   0000B1   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B4   7920         MOV     R1,#0x20
+   \   0000B6   7C..         MOV     R4,#LCD_epDesc & 0xff
+   \   0000B8   7D..         MOV     R5,#(LCD_epDesc >> 8) & 0xff
+   \   0000BA   7A..         MOV     R2,#LCD_DstAddr & 0xff
+   \   0000BC   7B..         MOV     R3,#(LCD_DstAddr >> 8) & 0xff
+   \   0000BE   12....       LCALL   ??AF_DataRequest?relay
+   \   0000C1   7409         MOV     A,#0x9
+   \   0000C3   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000C6   E9           MOV     A,R1
+    537          }
+   \   0000C7   7408         MOV     A,#0x8
+   \   0000C9   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000CC   7F02         MOV     R7,#0x2
+   \   0000CE   02....       LJMP    ?BANKED_LEAVE_XDATA
+    538          
+    539          /***********************************************************
+    540          	LCD send retry
+    541          ***********************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    542          static void LCD_SendRetry(){
+   \                     LCD_SendRetry:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 7
+   \   000005   74F9         MOV     A,#-0x7
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    543            // first get the short address
+    544            uint16 srcAddr = NLME_GetShortAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000A   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+   \   000011   AE..         MOV     R6,?V0 + 0
+   \   000013   AF..         MOV     R7,?V0 + 1
+    545            // new the frame
+    546            byte frame[7] = {0};
+   \   000015   90....       MOV     DPTR,#`?<Constant {0}>_2`
+   \   000018   C082         PUSH    DPL
+   \   00001A   C083         PUSH    DPH
+   \   00001C   85..82       MOV     DPL,?XSP + 0
+   \   00001F   85..83       MOV     DPH,?XSP + 1
+   \   000022   AC82         MOV     R4,DPL
+   \   000024   AD83         MOV     R5,DPH
+   \   000026   D083         POP     DPH
+   \   000028   D082         POP     DPL
+   \   00002A   7407         MOV     A,#0x7
+   \   00002C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    547            // fill the header
+    548            frame[0] = 0xFE;
+   \   00002F   85..82       MOV     DPL,?XSP + 0
+   \   000032   85..83       MOV     DPH,?XSP + 1
+   \   000035   74FE         MOV     A,#-0x2
+   \   000037   F0           MOVX    @DPTR,A
+    549            // fill the length
+    550            frame[1] = 0;
+   \   000038   7401         MOV     A,#0x1
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   7400         MOV     A,#0x0
+   \   00003F   F0           MOVX    @DPTR,A
+    551            // fill the command
+    552            frame[2] = LO_UINT16(LCD_RETRY_CMD);
+   \   000040   7402         MOV     A,#0x2
+   \   000042   12....       LCALL   ?XSTACK_DISP0_8
+   \   000045   74FD         MOV     A,#-0x3
+   \   000047   F0           MOVX    @DPTR,A
+    553            frame[3] = HI_UINT16(LCD_RETRY_CMD);
+   \   000048   7403         MOV     A,#0x3
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   74FF         MOV     A,#-0x1
+   \   00004F   F0           MOVX    @DPTR,A
+    554            // fill Addr
+    555            frame[4] = LO_UINT16(srcAddr);
+   \   000050   EE           MOV     A,R6
+   \   000051   C0E0         PUSH    A
+   \   000053   7404         MOV     A,#0x4
+   \   000055   12....       LCALL   ?XSTACK_DISP0_8
+   \   000058   D0E0         POP     A
+   \   00005A   F0           MOVX    @DPTR,A
+    556            frame[5] = HI_UINT16(srcAddr);
+   \   00005B   EE           MOV     A,R6
+   \   00005C   F8           MOV     R0,A
+   \   00005D   E5..         MOV     A,?V0 + 1
+   \   00005F   A9..         MOV     R1,?V0 + 1
+   \   000061   E4           CLR     A
+   \   000062   E5..         MOV     A,?V0 + 1
+   \   000064   A8..         MOV     R0,?V0 + 1
+   \   000066   E5..         MOV     A,?V0 + 1
+   \   000068   7405         MOV     A,#0x5
+   \   00006A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006D   E5..         MOV     A,?V0 + 1
+   \   00006F   F0           MOVX    @DPTR,A
+    557            // fill the fcs
+    558            frame[6] = LCD_CalcFCS((byte*)&frame[1], 5);
+   \   000070                ; Setup parameters for call to function LCD_CalcFCS
+   \   000070   7905         MOV     R1,#0x5
+   \   000072   7401         MOV     A,#0x1
+   \   000074   12....       LCALL   ?XSTACK_DISP0_8
+   \   000077   AA82         MOV     R2,DPL
+   \   000079   AB83         MOV     R3,DPH
+   \   00007B   12....       LCALL   ??LCD_CalcFCS?relay
+   \   00007E   E9           MOV     A,R1
+   \   00007F   C0E0         PUSH    A
+   \   000081   7406         MOV     A,#0x6
+   \   000083   12....       LCALL   ?XSTACK_DISP0_8
+   \   000086   D0E0         POP     A
+   \   000088   F0           MOVX    @DPTR,A
+    559            
+    560            // Send the data to Coordinator
+    561            AF_DataRequest( &LCD_DstAddr, 
+    562          				  &LCD_epDesc,
+    563          				  ZIGBEE_COMMON_CLUSTER,
+    564          				  7,
+    565          				  (byte *)frame,
+    566          				  &LCD_TransID,
+    567          				  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   000089                ; Setup parameters for call to function AF_DataRequest
+   \   000089   75..1E       MOV     ?V0 + 0,#0x1e
+   \   00008C   78..         MOV     R0,#?V0 + 0
+   \   00008E   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000091   75....       MOV     ?V0 + 0,#LCD_TransID & 0xff
+   \   000094   75....       MOV     ?V0 + 1,#(LCD_TransID >> 8) & 0xff
+   \   000097   78..         MOV     R0,#?V0 + 0
+   \   000099   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00009C   7403         MOV     A,#0x3
+   \   00009E   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A1   8582..       MOV     ?V0 + 0,DPL
+   \   0000A4   8583..       MOV     ?V0 + 1,DPH
+   \   0000A7   78..         MOV     R0,#?V0 + 0
+   \   0000A9   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000AC   75..07       MOV     ?V0 + 0,#0x7
+   \   0000AF   75..00       MOV     ?V0 + 1,#0x0
+   \   0000B2   78..         MOV     R0,#?V0 + 0
+   \   0000B4   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B7   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000BA   75..00       MOV     ?V0 + 1,#0x0
+   \   0000BD   78..         MOV     R0,#?V0 + 0
+   \   0000BF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000C2   7920         MOV     R1,#0x20
+   \   0000C4   7C..         MOV     R4,#LCD_epDesc & 0xff
+   \   0000C6   7D..         MOV     R5,#(LCD_epDesc >> 8) & 0xff
+   \   0000C8   7A..         MOV     R2,#LCD_DstAddr & 0xff
+   \   0000CA   7B..         MOV     R3,#(LCD_DstAddr >> 8) & 0xff
+   \   0000CC   12....       LCALL   ??AF_DataRequest?relay
+   \   0000CF   7409         MOV     A,#0x9
+   \   0000D1   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000D4   E9           MOV     A,R1
+    568          }
+   \   0000D5   7407         MOV     A,#0x7
+   \   0000D7   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000DA   7F02         MOV     R7,#0x2
+   \   0000DC   02....       LJMP    ?BANKED_LEAVE_XDATA
+    569          
+    570          /*********************************************************************
+    571           * @fn      LCD_CalcFCS
+    572           *
+    573           * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+    574           *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+    575           *
+    576           * @param   byte *msg_ptr - message pointer
+    577           * @param   byte len - length (in bytes) of message
+    578           *
+    579           * @return  result byte
+    580           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    581          static byte LCD_CalcFCS( uint8 *msg_ptr, uint8 len )
+   \                     LCD_CalcFCS:
+    582          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FC           MOV     R4,A
+    583            byte x;
+    584            byte xorResult = 0x00;
+   \   000007   7900         MOV     R1,#0x0
+    585          
+    586            for ( x=0; x<len; x++ )
+   \   000009   7800         MOV     R0,#0x0
+   \                     ??LCD_CalcFCS_0:
+   \   00000B   E8           MOV     A,R0
+   \   00000C   C3           CLR     C
+   \   00000D   9C           SUBB    A,R4
+   \   00000E   5016         JNC     ??LCD_CalcFCS_1
+    587              xorResult ^=  msg_ptr[x];
+   \   000010   88..         MOV     ?V0 + 0,R0
+   \   000012   75..00       MOV     ?V0 + 1,#0x0
+   \   000015   EA           MOV     A,R2
+   \   000016   25..         ADD     A,?V0 + 0
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   35..         ADDC    A,?V0 + 1
+   \   00001D   F583         MOV     DPH,A
+   \   00001F   E0           MOVX    A,@DPTR
+   \   000020   C9           XCH     A,R1
+   \   000021   69           XRL     A,R1
+   \   000022   F9           MOV     R1,A
+   \   000023   08           INC     R0
+   \   000024   80E5         SJMP    ??LCD_CalcFCS_0
+    588          
+    589            return ( xorResult );
+   \                     ??LCD_CalcFCS_1:
+   \   000026   7F02         MOV     R7,#0x2
+   \   000028   02....       LJMP    ?BANKED_LEAVE_XDATA
+    590          }
+    591          
+    592          /**************************************
+    593          	save extern address in array
+    594          **************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    595          static void copyExtAddr(byte* src, byte* dst){
+   \                     copyExtAddr:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    596          	// here LSB goes first
+    597            	int i = 0;
+   \   000004   7800         MOV     R0,#0x0
+   \   000006   7900         MOV     R1,#0x0
+    598          	while(i < 8){
+   \                     ??copyExtAddr_0:
+   \   000008   C3           CLR     C
+   \   000009   E8           MOV     A,R0
+   \   00000A   9408         SUBB    A,#0x8
+   \   00000C   E9           MOV     A,R1
+   \   00000D   9400         SUBB    A,#0x0
+   \   00000F   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   000011   65D0         XRL     A,PSW
+   \   000013   33           RLC     A
+   \   000014   5020         JNC     ??copyExtAddr_1
+    599          	  dst[i] = src[i];
+   \   000016   EA           MOV     A,R2
+   \   000017   28           ADD     A,R0
+   \   000018   F582         MOV     DPL,A
+   \   00001A   EB           MOV     A,R3
+   \   00001B   39           ADDC    A,R1
+   \   00001C   F583         MOV     DPH,A
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   C0E0         PUSH    A
+   \   000021   EC           MOV     A,R4
+   \   000022   28           ADD     A,R0
+   \   000023   F582         MOV     DPL,A
+   \   000025   ED           MOV     A,R5
+   \   000026   39           ADDC    A,R1
+   \   000027   F583         MOV     DPH,A
+   \   000029   D0E0         POP     A
+   \   00002B   F0           MOVX    @DPTR,A
+    600          	  // update
+    601          	  i++;
+   \   00002C   E8           MOV     A,R0
+   \   00002D   2401         ADD     A,#0x1
+   \   00002F   F8           MOV     R0,A
+   \   000030   E9           MOV     A,R1
+   \   000031   3400         ADDC    A,#0x0
+   \   000033   F9           MOV     R1,A
+   \   000034   80D2         SJMP    ??copyExtAddr_0
+    602          	}
+    603          }
+   \                     ??copyExtAddr_1:
+   \   000036   D083         POP     DPH
+   \   000038   D082         POP     DPL
+   \   00003A   02....       LJMP    ?BRET
+    604          
+    605          /******************************************************
+    606          		Define The Queue
+    607          ******************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    608          static void LCD_InitMessageQueue( ){
+   \                     LCD_InitMessageQueue:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    609            // only set the pHeader and the pTail
+    610            pHeader = 0;
+   \   000004   90....       MOV     DPTR,#pHeader
+   \   000007   7400         MOV     A,#0x0
+   \   000009   F0           MOVX    @DPTR,A
+    611            pTail = 0;
+   \   00000A   90....       MOV     DPTR,#pTail
+   \   00000D   7400         MOV     A,#0x0
+   \   00000F   F0           MOVX    @DPTR,A
+    612          }
+   \   000010   D083         POP     DPH
+   \   000012   D082         POP     DPL
+   \   000014   02....       LJMP    ?BRET
+    613          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    614          static void LCD_PushMessage( byte* str, byte len ){
+   \                     LCD_PushMessage:
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 3,R1
+    615            // check first
+    616            if( pTail > 11 ){
+   \   00000B   90....       MOV     DPTR,#pTail
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   C3           CLR     C
+   \   000010   940C         SUBB    A,#0xc
+   \   000012   5074         JNC     ??LCD_PushMessage_0
+    617          	return;
+    618            }
+    619            // copy the data to the pTail
+    620            osal_memcpy(messageArray[pTail].data, (byte*)str, len);
+   \   000014                ; Setup parameters for call to function osal_memcpy
+   \   000014   8E..         MOV     ?V0 + 0,R6
+   \   000016   8F..         MOV     ?V0 + 1,R7
+   \   000018   75..00       MOV     ?V0 + 2,#0x0
+   \   00001B   78..         MOV     R0,#?V0 + 0
+   \   00001D   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000020   85....       MOV     ?V0 + 0,?V0 + 3
+   \   000023   75..00       MOV     ?V0 + 1,#0x0
+   \   000026   AC..         MOV     R4,?V0 + 0
+   \   000028   AD..         MOV     R5,?V0 + 1
+   \   00002A   90....       MOV     DPTR,#pTail
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   F8           MOV     R0,A
+   \   00002F   7900         MOV     R1,#0x0
+   \   000031   E8           MOV     A,R0
+   \   000032   75F041       MOV     B,#0x41
+   \   000035   A4           MUL     AB
+   \   000036   C8           XCH     A,R0
+   \   000037   AAF0         MOV     R2,B
+   \   000039   75F000       MOV     B,#0x0
+   \   00003C   A4           MUL     AB
+   \   00003D   2A           ADD     A,R2
+   \   00003E   FA           MOV     R2,A
+   \   00003F   75F041       MOV     B,#0x41
+   \   000042   E9           MOV     A,R1
+   \   000043   A4           MUL     AB
+   \   000044   2A           ADD     A,R2
+   \   000045   F9           MOV     R1,A
+   \   000046   74..         MOV     A,#messageArray & 0xff
+   \   000048   28           ADD     A,R0
+   \   000049   FA           MOV     R2,A
+   \   00004A   74..         MOV     A,#(messageArray >> 8) & 0xff
+   \   00004C   39           ADDC    A,R1
+   \   00004D   FB           MOV     R3,A
+   \   00004E   12....       LCALL   ??osal_memcpy?relay
+   \   000051   7403         MOV     A,#0x3
+   \   000053   12....       LCALL   ?DEALLOC_XSTACK8
+    621            messageArray[pTail].len = len;
+   \   000056   E5..         MOV     A,?V0 + 3
+   \   000058   90....       MOV     DPTR,#pTail
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F8           MOV     R0,A
+   \   00005D   7900         MOV     R1,#0x0
+   \   00005F   E8           MOV     A,R0
+   \   000060   75F041       MOV     B,#0x41
+   \   000063   A4           MUL     AB
+   \   000064   C8           XCH     A,R0
+   \   000065   AAF0         MOV     R2,B
+   \   000067   75F000       MOV     B,#0x0
+   \   00006A   A4           MUL     AB
+   \   00006B   2A           ADD     A,R2
+   \   00006C   FA           MOV     R2,A
+   \   00006D   75F041       MOV     B,#0x41
+   \   000070   E9           MOV     A,R1
+   \   000071   A4           MUL     AB
+   \   000072   2A           ADD     A,R2
+   \   000073   F9           MOV     R1,A
+   \   000074   74..         MOV     A,#(messageArray + 64) & 0xff
+   \   000076   28           ADD     A,R0
+   \   000077   F582         MOV     DPL,A
+   \   000079   74..         MOV     A,#((messageArray + 64) >> 8) & 0xff
+   \   00007B   39           ADDC    A,R1
+   \   00007C   F583         MOV     DPH,A
+   \   00007E   E5..         MOV     A,?V0 + 3
+   \   000080   F0           MOVX    @DPTR,A
+    622            // then increase the tail
+    623            pTail++; 
+   \   000081   90....       MOV     DPTR,#pTail
+   \   000084   E0           MOVX    A,@DPTR
+   \   000085   2401         ADD     A,#0x1
+   \   000087   F0           MOVX    @DPTR,A
+    624          }
+   \                     ??LCD_PushMessage_0:
+   \   000088   7F04         MOV     R7,#0x4
+   \   00008A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    625          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    626          static MessageNode* LCD_PopMessage( ){
+   \                     LCD_PopMessage:
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    627            // if the message array is null just return 
+    628            if(0 == pTail){
+   \   000005   90....       MOV     DPTR,#pTail
+   \   000008   E0           MOVX    A,@DPTR
+   \   000009   7007         JNZ     ??LCD_PopMessage_0
+    629          	return NULL;
+   \   00000B   7A00         MOV     R2,#0x0
+   \   00000D   7B00         MOV     R3,#0x0
+   \   00000F   02....       LJMP    ??LCD_PopMessage_1 & 0xFFFF
+    630            }
+    631            // counter
+    632            byte i = 0;
+   \                     ??LCD_PopMessage_0:
+   \   000012   75..00       MOV     ?V0 + 3,#0x0
+    633            // get the header
+    634            MessageNode* returnNode = osal_mem_alloc(sizeof(MessageNode));
+   \   000015                ; Setup parameters for call to function osal_mem_alloc
+   \   000015   7A41         MOV     R2,#0x41
+   \   000017   7B00         MOV     R3,#0x0
+   \   000019   12....       LCALL   ??osal_mem_alloc?relay
+   \   00001C   8A..         MOV     ?V0 + 0,R2
+   \   00001E   8B..         MOV     ?V0 + 1,R3
+   \   000020   AE..         MOV     R6,?V0 + 0
+   \   000022   AF..         MOV     R7,?V0 + 1
+    635            // get node
+    636            osal_memcpy(returnNode->data, messageArray[pHeader].data, messageArray[pHeader].len);
+   \   000024                ; Setup parameters for call to function osal_memcpy
+   \   000024   90....       MOV     DPTR,#pHeader
+   \   000027   E0           MOVX    A,@DPTR
+   \   000028   F8           MOV     R0,A
+   \   000029   7900         MOV     R1,#0x0
+   \   00002B   E8           MOV     A,R0
+   \   00002C   75F041       MOV     B,#0x41
+   \   00002F   A4           MUL     AB
+   \   000030   C8           XCH     A,R0
+   \   000031   AAF0         MOV     R2,B
+   \   000033   75F000       MOV     B,#0x0
+   \   000036   A4           MUL     AB
+   \   000037   2A           ADD     A,R2
+   \   000038   FA           MOV     R2,A
+   \   000039   75F041       MOV     B,#0x41
+   \   00003C   E9           MOV     A,R1
+   \   00003D   A4           MUL     AB
+   \   00003E   2A           ADD     A,R2
+   \   00003F   F9           MOV     R1,A
+   \   000040   74..         MOV     A,#messageArray & 0xff
+   \   000042   28           ADD     A,R0
+   \   000043   F5..         MOV     ?V0 + 0,A
+   \   000045   74..         MOV     A,#(messageArray >> 8) & 0xff
+   \   000047   39           ADDC    A,R1
+   \   000048   F5..         MOV     ?V0 + 1,A
+   \   00004A   75..00       MOV     ?V0 + 2,#0x0
+   \   00004D   78..         MOV     R0,#?V0 + 0
+   \   00004F   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000052   90....       MOV     DPTR,#pHeader
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   F8           MOV     R0,A
+   \   000057   7900         MOV     R1,#0x0
+   \   000059   E8           MOV     A,R0
+   \   00005A   75F041       MOV     B,#0x41
+   \   00005D   A4           MUL     AB
+   \   00005E   C8           XCH     A,R0
+   \   00005F   AAF0         MOV     R2,B
+   \   000061   75F000       MOV     B,#0x0
+   \   000064   A4           MUL     AB
+   \   000065   2A           ADD     A,R2
+   \   000066   FA           MOV     R2,A
+   \   000067   75F041       MOV     B,#0x41
+   \   00006A   E9           MOV     A,R1
+   \   00006B   A4           MUL     AB
+   \   00006C   2A           ADD     A,R2
+   \   00006D   F9           MOV     R1,A
+   \   00006E   74..         MOV     A,#(messageArray + 64) & 0xff
+   \   000070   28           ADD     A,R0
+   \   000071   F582         MOV     DPL,A
+   \   000073   74..         MOV     A,#((messageArray + 64) >> 8) & 0xff
+   \   000075   39           ADDC    A,R1
+   \   000076   F583         MOV     DPH,A
+   \   000078   E0           MOVX    A,@DPTR
+   \   000079   FC           MOV     R4,A
+   \   00007A   7D00         MOV     R5,#0x0
+   \   00007C   EE           MOV     A,R6
+   \   00007D   FA           MOV     R2,A
+   \   00007E   EF           MOV     A,R7
+   \   00007F   FB           MOV     R3,A
+   \   000080   12....       LCALL   ??osal_memcpy?relay
+   \   000083   7403         MOV     A,#0x3
+   \   000085   12....       LCALL   ?DEALLOC_XSTACK8
+    637            returnNode->len = messageArray[pHeader].len;
+   \   000088   90....       MOV     DPTR,#pHeader
+   \   00008B   E0           MOVX    A,@DPTR
+   \   00008C   F8           MOV     R0,A
+   \   00008D   7900         MOV     R1,#0x0
+   \   00008F   E8           MOV     A,R0
+   \   000090   75F041       MOV     B,#0x41
+   \   000093   A4           MUL     AB
+   \   000094   C8           XCH     A,R0
+   \   000095   AAF0         MOV     R2,B
+   \   000097   75F000       MOV     B,#0x0
+   \   00009A   A4           MUL     AB
+   \   00009B   2A           ADD     A,R2
+   \   00009C   FA           MOV     R2,A
+   \   00009D   75F041       MOV     B,#0x41
+   \   0000A0   E9           MOV     A,R1
+   \   0000A1   A4           MUL     AB
+   \   0000A2   2A           ADD     A,R2
+   \   0000A3   F9           MOV     R1,A
+   \   0000A4   74..         MOV     A,#(messageArray + 64) & 0xff
+   \   0000A6   28           ADD     A,R0
+   \   0000A7   F582         MOV     DPL,A
+   \   0000A9   74..         MOV     A,#((messageArray + 64) >> 8) & 0xff
+   \   0000AB   39           ADDC    A,R1
+   \   0000AC   F583         MOV     DPH,A
+   \   0000AE   E0           MOVX    A,@DPTR
+   \   0000AF   C0E0         PUSH    A
+   \   0000B1   EE           MOV     A,R6
+   \   0000B2   2440         ADD     A,#0x40
+   \   0000B4   F582         MOV     DPL,A
+   \   0000B6   EF           MOV     A,R7
+   \   0000B7   3400         ADDC    A,#0x0
+   \   0000B9   F583         MOV     DPH,A
+   \   0000BB   D0E0         POP     A
+   \   0000BD   F0           MOVX    @DPTR,A
+    638            // shift data forward
+    639            for(i=0; i<=pTail-1; i++){
+   \   0000BE   75..00       MOV     ?V0 + 3,#0x0
+   \                     ??LCD_PopMessage_2:
+   \   0000C1   90....       MOV     DPTR,#pTail
+   \   0000C4   E0           MOVX    A,@DPTR
+   \   0000C5   F8           MOV     R0,A
+   \   0000C6   7900         MOV     R1,#0x0
+   \   0000C8   24FF         ADD     A,#-0x1
+   \   0000CA   F8           MOV     R0,A
+   \   0000CB   E9           MOV     A,R1
+   \   0000CC   34FF         ADDC    A,#-0x1
+   \   0000CE   F9           MOV     R1,A
+   \   0000CF   85....       MOV     ?V0 + 0,?V0 + 3
+   \   0000D2   75..00       MOV     ?V0 + 1,#0x0
+   \   0000D5   C3           CLR     C
+   \   0000D6   E8           MOV     A,R0
+   \   0000D7   95..         SUBB    A,?V0 + 0
+   \   0000D9   E9           MOV     A,R1
+   \   0000DA   95..         SUBB    A,?V0 + 1
+   \   0000DC   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   0000DE   65D0         XRL     A,PSW
+   \   0000E0   33           RLC     A
+   \   0000E1   5003         JNC     $+5
+   \   0000E3   02....       LJMP    ??LCD_PopMessage_3 & 0xFFFF
+    640          	osal_memcpy(messageArray[i].data, messageArray[i+1].data, messageArray[i+1].len);
+   \   0000E6                ; Setup parameters for call to function osal_memcpy
+   \   0000E6   E5..         MOV     A,?V0 + 3
+   \   0000E8   A8..         MOV     R0,?V0 + 3
+   \   0000EA   7900         MOV     R1,#0x0
+   \   0000EC   E8           MOV     A,R0
+   \   0000ED   75F041       MOV     B,#0x41
+   \   0000F0   A4           MUL     AB
+   \   0000F1   C8           XCH     A,R0
+   \   0000F2   AAF0         MOV     R2,B
+   \   0000F4   75F000       MOV     B,#0x0
+   \   0000F7   A4           MUL     AB
+   \   0000F8   2A           ADD     A,R2
+   \   0000F9   FA           MOV     R2,A
+   \   0000FA   75F041       MOV     B,#0x41
+   \   0000FD   E9           MOV     A,R1
+   \   0000FE   A4           MUL     AB
+   \   0000FF   2A           ADD     A,R2
+   \   000100   F9           MOV     R1,A
+   \   000101   74..         MOV     A,#(messageArray + 65) & 0xff
+   \   000103   28           ADD     A,R0
+   \   000104   F5..         MOV     ?V0 + 0,A
+   \   000106   74..         MOV     A,#((messageArray + 65) >> 8) & 0xff
+   \   000108   39           ADDC    A,R1
+   \   000109   F5..         MOV     ?V0 + 1,A
+   \   00010B   75..00       MOV     ?V0 + 2,#0x0
+   \   00010E   78..         MOV     R0,#?V0 + 0
+   \   000110   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000113   E5..         MOV     A,?V0 + 3
+   \   000115   A8..         MOV     R0,?V0 + 3
+   \   000117   7900         MOV     R1,#0x0
+   \   000119   E8           MOV     A,R0
+   \   00011A   75F041       MOV     B,#0x41
+   \   00011D   A4           MUL     AB
+   \   00011E   C8           XCH     A,R0
+   \   00011F   AAF0         MOV     R2,B
+   \   000121   75F000       MOV     B,#0x0
+   \   000124   A4           MUL     AB
+   \   000125   2A           ADD     A,R2
+   \   000126   FA           MOV     R2,A
+   \   000127   75F041       MOV     B,#0x41
+   \   00012A   E9           MOV     A,R1
+   \   00012B   A4           MUL     AB
+   \   00012C   2A           ADD     A,R2
+   \   00012D   F9           MOV     R1,A
+   \   00012E   74..         MOV     A,#(messageArray + 129) & 0xff
+   \   000130   28           ADD     A,R0
+   \   000131   F582         MOV     DPL,A
+   \   000133   74..         MOV     A,#((messageArray + 129) >> 8) & 0xff
+   \   000135   39           ADDC    A,R1
+   \   000136   F583         MOV     DPH,A
+   \   000138   E0           MOVX    A,@DPTR
+   \   000139   FC           MOV     R4,A
+   \   00013A   7D00         MOV     R5,#0x0
+   \   00013C   E5..         MOV     A,?V0 + 3
+   \   00013E   A8..         MOV     R0,?V0 + 3
+   \   000140   7900         MOV     R1,#0x0
+   \   000142   E8           MOV     A,R0
+   \   000143   75F041       MOV     B,#0x41
+   \   000146   A4           MUL     AB
+   \   000147   C8           XCH     A,R0
+   \   000148   AAF0         MOV     R2,B
+   \   00014A   75F000       MOV     B,#0x0
+   \   00014D   A4           MUL     AB
+   \   00014E   2A           ADD     A,R2
+   \   00014F   FA           MOV     R2,A
+   \   000150   75F041       MOV     B,#0x41
+   \   000153   E9           MOV     A,R1
+   \   000154   A4           MUL     AB
+   \   000155   2A           ADD     A,R2
+   \   000156   F9           MOV     R1,A
+   \   000157   74..         MOV     A,#messageArray & 0xff
+   \   000159   28           ADD     A,R0
+   \   00015A   FA           MOV     R2,A
+   \   00015B   74..         MOV     A,#(messageArray >> 8) & 0xff
+   \   00015D   39           ADDC    A,R1
+   \   00015E   FB           MOV     R3,A
+   \   00015F   12....       LCALL   ??osal_memcpy?relay
+   \   000162   7403         MOV     A,#0x3
+   \   000164   12....       LCALL   ?DEALLOC_XSTACK8
+    641          	// set the len
+    642          	messageArray[i].len = messageArray[i+1].len;
+   \   000167   E5..         MOV     A,?V0 + 3
+   \   000169   A8..         MOV     R0,?V0 + 3
+   \   00016B   7900         MOV     R1,#0x0
+   \   00016D   E8           MOV     A,R0
+   \   00016E   75F041       MOV     B,#0x41
+   \   000171   A4           MUL     AB
+   \   000172   C8           XCH     A,R0
+   \   000173   AAF0         MOV     R2,B
+   \   000175   75F000       MOV     B,#0x0
+   \   000178   A4           MUL     AB
+   \   000179   2A           ADD     A,R2
+   \   00017A   FA           MOV     R2,A
+   \   00017B   75F041       MOV     B,#0x41
+   \   00017E   E9           MOV     A,R1
+   \   00017F   A4           MUL     AB
+   \   000180   2A           ADD     A,R2
+   \   000181   F9           MOV     R1,A
+   \   000182   74..         MOV     A,#(messageArray + 129) & 0xff
+   \   000184   28           ADD     A,R0
+   \   000185   F582         MOV     DPL,A
+   \   000187   74..         MOV     A,#((messageArray + 129) >> 8) & 0xff
+   \   000189   39           ADDC    A,R1
+   \   00018A   F583         MOV     DPH,A
+   \   00018C   E0           MOVX    A,@DPTR
+   \   00018D   C0E0         PUSH    A
+   \   00018F   E5..         MOV     A,?V0 + 3
+   \   000191   A8..         MOV     R0,?V0 + 3
+   \   000193   7900         MOV     R1,#0x0
+   \   000195   E8           MOV     A,R0
+   \   000196   75F041       MOV     B,#0x41
+   \   000199   A4           MUL     AB
+   \   00019A   C8           XCH     A,R0
+   \   00019B   AAF0         MOV     R2,B
+   \   00019D   75F000       MOV     B,#0x0
+   \   0001A0   A4           MUL     AB
+   \   0001A1   2A           ADD     A,R2
+   \   0001A2   FA           MOV     R2,A
+   \   0001A3   75F041       MOV     B,#0x41
+   \   0001A6   E9           MOV     A,R1
+   \   0001A7   A4           MUL     AB
+   \   0001A8   2A           ADD     A,R2
+   \   0001A9   F9           MOV     R1,A
+   \   0001AA   74..         MOV     A,#(messageArray + 64) & 0xff
+   \   0001AC   28           ADD     A,R0
+   \   0001AD   F582         MOV     DPL,A
+   \   0001AF   74..         MOV     A,#((messageArray + 64) >> 8) & 0xff
+   \   0001B1   39           ADDC    A,R1
+   \   0001B2   F583         MOV     DPH,A
+   \   0001B4   D0E0         POP     A
+   \   0001B6   F0           MOVX    @DPTR,A
+    643            }
+   \   0001B7   05..         INC     ?V0 + 3
+   \   0001B9   02....       LJMP    ??LCD_PopMessage_2 & 0xFFFF
+    644            // and now pTail is refered to a null node
+    645            // just use to save new data
+    646            pTail--;
+   \                     ??LCD_PopMessage_3:
+   \   0001BC   90....       MOV     DPTR,#pTail
+   \   0001BF   E0           MOVX    A,@DPTR
+   \   0001C0   24FF         ADD     A,#-0x1
+   \   0001C2   F0           MOVX    @DPTR,A
+    647            pHeader=0;
+   \   0001C3   90....       MOV     DPTR,#pHeader
+   \   0001C6   7400         MOV     A,#0x0
+   \   0001C8   F0           MOVX    @DPTR,A
+    648            
+    649            // return
+    650            return returnNode;
+   \   0001C9   EE           MOV     A,R6
+   \   0001CA   FA           MOV     R2,A
+   \   0001CB   EF           MOV     A,R7
+   \   0001CC   FB           MOV     R3,A
+   \                     ??LCD_PopMessage_1:
+   \   0001CD   7F04         MOV     R7,#0x4
+   \   0001CF   02....       LJMP    ?BANKED_LEAVE_XDATA
+    651          }
+    652          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    653          static byte LCD_IsMessageEmpty( ){
+   \                     LCD_IsMessageEmpty:
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    654            if(pHeader == pTail){
+   \   000004   90....       MOV     DPTR,#pHeader
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   F8           MOV     R0,A
+   \   000009   90....       MOV     DPTR,#pTail
+   \   00000C   E0           MOVX    A,@DPTR
+   \   00000D   68           XRL     A,R0
+   \   00000E   7004         JNZ     ??LCD_IsMessageEmpty_0
+    655          	return 0x01;
+   \   000010   7901         MOV     R1,#0x1
+   \   000012   8002         SJMP    ??LCD_IsMessageEmpty_1
+    656            }else{
+    657          	return 0x00;
+   \                     ??LCD_IsMessageEmpty_0:
+   \   000014   7900         MOV     R1,#0x0
+   \                     ??LCD_IsMessageEmpty_1:
+   \   000016   D083         POP     DPH
+   \   000018   D082         POP     DPL
+   \   00001A   02....       LJMP    ?BRET
+    658            }
+    659          }
+    660          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    661          static void LCD_SendOneMessage( ){
+   \                     LCD_SendOneMessage:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    662            // just return
+    663            if(LCD_IsMessageEmpty() == 0x01){
+   \   000005                ; Setup parameters for call to function LCD_IsMessageEmpty
+   \   000005   12....       LCALL   ??LCD_IsMessageEmpty?relay
+   \   000008   E9           MOV     A,R1
+   \   000009   6401         XRL     A,#0x1
+   \   00000B   6029         JZ      ??LCD_SendOneMessage_0
+    664          	return;
+    665            }	
+    666            // pop a message from the message array
+    667            MessageNode* item = LCD_PopMessage();
+   \   00000D                ; Setup parameters for call to function LCD_PopMessage
+   \   00000D   12....       LCALL   ??LCD_PopMessage?relay
+   \   000010   8A..         MOV     ?V0 + 0,R2
+   \   000012   8B..         MOV     ?V0 + 1,R3
+   \   000014   AE..         MOV     R6,?V0 + 0
+   \   000016   AF..         MOV     R7,?V0 + 1
+    668            // send
+    669            HalUARTWrite(UART_PORT, item->data, item->len);
+   \   000018                ; Setup parameters for call to function HalUARTWrite
+   \   000018   EE           MOV     A,R6
+   \   000019   2440         ADD     A,#0x40
+   \   00001B   F582         MOV     DPL,A
+   \   00001D   EF           MOV     A,R7
+   \   00001E   3400         ADDC    A,#0x0
+   \   000020   F583         MOV     DPH,A
+   \   000022   E0           MOVX    A,@DPTR
+   \   000023   FC           MOV     R4,A
+   \   000024   7D00         MOV     R5,#0x0
+   \   000026   EE           MOV     A,R6
+   \   000027   FA           MOV     R2,A
+   \   000028   EF           MOV     A,R7
+   \   000029   FB           MOV     R3,A
+   \   00002A   7900         MOV     R1,#0x0
+   \   00002C   12....       LCALL   ??HalUARTWrite?relay
+    670            // free it after send
+    671            osal_mem_free((MessageNode*)item);
+   \   00002F                ; Setup parameters for call to function osal_mem_free
+   \   00002F   EE           MOV     A,R6
+   \   000030   FA           MOV     R2,A
+   \   000031   EF           MOV     A,R7
+   \   000032   FB           MOV     R3,A
+   \   000033   12....       LCALL   ??osal_mem_free?relay
+    672          }
+   \                     ??LCD_SendOneMessage_0:
+   \   000036   7F02         MOV     R7,#0x2
+   \   000038   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_MessageMSGCB?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_MessageMSGCB
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_BuildScreenFrame?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_BuildScreenFrame
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_Loading?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_Loading
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_RoomPlate?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_RoomPlate
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_UartInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_UartInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SendTopoInformation?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SendTopoInformation
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_UartCallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_UartCallBack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SendACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SendACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SendRetry?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SendRetry
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_CalcFCS?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_CalcFCS
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??copyExtAddr?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    copyExtAddr
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_InitMessageQueue?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_InitMessageQueue
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_PushMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_PushMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_PopMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_PopMessage
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_IsMessageEmpty?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_IsMessageEmpty
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LCD_SendOneMessage?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LCD_SendOneMessage
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {229, 229, 4, 128, 3, 0, 1}>`:
+   \   000000   E5           DB 229
+   \   000001   E5           DB 229
+   \   000002   04           DB 4
+   \   000003   80           DB 128
+   \   000004   03           DB 3
+   \   000005   00           DB 0
+   \   000006   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {229, 229, 4, 128, 3, 0, 6}>`:
+   \   000000   E5           DB 229
+   \   000001   E5           DB 229
+   \   000002   04           DB 4
+   \   000003   80           DB 128
+   \   000004   03           DB 3
+   \   000005   00           DB 0
+   \   000006   06           DB 6
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000009   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000011   0000         DB 0, 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>_1`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0
+   \            000000  
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>_2`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+    673          /*******************************************************************************
+    674          *******************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     LCD_BuildScreenFrame               1      0     33
+       -> osal_mem_alloc                0      0     32
+       -> osal_memcpy                   0      0     38
+       -> LCD_PushMessage               0      0     32
+       -> osal_mem_free                 0      0     32
+     LCD_CalcFCS                        0      0     43
+     LCD_InitMessageQueue               2      0      9
+     LCD_IsMessageEmpty                 2      0     10
+     LCD_Loading                        4      0     25
+       -> HalUARTWrite                  4      0     14
+     LCD_MessageMSGCB                   0      0     32
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_SendACK                   0      0     28
+       -> LCD_RoomPlate                 0      0     28
+       -> LCD_SendRetry                 0      0     28
+       -> LCD_BuildScreenFrame          0      0     28
+       -> LCD_SendACK                   0      0     28
+       -> LCD_SendTopoInformation       0      0     28
+     LCD_PopMessage                     1      0     25
+       -> osal_mem_alloc                0      0     24
+       -> osal_memcpy                   0      0     30
+       -> osal_memcpy                   0      0     30
+     LCD_PushMessage                    1      0     31
+       -> osal_memcpy                   0      0     30
+     LCD_RoomPlate                      4      0     21
+       -> HalUARTWrite                  4      0     14
+     LCD_SendACK                        2      0     41
+       -> LCD_CalcFCS                   0      0     36
+       -> AF_DataRequest                0      0     54
+     LCD_SendOneMessage                 0      0     28
+       -> LCD_IsMessageEmpty            0      0     20
+       -> LCD_PopMessage                0      0     20
+       -> HalUARTWrite                  0      0     20
+       -> osal_mem_free                 0      0     20
+     LCD_SendRetry                      2      0     40
+       -> NLME_GetShortAddr             0      0     34
+       -> LCD_CalcFCS                   0      0     34
+       -> AF_DataRequest                0      0     52
+     LCD_SendTopoInformation            2      0     60
+       -> NLME_GetExtAddr               0      0     66
+       -> NLME_GetShortAddr             0      0     66
+       -> NLME_GetCoordShortAddr        0      0     66
+       -> copyExtAddr                   0      0     66
+       -> LCD_CalcFCS                   0      0     66
+       -> AF_DataRequest                0      0     84
+     LCD_UartCallBack                   0      0      9
+       -> LCD_IsMessageEmpty            0      0     18
+       -> LCD_SendOneMessage            0      0     18
+     LCD_UartInit                       2      0     38
+       -> HalUARTOpen                   4      0     58
+     WirelessMonitorSystem_Init         0      0      9
+       -> LCD_InitMessageQueue          0      0     18
+       -> LCD_UartInit                  0      0     18
+       -> afRegister                    0      0     18
+     WirelessMonitorSystem_ProcessEvent
+                                        0      0     18
+       -> osal_msg_receive              0      0     36
+       -> LCD_SendOneMessage            0      0     36
+       -> LCD_MessageMSGCB              0      0     36
+       -> LCD_Loading                   0      0     36
+       -> LCD_SendTopoInformation       0      0     36
+       -> osal_msg_deallocate           0      0     36
+       -> osal_msg_receive              0      0     36
+     copyExtAddr                        3      0     33
+
+
+   Segment part sizes:
+
+     Function/Label                             Bytes
+     --------------                             -----
+     LCD_ClusterInList                            14
+     LCD_ClusterOutList                            2
+     LCD_SimpleDesc                               12
+     LCD_epDesc                                    6
+     LCD_TaskID                                    1
+     LCD_TransID                                   1
+     LCD_NwkState                                  1
+     LCD_DstAddr                                  12
+     pHeader                                       1
+     pTail                                         1
+     messageArray                                780
+     ackFlag                                       1
+     shiftToRoomInformation                        1
+     roomReg                                       2
+     courseReg                                     2
+     teacherReg                                    2
+     classReg                                      2
+     peopleReg                                     2
+     timeReg                                       2
+     WirelessMonitorSystem_Init                  108
+     WirelessMonitorSystem_ProcessEvent
+                                                 211
+     LCD_MessageMSGCB                            309
+     LCD_BuildScreenFrame                        178
+     LCD_Loading                                  66
+     LCD_RoomPlate                                66
+     LCD_UartInit                                126
+     LCD_SendTopoInformation                     310
+     LCD_UartCallBack                             27
+     LCD_SendACK                                 209
+     LCD_SendRetry                               223
+     LCD_CalcFCS                                  43
+     copyExtAddr                                  61
+     LCD_InitMessageQueue                         23
+     LCD_PushMessage                             141
+     LCD_PopMessage                              466
+     LCD_IsMessageEmpty                           29
+     LCD_SendOneMessage                           59
+     ??WirelessMonitorSystem_Init?relay            6
+     ??WirelessMonitorSystem_ProcessEvent?relay    6
+     ??LCD_MessageMSGCB?relay                      6
+     ??LCD_BuildScreenFrame?relay                  6
+     ??LCD_Loading?relay                           6
+     ??LCD_RoomPlate?relay                         6
+     ??LCD_UartInit?relay                          6
+     ??LCD_SendTopoInformation?relay               6
+     ??LCD_UartCallBack?relay                      6
+     ??LCD_SendACK?relay                           6
+     ??LCD_SendRetry?relay                         6
+     ??LCD_CalcFCS?relay                           6
+     ??copyExtAddr?relay                           6
+     ??LCD_InitMessageQueue?relay                  6
+     ??LCD_PushMessage?relay                       6
+     ??LCD_PopMessage?relay                        6
+     ??LCD_IsMessageEmpty?relay                    6
+     ??LCD_SendOneMessage?relay                    6
+     ?<Constant {229, 229, 4, 128, 3, 0, 1}>       7
+     ?<Constant {229, 229, 4, 128, 3, 0, 6}>       7
+     ?<Constant {0}>                              19
+     ?<Constant {0}>_1                             8
+     ?<Constant {0}>_2                             7
+
+ 
+ 2 655 bytes in segment BANKED_CODE
+   108 bytes in segment BANK_RELAYS
+    88 bytes in segment XDATA_ROM_C
+   805 bytes in segment XDATA_Z
+ 
+ 2 763 bytes of CODE  memory
+    88 bytes of CONST memory
+   805 bytes of XDATA memory
+
+Errors: none
+Warnings: none

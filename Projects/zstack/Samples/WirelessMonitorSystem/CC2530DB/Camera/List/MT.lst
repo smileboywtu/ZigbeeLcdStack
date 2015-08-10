@@ -1,0 +1,2066 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Jul/2015  17:23:39 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\mt\MT.c                                         #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\mt\MT. #
+#                          c" -D HAL_UART -lC "C:\Texas                       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Camera\List\ #
+#                          " -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\WirelessMonitorSystem\CC253 #
+#                          0DB\Camera\List\" --diag_suppress Pe001,Pa010 -o   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\Ca #
+#                          mera\Obj\" -e --no_cse --no_unroll --no_inline     #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\List\MT.lst                                    #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\Obj\MT.r51                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\mt\MT.c
+      1          /***************************************************************************************************
+      2            Filename:       MT.c
+      3            Revised:        $Date: 2011-06-07 12:12:44 -0700 (Tue, 07 Jun 2011) $
+      4            Revision:       $Revision: 26238 $
+      5          
+      6            Description:    MonitorTest Event Loop functions.
+      7                            Everything in the MonitorTest Task (except the serial driver).
+      8          
+      9          
+     10            Copyright 2007-2011 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          
+     40           **************************************************************************************************/
+     41          
+     42          /**************************************************************************************************
+     43           * INCLUDES
+     44           **************************************************************************************************/
+     45          
+     46          #include "ZComDef.h"
+     47          #include "MT.h"
+     48          #include "MT_APP.h"
+     49          #include "MT_DEBUG.h"
+     50          #include "MT_UTIL.h"
+     51          #include "MT_SYS.h"
+     52          
+     53          #include "OnBoard.h"
+     54          #include "OSAL.h"
+     55          #include "OSAL_Memory.h"
+     56          #include "OSAL_Nv.h"
+     57          
+     58          #include "DebugTrace.h"
+     59          #include "ZMAC.h"
+     60          
+     61          #if !defined ( NONWK )
+     62            #include "NLMEDE.h"
+     63            #include "nwk_bufs.h"
+     64            #include "ZDObject.h"
+     65            #include "ssp.h"
+     66            #include "nwk_util.h"
+     67            #include "AF.h"
+     68            #include "MT_SAPI.h"
+     69          #endif
+     70          
+     71          #if defined( MT_MAC_FUNC ) || defined( MT_MAC_CB_FUNC )
+     72            #include "MT_MAC.h"
+     73          #endif
+     74          #if defined( MT_NWK_FUNC ) || defined( MT_NWK_CB_FUNC )
+     75            #include "MT_NWK.h"
+     76            #include "nwk.h"
+     77            #include "nwk_bufs.h"
+     78          #endif
+     79          #if defined( MT_AF_FUNC ) || defined( MT_AF_CB_FUNC )
+     80            #include "MT_AF.h"
+     81          #endif
+     82          #if defined( MT_USER_TEST_FUNC )
+     83            #include "AF.h"
+     84          #endif
+     85          #if defined( MT_ZDO_FUNC )
+     86            #include "MT_ZDO.h"
+     87          #endif
+     88          #if defined (MT_SAPI_FUNC)
+     89          	#include "MT_SAPI.h"
+     90          #endif
+     91          #if defined (MT_OTA_FUNC)
+     92            #include "MT_OTA.h"
+     93          #endif
+     94          
+     95          #if defined( APP_TP )
+     96           #include "TestProfile.h"
+     97          #endif
+     98          #if defined( APP_TP2 )
+     99           #include "TestProfile2.h"
+    100          #endif
+    101          
+    102          #if defined(APP_TGEN)
+    103            #include "TrafficGenApp.h"
+    104          #endif
+    105          #if defined(APP_DEBUG)
+    106          	#include "DebugApp.h"
+    107          #endif
+    108          #if defined (NWK_TEST)
+    109          	#include "HWTTApp.h"
+    110          #endif
+    111          
+    112          /* HAL */
+    113          #include "hal_uart.h"
+    114          #include "hal_led.h"
+    115          #include "hal_key.h"
+    116          #include "MT_UART.h"
+    117          
+    118          /**************************************************************************************************
+    119           * CONSTANTS
+    120           **************************************************************************************************/
+    121          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    122          mtProcessMsg_t mtProcessIncoming[] =
+   \                     mtProcessIncoming:
+   \   000000                DS 22
+   \   000016                REQUIRE __INIT_XDATA_Z
+    123          {
+    124            NULL,
+    125          
+    126          #if defined (MT_SYS_FUNC)
+    127            MT_SysCommandProcessing,
+    128          #else
+    129            NULL,
+    130          #endif
+    131          
+    132          #if defined (MT_MAC_FUNC)
+    133            MT_MacCommandProcessing,
+    134          #else
+    135            NULL,
+    136          #endif
+    137          
+    138          #if defined (MT_NWK_FUNC)
+    139            MT_NwkCommandProcessing,
+    140          #else
+    141            NULL,
+    142          #endif
+    143          
+    144          #if defined (MT_AF_FUNC)
+    145            MT_AfCommandProcessing,
+    146          #else
+    147            NULL,
+    148          #endif
+    149          
+    150          #if defined (MT_ZDO_FUNC)
+    151            MT_ZdoCommandProcessing,
+    152          #else
+    153            NULL,
+    154          #endif
+    155          
+    156          #if defined (MT_SAPI_FUNC)
+    157            MT_SapiCommandProcessing,
+    158          #else
+    159            NULL,
+    160          #endif
+    161          
+    162          #if defined (MT_UTIL_FUNC)
+    163            MT_UtilCommandProcessing,
+    164          #else
+    165            NULL,
+    166          #endif
+    167          
+    168          #if defined (MT_DEBUG_FUNC)
+    169            MT_DebugCommandProcessing,
+    170          #else
+    171            NULL,
+    172          #endif
+    173          
+    174          #if defined (MT_APP_FUNC)
+    175            MT_AppCommandProcessing,
+    176          #else
+    177            NULL,
+    178          #endif
+    179          
+    180          #if defined (MT_OTA_FUNC)
+    181            MT_OtaCommandProcessing,
+    182          #else
+    183            NULL,
+    184          #endif
+    185          };
+    186          
+    187          /**************************************************************************************************
+    188           * GLOBAL VARIABLES
+    189           **************************************************************************************************/
+    190          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    191          byte debugThreshold;
+   \                     debugThreshold:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    192          byte debugCompId;
+   \                     debugCompId:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    193          
+    194          /**************************************************************************************************
+    195           * LOCAL FUNCTIONS
+    196           **************************************************************************************************/
+    197          
+    198          void MT_MsgQueueInit( void );
+    199          void MT_ResetMsgQueue( void );
+    200          byte MT_QueueMsg( byte *msg , byte len );
+    201          void MT_ProcessQueue( void );
+    202          
+    203          #if defined ( MT_USER_TEST_FUNC )
+    204          void MT_ProcessAppUserCmd( byte *pData );
+    205          #endif
+    206          
+    207          /**************************************************************************************************
+    208           * @fn         MT_Init
+    209           *
+    210           * @brief      This function is the secondary initialization that resolves conflicts during
+    211           *             osalInitTasks(). For example, since MT is the highest priority task, and
+    212           *             specifically because the MT task is initialized before the ZDApp task, if MT_Init()
+    213           *             registers anything with ZDO_RegisterForZdoCB(), it is wiped out when ZDApp task
+    214           *             initialization invokes ZDApp_InitZdoCBFunc().
+    215           *             There may be other existing or future such races, so try to do all possible
+    216           *             MT initialization here vice in MT_TaskInit().
+    217           *
+    218           * input parameters
+    219           *
+    220           * None.
+    221           *
+    222           * output parameters
+    223           *
+    224           * None.
+    225           *
+    226           * @return      None.
+    227           **************************************************************************************************
+    228           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    229          void MT_Init(void)
+   \                     MT_Init:
+    230          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    231          #if defined (MT_ZDO_FUNC)
+    232            MT_ZdoInit();
+    233          #endif
+    234            MT_SysResetInd();
+   \   000004                ; Setup parameters for call to function MT_SysResetInd
+   \   000004   12....       LCALL   ??MT_SysResetInd?relay
+    235          }
+   \   000007   D083         POP     DPH
+   \   000009   D082         POP     DPL
+   \   00000B   02....       LJMP    ?BRET
+    236          
+    237          /***************************************************************************************************
+    238           * @fn      MT_BuildSPIMsg
+    239           *
+    240           * @brief
+    241           *
+    242           *   Format an SPI message.
+    243           *
+    244           * @param   UINT16 cmd - command id
+    245           * @param   byte *msg - pointer to message buffer
+    246           * @param   byte dataLen - length of data field
+    247           * @param   byte *pData - pointer to data field
+    248           *
+    249           * @return  void
+    250           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    251          void MT_BuildSPIMsg( uint8 cmdType, uint8 cmdId, byte *msg, byte dataLen, byte *pData )
+   \                     MT_BuildSPIMsg:
+    252          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   8A..         MOV     ?V0 + 3,R2
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+   \   00000D   8B..         MOV     ?V0 + 7,R3
+   \   00000F   7410         MOV     A,#0x10
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F5..         MOV     ?V0 + 0,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   F5..         MOV     ?V0 + 1,A
+    253            /* Fill in the CMD and Data Length */
+    254            *msg++ = dataLen;
+   \   00001B   E5..         MOV     A,?V0 + 7
+   \   00001D   8E82         MOV     DPL,R6
+   \   00001F   8F83         MOV     DPH,R7
+   \   000021   E5..         MOV     A,?V0 + 7
+   \   000023   F0           MOVX    @DPTR,A
+   \   000024   8E82         MOV     DPL,R6
+   \   000026   8F83         MOV     DPH,R7
+   \   000028   A3           INC     DPTR
+   \   000029   AE82         MOV     R6,DPL
+   \   00002B   AF83         MOV     R7,DPH
+    255            *msg++ = cmdType;
+   \   00002D   E5..         MOV     A,?V0 + 2
+   \   00002F   8E82         MOV     DPL,R6
+   \   000031   8F83         MOV     DPH,R7
+   \   000033   E5..         MOV     A,?V0 + 2
+   \   000035   F0           MOVX    @DPTR,A
+   \   000036   8E82         MOV     DPL,R6
+   \   000038   8F83         MOV     DPH,R7
+   \   00003A   A3           INC     DPTR
+   \   00003B   AE82         MOV     R6,DPL
+   \   00003D   AF83         MOV     R7,DPH
+    256            *msg++ = cmdId;
+   \   00003F   E5..         MOV     A,?V0 + 3
+   \   000041   8E82         MOV     DPL,R6
+   \   000043   8F83         MOV     DPH,R7
+   \   000045   E5..         MOV     A,?V0 + 3
+   \   000047   F0           MOVX    @DPTR,A
+   \   000048   8E82         MOV     DPL,R6
+   \   00004A   8F83         MOV     DPH,R7
+   \   00004C   A3           INC     DPTR
+   \   00004D   AE82         MOV     R6,DPL
+   \   00004F   AF83         MOV     R7,DPH
+    257          
+    258            /* Fill in the data */
+    259            if ( pData )
+   \   000051   E5..         MOV     A,?V0 + 0
+   \   000053   45..         ORL     A,?V0 + 1
+   \   000055   6024         JZ      ??MT_BuildSPIMsg_0
+    260            {
+    261              osal_memcpy( msg, pData, dataLen );
+   \   000057                ; Setup parameters for call to function osal_memcpy
+   \   000057   85....       MOV     ?V0 + 4,?V0 + 0
+   \   00005A   85....       MOV     ?V0 + 5,?V0 + 1
+   \   00005D   75..00       MOV     ?V0 + 6,#0x0
+   \   000060   78..         MOV     R0,#?V0 + 4
+   \   000062   12....       LCALL   ?PUSH_XSTACK_I_THREE
+   \   000065   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000068   75..00       MOV     ?V0 + 5,#0x0
+   \   00006B   AC..         MOV     R4,?V0 + 4
+   \   00006D   AD..         MOV     R5,?V0 + 5
+   \   00006F   EE           MOV     A,R6
+   \   000070   FA           MOV     R2,A
+   \   000071   EF           MOV     A,R7
+   \   000072   FB           MOV     R3,A
+   \   000073   12....       LCALL   ??osal_memcpy?relay
+   \   000076   7403         MOV     A,#0x3
+   \   000078   12....       LCALL   ?DEALLOC_XSTACK8
+    262            }
+    263          }
+   \                     ??MT_BuildSPIMsg_0:
+   \   00007B   7F08         MOV     R7,#0x8
+   \   00007D   02....       LJMP    ?BANKED_LEAVE_XDATA
+    264          
+    265          /***************************************************************************************************
+    266           * @fn      MT_BuildAndSendZToolResponse
+    267           *
+    268           * @brief   Build and send a ZTOOL msg
+    269           * @param   uint8 cmdType - include type and subsystem
+    270           *          uint8 cmdId - command ID
+    271           *          byte dataLen
+    272           *          byte *pData
+    273           *
+    274           * @return  void
+    275           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    276          void MT_BuildAndSendZToolResponse(uint8 cmdType, uint8 cmdId, uint8 dataLen, uint8 *pData)
+   \                     MT_BuildAndSendZToolResponse:
+    277          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 1,R1
+   \   000007   8A..         MOV     ?V0 + 4,R2
+   \   000009   8B..         MOV     ?V0 + 0,R3
+   \   00000B   8C..         MOV     ?V0 + 2,R4
+   \   00000D   8D..         MOV     ?V0 + 3,R5
+    278            uint8 *msg_ptr;
+    279          
+    280            /* Allocate memory including SOP and FCS */
+    281            msg_ptr = MT_TransportAlloc((mtRpcCmdType_t)(cmdType & 0xE0), dataLen);
+   \   00000F                ; Setup parameters for call to function MT_TransportAlloc
+   \   00000F   AA..         MOV     R2,?V0 + 0
+   \   000011   74E0         MOV     A,#-0x20
+   \   000013   55..         ANL     A,?V0 + 1
+   \   000015   F9           MOV     R1,A
+   \   000016   12....       LCALL   ??MT_TransportAlloc?relay
+   \   000019   8A..         MOV     ?V0 + 6,R2
+   \   00001B   8B..         MOV     ?V0 + 7,R3
+   \   00001D   AE..         MOV     R6,?V0 + 6
+   \   00001F   AF..         MOV     R7,?V0 + 7
+    282          
+    283            if (msg_ptr)
+   \   000021   EE           MOV     A,R6
+   \   000022   4F           ORL     A,R7
+   \   000023   601E         JZ      ??MT_BuildAndSendZToolResponse_0
+    284            {
+    285              /* Build the message */
+    286              MT_BuildSPIMsg(cmdType, cmdId, msg_ptr, dataLen, pData);
+   \   000025                ; Setup parameters for call to function MT_BuildSPIMsg
+   \   000025   78..         MOV     R0,#?V0 + 2
+   \   000027   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002A   AB..         MOV     R3,?V0 + 0
+   \   00002C   EE           MOV     A,R6
+   \   00002D   FC           MOV     R4,A
+   \   00002E   EF           MOV     A,R7
+   \   00002F   FD           MOV     R5,A
+   \   000030   AA..         MOV     R2,?V0 + 4
+   \   000032   A9..         MOV     R1,?V0 + 1
+   \   000034   12....       LCALL   ??MT_BuildSPIMsg?relay
+   \   000037   7402         MOV     A,#0x2
+   \   000039   12....       LCALL   ?DEALLOC_XSTACK8
+    287              /* Send out the msg */
+    288              MT_TransportSend(msg_ptr);
+   \   00003C                ; Setup parameters for call to function MT_TransportSend
+   \   00003C   EE           MOV     A,R6
+   \   00003D   FA           MOV     R2,A
+   \   00003E   EF           MOV     A,R7
+   \   00003F   FB           MOV     R3,A
+   \   000040   12....       LCALL   ??MT_TransportSend?relay
+    289            }
+    290          }
+   \                     ??MT_BuildAndSendZToolResponse_0:
+   \   000043   7F08         MOV     R7,#0x8
+   \   000045   02....       LJMP    ?BANKED_LEAVE_XDATA
+    291          
+    292          /***************************************************************************************************
+    293           * @fn      MT_ProcessIncoming
+    294           *
+    295           * @brief  Process Incoming Message.
+    296           *
+    297           * @param   byte *pBuf - pointer to event message
+    298           *
+    299           * @return  void
+    300           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    301          void MT_ProcessIncoming(uint8 *pBuf)
+   \                     MT_ProcessIncoming:
+    302          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 3
+   \   000005   74FD         MOV     A,#-0x3
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    303            mtProcessMsg_t func;
+    304            uint8 rsp[MT_RPC_FRAME_HDR_SZ];
+    305          
+    306            /* pre-build response message:  | status | cmd0 | cmd1 | */
+    307            rsp[1] = pBuf[MT_RPC_POS_CMD0];
+   \   00000E   8E82         MOV     DPL,R6
+   \   000010   8F83         MOV     DPH,R7
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   C0E0         PUSH    A
+   \   000016   7401         MOV     A,#0x1
+   \   000018   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001B   D0E0         POP     A
+   \   00001D   F0           MOVX    @DPTR,A
+    308            rsp[2] = pBuf[MT_RPC_POS_CMD1];
+   \   00001E   8E82         MOV     DPL,R6
+   \   000020   8F83         MOV     DPH,R7
+   \   000022   A3           INC     DPTR
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   C0E0         PUSH    A
+   \   000027   7402         MOV     A,#0x2
+   \   000029   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002C   D0E0         POP     A
+   \   00002E   F0           MOVX    @DPTR,A
+    309          
+    310            /* check length */
+    311            if (pBuf[MT_RPC_POS_LEN] > MT_RPC_DATA_MAX)
+   \   00002F   8E82         MOV     DPL,R6
+   \   000031   8F83         MOV     DPH,R7
+   \   000033   E0           MOVX    A,@DPTR
+   \   000034   C3           CLR     C
+   \   000035   94FB         SUBB    A,#-0x5
+   \   000037   400B         JC      ??MT_ProcessIncoming_0
+    312            {
+    313              rsp[0] = MT_RPC_ERR_LENGTH;
+   \   000039   85..82       MOV     DPL,?XSP + 0
+   \   00003C   85..83       MOV     DPH,?XSP + 1
+   \   00003F   7404         MOV     A,#0x4
+   \   000041   F0           MOVX    @DPTR,A
+   \   000042   8076         SJMP    ??MT_ProcessIncoming_1
+    314            }
+    315            /* check subsystem range */
+    316            else if ((rsp[1] & MT_RPC_SUBSYSTEM_MASK) < MT_RPC_SYS_MAX)
+   \                     ??MT_ProcessIncoming_0:
+   \   000044   7401         MOV     A,#0x1
+   \   000046   12....       LCALL   ?XSTACK_DISP0_8
+   \   000049   E0           MOVX    A,@DPTR
+   \   00004A   541F         ANL     A,#0x1f
+   \   00004C   C3           CLR     C
+   \   00004D   940B         SUBB    A,#0xb
+   \   00004F   5060         JNC     ??MT_ProcessIncoming_2
+    317            {
+    318              /* look up processing function */
+    319              func = mtProcessIncoming[rsp[1] & MT_RPC_SUBSYSTEM_MASK];
+   \   000051   7401         MOV     A,#0x1
+   \   000053   12....       LCALL   ?XSTACK_DISP0_8
+   \   000056   E0           MOVX    A,@DPTR
+   \   000057   F8           MOV     R0,A
+   \   000058   7900         MOV     R1,#0x0
+   \   00005A   541F         ANL     A,#0x1f
+   \   00005C   F8           MOV     R0,A
+   \   00005D   E9           MOV     A,R1
+   \   00005E   5400         ANL     A,#0x0
+   \   000060   F9           MOV     R1,A
+   \   000061   E8           MOV     A,R0
+   \   000062   75F002       MOV     B,#0x2
+   \   000065   A4           MUL     AB
+   \   000066   C8           XCH     A,R0
+   \   000067   AAF0         MOV     R2,B
+   \   000069   75F000       MOV     B,#0x0
+   \   00006C   A4           MUL     AB
+   \   00006D   2A           ADD     A,R2
+   \   00006E   FA           MOV     R2,A
+   \   00006F   75F002       MOV     B,#0x2
+   \   000072   E9           MOV     A,R1
+   \   000073   A4           MUL     AB
+   \   000074   2A           ADD     A,R2
+   \   000075   F9           MOV     R1,A
+   \   000076   74..         MOV     A,#mtProcessIncoming & 0xff
+   \   000078   28           ADD     A,R0
+   \   000079   F582         MOV     DPL,A
+   \   00007B   74..         MOV     A,#(mtProcessIncoming >> 8) & 0xff
+   \   00007D   39           ADDC    A,R1
+   \   00007E   F583         MOV     DPH,A
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   F8           MOV     R0,A
+   \   000082   A3           INC     DPTR
+   \   000083   E0           MOVX    A,@DPTR
+   \   000084   F9           MOV     R1,A
+   \   000085   88..         MOV     ?V0 + 0,R0
+   \   000087   89..         MOV     ?V0 + 1,R1
+    320              if (func)
+   \   000089   E5..         MOV     A,?V0 + 0
+   \   00008B   45..         ORL     A,?V0 + 1
+   \   00008D   6017         JZ      ??MT_ProcessIncoming_3
+    321              {
+    322                /* execute processing function */
+    323                rsp[0] = (*func)(pBuf);
+   \   00008F                ; Setup parameters for indirect call
+   \   00008F   EE           MOV     A,R6
+   \   000090   FA           MOV     R2,A
+   \   000091   EF           MOV     A,R7
+   \   000092   FB           MOV     R3,A
+   \   000093   85..82       MOV     DPL,?V0 + 0
+   \   000096   85..83       MOV     DPH,?V0 + 1
+   \   000099   12....       LCALL   ?CALL_IND
+   \   00009C   E9           MOV     A,R1
+   \   00009D   85..82       MOV     DPL,?XSP + 0
+   \   0000A0   85..83       MOV     DPH,?XSP + 1
+   \   0000A3   F0           MOVX    @DPTR,A
+   \   0000A4   8014         SJMP    ??MT_ProcessIncoming_1
+    324              }
+    325              else
+    326              {
+    327                rsp[0] = MT_RPC_ERR_SUBSYSTEM;
+   \                     ??MT_ProcessIncoming_3:
+   \   0000A6   85..82       MOV     DPL,?XSP + 0
+   \   0000A9   85..83       MOV     DPH,?XSP + 1
+   \   0000AC   7401         MOV     A,#0x1
+   \   0000AE   F0           MOVX    @DPTR,A
+   \   0000AF   8009         SJMP    ??MT_ProcessIncoming_1
+    328              }
+    329            }
+    330            else
+    331            {
+    332              rsp[0] = MT_RPC_ERR_SUBSYSTEM;
+   \                     ??MT_ProcessIncoming_2:
+   \   0000B1   85..82       MOV     DPL,?XSP + 0
+   \   0000B4   85..83       MOV     DPH,?XSP + 1
+   \   0000B7   7401         MOV     A,#0x1
+   \   0000B9   F0           MOVX    @DPTR,A
+    333            }
+    334          
+    335            /* if error and this was an SREQ, send error message */
+    336            if ((rsp[0] != MT_RPC_SUCCESS) && ((rsp[1] & MT_RPC_CMD_TYPE_MASK) == MT_RPC_CMD_SREQ))
+   \                     ??MT_ProcessIncoming_1:
+   \   0000BA   85..82       MOV     DPL,?XSP + 0
+   \   0000BD   85..83       MOV     DPH,?XSP + 1
+   \   0000C0   E0           MOVX    A,@DPTR
+   \   0000C1   601F         JZ      ??MT_ProcessIncoming_4
+   \   0000C3   7401         MOV     A,#0x1
+   \   0000C5   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C8   E0           MOVX    A,@DPTR
+   \   0000C9   54E0         ANL     A,#0xe0
+   \   0000CB   6420         XRL     A,#0x20
+   \   0000CD   7013         JNZ     ??MT_ProcessIncoming_4
+    337            {
+    338              MT_BuildAndSendZToolResponse(((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_RES0), 0,
+    339                                                                            MT_RPC_FRAME_HDR_SZ, rsp);
+   \   0000CF                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   0000CF   85..82       MOV     DPL,?XSP + 0
+   \   0000D2   85..83       MOV     DPH,?XSP + 1
+   \   0000D5   AC82         MOV     R4,DPL
+   \   0000D7   AD83         MOV     R5,DPH
+   \   0000D9   7B03         MOV     R3,#0x3
+   \   0000DB   7A00         MOV     R2,#0x0
+   \   0000DD   7960         MOV     R1,#0x60
+   \   0000DF   12....       LCALL   ??MT_BuildAndSendZToolResponse?relay
+    340            }
+    341          }
+   \                     ??MT_ProcessIncoming_4:
+   \   0000E2   7403         MOV     A,#0x3
+   \   0000E4   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000E7   7F02         MOV     R7,#0x2
+   \   0000E9   02....       LJMP    ?BANKED_LEAVE_XDATA
+    342          
+    343          /***************************************************************************************************
+    344           * @fn      MTProcessAppRspMsg
+    345           *
+    346           * @brief   Process the User App Response Message
+    347           *
+    348           * @param   data - output serial buffer.  The first byte must be the
+    349           *          endpoint that send this message.
+    350           * @param   len - data length
+    351           *
+    352           * @return  none
+    353           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    354          void MTProcessAppRspMsg( byte *pData, byte len )
+   \                     MTProcessAppRspMsg:
+    355          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   89..         MOV     ?V0 + 0,R1
+    356            /* Send out Reset Response message */
+    357            MT_BuildAndSendZToolResponse( ((uint8)MT_RPC_CMD_SRSP | (uint8)MT_RPC_SYS_APP), MT_APP_RSP, len, pData );
+   \   00000B                ; Setup parameters for call to function MT_BuildAndSendZToolResponse
+   \   00000B   EE           MOV     A,R6
+   \   00000C   FC           MOV     R4,A
+   \   00000D   EF           MOV     A,R7
+   \   00000E   FD           MOV     R5,A
+   \   00000F   AB..         MOV     R3,?V0 + 0
+   \   000011   7A80         MOV     R2,#-0x80
+   \   000013   7969         MOV     R1,#0x69
+   \   000015   12....       LCALL   ??MT_BuildAndSendZToolResponse?relay
+    358          }
+   \   000018   7F01         MOV     R7,#0x1
+   \   00001A   02....       LJMP    ?BANKED_LEAVE_XDATA
+    359          
+    360          
+    361          /***************************************************************************************************
+    362           * @fn      MT_ReverseBytes
+    363           *
+    364           * @brief
+    365           *
+    366           *   Reverses bytes within an array
+    367           *
+    368           * @param   data - ptr to data buffer to reverse
+    369           * @param    len - number of bytes in buffer
+    370           *
+    371           * @return  void
+    372           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    373          void MT_ReverseBytes( byte *pData, byte len )
+   \                     MT_ReverseBytes:
+    374          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    375            byte i,j;
+    376            byte temp;
+    377          
+    378            for ( i = 0, j = len-1; len > 1; len-=2 )
+   \   000005   7C00         MOV     R4,#0x0
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   29           ADD     A,R1
+   \   00000A   F8           MOV     R0,A
+   \                     ??MT_ReverseBytes_0:
+   \   00000B   E9           MOV     A,R1
+   \   00000C   C3           CLR     C
+   \   00000D   9402         SUBB    A,#0x2
+   \   00000F   4050         JC      ??MT_ReverseBytes_1
+    379            {
+    380              temp = pData[i];
+   \   000011   8C..         MOV     ?V0 + 0,R4
+   \   000013   75..00       MOV     ?V0 + 1,#0x0
+   \   000016   EA           MOV     A,R2
+   \   000017   25..         ADD     A,?V0 + 0
+   \   000019   F582         MOV     DPL,A
+   \   00001B   EB           MOV     A,R3
+   \   00001C   35..         ADDC    A,?V0 + 1
+   \   00001E   F583         MOV     DPH,A
+   \   000020   E0           MOVX    A,@DPTR
+   \   000021   FD           MOV     R5,A
+    381              pData[i++] = pData[j];
+   \   000022   88..         MOV     ?V0 + 0,R0
+   \   000024   75..00       MOV     ?V0 + 1,#0x0
+   \   000027   EA           MOV     A,R2
+   \   000028   25..         ADD     A,?V0 + 0
+   \   00002A   F582         MOV     DPL,A
+   \   00002C   EB           MOV     A,R3
+   \   00002D   35..         ADDC    A,?V0 + 1
+   \   00002F   F583         MOV     DPH,A
+   \   000031   E0           MOVX    A,@DPTR
+   \   000032   C0E0         PUSH    A
+   \   000034   8C..         MOV     ?V0 + 0,R4
+   \   000036   75..00       MOV     ?V0 + 1,#0x0
+   \   000039   EA           MOV     A,R2
+   \   00003A   25..         ADD     A,?V0 + 0
+   \   00003C   F582         MOV     DPL,A
+   \   00003E   EB           MOV     A,R3
+   \   00003F   35..         ADDC    A,?V0 + 1
+   \   000041   F583         MOV     DPH,A
+   \   000043   D0E0         POP     A
+   \   000045   F0           MOVX    @DPTR,A
+   \   000046   0C           INC     R4
+    382              pData[j--] = temp;
+   \   000047   ED           MOV     A,R5
+   \   000048   C0E0         PUSH    A
+   \   00004A   88..         MOV     ?V0 + 0,R0
+   \   00004C   75..00       MOV     ?V0 + 1,#0x0
+   \   00004F   EA           MOV     A,R2
+   \   000050   25..         ADD     A,?V0 + 0
+   \   000052   F582         MOV     DPL,A
+   \   000054   EB           MOV     A,R3
+   \   000055   35..         ADDC    A,?V0 + 1
+   \   000057   F583         MOV     DPH,A
+   \   000059   D0E0         POP     A
+   \   00005B   F0           MOVX    @DPTR,A
+   \   00005C   18           DEC     R0
+    383            }
+   \   00005D   19           DEC     R1
+   \   00005E   19           DEC     R1
+   \   00005F   80AA         SJMP    ??MT_ReverseBytes_0
+    384          }
+   \                     ??MT_ReverseBytes_1:
+   \   000061   7F02         MOV     R7,#0x2
+   \   000063   02....       LJMP    ?BANKED_LEAVE_XDATA
+    385          
+    386          
+    387          /***************************************************************************************************
+    388           * @fn      MT_Word2Buf
+    389           *
+    390           * @brief   Copy a uint16 array to a byte array, little endian.
+    391           *
+    392           * @param   pBuf - byte array
+    393           * @param   pWord - uint16 array
+    394           * @param   len - length of uint16 array
+    395           *
+    396           * @return  pointer to end of byte array
+    397           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    398          uint8 *MT_Word2Buf( uint8 *pBuf, uint16 *pWord, uint8 len )
+   \                     MT_Word2Buf:
+    399          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    400            while ( len-- > 0 )
+   \                     ??MT_Word2Buf_0:
+   \   000005   E9           MOV     A,R1
+   \   000006   F8           MOV     R0,A
+   \   000007   74FF         MOV     A,#-0x1
+   \   000009   28           ADD     A,R0
+   \   00000A   F9           MOV     R1,A
+   \   00000B   E8           MOV     A,R0
+   \   00000C   C3           CLR     C
+   \   00000D   9401         SUBB    A,#0x1
+   \   00000F   403C         JC      ??MT_Word2Buf_1
+    401            {
+    402              *pBuf++ = LO_UINT16( *pWord );
+   \   000011   8C82         MOV     DPL,R4
+   \   000013   8D83         MOV     DPH,R5
+   \   000015   E0           MOVX    A,@DPTR
+   \   000016   FE           MOV     R6,A
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   FF           MOV     R7,A
+   \   00001A   EE           MOV     A,R6
+   \   00001B   8A82         MOV     DPL,R2
+   \   00001D   8B83         MOV     DPH,R3
+   \   00001F   F0           MOVX    @DPTR,A
+   \   000020   8A82         MOV     DPL,R2
+   \   000022   8B83         MOV     DPH,R3
+   \   000024   A3           INC     DPTR
+   \   000025   AA82         MOV     R2,DPL
+   \   000027   AB83         MOV     R3,DPH
+    403              *pBuf++ = HI_UINT16( *pWord );
+   \   000029   8C82         MOV     DPL,R4
+   \   00002B   8D83         MOV     DPH,R5
+   \   00002D   E0           MOVX    A,@DPTR
+   \   00002E   FE           MOV     R6,A
+   \   00002F   A3           INC     DPTR
+   \   000030   E0           MOVX    A,@DPTR
+   \   000031   FF           MOV     R7,A
+   \   000032   E4           CLR     A
+   \   000033   EF           MOV     A,R7
+   \   000034   FE           MOV     R6,A
+   \   000035   8A82         MOV     DPL,R2
+   \   000037   8B83         MOV     DPH,R3
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   8A82         MOV     DPL,R2
+   \   00003C   8B83         MOV     DPH,R3
+   \   00003E   A3           INC     DPTR
+   \   00003F   AA82         MOV     R2,DPL
+   \   000041   AB83         MOV     R3,DPH
+    404              pWord++;
+   \   000043   EC           MOV     A,R4
+   \   000044   2402         ADD     A,#0x2
+   \   000046   FC           MOV     R4,A
+   \   000047   ED           MOV     A,R5
+   \   000048   3400         ADDC    A,#0x0
+   \   00004A   FD           MOV     R5,A
+   \   00004B   80B8         SJMP    ??MT_Word2Buf_0
+    405            }
+    406          
+    407            return pBuf;
+   \                     ??MT_Word2Buf_1:
+   \   00004D   7F01         MOV     R7,#0x1
+   \   00004F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    408          }
+    409          #if !defined(NONWK)
+    410          /***************************************************************************************************
+    411           * @fn      MT_BuildEndpointDesc
+    412           *
+    413           * @brief   Build endpoint descriptor and simple descriptor structure from incoming buffer
+    414           *
+    415           * @param   pBuf - byte array
+    416           *
+    417           * @return  epDesc - pointer to the endpoint descriptor
+    418           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    419          uint8 MT_BuildEndpointDesc( uint8 *pBuf, void *param )
+   \                     MT_BuildEndpointDesc:
+    420          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+   \   000009   8C..         MOV     ?V0 + 4,R4
+   \   00000B   8D..         MOV     ?V0 + 5,R5
+    421            uint8 i;
+    422            uint8 ret = ZSuccess;
+   \   00000D   75..00       MOV     ?V0 + 3,#0x0
+    423            endPointDesc_t *epDesc;
+    424          
+    425            epDesc = (endPointDesc_t *)param;
+   \   000010   85....       MOV     ?V0 + 0,?V0 + 4
+   \   000013   85....       MOV     ?V0 + 1,?V0 + 5
+    426            /* check if this endpoint is already registered */
+    427            if ( afFindEndPointDesc( *pBuf ) != NULL )
+   \   000016                ; Setup parameters for call to function afFindEndPointDesc
+   \   000016   8E82         MOV     DPL,R6
+   \   000018   8F83         MOV     DPH,R7
+   \   00001A   E0           MOVX    A,@DPTR
+   \   00001B   F9           MOV     R1,A
+   \   00001C   12....       LCALL   ??afFindEndPointDesc?relay
+   \   00001F   8A..         MOV     ?V0 + 6,R2
+   \   000021   8B..         MOV     ?V0 + 7,R3
+   \   000023   E5..         MOV     A,?V0 + 6
+   \   000025   45..         ORL     A,?V0 + 7
+   \   000027   6006         JZ      ??MT_BuildEndpointDesc_0
+    428            {
+    429              ret = ZApsDuplicateEntry;
+   \   000029   75..B8       MOV     ?V0 + 3,#-0x48
+   \   00002C   02....       LJMP    ??MT_BuildEndpointDesc_1 & 0xFFFF
+    430            }
+    431            else if ( epDesc )
+   \                     ??MT_BuildEndpointDesc_0:
+   \   00002F   E5..         MOV     A,?V0 + 0
+   \   000031   45..         ORL     A,?V0 + 1
+   \   000033   7003         JNZ     $+5
+   \   000035   02....       LJMP    ??MT_BuildEndpointDesc_1 & 0xFFFF
+    432            {
+    433              epDesc->endPoint = *pBuf;
+   \   000038   8E82         MOV     DPL,R6
+   \   00003A   8F83         MOV     DPH,R7
+   \   00003C   E0           MOVX    A,@DPTR
+   \   00003D   85..82       MOV     DPL,?V0 + 0
+   \   000040   85..83       MOV     DPH,?V0 + 1
+   \   000043   F0           MOVX    @DPTR,A
+    434          
+    435              /* Ignore the latency reqs */
+    436              epDesc->latencyReq = noLatencyReqs;
+   \   000044   85..82       MOV     DPL,?V0 + 0
+   \   000047   85..83       MOV     DPH,?V0 + 1
+   \   00004A   A3           INC     DPTR
+   \   00004B   A3           INC     DPTR
+   \   00004C   A3           INC     DPTR
+   \   00004D   A3           INC     DPTR
+   \   00004E   A3           INC     DPTR
+   \   00004F   7400         MOV     A,#0x0
+   \   000051   F0           MOVX    @DPTR,A
+    437          
+    438              /* allocate memory for the simple descriptor */
+    439              epDesc->simpleDesc = (SimpleDescriptionFormat_t *) osal_mem_alloc(sizeof(SimpleDescriptionFormat_t));
+   \   000052                ; Setup parameters for call to function osal_mem_alloc
+   \   000052   7A0C         MOV     R2,#0xc
+   \   000054   7B00         MOV     R3,#0x0
+   \   000056   12....       LCALL   ??osal_mem_alloc?relay
+   \   000059   85..82       MOV     DPL,?V0 + 0
+   \   00005C   85..83       MOV     DPH,?V0 + 1
+   \   00005F   A3           INC     DPTR
+   \   000060   A3           INC     DPTR
+   \   000061   A3           INC     DPTR
+   \   000062   EA           MOV     A,R2
+   \   000063   F0           MOVX    @DPTR,A
+   \   000064   A3           INC     DPTR
+   \   000065   EB           MOV     A,R3
+   \   000066   F0           MOVX    @DPTR,A
+    440              if (epDesc->simpleDesc)
+   \   000067   85..82       MOV     DPL,?V0 + 0
+   \   00006A   85..83       MOV     DPH,?V0 + 1
+   \   00006D   A3           INC     DPTR
+   \   00006E   A3           INC     DPTR
+   \   00006F   A3           INC     DPTR
+   \   000070   E0           MOVX    A,@DPTR
+   \   000071   F8           MOV     R0,A
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   E8           MOV     A,R0
+   \   000076   49           ORL     A,R1
+   \   000077   7003         JNZ     $+5
+   \   000079   02....       LJMP    ??MT_BuildEndpointDesc_2 & 0xFFFF
+    441              {
+    442                /* Endpoint */
+    443                epDesc->simpleDesc->EndPoint = *pBuf++;
+   \   00007C   8E82         MOV     DPL,R6
+   \   00007E   8F83         MOV     DPH,R7
+   \   000080   E0           MOVX    A,@DPTR
+   \   000081   C0E0         PUSH    A
+   \   000083   85..82       MOV     DPL,?V0 + 0
+   \   000086   85..83       MOV     DPH,?V0 + 1
+   \   000089   A3           INC     DPTR
+   \   00008A   A3           INC     DPTR
+   \   00008B   A3           INC     DPTR
+   \   00008C   E0           MOVX    A,@DPTR
+   \   00008D   F8           MOV     R0,A
+   \   00008E   A3           INC     DPTR
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   F583         MOV     DPH,A
+   \   000092   8882         MOV     DPL,R0
+   \   000094   D0E0         POP     A
+   \   000096   F0           MOVX    @DPTR,A
+   \   000097   8E82         MOV     DPL,R6
+   \   000099   8F83         MOV     DPH,R7
+   \   00009B   A3           INC     DPTR
+   \   00009C   AE82         MOV     R6,DPL
+   \   00009E   AF83         MOV     R7,DPH
+    444          
+    445                /* AppProfId */
+    446                epDesc->simpleDesc->AppProfId = BUILD_UINT16(pBuf[0], pBuf[1]);
+   \   0000A0   8E82         MOV     DPL,R6
+   \   0000A2   8F83         MOV     DPH,R7
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   FA           MOV     R2,A
+   \   0000A6   7B00         MOV     R3,#0x0
+   \   0000A8   8E82         MOV     DPL,R6
+   \   0000AA   8F83         MOV     DPH,R7
+   \   0000AC   A3           INC     DPTR
+   \   0000AD   E0           MOVX    A,@DPTR
+   \   0000AE   F8           MOV     R0,A
+   \   0000AF   7900         MOV     R1,#0x0
+   \   0000B1   E4           CLR     A
+   \   0000B2   C8           XCH     A,R0
+   \   0000B3   F9           MOV     R1,A
+   \   0000B4   EA           MOV     A,R2
+   \   0000B5   28           ADD     A,R0
+   \   0000B6   FA           MOV     R2,A
+   \   0000B7   EB           MOV     A,R3
+   \   0000B8   39           ADDC    A,R1
+   \   0000B9   FB           MOV     R3,A
+   \   0000BA   85..82       MOV     DPL,?V0 + 0
+   \   0000BD   85..83       MOV     DPH,?V0 + 1
+   \   0000C0   A3           INC     DPTR
+   \   0000C1   A3           INC     DPTR
+   \   0000C2   A3           INC     DPTR
+   \   0000C3   E0           MOVX    A,@DPTR
+   \   0000C4   F8           MOV     R0,A
+   \   0000C5   A3           INC     DPTR
+   \   0000C6   E0           MOVX    A,@DPTR
+   \   0000C7   F583         MOV     DPH,A
+   \   0000C9   8882         MOV     DPL,R0
+   \   0000CB   A3           INC     DPTR
+   \   0000CC   EA           MOV     A,R2
+   \   0000CD   F0           MOVX    @DPTR,A
+   \   0000CE   A3           INC     DPTR
+   \   0000CF   EB           MOV     A,R3
+   \   0000D0   F0           MOVX    @DPTR,A
+    447                pBuf += sizeof(uint16);
+   \   0000D1   EE           MOV     A,R6
+   \   0000D2   2402         ADD     A,#0x2
+   \   0000D4   FE           MOV     R6,A
+   \   0000D5   EF           MOV     A,R7
+   \   0000D6   3400         ADDC    A,#0x0
+   \   0000D8   FF           MOV     R7,A
+    448          
+    449                /* AppDeviceId */
+    450                epDesc->simpleDesc->AppDeviceId = BUILD_UINT16(pBuf[0],pBuf[1]);
+   \   0000D9   8E82         MOV     DPL,R6
+   \   0000DB   8F83         MOV     DPH,R7
+   \   0000DD   E0           MOVX    A,@DPTR
+   \   0000DE   FA           MOV     R2,A
+   \   0000DF   7B00         MOV     R3,#0x0
+   \   0000E1   8E82         MOV     DPL,R6
+   \   0000E3   8F83         MOV     DPH,R7
+   \   0000E5   A3           INC     DPTR
+   \   0000E6   E0           MOVX    A,@DPTR
+   \   0000E7   F8           MOV     R0,A
+   \   0000E8   7900         MOV     R1,#0x0
+   \   0000EA   E4           CLR     A
+   \   0000EB   C8           XCH     A,R0
+   \   0000EC   F9           MOV     R1,A
+   \   0000ED   EA           MOV     A,R2
+   \   0000EE   28           ADD     A,R0
+   \   0000EF   FA           MOV     R2,A
+   \   0000F0   EB           MOV     A,R3
+   \   0000F1   39           ADDC    A,R1
+   \   0000F2   FB           MOV     R3,A
+   \   0000F3   85..82       MOV     DPL,?V0 + 0
+   \   0000F6   85..83       MOV     DPH,?V0 + 1
+   \   0000F9   A3           INC     DPTR
+   \   0000FA   A3           INC     DPTR
+   \   0000FB   A3           INC     DPTR
+   \   0000FC   E0           MOVX    A,@DPTR
+   \   0000FD   F8           MOV     R0,A
+   \   0000FE   A3           INC     DPTR
+   \   0000FF   E0           MOVX    A,@DPTR
+   \   000100   F583         MOV     DPH,A
+   \   000102   8882         MOV     DPL,R0
+   \   000104   A3           INC     DPTR
+   \   000105   A3           INC     DPTR
+   \   000106   A3           INC     DPTR
+   \   000107   EA           MOV     A,R2
+   \   000108   F0           MOVX    @DPTR,A
+   \   000109   A3           INC     DPTR
+   \   00010A   EB           MOV     A,R3
+   \   00010B   F0           MOVX    @DPTR,A
+    451                pBuf += sizeof(uint16);
+   \   00010C   EE           MOV     A,R6
+   \   00010D   2402         ADD     A,#0x2
+   \   00010F   FE           MOV     R6,A
+   \   000110   EF           MOV     A,R7
+   \   000111   3400         ADDC    A,#0x0
+   \   000113   FF           MOV     R7,A
+    452          
+    453                /* AppDevVer */
+    454                epDesc->simpleDesc->AppDevVer = (*pBuf++) & AF_APP_DEV_VER_MASK ;
+   \   000114   8E82         MOV     DPL,R6
+   \   000116   8F83         MOV     DPH,R7
+   \   000118   E0           MOVX    A,@DPTR
+   \   000119   540F         ANL     A,#0xf
+   \   00011B   F8           MOV     R0,A
+   \   00011C   8E82         MOV     DPL,R6
+   \   00011E   8F83         MOV     DPH,R7
+   \   000120   A3           INC     DPTR
+   \   000121   AE82         MOV     R6,DPL
+   \   000123   AF83         MOV     R7,DPH
+   \   000125   740F         MOV     A,#0xf
+   \   000127   58           ANL     A,R0
+   \   000128   F9           MOV     R1,A
+   \   000129   85..82       MOV     DPL,?V0 + 0
+   \   00012C   85..83       MOV     DPH,?V0 + 1
+   \   00012F   A3           INC     DPTR
+   \   000130   A3           INC     DPTR
+   \   000131   A3           INC     DPTR
+   \   000132   E0           MOVX    A,@DPTR
+   \   000133   F8           MOV     R0,A
+   \   000134   A3           INC     DPTR
+   \   000135   E0           MOVX    A,@DPTR
+   \   000136   F583         MOV     DPH,A
+   \   000138   8882         MOV     DPL,R0
+   \   00013A   A3           INC     DPTR
+   \   00013B   A3           INC     DPTR
+   \   00013C   A3           INC     DPTR
+   \   00013D   A3           INC     DPTR
+   \   00013E   A3           INC     DPTR
+   \   00013F   E0           MOVX    A,@DPTR
+   \   000140   54F0         ANL     A,#0xf0
+   \   000142   49           ORL     A,R1
+   \   000143   C0E0         PUSH    A
+   \   000145   85..82       MOV     DPL,?V0 + 0
+   \   000148   85..83       MOV     DPH,?V0 + 1
+   \   00014B   A3           INC     DPTR
+   \   00014C   A3           INC     DPTR
+   \   00014D   A3           INC     DPTR
+   \   00014E   E0           MOVX    A,@DPTR
+   \   00014F   F8           MOV     R0,A
+   \   000150   A3           INC     DPTR
+   \   000151   E0           MOVX    A,@DPTR
+   \   000152   F583         MOV     DPH,A
+   \   000154   8882         MOV     DPL,R0
+   \   000156   A3           INC     DPTR
+   \   000157   A3           INC     DPTR
+   \   000158   A3           INC     DPTR
+   \   000159   A3           INC     DPTR
+   \   00015A   A3           INC     DPTR
+   \   00015B   D0E0         POP     A
+   \   00015D   F0           MOVX    @DPTR,A
+    455          
+    456                /* LatencyReq */
+    457                pBuf++;
+   \   00015E   8E82         MOV     DPL,R6
+   \   000160   8F83         MOV     DPH,R7
+   \   000162   A3           INC     DPTR
+   \   000163   AE82         MOV     R6,DPL
+   \   000165   AF83         MOV     R7,DPH
+    458          
+    459                /* AppNumInClusters */
+    460                epDesc->simpleDesc->AppNumInClusters = *pBuf++;
+   \   000167   8E82         MOV     DPL,R6
+   \   000169   8F83         MOV     DPH,R7
+   \   00016B   E0           MOVX    A,@DPTR
+   \   00016C   C0E0         PUSH    A
+   \   00016E   85..82       MOV     DPL,?V0 + 0
+   \   000171   85..83       MOV     DPH,?V0 + 1
+   \   000174   A3           INC     DPTR
+   \   000175   A3           INC     DPTR
+   \   000176   A3           INC     DPTR
+   \   000177   E0           MOVX    A,@DPTR
+   \   000178   F8           MOV     R0,A
+   \   000179   A3           INC     DPTR
+   \   00017A   E0           MOVX    A,@DPTR
+   \   00017B   F583         MOV     DPH,A
+   \   00017D   8882         MOV     DPL,R0
+   \   00017F   A3           INC     DPTR
+   \   000180   A3           INC     DPTR
+   \   000181   A3           INC     DPTR
+   \   000182   A3           INC     DPTR
+   \   000183   A3           INC     DPTR
+   \   000184   A3           INC     DPTR
+   \   000185   D0E0         POP     A
+   \   000187   F0           MOVX    @DPTR,A
+   \   000188   8E82         MOV     DPL,R6
+   \   00018A   8F83         MOV     DPH,R7
+   \   00018C   A3           INC     DPTR
+   \   00018D   AE82         MOV     R6,DPL
+   \   00018F   AF83         MOV     R7,DPH
+    461                if (epDesc->simpleDesc->AppNumInClusters)
+   \   000191   85..82       MOV     DPL,?V0 + 0
+   \   000194   85..83       MOV     DPH,?V0 + 1
+   \   000197   A3           INC     DPTR
+   \   000198   A3           INC     DPTR
+   \   000199   A3           INC     DPTR
+   \   00019A   E0           MOVX    A,@DPTR
+   \   00019B   F8           MOV     R0,A
+   \   00019C   A3           INC     DPTR
+   \   00019D   E0           MOVX    A,@DPTR
+   \   00019E   F583         MOV     DPH,A
+   \   0001A0   8882         MOV     DPL,R0
+   \   0001A2   A3           INC     DPTR
+   \   0001A3   A3           INC     DPTR
+   \   0001A4   A3           INC     DPTR
+   \   0001A5   A3           INC     DPTR
+   \   0001A6   A3           INC     DPTR
+   \   0001A7   A3           INC     DPTR
+   \   0001A8   E0           MOVX    A,@DPTR
+   \   0001A9   7003         JNZ     $+5
+   \   0001AB   02....       LJMP    ??MT_BuildEndpointDesc_3 & 0xFFFF
+    462                {
+    463                  epDesc->simpleDesc->pAppInClusterList = (uint16 *)
+    464                            osal_mem_alloc((epDesc->simpleDesc->AppNumInClusters)*sizeof(uint16));
+   \   0001AE                ; Setup parameters for call to function osal_mem_alloc
+   \   0001AE   85..82       MOV     DPL,?V0 + 0
+   \   0001B1   85..83       MOV     DPH,?V0 + 1
+   \   0001B4   A3           INC     DPTR
+   \   0001B5   A3           INC     DPTR
+   \   0001B6   A3           INC     DPTR
+   \   0001B7   E0           MOVX    A,@DPTR
+   \   0001B8   F8           MOV     R0,A
+   \   0001B9   A3           INC     DPTR
+   \   0001BA   E0           MOVX    A,@DPTR
+   \   0001BB   F583         MOV     DPH,A
+   \   0001BD   8882         MOV     DPL,R0
+   \   0001BF   A3           INC     DPTR
+   \   0001C0   A3           INC     DPTR
+   \   0001C1   A3           INC     DPTR
+   \   0001C2   A3           INC     DPTR
+   \   0001C3   A3           INC     DPTR
+   \   0001C4   A3           INC     DPTR
+   \   0001C5   E0           MOVX    A,@DPTR
+   \   0001C6   FA           MOV     R2,A
+   \   0001C7   7B00         MOV     R3,#0x0
+   \   0001C9   EA           MOV     A,R2
+   \   0001CA   75F002       MOV     B,#0x2
+   \   0001CD   A4           MUL     AB
+   \   0001CE   CA           XCH     A,R2
+   \   0001CF   A8F0         MOV     R0,B
+   \   0001D1   75F000       MOV     B,#0x0
+   \   0001D4   A4           MUL     AB
+   \   0001D5   28           ADD     A,R0
+   \   0001D6   F8           MOV     R0,A
+   \   0001D7   75F002       MOV     B,#0x2
+   \   0001DA   EB           MOV     A,R3
+   \   0001DB   A4           MUL     AB
+   \   0001DC   28           ADD     A,R0
+   \   0001DD   FB           MOV     R3,A
+   \   0001DE   12....       LCALL   ??osal_mem_alloc?relay
+   \   0001E1   85..82       MOV     DPL,?V0 + 0
+   \   0001E4   85..83       MOV     DPH,?V0 + 1
+   \   0001E7   A3           INC     DPTR
+   \   0001E8   A3           INC     DPTR
+   \   0001E9   A3           INC     DPTR
+   \   0001EA   E0           MOVX    A,@DPTR
+   \   0001EB   F8           MOV     R0,A
+   \   0001EC   A3           INC     DPTR
+   \   0001ED   E0           MOVX    A,@DPTR
+   \   0001EE   F583         MOV     DPH,A
+   \   0001F0   8882         MOV     DPL,R0
+   \   0001F2   A3           INC     DPTR
+   \   0001F3   A3           INC     DPTR
+   \   0001F4   A3           INC     DPTR
+   \   0001F5   A3           INC     DPTR
+   \   0001F6   A3           INC     DPTR
+   \   0001F7   A3           INC     DPTR
+   \   0001F8   A3           INC     DPTR
+   \   0001F9   EA           MOV     A,R2
+   \   0001FA   F0           MOVX    @DPTR,A
+   \   0001FB   A3           INC     DPTR
+   \   0001FC   EB           MOV     A,R3
+   \   0001FD   F0           MOVX    @DPTR,A
+    465                  if ( epDesc->simpleDesc->pAppInClusterList )
+   \   0001FE   85..82       MOV     DPL,?V0 + 0
+   \   000201   85..83       MOV     DPH,?V0 + 1
+   \   000204   A3           INC     DPTR
+   \   000205   A3           INC     DPTR
+   \   000206   A3           INC     DPTR
+   \   000207   E0           MOVX    A,@DPTR
+   \   000208   F8           MOV     R0,A
+   \   000209   A3           INC     DPTR
+   \   00020A   E0           MOVX    A,@DPTR
+   \   00020B   F583         MOV     DPH,A
+   \   00020D   8882         MOV     DPL,R0
+   \   00020F   A3           INC     DPTR
+   \   000210   A3           INC     DPTR
+   \   000211   A3           INC     DPTR
+   \   000212   A3           INC     DPTR
+   \   000213   A3           INC     DPTR
+   \   000214   A3           INC     DPTR
+   \   000215   A3           INC     DPTR
+   \   000216   E0           MOVX    A,@DPTR
+   \   000217   F8           MOV     R0,A
+   \   000218   A3           INC     DPTR
+   \   000219   E0           MOVX    A,@DPTR
+   \   00021A   F9           MOV     R1,A
+   \   00021B   E8           MOV     A,R0
+   \   00021C   49           ORL     A,R1
+   \   00021D   7003         JNZ     $+5
+   \   00021F   02....       LJMP    ??MT_BuildEndpointDesc_4 & 0xFFFF
+    466                  {
+    467                    for (i=0; i<(epDesc->simpleDesc->AppNumInClusters); i++)
+   \   000222   75..00       MOV     ?V0 + 2,#0x0
+   \                     ??MT_BuildEndpointDesc_5:
+   \   000225   85..82       MOV     DPL,?V0 + 0
+   \   000228   85..83       MOV     DPH,?V0 + 1
+   \   00022B   A3           INC     DPTR
+   \   00022C   A3           INC     DPTR
+   \   00022D   A3           INC     DPTR
+   \   00022E   E0           MOVX    A,@DPTR
+   \   00022F   F8           MOV     R0,A
+   \   000230   A3           INC     DPTR
+   \   000231   E0           MOVX    A,@DPTR
+   \   000232   F583         MOV     DPH,A
+   \   000234   8882         MOV     DPL,R0
+   \   000236   A3           INC     DPTR
+   \   000237   A3           INC     DPTR
+   \   000238   A3           INC     DPTR
+   \   000239   A3           INC     DPTR
+   \   00023A   A3           INC     DPTR
+   \   00023B   A3           INC     DPTR
+   \   00023C   E0           MOVX    A,@DPTR
+   \   00023D   F8           MOV     R0,A
+   \   00023E   E5..         MOV     A,?V0 + 2
+   \   000240   C3           CLR     C
+   \   000241   98           SUBB    A,R0
+   \   000242   506C         JNC     ??MT_BuildEndpointDesc_3
+    468                    {
+    469                      epDesc->simpleDesc->pAppInClusterList[i] = BUILD_UINT16(*pBuf, *(pBuf+1));
+   \   000244   8E82         MOV     DPL,R6
+   \   000246   8F83         MOV     DPH,R7
+   \   000248   E0           MOVX    A,@DPTR
+   \   000249   FA           MOV     R2,A
+   \   00024A   7B00         MOV     R3,#0x0
+   \   00024C   8E82         MOV     DPL,R6
+   \   00024E   8F83         MOV     DPH,R7
+   \   000250   A3           INC     DPTR
+   \   000251   E0           MOVX    A,@DPTR
+   \   000252   F8           MOV     R0,A
+   \   000253   7900         MOV     R1,#0x0
+   \   000255   E4           CLR     A
+   \   000256   C8           XCH     A,R0
+   \   000257   F9           MOV     R1,A
+   \   000258   EA           MOV     A,R2
+   \   000259   28           ADD     A,R0
+   \   00025A   FC           MOV     R4,A
+   \   00025B   EB           MOV     A,R3
+   \   00025C   39           ADDC    A,R1
+   \   00025D   FD           MOV     R5,A
+   \   00025E   E5..         MOV     A,?V0 + 2
+   \   000260   AA..         MOV     R2,?V0 + 2
+   \   000262   7B00         MOV     R3,#0x0
+   \   000264   EA           MOV     A,R2
+   \   000265   75F002       MOV     B,#0x2
+   \   000268   A4           MUL     AB
+   \   000269   CA           XCH     A,R2
+   \   00026A   A8F0         MOV     R0,B
+   \   00026C   75F000       MOV     B,#0x0
+   \   00026F   A4           MUL     AB
+   \   000270   28           ADD     A,R0
+   \   000271   F8           MOV     R0,A
+   \   000272   75F002       MOV     B,#0x2
+   \   000275   EB           MOV     A,R3
+   \   000276   A4           MUL     AB
+   \   000277   28           ADD     A,R0
+   \   000278   FB           MOV     R3,A
+   \   000279   85..82       MOV     DPL,?V0 + 0
+   \   00027C   85..83       MOV     DPH,?V0 + 1
+   \   00027F   A3           INC     DPTR
+   \   000280   A3           INC     DPTR
+   \   000281   A3           INC     DPTR
+   \   000282   E0           MOVX    A,@DPTR
+   \   000283   F8           MOV     R0,A
+   \   000284   A3           INC     DPTR
+   \   000285   E0           MOVX    A,@DPTR
+   \   000286   F583         MOV     DPH,A
+   \   000288   8882         MOV     DPL,R0
+   \   00028A   A3           INC     DPTR
+   \   00028B   A3           INC     DPTR
+   \   00028C   A3           INC     DPTR
+   \   00028D   A3           INC     DPTR
+   \   00028E   A3           INC     DPTR
+   \   00028F   A3           INC     DPTR
+   \   000290   A3           INC     DPTR
+   \   000291   E0           MOVX    A,@DPTR
+   \   000292   2A           ADD     A,R2
+   \   000293   F8           MOV     R0,A
+   \   000294   A3           INC     DPTR
+   \   000295   E0           MOVX    A,@DPTR
+   \   000296   3B           ADDC    A,R3
+   \   000297   8882         MOV     DPL,R0
+   \   000299   F583         MOV     DPH,A
+   \   00029B   EC           MOV     A,R4
+   \   00029C   F0           MOVX    @DPTR,A
+   \   00029D   A3           INC     DPTR
+   \   00029E   ED           MOV     A,R5
+   \   00029F   F0           MOVX    @DPTR,A
+    470                      pBuf += 2;
+   \   0002A0   EE           MOV     A,R6
+   \   0002A1   2402         ADD     A,#0x2
+   \   0002A3   FE           MOV     R6,A
+   \   0002A4   EF           MOV     A,R7
+   \   0002A5   3400         ADDC    A,#0x0
+   \   0002A7   FF           MOV     R7,A
+    471                    }
+   \   0002A8   05..         INC     ?V0 + 2
+   \   0002AA   02....       LJMP    ??MT_BuildEndpointDesc_5 & 0xFFFF
+    472                  }
+    473                  else
+    474                  {
+    475                    ret = ZMemError;
+   \                     ??MT_BuildEndpointDesc_4:
+   \   0002AD   75..10       MOV     ?V0 + 3,#0x10
+    476                  }
+    477                }
+    478          
+    479                /* AppNumOutClusters */
+    480                epDesc->simpleDesc->AppNumOutClusters = *pBuf++;
+   \                     ??MT_BuildEndpointDesc_3:
+   \   0002B0   8E82         MOV     DPL,R6
+   \   0002B2   8F83         MOV     DPH,R7
+   \   0002B4   E0           MOVX    A,@DPTR
+   \   0002B5   C0E0         PUSH    A
+   \   0002B7   85..82       MOV     DPL,?V0 + 0
+   \   0002BA   85..83       MOV     DPH,?V0 + 1
+   \   0002BD   A3           INC     DPTR
+   \   0002BE   A3           INC     DPTR
+   \   0002BF   A3           INC     DPTR
+   \   0002C0   E0           MOVX    A,@DPTR
+   \   0002C1   F8           MOV     R0,A
+   \   0002C2   A3           INC     DPTR
+   \   0002C3   E0           MOVX    A,@DPTR
+   \   0002C4   F583         MOV     DPH,A
+   \   0002C6   8882         MOV     DPL,R0
+   \   0002C8   A3           INC     DPTR
+   \   0002C9   A3           INC     DPTR
+   \   0002CA   A3           INC     DPTR
+   \   0002CB   A3           INC     DPTR
+   \   0002CC   A3           INC     DPTR
+   \   0002CD   A3           INC     DPTR
+   \   0002CE   A3           INC     DPTR
+   \   0002CF   A3           INC     DPTR
+   \   0002D0   A3           INC     DPTR
+   \   0002D1   D0E0         POP     A
+   \   0002D3   F0           MOVX    @DPTR,A
+   \   0002D4   8E82         MOV     DPL,R6
+   \   0002D6   8F83         MOV     DPH,R7
+   \   0002D8   A3           INC     DPTR
+   \   0002D9   AE82         MOV     R6,DPL
+   \   0002DB   AF83         MOV     R7,DPH
+    481                if (epDesc->simpleDesc->AppNumOutClusters)
+   \   0002DD   85..82       MOV     DPL,?V0 + 0
+   \   0002E0   85..83       MOV     DPH,?V0 + 1
+   \   0002E3   A3           INC     DPTR
+   \   0002E4   A3           INC     DPTR
+   \   0002E5   A3           INC     DPTR
+   \   0002E6   E0           MOVX    A,@DPTR
+   \   0002E7   F8           MOV     R0,A
+   \   0002E8   A3           INC     DPTR
+   \   0002E9   E0           MOVX    A,@DPTR
+   \   0002EA   F583         MOV     DPH,A
+   \   0002EC   8882         MOV     DPL,R0
+   \   0002EE   A3           INC     DPTR
+   \   0002EF   A3           INC     DPTR
+   \   0002F0   A3           INC     DPTR
+   \   0002F1   A3           INC     DPTR
+   \   0002F2   A3           INC     DPTR
+   \   0002F3   A3           INC     DPTR
+   \   0002F4   A3           INC     DPTR
+   \   0002F5   A3           INC     DPTR
+   \   0002F6   A3           INC     DPTR
+   \   0002F7   E0           MOVX    A,@DPTR
+   \   0002F8   7003         JNZ     $+5
+   \   0002FA   02....       LJMP    ??MT_BuildEndpointDesc_6 & 0xFFFF
+    482                {
+    483                  epDesc->simpleDesc->pAppOutClusterList = (uint16 *)
+    484                                    osal_mem_alloc((epDesc->simpleDesc->AppNumOutClusters)*sizeof(uint16));
+   \   0002FD                ; Setup parameters for call to function osal_mem_alloc
+   \   0002FD   85..82       MOV     DPL,?V0 + 0
+   \   000300   85..83       MOV     DPH,?V0 + 1
+   \   000303   A3           INC     DPTR
+   \   000304   A3           INC     DPTR
+   \   000305   A3           INC     DPTR
+   \   000306   E0           MOVX    A,@DPTR
+   \   000307   F8           MOV     R0,A
+   \   000308   A3           INC     DPTR
+   \   000309   E0           MOVX    A,@DPTR
+   \   00030A   F583         MOV     DPH,A
+   \   00030C   8882         MOV     DPL,R0
+   \   00030E   A3           INC     DPTR
+   \   00030F   A3           INC     DPTR
+   \   000310   A3           INC     DPTR
+   \   000311   A3           INC     DPTR
+   \   000312   A3           INC     DPTR
+   \   000313   A3           INC     DPTR
+   \   000314   A3           INC     DPTR
+   \   000315   A3           INC     DPTR
+   \   000316   A3           INC     DPTR
+   \   000317   E0           MOVX    A,@DPTR
+   \   000318   FA           MOV     R2,A
+   \   000319   7B00         MOV     R3,#0x0
+   \   00031B   EA           MOV     A,R2
+   \   00031C   75F002       MOV     B,#0x2
+   \   00031F   A4           MUL     AB
+   \   000320   CA           XCH     A,R2
+   \   000321   A8F0         MOV     R0,B
+   \   000323   75F000       MOV     B,#0x0
+   \   000326   A4           MUL     AB
+   \   000327   28           ADD     A,R0
+   \   000328   F8           MOV     R0,A
+   \   000329   75F002       MOV     B,#0x2
+   \   00032C   EB           MOV     A,R3
+   \   00032D   A4           MUL     AB
+   \   00032E   28           ADD     A,R0
+   \   00032F   FB           MOV     R3,A
+   \   000330   12....       LCALL   ??osal_mem_alloc?relay
+   \   000333   85..82       MOV     DPL,?V0 + 0
+   \   000336   85..83       MOV     DPH,?V0 + 1
+   \   000339   A3           INC     DPTR
+   \   00033A   A3           INC     DPTR
+   \   00033B   A3           INC     DPTR
+   \   00033C   E0           MOVX    A,@DPTR
+   \   00033D   F8           MOV     R0,A
+   \   00033E   A3           INC     DPTR
+   \   00033F   E0           MOVX    A,@DPTR
+   \   000340   F583         MOV     DPH,A
+   \   000342   8882         MOV     DPL,R0
+   \   000344   A3           INC     DPTR
+   \   000345   A3           INC     DPTR
+   \   000346   A3           INC     DPTR
+   \   000347   A3           INC     DPTR
+   \   000348   A3           INC     DPTR
+   \   000349   A3           INC     DPTR
+   \   00034A   A3           INC     DPTR
+   \   00034B   A3           INC     DPTR
+   \   00034C   A3           INC     DPTR
+   \   00034D   A3           INC     DPTR
+   \   00034E   EA           MOV     A,R2
+   \   00034F   F0           MOVX    @DPTR,A
+   \   000350   A3           INC     DPTR
+   \   000351   EB           MOV     A,R3
+   \   000352   F0           MOVX    @DPTR,A
+    485                  if (epDesc->simpleDesc->pAppOutClusterList)
+   \   000353   85..82       MOV     DPL,?V0 + 0
+   \   000356   85..83       MOV     DPH,?V0 + 1
+   \   000359   A3           INC     DPTR
+   \   00035A   A3           INC     DPTR
+   \   00035B   A3           INC     DPTR
+   \   00035C   E0           MOVX    A,@DPTR
+   \   00035D   F8           MOV     R0,A
+   \   00035E   A3           INC     DPTR
+   \   00035F   E0           MOVX    A,@DPTR
+   \   000360   F583         MOV     DPH,A
+   \   000362   8882         MOV     DPL,R0
+   \   000364   A3           INC     DPTR
+   \   000365   A3           INC     DPTR
+   \   000366   A3           INC     DPTR
+   \   000367   A3           INC     DPTR
+   \   000368   A3           INC     DPTR
+   \   000369   A3           INC     DPTR
+   \   00036A   A3           INC     DPTR
+   \   00036B   A3           INC     DPTR
+   \   00036C   A3           INC     DPTR
+   \   00036D   A3           INC     DPTR
+   \   00036E   E0           MOVX    A,@DPTR
+   \   00036F   F8           MOV     R0,A
+   \   000370   A3           INC     DPTR
+   \   000371   E0           MOVX    A,@DPTR
+   \   000372   F9           MOV     R1,A
+   \   000373   E8           MOV     A,R0
+   \   000374   49           ORL     A,R1
+   \   000375   7003         JNZ     $+5
+   \   000377   02....       LJMP    ??MT_BuildEndpointDesc_7 & 0xFFFF
+    486                  {
+    487                    for (i=0; i<(epDesc->simpleDesc->AppNumOutClusters); i++)
+   \   00037A   75..00       MOV     ?V0 + 2,#0x0
+   \                     ??MT_BuildEndpointDesc_8:
+   \   00037D   85..82       MOV     DPL,?V0 + 0
+   \   000380   85..83       MOV     DPH,?V0 + 1
+   \   000383   A3           INC     DPTR
+   \   000384   A3           INC     DPTR
+   \   000385   A3           INC     DPTR
+   \   000386   E0           MOVX    A,@DPTR
+   \   000387   F8           MOV     R0,A
+   \   000388   A3           INC     DPTR
+   \   000389   E0           MOVX    A,@DPTR
+   \   00038A   F583         MOV     DPH,A
+   \   00038C   8882         MOV     DPL,R0
+   \   00038E   A3           INC     DPTR
+   \   00038F   A3           INC     DPTR
+   \   000390   A3           INC     DPTR
+   \   000391   A3           INC     DPTR
+   \   000392   A3           INC     DPTR
+   \   000393   A3           INC     DPTR
+   \   000394   A3           INC     DPTR
+   \   000395   A3           INC     DPTR
+   \   000396   A3           INC     DPTR
+   \   000397   E0           MOVX    A,@DPTR
+   \   000398   F8           MOV     R0,A
+   \   000399   E5..         MOV     A,?V0 + 2
+   \   00039B   C3           CLR     C
+   \   00039C   98           SUBB    A,R0
+   \   00039D   506F         JNC     ??MT_BuildEndpointDesc_6
+    488                    {
+    489                      epDesc->simpleDesc->pAppOutClusterList[i] = BUILD_UINT16(*pBuf, *(pBuf+1));
+   \   00039F   8E82         MOV     DPL,R6
+   \   0003A1   8F83         MOV     DPH,R7
+   \   0003A3   E0           MOVX    A,@DPTR
+   \   0003A4   FA           MOV     R2,A
+   \   0003A5   7B00         MOV     R3,#0x0
+   \   0003A7   8E82         MOV     DPL,R6
+   \   0003A9   8F83         MOV     DPH,R7
+   \   0003AB   A3           INC     DPTR
+   \   0003AC   E0           MOVX    A,@DPTR
+   \   0003AD   F8           MOV     R0,A
+   \   0003AE   7900         MOV     R1,#0x0
+   \   0003B0   E4           CLR     A
+   \   0003B1   C8           XCH     A,R0
+   \   0003B2   F9           MOV     R1,A
+   \   0003B3   EA           MOV     A,R2
+   \   0003B4   28           ADD     A,R0
+   \   0003B5   FC           MOV     R4,A
+   \   0003B6   EB           MOV     A,R3
+   \   0003B7   39           ADDC    A,R1
+   \   0003B8   FD           MOV     R5,A
+   \   0003B9   E5..         MOV     A,?V0 + 2
+   \   0003BB   AA..         MOV     R2,?V0 + 2
+   \   0003BD   7B00         MOV     R3,#0x0
+   \   0003BF   EA           MOV     A,R2
+   \   0003C0   75F002       MOV     B,#0x2
+   \   0003C3   A4           MUL     AB
+   \   0003C4   CA           XCH     A,R2
+   \   0003C5   A8F0         MOV     R0,B
+   \   0003C7   75F000       MOV     B,#0x0
+   \   0003CA   A4           MUL     AB
+   \   0003CB   28           ADD     A,R0
+   \   0003CC   F8           MOV     R0,A
+   \   0003CD   75F002       MOV     B,#0x2
+   \   0003D0   EB           MOV     A,R3
+   \   0003D1   A4           MUL     AB
+   \   0003D2   28           ADD     A,R0
+   \   0003D3   FB           MOV     R3,A
+   \   0003D4   85..82       MOV     DPL,?V0 + 0
+   \   0003D7   85..83       MOV     DPH,?V0 + 1
+   \   0003DA   A3           INC     DPTR
+   \   0003DB   A3           INC     DPTR
+   \   0003DC   A3           INC     DPTR
+   \   0003DD   E0           MOVX    A,@DPTR
+   \   0003DE   F8           MOV     R0,A
+   \   0003DF   A3           INC     DPTR
+   \   0003E0   E0           MOVX    A,@DPTR
+   \   0003E1   F583         MOV     DPH,A
+   \   0003E3   8882         MOV     DPL,R0
+   \   0003E5   A3           INC     DPTR
+   \   0003E6   A3           INC     DPTR
+   \   0003E7   A3           INC     DPTR
+   \   0003E8   A3           INC     DPTR
+   \   0003E9   A3           INC     DPTR
+   \   0003EA   A3           INC     DPTR
+   \   0003EB   A3           INC     DPTR
+   \   0003EC   A3           INC     DPTR
+   \   0003ED   A3           INC     DPTR
+   \   0003EE   A3           INC     DPTR
+   \   0003EF   E0           MOVX    A,@DPTR
+   \   0003F0   2A           ADD     A,R2
+   \   0003F1   F8           MOV     R0,A
+   \   0003F2   A3           INC     DPTR
+   \   0003F3   E0           MOVX    A,@DPTR
+   \   0003F4   3B           ADDC    A,R3
+   \   0003F5   8882         MOV     DPL,R0
+   \   0003F7   F583         MOV     DPH,A
+   \   0003F9   EC           MOV     A,R4
+   \   0003FA   F0           MOVX    @DPTR,A
+   \   0003FB   A3           INC     DPTR
+   \   0003FC   ED           MOV     A,R5
+   \   0003FD   F0           MOVX    @DPTR,A
+    490                      pBuf += 2;
+   \   0003FE   EE           MOV     A,R6
+   \   0003FF   2402         ADD     A,#0x2
+   \   000401   FE           MOV     R6,A
+   \   000402   EF           MOV     A,R7
+   \   000403   3400         ADDC    A,#0x0
+   \   000405   FF           MOV     R7,A
+    491                    }
+   \   000406   05..         INC     ?V0 + 2
+   \   000408   02....       LJMP    ??MT_BuildEndpointDesc_8 & 0xFFFF
+    492                  }
+    493                  else
+    494                  {
+    495                    ret = ZMemError;
+   \                     ??MT_BuildEndpointDesc_7:
+   \   00040B   75..10       MOV     ?V0 + 3,#0x10
+    496                  }
+    497                }
+    498          
+    499                /* if any list cannot be allocated...free all */
+    500                if ( ret == ZMemError )
+   \                     ??MT_BuildEndpointDesc_6:
+   \   00040E   7410         MOV     A,#0x10
+   \   000410   65..         XRL     A,?V0 + 3
+   \   000412   6003         JZ      $+5
+   \   000414   02....       LJMP    ??MT_BuildEndpointDesc_1 & 0xFFFF
+    501                {
+    502                  if (epDesc->simpleDesc->pAppInClusterList)
+   \   000417   85..82       MOV     DPL,?V0 + 0
+   \   00041A   85..83       MOV     DPH,?V0 + 1
+   \   00041D   A3           INC     DPTR
+   \   00041E   A3           INC     DPTR
+   \   00041F   A3           INC     DPTR
+   \   000420   E0           MOVX    A,@DPTR
+   \   000421   F8           MOV     R0,A
+   \   000422   A3           INC     DPTR
+   \   000423   E0           MOVX    A,@DPTR
+   \   000424   F583         MOV     DPH,A
+   \   000426   8882         MOV     DPL,R0
+   \   000428   A3           INC     DPTR
+   \   000429   A3           INC     DPTR
+   \   00042A   A3           INC     DPTR
+   \   00042B   A3           INC     DPTR
+   \   00042C   A3           INC     DPTR
+   \   00042D   A3           INC     DPTR
+   \   00042E   A3           INC     DPTR
+   \   00042F   E0           MOVX    A,@DPTR
+   \   000430   F8           MOV     R0,A
+   \   000431   A3           INC     DPTR
+   \   000432   E0           MOVX    A,@DPTR
+   \   000433   F9           MOV     R1,A
+   \   000434   E8           MOV     A,R0
+   \   000435   49           ORL     A,R1
+   \   000436   6020         JZ      ??MT_BuildEndpointDesc_9
+    503                  {
+    504                    osal_mem_free(epDesc->simpleDesc->pAppInClusterList);
+   \   000438                ; Setup parameters for call to function osal_mem_free
+   \   000438   85..82       MOV     DPL,?V0 + 0
+   \   00043B   85..83       MOV     DPH,?V0 + 1
+   \   00043E   A3           INC     DPTR
+   \   00043F   A3           INC     DPTR
+   \   000440   A3           INC     DPTR
+   \   000441   E0           MOVX    A,@DPTR
+   \   000442   F8           MOV     R0,A
+   \   000443   A3           INC     DPTR
+   \   000444   E0           MOVX    A,@DPTR
+   \   000445   F583         MOV     DPH,A
+   \   000447   8882         MOV     DPL,R0
+   \   000449   A3           INC     DPTR
+   \   00044A   A3           INC     DPTR
+   \   00044B   A3           INC     DPTR
+   \   00044C   A3           INC     DPTR
+   \   00044D   A3           INC     DPTR
+   \   00044E   A3           INC     DPTR
+   \   00044F   A3           INC     DPTR
+   \   000450   E0           MOVX    A,@DPTR
+   \   000451   FA           MOV     R2,A
+   \   000452   A3           INC     DPTR
+   \   000453   E0           MOVX    A,@DPTR
+   \   000454   FB           MOV     R3,A
+   \   000455   12....       LCALL   ??osal_mem_free?relay
+    505                  }
+    506          
+    507                  if (epDesc->simpleDesc->AppNumOutClusters)
+   \                     ??MT_BuildEndpointDesc_9:
+   \   000458   85..82       MOV     DPL,?V0 + 0
+   \   00045B   85..83       MOV     DPH,?V0 + 1
+   \   00045E   A3           INC     DPTR
+   \   00045F   A3           INC     DPTR
+   \   000460   A3           INC     DPTR
+   \   000461   E0           MOVX    A,@DPTR
+   \   000462   F8           MOV     R0,A
+   \   000463   A3           INC     DPTR
+   \   000464   E0           MOVX    A,@DPTR
+   \   000465   F583         MOV     DPH,A
+   \   000467   8882         MOV     DPL,R0
+   \   000469   A3           INC     DPTR
+   \   00046A   A3           INC     DPTR
+   \   00046B   A3           INC     DPTR
+   \   00046C   A3           INC     DPTR
+   \   00046D   A3           INC     DPTR
+   \   00046E   A3           INC     DPTR
+   \   00046F   A3           INC     DPTR
+   \   000470   A3           INC     DPTR
+   \   000471   A3           INC     DPTR
+   \   000472   E0           MOVX    A,@DPTR
+   \   000473   6023         JZ      ??MT_BuildEndpointDesc_10
+    508                  {
+    509                    osal_mem_free(epDesc->simpleDesc->pAppOutClusterList);
+   \   000475                ; Setup parameters for call to function osal_mem_free
+   \   000475   85..82       MOV     DPL,?V0 + 0
+   \   000478   85..83       MOV     DPH,?V0 + 1
+   \   00047B   A3           INC     DPTR
+   \   00047C   A3           INC     DPTR
+   \   00047D   A3           INC     DPTR
+   \   00047E   E0           MOVX    A,@DPTR
+   \   00047F   F8           MOV     R0,A
+   \   000480   A3           INC     DPTR
+   \   000481   E0           MOVX    A,@DPTR
+   \   000482   F583         MOV     DPH,A
+   \   000484   8882         MOV     DPL,R0
+   \   000486   A3           INC     DPTR
+   \   000487   A3           INC     DPTR
+   \   000488   A3           INC     DPTR
+   \   000489   A3           INC     DPTR
+   \   00048A   A3           INC     DPTR
+   \   00048B   A3           INC     DPTR
+   \   00048C   A3           INC     DPTR
+   \   00048D   A3           INC     DPTR
+   \   00048E   A3           INC     DPTR
+   \   00048F   A3           INC     DPTR
+   \   000490   E0           MOVX    A,@DPTR
+   \   000491   FA           MOV     R2,A
+   \   000492   A3           INC     DPTR
+   \   000493   E0           MOVX    A,@DPTR
+   \   000494   FB           MOV     R3,A
+   \   000495   12....       LCALL   ??osal_mem_free?relay
+    510                  }
+    511          
+    512                  osal_mem_free(epDesc->simpleDesc);
+   \                     ??MT_BuildEndpointDesc_10:
+   \   000498                ; Setup parameters for call to function osal_mem_free
+   \   000498   85..82       MOV     DPL,?V0 + 0
+   \   00049B   85..83       MOV     DPH,?V0 + 1
+   \   00049E   A3           INC     DPTR
+   \   00049F   A3           INC     DPTR
+   \   0004A0   A3           INC     DPTR
+   \   0004A1   E0           MOVX    A,@DPTR
+   \   0004A2   FA           MOV     R2,A
+   \   0004A3   A3           INC     DPTR
+   \   0004A4   E0           MOVX    A,@DPTR
+   \   0004A5   FB           MOV     R3,A
+   \   0004A6   12....       LCALL   ??osal_mem_free?relay
+   \   0004A9   8003         SJMP    ??MT_BuildEndpointDesc_1
+    513                }
+    514              }
+    515              else
+    516              {
+    517                ret = ZMemError;
+   \                     ??MT_BuildEndpointDesc_2:
+   \   0004AB   75..10       MOV     ?V0 + 3,#0x10
+    518              }
+    519            }
+    520          
+    521            return ret;
+   \                     ??MT_BuildEndpointDesc_1:
+   \   0004AE   A9..         MOV     R1,?V0 + 3
+   \   0004B0   7F08         MOV     R7,#0x8
+   \   0004B2   02....       LJMP    ?BANKED_LEAVE_XDATA
+    522          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_BuildSPIMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_BuildSPIMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_BuildAndSendZToolResponse?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_BuildAndSendZToolResponse
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_ProcessIncoming?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_ProcessIncoming
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MTProcessAppRspMsg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MTProcessAppRspMsg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_ReverseBytes?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_ReverseBytes
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_Word2Buf?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_Word2Buf
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??MT_BuildEndpointDesc?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    MT_BuildEndpointDesc
+    523          #endif
+    524          /***************************************************************************************************
+    525          ***************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     MTProcessAppRspMsg                 0      0      9
+       -> MT_BuildAndSendZToolResponse
+                                        0      0     18
+     MT_BuildAndSendZToolResponse       0      0     31
+       -> MT_TransportAlloc             0      0     32
+       -> MT_BuildSPIMsg                0      0     36
+       -> MT_TransportSend              0      0     32
+     MT_BuildEndpointDesc               1      0     16
+       -> afFindEndPointDesc            0      0     32
+       -> osal_mem_alloc                0      0     32
+       -> osal_mem_alloc                0      0     32
+       -> osal_mem_alloc                0      0     32
+       -> osal_mem_free                 0      0     32
+       -> osal_mem_free                 0      0     32
+       -> osal_mem_free                 0      0     32
+     MT_BuildSPIMsg                     1      0     37
+       -> osal_memcpy                   0      0     38
+     MT_Init                            2      0      0
+       -> MT_SysResetInd                4      0      0
+     MT_ProcessIncoming                 1      0     13
+       -> MT_BuildAndSendZToolResponse
+                                        0      0     26
+     MT_ReverseBytes                    1      0     10
+     MT_Word2Buf                        1      0      9
+
+
+   Segment part sizes:
+
+     Function/Label                       Bytes
+     --------------                       -----
+     mtProcessIncoming                      22
+     debugThreshold                          1
+     debugCompId                             1
+     MT_Init                                14
+     MT_BuildSPIMsg                        128
+     MT_BuildAndSendZToolResponse           72
+     MT_ProcessIncoming                    236
+     MTProcessAppRspMsg                     29
+     MT_ReverseBytes                       102
+     MT_Word2Buf                            82
+     MT_BuildEndpointDesc                 1205
+     ??MT_Init?relay                         6
+     ??MT_BuildSPIMsg?relay                  6
+     ??MT_BuildAndSendZToolResponse?relay    6
+     ??MT_ProcessIncoming?relay              6
+     ??MTProcessAppRspMsg?relay              6
+     ??MT_ReverseBytes?relay                 6
+     ??MT_Word2Buf?relay                     6
+     ??MT_BuildEndpointDesc?relay            6
+
+ 
+ 1 868 bytes in segment BANKED_CODE
+    48 bytes in segment BANK_RELAYS
+    24 bytes in segment XDATA_Z
+ 
+ 1 916 bytes of CODE  memory
+    24 bytes of XDATA memory
+
+Errors: none
+Warnings: none

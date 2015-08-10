@@ -1,0 +1,862 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         13/Jul/2015  17:24:01 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Componen #
+#                          ts\hal\target\CC2530EB\sccb.c                      #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Components\hal\ta #
+#                          rget\CC2530EB\sccb.c" -D HAL_UART -lC "C:\Texas    #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Camera\List\ #
+#                          " -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\WirelessMonitorSystem\CC253 #
+#                          0DB\Camera\List\" --diag_suppress Pe001,Pa010 -o   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\Ca #
+#                          mera\Obj\" -e --no_cse --no_unroll --no_inline     #
+#                          --no_code_motion --no_tbaa --debug --core=plain    #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -On --require_prototypes  #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\List\sccb.lst                                  #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Cam #
+#                          era\Obj\sccb.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Components\hal\target\CC2530EB\sccb.c
+      1          #include "sccb.h"
+
+   \                                 In  segment SFR_AN, at 0xa0
+   \   union <unnamed> volatile __sfr _A_P2
+   \                     _A_P2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf7
+   \   unsigned char volatile __sfr P2INP
+   \                     P2INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          // delay
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      3          void delay_us(uint16 usec)
+   \                     delay_us:
+      4          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      5              usec>>= 1;
+   \   000000   EB           MOV     A,R3
+   \   000001   C3           CLR     C
+   \   000002   13           RRC     A
+   \   000003   FB           MOV     R3,A
+   \   000004   EA           MOV     A,R2
+   \   000005   13           RRC     A
+   \   000006   FA           MOV     R2,A
+      6              while(usec--)
+   \                     ??delay_us_0:
+   \   000007   EA           MOV     A,R2
+   \   000008   F8           MOV     R0,A
+   \   000009   EB           MOV     A,R3
+   \   00000A   F9           MOV     R1,A
+   \   00000B   E8           MOV     A,R0
+   \   00000C   24FF         ADD     A,#-0x1
+   \   00000E   FA           MOV     R2,A
+   \   00000F   E9           MOV     A,R1
+   \   000010   34FF         ADDC    A,#-0x1
+   \   000012   FB           MOV     R3,A
+   \   000013   E8           MOV     A,R0
+   \   000014   49           ORL     A,R1
+   \   000015   6013         JZ      ??delay_us_1
+      7              {
+      8                  NOP();
+   \   000017   00           NOP
+      9                  NOP();
+   \   000018   00           NOP
+     10                  NOP();
+   \   000019   00           NOP
+     11                  NOP();
+   \   00001A   00           NOP
+     12                  NOP();
+   \   00001B   00           NOP
+     13                  NOP();
+   \   00001C   00           NOP
+     14                  NOP();
+   \   00001D   00           NOP
+     15                  NOP();
+   \   00001E   00           NOP
+     16                  NOP();
+   \   00001F   00           NOP
+     17                  NOP();
+   \   000020   00           NOP
+     18                  NOP();
+   \   000021   00           NOP
+     19                  NOP();
+   \   000022   00           NOP
+     20                  NOP();
+   \   000023   00           NOP
+     21                  NOP();
+   \   000024   00           NOP
+     22                  NOP();
+   \   000025   00           NOP
+     23                  NOP();
+   \   000026   00           NOP
+     24                  NOP();
+   \   000027   00           NOP
+   \   000028   80DD         SJMP    ??delay_us_0
+     25              }
+     26          }
+   \                     ??delay_us_1:
+   \   00002A   02....       LJMP    ?BRET
+     27          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     28          void delay_ms(uint16 msec)
+   \                     delay_ms:
+     29          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     30               while(msec--)
+   \                     ??delay_ms_0:
+   \   000009   EE           MOV     A,R6
+   \   00000A   F8           MOV     R0,A
+   \   00000B   EF           MOV     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   E8           MOV     A,R0
+   \   00000E   24FF         ADD     A,#-0x1
+   \   000010   FE           MOV     R6,A
+   \   000011   E9           MOV     A,R1
+   \   000012   34FF         ADDC    A,#-0x1
+   \   000014   FF           MOV     R7,A
+   \   000015   E8           MOV     A,R0
+   \   000016   49           ORL     A,R1
+   \   000017   6009         JZ      ??delay_ms_1
+     31                  delay_us(1000);
+   \   000019                ; Setup parameters for call to function delay_us
+   \   000019   7AE8         MOV     R2,#-0x18
+   \   00001B   7B03         MOV     R3,#0x3
+   \   00001D   12....       LCALL   ??delay_us?relay
+   \   000020   80E7         SJMP    ??delay_ms_0
+     32          }
+   \                     ??delay_ms_1:
+   \   000022   7F01         MOV     R7,#0x1
+   \   000024   02....       LJMP    ?BANKED_LEAVE_XDATA
+     33          
+     34          //初始化SCCB接口
+     35          //CHECK OK
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     36          void SCCB_Init(void)
+   \                     SCCB_Init:
+     37          {	
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     38            // set SCL out and output value is 1
+     39            // p2_4 out and value is 1
+     40            {
+     41                  P2SEL &= 0xFB;    // general I/O
+   \   000000   53F5FB       ANL     0xf5,#0xfb
+     42                  P2DIR |= 0x10;    // out-put
+   \   000003   43FF10       ORL     0xff,#0x10
+     43                  P2INP &= 0x6F;    // set SCL mode pull-up/down 
+   \   000006   53F76F       ANL     0xf7,#0x6f
+     44                  SCCB_SCL = 1;       // SCCB requirement: idle 1
+   \   000009   D2A4         SETB    0xa0.4
+     45            }
+     46                  // set SDA out and remains floating
+     47                  // P2_3 out and floating
+     48            	// pull-up mode
+     49          	SCCB_SDA_OUT();	   
+   \   00000B   53F5FD       ANL     0xf5,#0xfd
+   \   00000E   43FF08       ORL     0xff,#0x8
+   \   000011   53F777       ANL     0xf7,#0x77
+     50          }			 
+   \   000014   02....       LJMP    ?BRET
+   \   000017                REQUIRE P2SEL
+   \   000017                REQUIRE P2DIR
+   \   000017                REQUIRE P2INP
+   \   000017                REQUIRE _A_P2
+     51          
+     52          //SCCB起始信号
+     53          //当时钟为高的时候,数据线的高到低,为SCCB起始信号
+     54          //在激活状态下,SDA和SCL均为低电平
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     55          void SCCB_Start(void)
+   \                     SCCB_Start:
+     56          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     57              SCCB_SDA=1;     //数据线高电平	   
+   \   000004   D2A3         SETB    0xa0.3
+     58              SCCB_SCL=1;	    //在时钟线高的时候数据线由高至低
+   \   000006   D2A4         SETB    0xa0.4
+     59              delay_us(50);  
+   \   000008                ; Setup parameters for call to function delay_us
+   \   000008   7A32         MOV     R2,#0x32
+   \   00000A   7B00         MOV     R3,#0x0
+   \   00000C   12....       LCALL   ??delay_us?relay
+     60              SCCB_SDA=0;
+   \   00000F   C2A3         CLR     0xa0.3
+     61              delay_us(50);	 
+   \   000011                ; Setup parameters for call to function delay_us
+   \   000011   7A32         MOV     R2,#0x32
+   \   000013   7B00         MOV     R3,#0x0
+   \   000015   12....       LCALL   ??delay_us?relay
+     62              SCCB_SCL=0;	    //数据线恢复低电平，单操作函数必要	  
+   \   000018   C2A4         CLR     0xa0.4
+     63          }
+   \   00001A   D083         POP     DPH
+   \   00001C   D082         POP     DPL
+   \   00001E   02....       LJMP    ?BRET
+   \   000021                REQUIRE _A_P2
+     64          
+     65          //SCCB停止信号
+     66          //当时钟为高的时候,数据线的低到高,为SCCB停止信号
+     67          //空闲状况下,SDA,SCL均为高电平
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     68          void SCCB_Stop(void)
+   \                     SCCB_Stop:
+     69          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     70              SCCB_SDA=0;
+   \   000004   C2A3         CLR     0xa0.3
+     71              delay_us(50);	 
+   \   000006                ; Setup parameters for call to function delay_us
+   \   000006   7A32         MOV     R2,#0x32
+   \   000008   7B00         MOV     R3,#0x0
+   \   00000A   12....       LCALL   ??delay_us?relay
+     72              SCCB_SCL=1;	
+   \   00000D   D2A4         SETB    0xa0.4
+     73              delay_us(50); 
+   \   00000F                ; Setup parameters for call to function delay_us
+   \   00000F   7A32         MOV     R2,#0x32
+   \   000011   7B00         MOV     R3,#0x0
+   \   000013   12....       LCALL   ??delay_us?relay
+     74              SCCB_SDA=1;	
+   \   000016   D2A3         SETB    0xa0.3
+     75              delay_us(50);
+   \   000018                ; Setup parameters for call to function delay_us
+   \   000018   7A32         MOV     R2,#0x32
+   \   00001A   7B00         MOV     R3,#0x0
+   \   00001C   12....       LCALL   ??delay_us?relay
+     76          }  
+   \   00001F   D083         POP     DPH
+   \   000021   D082         POP     DPL
+   \   000023   02....       LJMP    ?BRET
+   \   000026                REQUIRE _A_P2
+     77          //产生NA信号
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          void SCCB_No_Ack(void)
+   \                     SCCB_No_Ack:
+     79          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     80          	delay_us(50);
+   \   000004                ; Setup parameters for call to function delay_us
+   \   000004   7A32         MOV     R2,#0x32
+   \   000006   7B00         MOV     R3,#0x0
+   \   000008   12....       LCALL   ??delay_us?relay
+     81          	SCCB_SDA=1;	
+   \   00000B   D2A3         SETB    0xa0.3
+     82          	SCCB_SCL=1;	
+   \   00000D   D2A4         SETB    0xa0.4
+     83          	delay_us(50);
+   \   00000F                ; Setup parameters for call to function delay_us
+   \   00000F   7A32         MOV     R2,#0x32
+   \   000011   7B00         MOV     R3,#0x0
+   \   000013   12....       LCALL   ??delay_us?relay
+     84          	SCCB_SCL=0;	
+   \   000016   C2A4         CLR     0xa0.4
+     85          	delay_us(50);
+   \   000018                ; Setup parameters for call to function delay_us
+   \   000018   7A32         MOV     R2,#0x32
+   \   00001A   7B00         MOV     R3,#0x0
+   \   00001C   12....       LCALL   ??delay_us?relay
+     86          	SCCB_SDA=0;	
+   \   00001F   C2A3         CLR     0xa0.3
+     87          	delay_us(50);
+   \   000021                ; Setup parameters for call to function delay_us
+   \   000021   7A32         MOV     R2,#0x32
+   \   000023   7B00         MOV     R3,#0x0
+   \   000025   12....       LCALL   ??delay_us?relay
+     88          }
+   \   000028   D083         POP     DPH
+   \   00002A   D082         POP     DPL
+   \   00002C   02....       LJMP    ?BRET
+   \   00002F                REQUIRE _A_P2
+     89          //SCCB,写入一个字节
+     90          //返回值:0,成功;1,失败. 
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     91          uint8 SCCB_WR_Byte(uint8 dat)
+   \                     SCCB_WR_Byte:
+     92          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+     93          	uint8 j,res;	 
+     94          	for(j=0;j<8;j++)                //循环8次发送数据
+   \   000007   7F00         MOV     R7,#0x0
+   \                     ??SCCB_WR_Byte_0:
+   \   000009   EF           MOV     A,R7
+   \   00000A   C3           CLR     C
+   \   00000B   9408         SUBB    A,#0x8
+   \   00000D   5027         JNC     ??SCCB_WR_Byte_1
+     95          	{
+     96          		if(dat&0x80)SCCB_SDA=1;	
+   \   00000F   E5..         MOV     A,?V0 + 0
+   \   000011   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000013   5004         JNC     ??SCCB_WR_Byte_2
+   \   000015   D2A3         SETB    0xa0.3
+   \   000017   8002         SJMP    ??SCCB_WR_Byte_3
+     97          		else SCCB_SDA=0;
+   \                     ??SCCB_WR_Byte_2:
+   \   000019   C2A3         CLR     0xa0.3
+     98          		dat<<=1;
+   \                     ??SCCB_WR_Byte_3:
+   \   00001B   E5..         MOV     A,?V0 + 0
+   \   00001D   C3           CLR     C
+   \   00001E   33           RLC     A
+   \   00001F   F5..         MOV     ?V0 + 0,A
+     99          		delay_us(50);
+   \   000021                ; Setup parameters for call to function delay_us
+   \   000021   7A32         MOV     R2,#0x32
+   \   000023   7B00         MOV     R3,#0x0
+   \   000025   12....       LCALL   ??delay_us?relay
+    100          		SCCB_SCL=1;	
+   \   000028   D2A4         SETB    0xa0.4
+    101          		delay_us(50);
+   \   00002A                ; Setup parameters for call to function delay_us
+   \   00002A   7A32         MOV     R2,#0x32
+   \   00002C   7B00         MOV     R3,#0x0
+   \   00002E   12....       LCALL   ??delay_us?relay
+    102          		SCCB_SCL=0;		   
+   \   000031   C2A4         CLR     0xa0.4
+    103          	}			 
+   \   000033   0F           INC     R7
+   \   000034   80D3         SJMP    ??SCCB_WR_Byte_0
+    104          	SCCB_SDA_IN();		        //设置SDA为输入 
+   \                     ??SCCB_WR_Byte_1:
+   \   000036   53F5FD       ANL     0xf5,#0xfd
+   \   000039   53FFF7       ANL     0xff,#0xf7
+   \   00003C   53F777       ANL     0xf7,#0x77
+    105          	delay_us(50);
+   \   00003F                ; Setup parameters for call to function delay_us
+   \   00003F   7A32         MOV     R2,#0x32
+   \   000041   7B00         MOV     R3,#0x0
+   \   000043   12....       LCALL   ??delay_us?relay
+    106          	SCCB_SCL=1;			//接收第九位,以判断是否发送成功
+   \   000046   D2A4         SETB    0xa0.4
+    107          	delay_us(50);
+   \   000048                ; Setup parameters for call to function delay_us
+   \   000048   7A32         MOV     R2,#0x32
+   \   00004A   7B00         MOV     R3,#0x0
+   \   00004C   12....       LCALL   ??delay_us?relay
+    108          	if(SCCB_READ_SDA)res=1;         //SDA=1发送失败，返回1
+   \   00004F   A2A3         MOV     C,0xa0.3
+   \   000051   5004         JNC     ??SCCB_WR_Byte_4
+   \   000053   7E01         MOV     R6,#0x1
+   \   000055   8002         SJMP    ??SCCB_WR_Byte_5
+    109          	else res=0;                     //SDA=0发送成功，返回0
+   \                     ??SCCB_WR_Byte_4:
+   \   000057   7E00         MOV     R6,#0x0
+    110          	SCCB_SCL=0;		 
+   \                     ??SCCB_WR_Byte_5:
+   \   000059   C2A4         CLR     0xa0.4
+    111          	SCCB_SDA_OUT();		        //设置SDA为输出    
+   \   00005B   53F5FD       ANL     0xf5,#0xfd
+   \   00005E   43FF08       ORL     0xff,#0x8
+   \   000061   53F777       ANL     0xf7,#0x77
+    112          	return res;  
+   \   000064   EE           MOV     A,R6
+   \   000065   F9           MOV     R1,A
+   \   000066   7F01         MOV     R7,#0x1
+   \   000068   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   00006B                REQUIRE _A_P2
+   \   00006B                REQUIRE P2SEL
+   \   00006B                REQUIRE P2DIR
+   \   00006B                REQUIRE P2INP
+    113          }	 
+    114          //SCCB 读取一个字节
+    115          //在SCL的上升沿,数据锁存
+    116          //返回值:读到的数据
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    117          uint8 SCCB_RD_Byte(void)
+   \                     SCCB_RD_Byte:
+    118          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    119          	uint8 temp=0,j;    
+   \   000005   7E00         MOV     R6,#0x0
+    120          	SCCB_SDA_IN();		//设置SDA为输入  
+   \   000007   53F5FD       ANL     0xf5,#0xfd
+   \   00000A   53FFF7       ANL     0xff,#0xf7
+   \   00000D   53F777       ANL     0xf7,#0x77
+    121          	for(j=8;j>0;j--) 	//循环8次接收数据
+   \   000010   7F08         MOV     R7,#0x8
+   \                     ??SCCB_RD_Byte_0:
+   \   000012   EF           MOV     A,R7
+   \   000013   C3           CLR     C
+   \   000014   9401         SUBB    A,#0x1
+   \   000016   401E         JC      ??SCCB_RD_Byte_1
+    122          	{		     	  
+    123          		delay_us(50);
+   \   000018                ; Setup parameters for call to function delay_us
+   \   000018   7A32         MOV     R2,#0x32
+   \   00001A   7B00         MOV     R3,#0x0
+   \   00001C   12....       LCALL   ??delay_us?relay
+    124          		SCCB_SCL=1;
+   \   00001F   D2A4         SETB    0xa0.4
+    125          		temp=temp<<1;
+   \   000021   EE           MOV     A,R6
+   \   000022   C3           CLR     C
+   \   000023   33           RLC     A
+   \   000024   FE           MOV     R6,A
+    126          		if(SCCB_READ_SDA)temp++;   
+   \   000025   A2A3         MOV     C,0xa0.3
+   \   000027   5001         JNC     ??SCCB_RD_Byte_2
+   \   000029   0E           INC     R6
+    127          		delay_us(50);
+   \                     ??SCCB_RD_Byte_2:
+   \   00002A                ; Setup parameters for call to function delay_us
+   \   00002A   7A32         MOV     R2,#0x32
+   \   00002C   7B00         MOV     R3,#0x0
+   \   00002E   12....       LCALL   ??delay_us?relay
+    128          		SCCB_SCL=0;
+   \   000031   C2A4         CLR     0xa0.4
+    129          	}	
+   \   000033   1F           DEC     R7
+   \   000034   80DC         SJMP    ??SCCB_RD_Byte_0
+    130          	SCCB_SDA_OUT();		//设置SDA为输出    
+   \                     ??SCCB_RD_Byte_1:
+   \   000036   53F5FD       ANL     0xf5,#0xfd
+   \   000039   43FF08       ORL     0xff,#0x8
+   \   00003C   53F777       ANL     0xf7,#0x77
+    131          	return temp;
+   \   00003F   EE           MOV     A,R6
+   \   000040   F9           MOV     R1,A
+   \   000041   7F01         MOV     R7,#0x1
+   \   000043   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000046                REQUIRE P2SEL
+   \   000046                REQUIRE P2DIR
+   \   000046                REQUIRE P2INP
+   \   000046                REQUIRE _A_P2
+    132          } 							    
+    133          //写寄存器
+    134          //返回值:0,成功;1,失败.
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    135          uint8 SCCB_WR_Reg(uint8 reg,uint8 data)
+   \                     SCCB_WR_Reg:
+    136          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    137          	uint8 res=0;
+   \   000009   7E00         MOV     R6,#0x0
+    138          	SCCB_Start(); 			        //启动SCCB传输
+   \   00000B                ; Setup parameters for call to function SCCB_Start
+   \   00000B   12....       LCALL   ??SCCB_Start?relay
+    139          	if(SCCB_WR_Byte(SCCB_ID))res=1;	        //写器件ID	  
+   \   00000E                ; Setup parameters for call to function SCCB_WR_Byte
+   \   00000E   7942         MOV     R1,#0x42
+   \   000010   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   000013   E9           MOV     A,R1
+   \   000014   6002         JZ      ??SCCB_WR_Reg_0
+   \   000016   7E01         MOV     R6,#0x1
+    140          	delay_us(100);
+   \                     ??SCCB_WR_Reg_0:
+   \   000018                ; Setup parameters for call to function delay_us
+   \   000018   7A64         MOV     R2,#0x64
+   \   00001A   7B00         MOV     R3,#0x0
+   \   00001C   12....       LCALL   ??delay_us?relay
+    141            	if(SCCB_WR_Byte(reg))res=1;		//写寄存器地址	  
+   \   00001F                ; Setup parameters for call to function SCCB_WR_Byte
+   \   00001F   A9..         MOV     R1,?V0 + 0
+   \   000021   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   000024   E9           MOV     A,R1
+   \   000025   6002         JZ      ??SCCB_WR_Reg_1
+   \   000027   7E01         MOV     R6,#0x1
+    142          	delay_us(100);
+   \                     ??SCCB_WR_Reg_1:
+   \   000029                ; Setup parameters for call to function delay_us
+   \   000029   7A64         MOV     R2,#0x64
+   \   00002B   7B00         MOV     R3,#0x0
+   \   00002D   12....       LCALL   ??delay_us?relay
+    143            	if(SCCB_WR_Byte(data))res=1; 	        //写数据	 
+   \   000030                ; Setup parameters for call to function SCCB_WR_Byte
+   \   000030   EF           MOV     A,R7
+   \   000031   F9           MOV     R1,A
+   \   000032   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   000035   E9           MOV     A,R1
+   \   000036   6002         JZ      ??SCCB_WR_Reg_2
+   \   000038   7E01         MOV     R6,#0x1
+    144            	SCCB_Stop();	  
+   \                     ??SCCB_WR_Reg_2:
+   \   00003A                ; Setup parameters for call to function SCCB_Stop
+   \   00003A   12....       LCALL   ??SCCB_Stop?relay
+    145            	return	res;
+   \   00003D   EE           MOV     A,R6
+   \   00003E   F9           MOV     R1,A
+   \   00003F   7F01         MOV     R7,#0x1
+   \   000041   02....       LJMP    ?BANKED_LEAVE_XDATA
+    146          }		  					    
+    147          //读寄存器
+    148          //返回值:读到的寄存器值
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    149          uint8 SCCB_RD_Reg(uint8 reg)
+   \                     SCCB_RD_Reg:
+    150          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+    151          	uint8 val=0;
+   \   000007   7E00         MOV     R6,#0x0
+    152          	SCCB_Start(); 			//启动SCCB传输
+   \   000009                ; Setup parameters for call to function SCCB_Start
+   \   000009   12....       LCALL   ??SCCB_Start?relay
+    153          	SCCB_WR_Byte(SCCB_ID);		//写器件ID	  
+   \   00000C                ; Setup parameters for call to function SCCB_WR_Byte
+   \   00000C   7942         MOV     R1,#0x42
+   \   00000E   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   000011   E9           MOV     A,R1
+    154          	delay_us(100);	 
+   \   000012                ; Setup parameters for call to function delay_us
+   \   000012   7A64         MOV     R2,#0x64
+   \   000014   7B00         MOV     R3,#0x0
+   \   000016   12....       LCALL   ??delay_us?relay
+    155            	SCCB_WR_Byte(reg);		//写寄存器地址	  
+   \   000019                ; Setup parameters for call to function SCCB_WR_Byte
+   \   000019   EF           MOV     A,R7
+   \   00001A   F9           MOV     R1,A
+   \   00001B   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   00001E   E9           MOV     A,R1
+    156          	delay_us(100);	  
+   \   00001F                ; Setup parameters for call to function delay_us
+   \   00001F   7A64         MOV     R2,#0x64
+   \   000021   7B00         MOV     R3,#0x0
+   \   000023   12....       LCALL   ??delay_us?relay
+    157          	SCCB_Stop();   
+   \   000026                ; Setup parameters for call to function SCCB_Stop
+   \   000026   12....       LCALL   ??SCCB_Stop?relay
+    158          	delay_us(100);	   
+   \   000029                ; Setup parameters for call to function delay_us
+   \   000029   7A64         MOV     R2,#0x64
+   \   00002B   7B00         MOV     R3,#0x0
+   \   00002D   12....       LCALL   ??delay_us?relay
+    159          	//设置寄存器地址后，才是读
+    160          	SCCB_Start();
+   \   000030                ; Setup parameters for call to function SCCB_Start
+   \   000030   12....       LCALL   ??SCCB_Start?relay
+    161          	SCCB_WR_Byte(SCCB_ID|0X01);	//发送读命令	  
+   \   000033                ; Setup parameters for call to function SCCB_WR_Byte
+   \   000033   7943         MOV     R1,#0x43
+   \   000035   12....       LCALL   ??SCCB_WR_Byte?relay
+   \   000038   E9           MOV     A,R1
+    162          	delay_us(100);
+   \   000039                ; Setup parameters for call to function delay_us
+   \   000039   7A64         MOV     R2,#0x64
+   \   00003B   7B00         MOV     R3,#0x0
+   \   00003D   12....       LCALL   ??delay_us?relay
+    163            	val=SCCB_RD_Byte();		//读取数据
+   \   000040                ; Setup parameters for call to function SCCB_RD_Byte
+   \   000040   12....       LCALL   ??SCCB_RD_Byte?relay
+   \   000043   E9           MOV     A,R1
+   \   000044   FE           MOV     R6,A
+    164            	SCCB_No_Ack();
+   \   000045                ; Setup parameters for call to function SCCB_No_Ack
+   \   000045   12....       LCALL   ??SCCB_No_Ack?relay
+    165            	SCCB_Stop();
+   \   000048                ; Setup parameters for call to function SCCB_Stop
+   \   000048   12....       LCALL   ??SCCB_Stop?relay
+    166            	return val;
+   \   00004B   EE           MOV     A,R6
+   \   00004C   F9           MOV     R1,A
+   \   00004D   7F01         MOV     R7,#0x1
+   \   00004F   02....       LJMP    ?BANKED_LEAVE_XDATA
+    167          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_us?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_us
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay_ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay_ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_No_Ack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_No_Ack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_WR_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_WR_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_RD_Byte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_RD_Byte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_WR_Reg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_WR_Reg
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??SCCB_RD_Reg?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    SCCB_RD_Reg
+
+   Maximum stack usage in bytes:
+
+     Function          ISTACK PSTACK XSTACK
+     --------          ------ ------ ------
+     SCCB_Init             0      0      0
+     SCCB_No_Ack           2      0      9
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+     SCCB_RD_Byte          0      0     18
+       -> delay_us         0      0     18
+       -> delay_us         0      0     18
+     SCCB_RD_Reg           0      0      9
+       -> SCCB_Start       0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_Stop        0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_Start       0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_RD_Byte     0      0     18
+       -> SCCB_No_Ack      0      0     18
+       -> SCCB_Stop        0      0     18
+     SCCB_Start            2      0      9
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+     SCCB_Stop             2      0      9
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+       -> delay_us         4      0      0
+     SCCB_WR_Byte          0      0     18
+       -> delay_us         0      0     18
+       -> delay_us         0      0     18
+       -> delay_us         0      0     18
+       -> delay_us         0      0     18
+     SCCB_WR_Reg           0      0      9
+       -> SCCB_Start       0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> delay_us         0      0     18
+       -> SCCB_WR_Byte     0      0     18
+       -> SCCB_Stop        0      0     18
+     delay_ms              0      0      9
+       -> delay_us         0      0     18
+     delay_us              0      0      9
+
+
+   Segment part sizes:
+
+     Function/Label       Bytes
+     --------------       -----
+     _A_P2                   1
+     P2SEL                   1
+     P2INP                   1
+     P2DIR                   1
+     delay_us               45
+     delay_ms               39
+     SCCB_Init              23
+     SCCB_Start             33
+     SCCB_Stop              38
+     SCCB_No_Ack            47
+     SCCB_WR_Byte          107
+     SCCB_RD_Byte           70
+     SCCB_WR_Reg            68
+     SCCB_RD_Reg            82
+     ??delay_us?relay        6
+     ??delay_ms?relay        6
+     ??SCCB_Init?relay       6
+     ??SCCB_Start?relay      6
+     ??SCCB_Stop?relay       6
+     ??SCCB_No_Ack?relay     6
+     ??SCCB_WR_Byte?relay    6
+     ??SCCB_RD_Byte?relay    6
+     ??SCCB_WR_Reg?relay     6
+     ??SCCB_RD_Reg?relay     6
+
+ 
+ 552 bytes in segment BANKED_CODE
+  60 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+ 
+ 612 bytes of CODE memory
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

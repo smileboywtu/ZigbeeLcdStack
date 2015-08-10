@@ -1,0 +1,1523 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.10194/W32 for 8051         01/Jun/2015  00:49:50 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\Source\Vibra #
+#                          te.c                                               #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\Tools\CC2530DB\f8wEndev.cfg"             #
+#                          (-DCPU32MHZ -DROOT=__near_func                     #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\Too #
+#                          ls\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=500         #
+#                          -DQUEUED_POLL_RATE=30 -DRESPONSE_POLL_RATE=100)    #
+#                          -DREJOIN_POLL_RATE=440 "C:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\Source\Vibrate.c" -D  #
+#                          HAL_UART -D xOCM_CLK_PORT=0 -D xOCM_CLK_PIN=7 -D   #
+#                          xOCM_DATA_PORT=0 -D xOCM_DATA_PIN=6 -lC "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\Vibrate\List #
+#                          \" -lA "C:\Texas Instruments\ZStack-CC2530-2.5.1a\ #
+#                          Projects\zstack\Samples\WirelessMonitorSystem\CC25 #
+#                          30DB\Vibrate\List\" --diag_suppress Pe001,Pa010    #
+#                          -o "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \Vibrate\Obj\" -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WirelessMonitorSystem\CC2530DB\.. #
+#                          \Source\" -I "C:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WirelessMonitorSyste #
+#                          m\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\hal\target\CC2530EB\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\include\" -I "C:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\high_level\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\mac\low_level\srf04\single_chip\"    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WirelessMonitorSystem\CC2530DB #
+#                          \..\..\..\..\..\Components\mt\" -I "C:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "C:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\saddr\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\services\sdata\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\af\" -I "C:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\nwk\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sapi\" -I "C:\Texas            #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sec\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\sys\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\stack\zdo\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\" -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WirelessMonitorSystem\CC2530DB\..\..\..\..\ #
+#                          ..\Components\zmac\f8w\" -Ohz --require_prototypes #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Vib #
+#                          rate\List\Vibrate.lst                              #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WirelessMonitorSystem\CC2530DB\Vib #
+#                          rate\Obj\Vibrate.r51                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WirelessMonitorSystem\Source\Vibrate.c
+      1          /*********************************************************************
+      2           * INCLUDES
+      3           */
+      4          #include "OSAL.h"
+      5          #include "AF.h"
+      6          #include "ZDApp.h"
+      7          #include "ZDObject.h"
+      8          #include "ZDProfile.h"
+      9          
+     10          #include "WirelessMonitorSystem.h"
+     11          #include "DebugTrace.h"
+     12          
+     13          #if !defined( WIN32 )
+     14            #include "OnBoard.h"
+     15          #endif
+     16          
+     17          /* HAL */
+     18          //#include "hal_i2c.h"
+     19          //#include "hal_adxl345.h"
+     20          //#include "ADXL345SPI.h"
+     21          
+     22          
+     23          /*********************************************************************
+     24           * MACROS
+     25           */
+     26          // Max Cluster ID
+     27          #define VIBRATE_MAX_IN_CLUSTERS 	3
+     28          #define VIBRATE_MAX_OUT_CLUSTERS	1
+     29          
+     30          // Send Message Timeout
+     31          #define Vibrate_SEND_DELAY  	(RESPONSE_POLL_RATE * 2)
+     32          
+     33          // Application Events (OSAL) - These are bit weighted definitions.
+     34          #define Vibrate_SEND_MSG_EVT    0x0001
+     35          
+     36          /*********************************************************************
+     37           * CONSTANTS
+     38           */
+     39          
+     40          /*********************************************************************
+     41           * TYPEDEFS
+     42           */
+     43          
+     44          /*********************************************************************
+     45           * GLOBAL VARIABLES
+     46           */
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     47          const cId_t Vibrate_ClusterInList[VIBRATE_MAX_IN_CLUSTERS] =
+   \                     Vibrate_ClusterInList:
+   \   000000   0A00         DW 10
+   \   000002   0E00         DW 14
+   \   000004   0F00         DW 15
+     48          {
+     49          	TOPO_REQ,
+     50          	DATA_ALLOW,
+     51          	DATA_REFUSE
+     52          };
+     53          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     54          const cId_t Vibrate_ClusterOutList[VIBRATE_MAX_OUT_CLUSTERS] =
+   \                     Vibrate_ClusterOutList:
+   \   000000   0B00         DW 11
+     55          {
+     56          	ZIGBEE_COMMON_CLUSTER
+     57          };
+     58          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     59          const SimpleDescriptionFormat_t Vibrate_SimpleDesc =
+   \                     Vibrate_SimpleDesc:
+   \   000000   0A           DB 10
+   \   000001   040F         DW 3844
+   \   000003   0100         DW 1
+   \   000005   00           DB 0
+   \   000006   03           DB 3
+   \   000007   ....         DW Vibrate_ClusterInList
+   \   000009   01           DB 1
+   \   00000A   ....         DW Vibrate_ClusterOutList
+     60          {
+     61            Monitor_ENDPOINT,              //  int Endpoint;
+     62            Monitor_PROFID,                //  uint16 AppProfId[2];
+     63            Monitor_DEVICEID,              //  uint16 AppDeviceId[2];
+     64            Monitor_DEVICE_VERSION,        //  int   AppDevVer:4;
+     65            Monitor_FLAGS,                 //  int   AppFlags:4;
+     66            VIBRATE_MAX_IN_CLUSTERS,          //  byte  AppNumInClusters;
+     67            (cId_t *)Vibrate_ClusterInList,   //  byte *pAppInClusterList;
+     68            VIBRATE_MAX_OUT_CLUSTERS,         //  byte  AppNumInClusters;
+     69            (cId_t *)Vibrate_ClusterOutList   //  byte *pAppInClusterList;
+     70          };
+     71          
+     72          // This is the Endpoint/Interface description.  It is defined here, but
+     73          // filled-in in Vibrate_Init().  Another way to go would be to fill
+     74          // in the structure here and make it a "const" (in code space).  The
+     75          // way it's defined in this sample app it is define in RAM.
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     76          endPointDesc_t Vibrate_epDesc;
+   \                     Vibrate_epDesc:
+   \   000000                DS 6
+   \   000006                REQUIRE __INIT_XDATA_Z
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL VARIABLES
+     80           */
+     81          
+     82          /*********************************************************************
+     83           * EXTERNAL FUNCTIONS
+     84           */
+     85          
+     86          /*********************************************************************
+     87           * LOCAL VARIABLES
+     88           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     89          byte Vibrate_TaskID;   // Task ID for internal task/event processing
+   \                     Vibrate_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     90          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     91          devStates_t Vibrate_NwkState;
+   \                     Vibrate_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     92          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     93          byte Vibrate_TransID;  // This is the unique message ID (counter)
+   \                     Vibrate_TransID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     94          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     95          afAddrType_t Vibrate_DstAddr;	// the coordinator addr
+   \                     Vibrate_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+     96          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     97          uint16 srcAddr = 0;
+   \                     srcAddr:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     98          
+     99          
+    100          /************************ User *********************************/
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    101          static byte allowSend = 1;
+   \                     allowSend:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for allowSend>`
+   \   000001                REQUIRE __INIT_XDATA_I
+    102          
+    103          /*********************************************************************
+    104           * LOCAL FUNCTIONS
+    105           */
+    106          static void Vibrate_InitUart( void );
+    107          static void Vibrate_UartCallBack( uint8 port, uint8 event );
+    108          static void Vibrate_ProcessingUartData( void );
+    109          static void Vibrate_MessageMSGCB( afIncomingMSGPacket_t *pckt );
+    110          //static void Vibrate_InitSensor( void );
+    111          static void Vibrate_SendTopoInformation( void );
+    112          static void Vibrate_SendADXL345Data( byte* buffer );
+    113          static byte Vibrate_CalcFCS( uint8 *msg_ptr, uint8 len );
+    114          
+    115          /*********************************************************************
+    116           * @fn      Controller_Init
+    117           *
+    118           * @brief   Initialization function for the Generic App Task.
+    119           *          This is called during initialization and should contain
+    120           *          any application specific initialization (ie. hardware
+    121           *          initialization/setup, table initialization, power up
+    122           *          notificaiton ... ).
+    123           *
+    124           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    125           *                    used to send messages and set timers.
+    126           *
+    127           * @return  none
+    128           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    129          void WirelessMonitorSystem_Init( uint8 task_id )
+   \                     WirelessMonitorSystem_Init:
+    130          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+    131            Vibrate_TaskID = task_id;
+   \   000006   90....       MOV     DPTR,#Vibrate_TaskID
+   \   000009   F0           MOVX    @DPTR,A
+    132            Vibrate_NwkState = DEV_INIT;
+   \   00000A   90....       MOV     DPTR,#Vibrate_NwkState
+   \   00000D   7401         MOV     A,#0x1
+   \   00000F   F0           MOVX    @DPTR,A
+    133            Vibrate_TransID = 0;
+   \   000010   90....       MOV     DPTR,#Vibrate_TransID
+   \   000013   E4           CLR     A
+   \   000014   F0           MOVX    @DPTR,A
+    134            
+    135            // allow send by default
+    136            allowSend = 1;
+   \   000015   90....       MOV     DPTR,#allowSend
+   \   000018   04           INC     A
+   \   000019   F0           MOVX    @DPTR,A
+    137          
+    138            // Init Uart
+    139            Vibrate_InitUart();
+   \   00001A                ; Setup parameters for call to function Vibrate_InitUart
+   \   00001A   12....       LCALL   ??Vibrate_InitUart?relay
+    140            
+    141            // Init the ADXL345
+    142          //  Vibrate_InitSensor();
+    143            
+    144            // init the destination address
+    145            Vibrate_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00001D   90....       MOV     DPTR,#Vibrate_DstAddr + 8
+   \   000020   7402         MOV     A,#0x2
+   \   000022   F0           MOVX    @DPTR,A
+    146            Vibrate_DstAddr.endPoint = Monitor_ENDPOINT;
+   \   000023   A3           INC     DPTR
+   \   000024   740A         MOV     A,#0xa
+   \   000026   F0           MOVX    @DPTR,A
+    147            Vibrate_DstAddr.addr.shortAddr = 0x0000;	
+   \   000027   90....       MOV     DPTR,#Vibrate_DstAddr
+   \   00002A   E4           CLR     A
+   \   00002B   F0           MOVX    @DPTR,A
+   \   00002C   A3           INC     DPTR
+   \   00002D   F0           MOVX    @DPTR,A
+    148          
+    149            // Fill out the endpoint description.
+    150            Vibrate_epDesc.endPoint =Monitor_ENDPOINT;
+   \   00002E   90....       MOV     DPTR,#Vibrate_epDesc
+   \   000031   740A         MOV     A,#0xa
+   \   000033   F0           MOVX    @DPTR,A
+    151            Vibrate_epDesc.task_id = &Vibrate_TaskID;
+   \   000034   A3           INC     DPTR
+   \   000035   74..         MOV     A,#Vibrate_TaskID & 0xff
+   \   000037   F0           MOVX    @DPTR,A
+   \   000038   A3           INC     DPTR
+   \   000039   74..         MOV     A,#(Vibrate_TaskID >> 8) & 0xff
+   \   00003B   F0           MOVX    @DPTR,A
+    152            Vibrate_epDesc.simpleDesc
+    153                      = (SimpleDescriptionFormat_t *)&Vibrate_SimpleDesc;
+   \   00003C   A3           INC     DPTR
+   \   00003D   74..         MOV     A,#Vibrate_SimpleDesc & 0xff
+   \   00003F   F0           MOVX    @DPTR,A
+   \   000040   A3           INC     DPTR
+   \   000041   74..         MOV     A,#(Vibrate_SimpleDesc >> 8) & 0xff
+   \   000043   F0           MOVX    @DPTR,A
+    154            Vibrate_epDesc.latencyReq = noLatencyReqs;
+   \   000044   A3           INC     DPTR
+   \   000045   E4           CLR     A
+   \   000046   F0           MOVX    @DPTR,A
+    155          
+    156            // Register the endpoint description with the AF
+    157            afRegister( &Vibrate_epDesc );
+   \   000047                ; Setup parameters for call to function afRegister
+   \   000047   7A..         MOV     R2,#Vibrate_epDesc & 0xff
+   \   000049   7B..         MOV     R3,#(Vibrate_epDesc >> 8) & 0xff
+   \   00004B   12....       LCALL   ??afRegister?relay
+    158          }
+   \   00004E                REQUIRE ?Subroutine0
+   \   00004E                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    159          
+    160          /*********************************************************************
+    161           * @fn      Controller_ProcessEvent
+    162           *
+    163           * @brief   Generic Application Task event processor.  This function
+    164           *          is called to process all events for the task.  Events
+    165           *          include timers, messages and any other user defined events.
+    166           *
+    167           * @param   task_id  - The OSAL assigned task ID.
+    168           * @param   events - events to process.  This is a bit map and can
+    169           *                   contain more than one event.
+    170           *
+    171           * @return  none
+    172           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    173          uint16 WirelessMonitorSystem_ProcessEvent( uint8 task_id, uint16 events )
+   \                     WirelessMonitorSystem_ProcessEvent:
+    174          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    175            afIncomingMSGPacket_t *MSGpkt;
+    176            afDataConfirm_t *afDataConfirm;
+    177          
+    178            // Data Confirmation message fields
+    179            byte sentEP;
+    180            ZStatus_t sentStatus;
+    181            byte sentTransID;       // This should match the value sent
+    182            (void)task_id;  // Intentionally unreferenced parameter
+    183          
+    184            if ( events & SYS_EVENT_MSG )
+   \   000009   5480         ANL     A,#0x80
+   \   00000B   7003         JNZ     $+5
+   \   00000D   02....       LJMP    ??WirelessMonitorSystem_ProcessEvent_0 & 0xFFFF
+    185            {
+    186              MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Vibrate_TaskID );
+   \   000010                ; Setup parameters for call to function osal_msg_receive
+   \   000010   8029         SJMP    ??WirelessMonitorSystem_ProcessEvent_1
+    187              while ( MSGpkt )
+    188              {
+    189                switch ( MSGpkt->hdr.event )
+    190                {
+    191                  case AF_DATA_CONFIRM_CMD:
+    192                    afDataConfirm = (afDataConfirm_t *)MSGpkt;
+    193                    sentEP = afDataConfirm->endpoint;
+    194                    sentStatus = afDataConfirm->hdr.status;
+    195                    sentTransID = afDataConfirm->transID;
+    196                    (void)sentEP;
+    197                    (void)sentTransID;
+    198          
+    199                    // Action taken when confirmation is received.
+    200                    if ( sentStatus != ZSuccess )
+    201                    {
+    202          			
+    203                    }
+    204          		  
+    205          		  // delay a time
+    206          		  // this will make the device receive the allow or refuse command
+    207          		  osal_start_timerEx(Vibrate_TaskID, 
+    208          							 Vibrate_SEND_MSG_EVT, 
+    209          							 Vibrate_SEND_DELAY);
+    210                    break;
+    211          		  
+    212          		  case AF_INCOMING_MSG_CMD:
+    213                    	Vibrate_MessageMSGCB( MSGpkt );
+    214                    break;
+    215          		  
+    216          		  case ZDO_STATE_CHANGE:
+    217                    	Vibrate_NwkState = (devStates_t)(MSGpkt->hdr.status);
+   \                     ??WirelessMonitorSystem_ProcessEvent_2:
+   \   000012   A3           INC     DPTR
+   \   000013   E0           MOVX    A,@DPTR
+   \   000014   90....       MOV     DPTR,#Vibrate_NwkState
+   \   000017   F0           MOVX    @DPTR,A
+    218          		    if ( (Vibrate_NwkState == DEV_ZB_COORD)
+    219          			  || (Vibrate_NwkState == DEV_ROUTER)
+    220          			  || (Vibrate_NwkState == DEV_END_DEVICE) )
+   \   000018   6409         XRL     A,#0x9
+   \   00001A   600A         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   00001C   E0           MOVX    A,@DPTR
+   \   00001D   6407         XRL     A,#0x7
+   \   00001F   6005         JZ      ??WirelessMonitorSystem_ProcessEvent_3
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   6406         XRL     A,#0x6
+   \   000024   700E         JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+    221          			{
+    222          			    // record the destinator address
+    223          			  	srcAddr = NLME_GetShortAddr();
+   \                     ??WirelessMonitorSystem_ProcessEvent_3:
+   \   000026                ; Setup parameters for call to function NLME_GetShortAddr
+   \   000026   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   000029   90....       MOV     DPTR,#srcAddr
+   \   00002C   EA           MOV     A,R2
+   \   00002D   F0           MOVX    @DPTR,A
+   \   00002E   A3           INC     DPTR
+   \   00002F   EB           MOV     A,R3
+   \   000030   F0           MOVX    @DPTR,A
+    224          				// Start Topology
+    225          				Vibrate_SendTopoInformation();
+   \   000031                ; Setup parameters for call to function Vibrate_SendTopoInformation
+   \                     ??WirelessMonitorSystem_ProcessEvent_5:
+   \   000031   12....       LCALL   ??Vibrate_SendTopoInformation?relay
+    226          				// Start the send task
+    227          //		  		osal_start_timerEx( Vibrate_TaskID,
+    228          //							 		Vibrate_SEND_MSG_EVT,
+    229          //									Vibrate_SEND_DELAY);
+    230          			}
+    231          			break;
+    232                }
+    233          
+    234                // Release the memory
+    235                osal_msg_deallocate( (uint8 *)MSGpkt );
+   \                     ??WirelessMonitorSystem_ProcessEvent_4:
+   \   000034                ; Setup parameters for call to function osal_msg_deallocate
+   \   000034   AA..         MOV     R2,?V0 + 0
+   \   000036   AB..         MOV     R3,?V0 + 1
+   \   000038   12....       LCALL   ??osal_msg_deallocate?relay
+    236          
+    237                // Next
+    238                MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( Vibrate_TaskID );
+   \   00003B                ; Setup parameters for call to function osal_msg_receive
+   \                     ??WirelessMonitorSystem_ProcessEvent_1:
+   \   00003B   90....       MOV     DPTR,#Vibrate_TaskID
+   \   00003E   E0           MOVX    A,@DPTR
+   \   00003F   F9           MOV     R1,A
+   \   000040   12....       LCALL   ??osal_msg_receive?relay
+   \   000043   8A..         MOV     ?V0 + 0,R2
+   \   000045   8B..         MOV     ?V0 + 1,R3
+   \   000047   E5..         MOV     A,?V0 + 0
+   \   000049   45..         ORL     A,?V0 + 1
+   \   00004B   6054         JZ      ??WirelessMonitorSystem_ProcessEvent_6
+   \   00004D   85..82       MOV     DPL,?V0 + 0
+   \   000050   85..83       MOV     DPH,?V0 + 1
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   24E6         ADD     A,#-0x1a
+   \   000056   601A         JZ      ??WirelessMonitorSystem_ProcessEvent_7
+   \   000058   2449         ADD     A,#0x49
+   \   00005A   60B6         JZ      ??WirelessMonitorSystem_ProcessEvent_2
+   \   00005C   24D4         ADD     A,#-0x2c
+   \   00005E   70D4         JNZ     ??WirelessMonitorSystem_ProcessEvent_4
+   \   000060                ; Setup parameters for call to function osal_start_timerEx
+   \   000060   7CC8         MOV     R4,#-0x38
+   \   000062   7D00         MOV     R5,#0x0
+   \   000064   7A01         MOV     R2,#0x1
+   \   000066   7B00         MOV     R3,#0x0
+   \   000068   90....       MOV     DPTR,#Vibrate_TaskID
+   \   00006B   E0           MOVX    A,@DPTR
+   \   00006C   F9           MOV     R1,A
+   \   00006D   12....       LCALL   ??osal_start_timerEx?relay
+   \   000070   80C2         SJMP    ??WirelessMonitorSystem_ProcessEvent_4
+   \                     ??WirelessMonitorSystem_ProcessEvent_7:
+   \   000072   A3           INC     DPTR
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   E0           MOVX    A,@DPTR
+   \   000077   F5..         MOV     ?V0 + 2,A
+   \   000079   A3           INC     DPTR
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   F5..         MOV     ?V0 + 3,A
+   \   00007D   78..         MOV     R0,#?V0 + 2
+   \   00007F   12....       LCALL   ?US_SWITCH_DENSE
+   \                     `?<Jumptable for WirelessMonitorSystem_ProcessE_0`:
+   \   000082   0A00         DW        10
+   \   000084   05           DB        5
+   \   000085   ....         DW        ??WirelessMonitorSystem_ProcessEvent_4
+   \   000087   ....         DW        ??WirelessMonitorSystem_ProcessEvent_5
+   \   000089   ....         DW        ??WirelessMonitorSystem_ProcessEvent_4
+   \   00008B   ....         DW        ??WirelessMonitorSystem_ProcessEvent_4
+   \   00008D   ....         DW        ??WirelessMonitorSystem_ProcessEvent_4
+   \   00008F   ....         DW        ??WirelessMonitorSystem_ProcessEvent_8
+   \   000091   ....         DW        ??WirelessMonitorSystem_ProcessEvent_9
+   \                     ??WirelessMonitorSystem_ProcessEvent_9:
+   \   000093   90....       MOV     DPTR,#allowSend
+   \   000096   E4           CLR     A
+   \                     ??WirelessMonitorSystem_ProcessEvent_10:
+   \   000097   F0           MOVX    @DPTR,A
+   \   000098   809A         SJMP    ??WirelessMonitorSystem_ProcessEvent_4
+   \                     ??WirelessMonitorSystem_ProcessEvent_8:
+   \   00009A   90....       MOV     DPTR,#allowSend
+   \   00009D   7401         MOV     A,#0x1
+   \   00009F   80F6         SJMP    ??WirelessMonitorSystem_ProcessEvent_10
+    239              }
+    240          
+    241              // return unprocessed events
+    242              return (events ^ SYS_EVENT_MSG);
+   \                     ??WirelessMonitorSystem_ProcessEvent_6:
+   \   0000A1   EE           MOV     A,R6
+   \   0000A2   FA           MOV     R2,A
+   \   0000A3   EF           MOV     A,R7
+   \   0000A4   6480         XRL     A,#0x80
+   \                     ??WirelessMonitorSystem_ProcessEvent_11:
+   \   0000A6   FB           MOV     R3,A
+   \   0000A7   8013         SJMP    ??WirelessMonitorSystem_ProcessEvent_12
+    243            }
+    244          
+    245            // Send a message out - This event is generated by a timer
+    246            //  (setup in Vibrate_Init()).
+    247            if ( events & Vibrate_SEND_MSG_EVT )
+   \                     ??WirelessMonitorSystem_ProcessEvent_0:
+   \   0000A9   EE           MOV     A,R6
+   \   0000AA   A2E0         MOV     C,0xE0 /* A   */.0
+   \   0000AC   500A         JNC     ??WirelessMonitorSystem_ProcessEvent_13
+    248            {
+    249              // Send "the" message
+    250          //    Vibrate_ReadADXL345();
+    251          	Vibrate_ProcessingUartData();
+   \   0000AE                ; Setup parameters for call to function Vibrate_ProcessingUartData
+   \   0000AE   12....       LCALL   ??Vibrate_ProcessingUartData?relay
+    252          	
+    253              // return unprocessed events
+    254              return (events ^ Vibrate_SEND_MSG_EVT);
+   \   0000B1   EE           MOV     A,R6
+   \   0000B2   6401         XRL     A,#0x1
+   \   0000B4   FA           MOV     R2,A
+   \   0000B5   EF           MOV     A,R7
+   \   0000B6   80EE         SJMP    ??WirelessMonitorSystem_ProcessEvent_11
+    255            }
+    256          
+    257            // Discard unknown events
+    258            return 0;
+   \                     ??WirelessMonitorSystem_ProcessEvent_13:
+   \   0000B8   7A00         MOV     R2,#0x0
+   \   0000BA   7B00         MOV     R3,#0x0
+   \                     ??WirelessMonitorSystem_ProcessEvent_12:
+   \   0000BC   7F04         MOV     R7,#0x4
+   \   0000BE   02....       LJMP    ?BANKED_LEAVE_XDATA
+    259          }
+    260          
+    261          // Processing Incoming Message
+    262          static void Vibrate_MessageMSGCB( afIncomingMSGPacket_t *pkt )
+    263          {
+    264            // According to the clusterID
+    265            switch( pkt->clusterId )
+    266            {
+    267          	// send the topology information
+    268            	case TOPO_REQ:
+    269                Vibrate_SendTopoInformation();
+    270              break;
+    271          	
+    272            	case DATA_ALLOW:
+    273          	  // sent the flag
+    274          	  allowSend = 1;
+    275          	  break;
+    276          	  
+    277            case DATA_REFUSE:
+    278          	 // reset the flag
+    279          	allowSend = 0;
+    280          	break;
+    281            }
+    282          }
+    283          /*********************************************************************
+    284           * @fn      Vibrate_InitSensor
+    285           *
+    286           * @brief   Init the ADXL345.
+    287           *
+    288           * @param   none
+    289           *
+    290           * @return  none
+    291           */
+    292          /*
+    293          void Vibrate_InitSensor()
+    294          {
+    295            byte value = 0x00;
+    296            
+    297          //  // set the SPI
+    298          //  Init_Spi();
+    299          //  // use 4 -wrie mode
+    300          //  // default is 4 wire so do nothing 
+    301          //  value = 0x00;
+    302          //  ADXL345Write(0, 1, &value, 0x31);
+    303          //  
+    304          //  // Just Open the ADXL345
+    305          //  value = 0;
+    306          //  ADXL345Write(0, 1, &value, 0x2d);
+    307          //  value = 16;
+    308          //  ADXL345Write(0, 1, &value, 0x2d);
+    309          //  value = 8;
+    310          //  ADXL345Write(0, 1, &value, 0x2d);
+    311          //  
+    312          //  // DO More Setting here
+    313          //  value = 75;
+    314          //  ADXL345Write(0, 1, &value, 0x24);
+    315          //  ADXL345Write(0, 1, &value, 0x25);
+    316          //  value = 10;
+    317          //  ADXL345Write(0, 1, &value, 0x26);
+    318            
+    319            ADXL345_PowerOn();
+    320            
+    321            ADXL345WriteByte(ADXL345_THRESH_ACT, 75);
+    322            ADXL345WriteByte(ADXL345_THRESH_INACT, 75);
+    323            ADXL345WriteByte(ADXL345_TIME_INACT, 10);
+    324            
+    325            value = ADXL345ReadByte(ADXL345_ACT_INACT_CTL);
+    326            // set x, y, z movement
+    327            value |= 0x77;
+    328            ADXL345WriteByte(ADXL345_ACT_INACT_CTL, value);
+    329            
+    330            // set tap
+    331            value = ADXL345ReadByte(ADXL345_TAP_AXES);
+    332            value &= 0xF9;
+    333            value |= 0x01;
+    334            ADXL345WriteByte(ADXL345_TAP_AXES, value);
+    335            
+    336            // single double tap
+    337            ADXL345WriteByte(ADXL345_THRESH_TAP, 50);
+    338            ADXL345WriteByte(ADXL345_DUR, 15);
+    339            ADXL345WriteByte(ADXL345_LATENT, 80);
+    340            ADXL345WriteByte(ADXL345_WINDOW, 200);
+    341            
+    342            // set free fall 
+    343            ADXL345WriteByte(ADXL345_THRESH_FF, 7);
+    344            ADXL345WriteByte(ADXL345_TIME_FF, 45);
+    345            
+    346          //  value = 0x0F;
+    347          //  ADXL345Write(0, 1, &value, 0x2c);
+    348          }
+    349          */
+    350          
+    351          /*********************************************************************
+    352           * @fn      Vibrate_SendTopoInfo
+    353           *
+    354           * @brief   Send the topology information to the coordinator.
+    355           *
+    356           * @param   none
+    357           *
+    358           * @return  none
+    359           *
+    360           *
+    361           *
+    362           * |	SOF		|	LEN		| 	CMD		| 	Addr	|	DATA	| 	FCS		|
+    363           *		1			1			2			2			--			1
+    364           *
+    365           */
+    366          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    367          void Vibrate_SendTopoInformation()
+   \                     Vibrate_SendTopoInformation:
+    368          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 11
+   \   000005   74F5         MOV     A,#-0xb
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    369            // Define the Frame
+    370            uint16 srcAddr = NLME_GetShortAddr();
+   \   00000A                ; Setup parameters for call to function NLME_GetShortAddr
+   \   00000A   12....       LCALL   ??NLME_GetShortAddr?relay
+   \   00000D   8A..         MOV     ?V0 + 0,R2
+   \   00000F   8B..         MOV     ?V0 + 1,R3
+    371            uint16 parAddr = NLME_GetCoordShortAddr();
+   \   000011                ; Setup parameters for call to function NLME_GetCoordShortAddr
+   \   000011   12....       LCALL   ??NLME_GetCoordShortAddr?relay
+    372            byte frame[11] = {0};
+   \   000014   85..82       MOV     DPL,?XSP + 0
+   \   000017   85..83       MOV     DPH,?XSP + 1
+   \   00001A   AC82         MOV     R4,DPL
+   \   00001C   AD83         MOV     R5,DPH
+   \   00001E   7583..       MOV     DPH,#(`?<Constant {0}>` >> 8) & 0xff
+   \   000021   7582..       MOV     DPL,#`?<Constant {0}>` & 0xff
+   \   000024   740B         MOV     A,#0xb
+   \   000026   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    373            
+    374            // Build the Frame
+    375            // Fill SOF	0xFE
+    376            frame[0] = 0xFE;
+   \   000029   85..82       MOV     DPL,?XSP + 0
+   \   00002C   85..83       MOV     DPH,?XSP + 1
+   \   00002F   74FE         MOV     A,#-0x2
+   \   000031   F0           MOVX    @DPTR,A
+    377            // Fill len
+    378            frame[1] = 4;
+   \   000032   7401         MOV     A,#0x1
+   \   000034   12....       LCALL   ?XSTACK_DISP0_8
+   \   000037   7404         MOV     A,#0x4
+   \   000039   F0           MOVX    @DPTR,A
+    379            // Fill CMD
+    380            frame[2] = LO_UINT16(TOPOLOGY_CMD);
+   \   00003A   7402         MOV     A,#0x2
+   \   00003C   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003F   7401         MOV     A,#0x1
+   \   000041   F0           MOVX    @DPTR,A
+    381            frame[3] = HI_UINT16(TOPOLOGY_CMD);
+   \   000042   7403         MOV     A,#0x3
+   \   000044   12....       LCALL   ?XSTACK_DISP0_8
+   \   000047   E4           CLR     A
+   \   000048   F0           MOVX    @DPTR,A
+    382            // Fill Addr
+    383            frame[4] = LO_UINT16(srcAddr);
+   \   000049   7404         MOV     A,#0x4
+   \   00004B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004E   E5..         MOV     A,?V0 + 0
+   \   000050   F0           MOVX    @DPTR,A
+    384            frame[5] = HI_UINT16(srcAddr);
+   \   000051   7405         MOV     A,#0x5
+   \   000053   12....       LCALL   ?XSTACK_DISP0_8
+   \   000056   E5..         MOV     A,?V0 + 1
+   \   000058   F0           MOVX    @DPTR,A
+    385            // Fill type
+    386            frame[6] = LO_UINT16(VIBRATE);
+   \   000059   7406         MOV     A,#0x6
+   \   00005B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005E   7404         MOV     A,#0x4
+   \   000060   F0           MOVX    @DPTR,A
+    387            frame[7] = HI_UINT16(VIBRATE);
+   \   000061   7407         MOV     A,#0x7
+   \   000063   12....       LCALL   ?XSTACK_DISP0_8
+   \   000066   E4           CLR     A
+   \   000067   F0           MOVX    @DPTR,A
+    388            // Fill parent
+    389            frame[8] = LO_UINT16(parAddr);
+   \   000068   7408         MOV     A,#0x8
+   \   00006A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006D   EA           MOV     A,R2
+   \   00006E   F0           MOVX    @DPTR,A
+    390            frame[9] = HI_UINT16(parAddr);
+   \   00006F   7409         MOV     A,#0x9
+   \   000071   12....       LCALL   ?XSTACK_DISP0_8
+   \   000074   EB           MOV     A,R3
+   \   000075   F0           MOVX    @DPTR,A
+    391            // Cal and fill FCS
+    392            frame[10] = Vibrate_CalcFCS((byte*)&frame[1], \
+    393          								9);
+   \   000076                ; Setup parameters for call to function Vibrate_CalcFCS
+   \   000076   7909         MOV     R1,#0x9
+   \   000078   7401         MOV     A,#0x1
+   \   00007A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00007D   AA82         MOV     R2,DPL
+   \   00007F   AB83         MOV     R3,DPH
+   \   000081   12....       LCALL   ??Vibrate_CalcFCS?relay
+   \   000084   740A         MOV     A,#0xa
+   \   000086   12....       LCALL   ?XSTACK_DISP0_8
+   \   000089   E9           MOV     A,R1
+   \   00008A   F0           MOVX    @DPTR,A
+    394            
+    395            // Send the data to Coordinator
+    396            AF_DataRequest( &Vibrate_DstAddr, &
+    397          				  Vibrate_epDesc,
+    398                            ZIGBEE_COMMON_CLUSTER,
+    399                            11,
+    400                            (byte *) frame,
+    401                            &Vibrate_TransID,
+    402                            AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   00008B                ; Setup parameters for call to function AF_DataRequest
+   \   00008B   75..1E       MOV     ?V0 + 0,#0x1e
+   \   00008E   78..         MOV     R0,#?V0 + 0
+   \   000090   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   000093   75....       MOV     ?V0 + 0,#Vibrate_TransID & 0xff
+   \   000096   75....       MOV     ?V0 + 1,#(Vibrate_TransID >> 8) & 0xff
+   \   000099   78..         MOV     R0,#?V0 + 0
+   \   00009B   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00009E   7403         MOV     A,#0x3
+   \   0000A0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000A3   8582..       MOV     ?V0 + 0,DPL
+   \   0000A6   8583..       MOV     ?V0 + 1,DPH
+   \   0000A9   78..         MOV     R0,#?V0 + 0
+   \   0000AB   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000AE   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000B1   75..00       MOV     ?V0 + 1,#0x0
+   \   0000B4   78..         MOV     R0,#?V0 + 0
+   \   0000B6   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000B9   78..         MOV     R0,#?V0 + 0
+   \   0000BB   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BE   7920         MOV     R1,#0x20
+   \   0000C0   7C..         MOV     R4,#Vibrate_epDesc & 0xff
+   \   0000C2   7D..         MOV     R5,#(Vibrate_epDesc >> 8) & 0xff
+   \   0000C4   7A..         MOV     R2,#Vibrate_DstAddr & 0xff
+   \   0000C6   7B..         MOV     R3,#(Vibrate_DstAddr >> 8) & 0xff
+   \   0000C8   12....       LCALL   ??AF_DataRequest?relay
+   \   0000CB   7409         MOV     A,#0x9
+   \   0000CD   12....       LCALL   ?DEALLOC_XSTACK8
+    403          }
+   \   0000D0   740B         MOV     A,#0xb
+   \   0000D2   80..         SJMP    ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine4_0
+   \   000003                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   7F02         MOV     R7,#0x2
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    404          
+    405          // read the uart data and send to the monitor
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    406          static void Vibrate_ProcessingUartData( void ){
+   \                     Vibrate_ProcessingUartData:
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+    407            byte* buffer = (byte*)osal_mem_alloc(6);
+   \   000005                ; Setup parameters for call to function osal_mem_alloc
+   \   000005   7A06         MOV     R2,#0x6
+   \   000007   7B00         MOV     R3,#0x0
+   \   000009   12....       LCALL   ??osal_mem_alloc?relay
+   \   00000C   8A..         MOV     ?V0 + 0,R2
+   \   00000E   8B..         MOV     ?V0 + 1,R3
+   \   000010   AE..         MOV     R6,?V0 + 0
+   \   000012   AF..         MOV     R7,?V0 + 1
+    408            // if the Rx hava data
+    409            while ( Hal_UART_RxBufLen(UART_PORT) )
+   \   000014                ; Setup parameters for call to function Hal_UART_RxBufLen
+   \   000014   7900         MOV     R1,#0x0
+   \   000016   12....       LCALL   ??Hal_UART_RxBufLen?relay
+   \   000019   8B..         MOV     ?V0 + 1,R3
+   \   00001B   EA           MOV     A,R2
+   \   00001C   45..         ORL     A,?V0 + 1
+   \   00001E   6014         JZ      ??Vibrate_ProcessingUartData_0
+    410            {
+    411          	// read 6 bytes to buffer
+    412              HalUARTRead (UART_PORT, buffer, 6);
+   \   000020                ; Setup parameters for call to function HalUARTRead
+   \   000020   7C06         MOV     R4,#0x6
+   \   000022   7D00         MOV     R5,#0x0
+   \   000024   EE           MOV     A,R6
+   \   000025   FA           MOV     R2,A
+   \   000026   EF           MOV     A,R7
+   \   000027   FB           MOV     R3,A
+   \   000028   7900         MOV     R1,#0x0
+   \   00002A   12....       LCALL   ??HalUARTRead?relay
+    413          	// send the data 
+    414          	Vibrate_SendADXL345Data(buffer);
+   \   00002D                ; Setup parameters for call to function Vibrate_SendADXL345Data
+   \   00002D   EE           MOV     A,R6
+   \   00002E   FA           MOV     R2,A
+   \   00002F   EF           MOV     A,R7
+   \   000030   FB           MOV     R3,A
+   \   000031   12....       LCALL   ??Vibrate_SendADXL345Data?relay
+    415          	// here just break 
+    416          	// wait the timer to wake this method again
+    417          	// or the uart callback to wake the method
+    418          	break;
+    419            }
+    420            // free the memory
+    421            osal_mem_free((byte*)buffer);
+   \                     ??Vibrate_ProcessingUartData_0:
+   \   000034                ; Setup parameters for call to function osal_mem_free
+   \   000034   EE           MOV     A,R6
+   \   000035   FA           MOV     R2,A
+   \   000036   EF           MOV     A,R7
+   \   000037   FB           MOV     R3,A
+   \   000038   12....       LCALL   ??osal_mem_free?relay
+    422          }
+   \   00003B   80..         SJMP    ??Subroutine4_0
+    423          
+    424          /*********************************************************************
+    425           * @fn      Vibrate_ReadADXL345
+    426           *
+    427           * @brief   read the adxl345 data
+    428           *
+    429           * @param   buf		-- where to save the data
+    430           *
+    431           * @return  none
+    432           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    433          void Vibrate_SendADXL345Data(byte* buffer)
+   \                     Vibrate_SendADXL345Data:
+    434          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 13
+   \   000005   74F3         MOV     A,#-0xd
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    435            // Read the ADXL345
+    436            // Use I2C
+    437          //  byte* buffer = (byte*)osal_mem_alloc(6);
+    438          //  osal_memset(buffer, 0x00, 6);
+    439          //  // Read
+    440          //  ADXL345_readAccel(buffer);
+    441            //ADXL345Read(0, 1, buffer, 0x2C);
+    442            //ADXL345Read(1, 6, &buffer[0], 0x32);
+    443            
+    444            // Build Frame
+    445            byte frame[13] = {0};
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   AC82         MOV     R4,DPL
+   \   000012   AD83         MOV     R5,DPH
+   \   000014   7583..       MOV     DPH,#(`?<Constant {0}>_1` >> 8) & 0xff
+   \   000017   7582..       MOV     DPL,#`?<Constant {0}>_1` & 0xff
+   \   00001A   740D         MOV     A,#0xd
+   \   00001C   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+    446            
+    447            // Fill the SOF
+    448            frame[0] = 0xFE;
+   \   00001F   85..82       MOV     DPL,?XSP + 0
+   \   000022   85..83       MOV     DPH,?XSP + 1
+   \   000025   74FE         MOV     A,#-0x2
+   \   000027   F0           MOVX    @DPTR,A
+    449            // Fill len
+    450            frame[1] = 6;
+   \   000028   7401         MOV     A,#0x1
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   7406         MOV     A,#0x6
+   \   00002F   F0           MOVX    @DPTR,A
+    451            // Fill CMD
+    452            frame[2] = LO_UINT16(VIBRATE_DATA_CMD);
+   \   000030   7402         MOV     A,#0x2
+   \   000032   12....       LCALL   ?XSTACK_DISP0_8
+   \   000035   7409         MOV     A,#0x9
+   \   000037   F0           MOVX    @DPTR,A
+    453            frame[3] = HI_UINT16(VIBRATE_DATA_CMD);
+   \   000038   7403         MOV     A,#0x3
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   E4           CLR     A
+   \   00003E   F0           MOVX    @DPTR,A
+    454            // Fill Addr
+    455            frame[4] = LO_UINT16(srcAddr);
+   \   00003F   90....       MOV     DPTR,#srcAddr
+   \   000042   E0           MOVX    A,@DPTR
+   \   000043   C0E0         PUSH    A
+   \   000045   7404         MOV     A,#0x4
+   \   000047   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004A   D0E0         POP     A
+   \   00004C   F0           MOVX    @DPTR,A
+    456            frame[5] = HI_UINT16(srcAddr);
+   \   00004D   90....       MOV     DPTR,#srcAddr + 1
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   C0E0         PUSH    A
+   \   000053   7405         MOV     A,#0x5
+   \   000055   12....       LCALL   ?XSTACK_DISP0_8
+   \   000058   D0E0         POP     A
+   \   00005A   F0           MOVX    @DPTR,A
+    457            // Fill Data
+    458            frame[6] = buffer[0];
+   \   00005B   8A82         MOV     DPL,R2
+   \   00005D   8B83         MOV     DPH,R3
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   C0E0         PUSH    A
+   \   000062   7406         MOV     A,#0x6
+   \   000064   12....       LCALL   ?XSTACK_DISP0_8
+   \   000067   D0E0         POP     A
+   \   000069   12....       LCALL   ?Subroutine3 & 0xFFFF
+    459            frame[7] = buffer[1];
+   \                     ??CrossCallReturnLabel_2:
+   \   00006C   E0           MOVX    A,@DPTR
+   \   00006D   C0E0         PUSH    A
+   \   00006F   7407         MOV     A,#0x7
+   \   000071   12....       LCALL   ?XSTACK_DISP0_8
+   \   000074   D0E0         POP     A
+   \   000076   12....       LCALL   ?Subroutine3 & 0xFFFF
+    460            frame[8] = buffer[2];
+   \                     ??CrossCallReturnLabel_3:
+   \   000079   A3           INC     DPTR
+   \   00007A   E0           MOVX    A,@DPTR
+   \   00007B   C0E0         PUSH    A
+   \   00007D   7408         MOV     A,#0x8
+   \   00007F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000082   D0E0         POP     A
+   \   000084   12....       LCALL   ?Subroutine3 & 0xFFFF
+    461            frame[9] = buffer[3];
+   \                     ??CrossCallReturnLabel_4:
+   \   000087   A3           INC     DPTR
+   \   000088   A3           INC     DPTR
+   \   000089   E0           MOVX    A,@DPTR
+   \   00008A   C0E0         PUSH    A
+   \   00008C   7409         MOV     A,#0x9
+   \   00008E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000091   D0E0         POP     A
+   \   000093   12....       LCALL   ?Subroutine2 & 0xFFFF
+    462            frame[10] = buffer[4];
+   \                     ??CrossCallReturnLabel_0:
+   \   000096   E0           MOVX    A,@DPTR
+   \   000097   C0E0         PUSH    A
+   \   000099   740A         MOV     A,#0xa
+   \   00009B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00009E   D0E0         POP     A
+   \   0000A0   12....       LCALL   ?Subroutine2 & 0xFFFF
+    463            frame[11] = buffer[5];
+   \                     ??CrossCallReturnLabel_1:
+   \   0000A3   A3           INC     DPTR
+   \   0000A4   E0           MOVX    A,@DPTR
+   \   0000A5   C0E0         PUSH    A
+   \   0000A7   740B         MOV     A,#0xb
+   \   0000A9   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000AC   D0E0         POP     A
+   \   0000AE   F0           MOVX    @DPTR,A
+    464            // Calc FCS and Fill
+    465            frame[12] = Vibrate_CalcFCS((byte*)&frame[1], \
+    466          								 11);
+   \   0000AF                ; Setup parameters for call to function Vibrate_CalcFCS
+   \   0000AF   790B         MOV     R1,#0xb
+   \   0000B1   7401         MOV     A,#0x1
+   \   0000B3   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000B6   AA82         MOV     R2,DPL
+   \   0000B8   AB83         MOV     R3,DPH
+   \   0000BA   12....       LCALL   ??Vibrate_CalcFCS?relay
+   \   0000BD   740C         MOV     A,#0xc
+   \   0000BF   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C2   E9           MOV     A,R1
+   \   0000C3   F0           MOVX    @DPTR,A
+    467            
+    468            if(1 == allowSend)
+   \   0000C4   90....       MOV     DPTR,#allowSend
+   \   0000C7   E0           MOVX    A,@DPTR
+   \   0000C8   6401         XRL     A,#0x1
+   \   0000CA   7048         JNZ     ??Vibrate_SendADXL345Data_0
+    469            {
+    470          	  // Send the sensor data to Coordinator
+    471          	  AF_DataRequest( &Vibrate_DstAddr, &
+    472          					  Vibrate_epDesc,
+    473          					  ZIGBEE_COMMON_CLUSTER,
+    474          					  13,
+    475          					  (byte *) frame,
+    476          					  &Vibrate_TransID,
+    477          					  AF_DISCV_ROUTE, AF_DEFAULT_RADIUS );
+   \   0000CC                ; Setup parameters for call to function AF_DataRequest
+   \   0000CC   75..1E       MOV     ?V0 + 0,#0x1e
+   \   0000CF   78..         MOV     R0,#?V0 + 0
+   \   0000D1   12....       LCALL   ?PUSH_XSTACK_I_ONE
+   \   0000D4   75....       MOV     ?V0 + 0,#Vibrate_TransID & 0xff
+   \   0000D7   75....       MOV     ?V0 + 1,#(Vibrate_TransID >> 8) & 0xff
+   \   0000DA   78..         MOV     R0,#?V0 + 0
+   \   0000DC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000DF   7403         MOV     A,#0x3
+   \   0000E1   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000E4   8582..       MOV     ?V0 + 0,DPL
+   \   0000E7   8583..       MOV     ?V0 + 1,DPH
+   \   0000EA   78..         MOV     R0,#?V0 + 0
+   \   0000EC   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000EF   75..0D       MOV     ?V0 + 0,#0xd
+   \   0000F2   75..00       MOV     ?V0 + 1,#0x0
+   \   0000F5   78..         MOV     R0,#?V0 + 0
+   \   0000F7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000FA   75..0B       MOV     ?V0 + 0,#0xb
+   \   0000FD   78..         MOV     R0,#?V0 + 0
+   \   0000FF   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000102   7920         MOV     R1,#0x20
+   \   000104   7C..         MOV     R4,#Vibrate_epDesc & 0xff
+   \   000106   7D..         MOV     R5,#(Vibrate_epDesc >> 8) & 0xff
+   \   000108   7A..         MOV     R2,#Vibrate_DstAddr & 0xff
+   \   00010A   7B..         MOV     R3,#(Vibrate_DstAddr >> 8) & 0xff
+   \   00010C   12....       LCALL   ??AF_DataRequest?relay
+   \   00010F   7409         MOV     A,#0x9
+   \   000111   12....       LCALL   ?DEALLOC_XSTACK8
+    478            }
+    479            else
+    480            {
+    481          	// do nothing here
+    482            }
+    483            
+    484            // reset the buffer
+    485          //  osal_mem_free((byte*)buffer);
+    486          //  buffer = NULL;
+    487            
+    488            // send next
+    489          //  osal_start_timerEx(Vibrate_TaskID,
+    490          //					 Vibrate_SEND_MSG_EVT,
+    491          //					 Vibrate_SEND_DELAY);
+    492          }
+   \                     ??Vibrate_SendADXL345Data_0:
+   \   000114   740D         MOV     A,#0xd
+   \   000116   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8A82         MOV     DPL,R2
+   \   000003   8B83         MOV     DPH,R3
+   \   000005   A3           INC     DPTR
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8A82         MOV     DPL,R2
+   \   000003   8B83         MOV     DPH,R3
+   \   000005   A3           INC     DPTR
+   \   000006   A3           INC     DPTR
+   \   000007   A3           INC     DPTR
+   \   000008   A3           INC     DPTR
+   \   000009   22           RET
+    493          
+    494          	
+    495          /*********************************************************************
+    496           * @fn      Vibrate_CalcFCS
+    497           *
+    498           * @brief   Calculate the FCS of a message buffer by XOR'ing each byte.
+    499           *          Remember to NOT include SOP and FCS fields, so start at the CMD field.
+    500           *
+    501           * @param   byte *msg_ptr - message pointer
+    502           * @param   byte len - length (in bytes) of message
+    503           *
+    504           * @return  result byte
+    505           ********************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    506          byte Vibrate_CalcFCS( uint8 *msg_ptr, uint8 len )
+   \                     Vibrate_CalcFCS:
+    507          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FC           MOV     R4,A
+    508            byte x;
+    509            byte xorResult = 0x00;
+   \   000007   7900         MOV     R1,#0x0
+    510          
+    511            for ( x=0; x<len; x++ )
+   \   000009   7800         MOV     R0,#0x0
+   \   00000B   8011         SJMP    ??Vibrate_CalcFCS_0
+    512              xorResult ^=  msg_ptr[x];
+   \                     ??Vibrate_CalcFCS_1:
+   \   00000D   88..         MOV     ?V0 + 0,R0
+   \   00000F   EA           MOV     A,R2
+   \   000010   25..         ADD     A,?V0 + 0
+   \   000012   F582         MOV     DPL,A
+   \   000014   EB           MOV     A,R3
+   \   000015   3400         ADDC    A,#0x0
+   \   000017   F583         MOV     DPH,A
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   C9           XCH     A,R1
+   \   00001B   69           XRL     A,R1
+   \   00001C   F9           MOV     R1,A
+   \   00001D   08           INC     R0
+   \                     ??Vibrate_CalcFCS_0:
+   \   00001E   E8           MOV     A,R0
+   \   00001F   C3           CLR     C
+   \   000020   9C           SUBB    A,R4
+   \   000021   40EA         JC      ??Vibrate_CalcFCS_1
+    513          
+    514            return ( xorResult );
+   \   000023   02....       LJMP    ??Subroutine4_0 & 0xFFFF
+    515          }
+    516          
+    517          // uart init
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    518          static void Vibrate_InitUart( void )
+   \                     Vibrate_InitUart:
+    519          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    520              // create the uart structure
+    521            halUARTCfg_t uartConfig;
+    522            // set the parameters
+    523            uartConfig.configured           = TRUE;               
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+    524            uartConfig.baudRate             = HAL_UART_BR_9600;
+   \   000012   12....       LCALL   ?XSTACK_DISP0_8
+   \   000015   E4           CLR     A
+   \   000016   F0           MOVX    @DPTR,A
+    525            uartConfig.flowControl          = FALSE;
+   \   000017   7402         MOV     A,#0x2
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   E4           CLR     A
+   \   00001D   F0           MOVX    @DPTR,A
+    526            uartConfig.flowControlThreshold = 64;   				
+   \   00001E   7403         MOV     A,#0x3
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7440         MOV     A,#0x40
+   \   000025   F0           MOVX    @DPTR,A
+   \   000026   A3           INC     DPTR
+   \   000027   E4           CLR     A
+   \   000028   F0           MOVX    @DPTR,A
+    527            uartConfig.rx.maxBufSize        = 128;  				
+   \   000029   740A         MOV     A,#0xa
+   \   00002B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002E   7480         MOV     A,#-0x80
+   \   000030   F0           MOVX    @DPTR,A
+   \   000031   A3           INC     DPTR
+   \   000032   E4           CLR     A
+   \   000033   F0           MOVX    @DPTR,A
+    528            uartConfig.tx.maxBufSize        = 128;  				
+   \   000034   7412         MOV     A,#0x12
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   7480         MOV     A,#-0x80
+   \   00003B   F0           MOVX    @DPTR,A
+   \   00003C   A3           INC     DPTR
+   \   00003D   E4           CLR     A
+   \   00003E   F0           MOVX    @DPTR,A
+    529            uartConfig.idleTimeout          = 6;    				
+   \   00003F   7405         MOV     A,#0x5
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   7406         MOV     A,#0x6
+   \   000046   F0           MOVX    @DPTR,A
+    530            uartConfig.intEnable            = TRUE;               
+   \   000047   7416         MOV     A,#0x16
+   \   000049   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004C   7401         MOV     A,#0x1
+   \   00004E   F0           MOVX    @DPTR,A
+    531            uartConfig.callBackFunc         = Vibrate_UartCallBack;
+   \   00004F   741B         MOV     A,#0x1b
+   \   000051   12....       LCALL   ?XSTACK_DISP0_8
+   \   000054   74..         MOV     A,#??Vibrate_UartCallBack?relay & 0xff
+   \   000056   F0           MOVX    @DPTR,A
+   \   000057   A3           INC     DPTR
+   \   000058   74..         MOV     A,#(??Vibrate_UartCallBack?relay >> 8) & 0xff
+   \   00005A   F0           MOVX    @DPTR,A
+    532            // open it
+    533            HalUARTOpen (UART_PORT, &uartConfig);
+   \   00005B                ; Setup parameters for call to function HalUARTOpen
+   \   00005B   85..82       MOV     DPL,?XSP + 0
+   \   00005E   85..83       MOV     DPH,?XSP + 1
+   \   000061   AA82         MOV     R2,DPL
+   \   000063   AB83         MOV     R3,DPH
+   \   000065   7900         MOV     R1,#0x0
+   \   000067   12....       LCALL   ??HalUARTOpen?relay
+    534          }
+   \   00006A   741D         MOV     A,#0x1d
+   \   00006C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00006F   D083         POP     DPH
+   \   000071   D082         POP     DPL
+   \   000073   02....       LJMP    ?BRET
+    535          
+    536          // uart call back
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    537          static void Vibrate_UartCallBack( uint8 port, uint8 event )
+   \                     Vibrate_UartCallBack:
+    538          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+    539            (void)port;
+    540          
+    541            // if Rx interrupt has occur
+    542            if ((event & (HAL_UART_RX_FULL | HAL_UART_RX_ABOUT_FULL | HAL_UART_RX_TIMEOUT)))
+   \   000007   7407         MOV     A,#0x7
+   \   000009   5E           ANL     A,R6
+   \   00000A   6003         JZ      ??Vibrate_UartCallBack_0
+    543            {
+    544          	Vibrate_ProcessingUartData();
+   \   00000C                ; Setup parameters for call to function Vibrate_ProcessingUartData
+   \   00000C   12....       LCALL   ??Vibrate_ProcessingUartData?relay
+    545            }
+    546          }
+   \                     ??Vibrate_UartCallBack_0:
+   \   00000F   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for allowSend>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??WirelessMonitorSystem_ProcessEvent?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    WirelessMonitorSystem_ProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_SendTopoInformation?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_SendTopoInformation
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_ProcessingUartData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_ProcessingUartData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_SendADXL345Data?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_SendADXL345Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_CalcFCS?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_CalcFCS
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_InitUart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_InitUart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Vibrate_UartCallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Vibrate_UartCallBack
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000009   0000         DB 0, 0
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>_1`:
+   \   000000   00           DB 0
+   \   000001   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000009   00000000     DB 0, 0, 0, 0
+    547          /*********************************************************************
+    548           */
+
+   Maximum stack usage in bytes:
+
+     Function                       ISTACK PSTACK XSTACK
+     --------                       ------ ------ ------
+     Vibrate_CalcFCS                    0      0     33
+     Vibrate_InitUart                   2      0     38
+       -> HalUARTOpen                   4      0     58
+     Vibrate_ProcessingUartData         0      0     22
+       -> osal_mem_alloc                0      0     20
+       -> Hal_UART_RxBufLen             0      0     20
+       -> HalUARTRead                   0      0     20
+       -> Vibrate_SendADXL345Data       0      0     20
+       -> osal_mem_free                 0      0     20
+     Vibrate_SendADXL345Data            2      0     42
+       -> Vibrate_CalcFCS               0      0     46
+       -> AF_DataRequest                0      0     64
+     Vibrate_SendTopoInformation        2      0     42
+       -> NLME_GetShortAddr             0      0     42
+       -> NLME_GetCoordShortAddr        0      0     42
+       -> Vibrate_CalcFCS               0      0     42
+       -> AF_DataRequest                0      0     60
+     Vibrate_UartCallBack               0      0      9
+       -> Vibrate_ProcessingUartData
+                                        0      0     18
+     WirelessMonitorSystem_Init         0      0      9
+       -> Vibrate_InitUart              0      0     18
+       -> afRegister                    0      0     18
+     WirelessMonitorSystem_ProcessEvent
+                                        0      0     12
+       -> osal_msg_receive              0      0     24
+       -> NLME_GetShortAddr             0      0     24
+       -> Vibrate_SendTopoInformation
+                                        0      0     24
+       -> osal_msg_deallocate           0      0     24
+       -> osal_msg_receive              0      0     24
+       -> osal_start_timerEx            0      0     24
+       -> Vibrate_SendTopoInformation
+                                        0      0     24
+       -> Vibrate_ProcessingUartData
+                                        0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label                             Bytes
+     --------------                             -----
+     Vibrate_ClusterInList                         6
+     Vibrate_ClusterOutList                        2
+     Vibrate_SimpleDesc                           12
+     Vibrate_epDesc                                6
+     Vibrate_TaskID                                1
+     Vibrate_NwkState                              1
+     Vibrate_TransID                               1
+     Vibrate_DstAddr                              12
+     srcAddr                                       2
+     allowSend                                     1
+     WirelessMonitorSystem_Init                   78
+     ?Subroutine0                                  5
+     WirelessMonitorSystem_ProcessEvent
+                                                 193
+     Vibrate_SendTopoInformation                 212
+     ?Subroutine1                                  3
+     ??Subroutine4_0                               5
+     Vibrate_ProcessingUartData                   61
+     Vibrate_SendADXL345Data                     281
+     ?Subroutine3                                  7
+     ?Subroutine2                                 10
+     Vibrate_CalcFCS                              38
+     Vibrate_InitUart                            118
+     Vibrate_UartCallBack                         18
+     ?<Initializer for allowSend>                  1
+     ??WirelessMonitorSystem_Init?relay            6
+     ??WirelessMonitorSystem_ProcessEvent?relay    6
+     ??Vibrate_SendTopoInformation?relay           6
+     ??Vibrate_ProcessingUartData?relay            6
+     ??Vibrate_SendADXL345Data?relay               6
+     ??Vibrate_CalcFCS?relay                       6
+     ??Vibrate_InitUart?relay                      6
+     ??Vibrate_UartCallBack?relay                  6
+     ?<Constant {0}>                              11
+     ?<Constant {0}>_1                            13
+
+ 
+ 1 029 bytes in segment BANKED_CODE
+    48 bytes in segment BANK_RELAYS
+     1 byte  in segment XDATA_I
+     1 byte  in segment XDATA_ID
+    44 bytes in segment XDATA_ROM_C
+    23 bytes in segment XDATA_Z
+ 
+ 1 078 bytes of CODE  memory
+    44 bytes of CONST memory
+    24 bytes of XDATA memory
+
+Errors: none
+Warnings: none
