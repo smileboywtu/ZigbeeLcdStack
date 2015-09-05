@@ -1,5 +1,8 @@
 # Wireless LCD Stack
   This is z-stack for cc2530
+# Version
+  Z-Stack 2.5.3a
+  IAR 8.2
 
 # Tools
   You need to use the IAR workspace to open this project, this project contain all the zigbee pro stack
