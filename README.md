@@ -60,6 +60,10 @@ also special ones.Know more information about the camera from [here](https://ite
 
 >> Because CC2530 is actually is a 8051 core, so there isn't an IIC interface, so I just use an Arduino UNO as a wire connect ADXL345 and CC2530.
 
+#More
+
+> You also can look at the *Embeded-Monitor* Project and this project is the PC front end of this ZIGBEE stack.
+
 #Contact
 
 > You may get some bugs or need help, please email me at 294101042@qq.com.
