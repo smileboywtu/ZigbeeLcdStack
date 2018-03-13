@@ -21,7 +21,7 @@ All thing is easy and all files just prepared for you.
   
 # Description
 
-##Content
+## Content
 
 You may interesting with the content it contains. Here I just give you some information.
 
@@ -33,7 +33,7 @@ Here are the projects:
 + Camera Project
 + Vibrate(ADXL345)
 
-##LCD Project
+## LCD Project
 
 This project is the main project for the z-stack, this project has won big prize in
 the final contest of the Up-Tech Cap.
@@ -51,23 +51,23 @@ For other LCDs, you may need to create the z-stack your own.
 For the user whole use other LCDs but with the UART control interface, you may need to change the content command. As for content command, you should look at the docs for
 your LCD, this is usually specific.
 
-##Camera Project
+## Camera Project
 
 So when you use this project to get and transfer images, you need a camera, which is
 also special ones.Know more information about the camera from [here](https://item.taobao.com/item.htm?spm=a230r.1.14.71.XsMDNL&id=37639069215&ns=1&abbucket=14#detail).
 
 ![Alt text](https://img.alicdn.com/imgextra/i3/61516653/T2laWmXTxXXXXXXXXX-61516653.jpg  "UART JPEG Camera")
 
-##Vibrate Project
+## Vibrate Project
 
 This project just use the ADXL345 to get the vibrate. know more things about the ADXL345 from [here](http://www.analog.com/en/products/mems/mems-accelerometers/adxl345.html).
 
 Because CC2530 is actually is a 8051 core, so there isn't an IIC interface, so I just use an Arduino UNO as a wire connect ADXL345 and CC2530.
 
-#More
+# More
 
 You also can look at the *Embeded-Monitor* Project and this project is the PC front end of this ZIGBEE stack.
 
-#Contact
+# Contact
 
 You may get some bugs or need help, please email me at 294101042@qq.com.
